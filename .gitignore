@@ -5,6 +5,10 @@ ehthumbs.db
 # Folder config file
 Desktop.ini
 
+#Backups and logs
+*.log
+*.bkp
+
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
@@ -44,5 +48,6 @@ $RECYCLE.BIN/
 .AppleDesktop
 Network Trash Folder
 Temporary Items
+RemoteSystemsTempFiles
 .metadata
 .apdisk
