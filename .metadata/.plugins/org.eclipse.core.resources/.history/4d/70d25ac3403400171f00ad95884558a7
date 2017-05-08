@@ -1,0 +1,71 @@
+\relax 
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Implementa\IeC {\c c}\IeC {\~a}o e Testes}{41}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{cap:Implementacao}{{7}{41}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}Arquitetura da Aplica\IeC {\c c}\IeC {\~a}o}{41}}
+\citation{BBC}
+\@writefile{lof}{\contentsline {figure}{\numberline {Figura\nobreakspace  7.1:}{\ignorespaces Arquitetura inicial da aplica\IeC {\c c}\IeC {\~a}o Kinected Blender.}}{42}}
+\newlabel{fig:arquiteturaant}{{7.1}{42}}
+\AC@undonewlabel{acro:DLL}
+\newlabel{acro:DLL}{{7.1}{42}}
+\acronymused{DLL}
+\citation{iana}
+\@writefile{lof}{\contentsline {figure}{\numberline {Figura\nobreakspace  7.2:}{\ignorespaces Nova arquitetura da aplica\IeC {\c c}\IeC {\~a}o Kinected Blender.}}{43}}
+\newlabel{fig:arquitetura}{{7.2}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Comunica\IeC {\c c}\IeC {\~a}o}{43}}
+\AC@undonewlabel{acro:UDP}
+\newlabel{acro:UDP}{{7.2}{43}}
+\acronymused{UDP}
+\AC@undonewlabel{acro:TCP}
+\newlabel{acro:TCP}{{7.2}{43}}
+\acronymused{TCP}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Addon Kinected Blender}{44}}
+\@writefile{lof}{\contentsline {figure}{\numberline {Figura\nobreakspace  7.3:}{\ignorespaces \textit  {Addon} Kinected Blender ativado.}}{44}}
+\newlabel{fig:addonk}{{7.3}{44}}
+\@writefile{lot}{\contentsline {table}{\numberline {Tabela\nobreakspace  7.1:}{\ignorespaces Tabela para mapeamento de objetos vinculados \IeC {\`a}s partes do corpo.}}{45}}
+\newlabel{tab:mapeamento}{{7.1}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {Figura\nobreakspace  7.4:}{\ignorespaces A fun\IeC {\c c}\IeC {\~a}o \textit  {Auto keyframe insertion} deve estar ativada para grava\IeC {\c c}\IeC {\~a}o da anima\IeC {\c c}\IeC {\~a}o.}}{45}}
+\newlabel{fig:autoins}{{7.4}{45}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3.1}Mapeamento para \textit  {Armature} / \textit  {Bones}}{45}}
+\@writefile{lof}{\contentsline {figure}{\numberline {Figura\nobreakspace  7.5:}{\ignorespaces \textit  {Armature} cinza mapeado no personagem e \textit  {armature} rosa mapeada do usu\IeC {\'a}rio.}}{46}}
+\newlabel{fig:armature3}{{7.5}{46}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.4}Kinected Blender - Receptor}{46}}
+\citation{jobert}
+\@writefile{toc}{\contentsline {section}{\numberline {7.5}Testes Realizados}{47}}
+\@writefile{lot}{\contentsline {table}{\numberline {Tabela\nobreakspace  7.2:}{\ignorespaces Tabela de gestos para reconhecimento.}}{48}}
+\newlabel{tab:gestos}{{7.2}{48}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.6}Anima\IeC {\c c}\IeC {\~a}o}{48}}
+\@writefile{lof}{\contentsline {figure}{\numberline {Figura\nobreakspace  7.6:}{\ignorespaces Modelo 3D utilizado na anima\IeC {\c c}\IeC {\~a}o.}}{49}}
+\newlabel{fig:jake}{{7.6}{49}}
+\@setckpt{capitulos/capitulo6}{
+\setcounter{page}{50}
+\setcounter{equation}{0}
+\setcounter{enumi}{0}
+\setcounter{enumii}{0}
+\setcounter{enumiii}{0}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{0}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{7}
+\setcounter{section}{6}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{6}
+\setcounter{table}{2}
+\setcounter{NAT@ctr}{0}
+\setcounter{ii@authorcount}{1}
+\setcounter{kwcounter}{3}
+\setcounter{lstnumber}{1}
+\setcounter{r@tfl@t}{0}
+\setcounter{header@val}{0}
+\setcounter{max@header@val}{0}
+\setcounter{subfigure}{0}
+\setcounter{LT@tables}{0}
+\setcounter{LT@chunks}{0}
+\setcounter{parentequation}{0}
+\setcounter{lstlisting}{0}
+}

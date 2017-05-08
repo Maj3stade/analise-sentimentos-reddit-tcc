@@ -1,0 +1,123 @@
+\documentclass{iiufrgs}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{setspace}
+\usepackage{fontenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{url}
+\usepackage[printonlyused]{acronym}
+\usepackage{rotating}
+\usepackage{bytefield}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{fixltx2e}
+\usepackage{longtable}
+\usepackage{mathtools}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{textcomp}
+%\usepackage[brazilian]{babel}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\onehalfspacing
+
+\setdescription{topsep=1em,parsep=0pt,partopsep=0pt,itemsep=0pt}
+\setitemize{topsep=1em,parsep=0pt,partopsep=0pt,itemsep=0pt}
+\setenumerate{topsep=1em,parsep=0pt,partopsep=0pt,itemsep=0pt}
+
+\course{\cgcc}
+\title{O Uso de Processamento de Linguagem Natural para a Análise de
+Sentimentos na Rede Social Reddit.}
+\author{Santos Andreata}{Guilherme Henrique}
+\advisor[]{Martinotto}{André Luis}
+\location{Caxias do Sul}{}
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\begin{document}
+
+\maketitle  
+
+\begin{titlepage}
+%\setcounter{page}{2} - Inclui o número da página
+%\thispagestyle{headings}
+\vfill
+
+\begin{center}
+{\setlength{\unitlength}{1cm}\makebox(12,6.5){\parbox[c]{12cm}{\setlength{\parskip}{0.8cm}\center\vskip -1.2cm\LARGE{\bf O Uso de Processamento de Linguagem Natural para a Análise de Sentimentos na
+Rede Social Reddit.}\par \normalsize por\par \large Guilherme Henrique
+Santos Andreata\par}}}
+\end{center}
+
+{\large Projeto de Diplomação submetido ao curso de Bacharelado em Sistemas de
+Informação da área de conhecimento de ciências exatas e engenharia, como requisito obrigatório para graduação.}
+
+\vfill
+
+\begin{center}
+{\Large\bf Projeto de Diplomação}
+\end{center}
+
+\vfill
+
+\begin{singlespace}
+Orientador: {André Luis Martinotto\par}
+
+Banca examinadora:\par
+\hspace{1cm} {\setlength{\unitlength}{1cm}
+\makebox(9,1){\parbox[c]{9cm}{\center André Gustavo Adami\\ CCTI/UCS}}}\par
+\hspace{1cm} {\setlength{\unitlength}{1cm}
+\makebox(9,1){\parbox[c]{9cm}{\center Carlos Eduardo Nery\\ CCTI/UCS}}}\par
+
+\vfill
+
+\hfill{\setlength{\unitlength}{1cm}\makebox(9,2.5){\parbox[c]{9cm}{\setlength{\parskip}{0.8cm}\center\vskip -1.2cm Projeto de Diplomação apresentado em\\ 5 de Dezembro de 2013\par Daniel Luís Notari\\ Coordenador}}}
+
+\end{singlespace}
+
+\end{titlepage}
+
+\tableofcontents
+
+\chapter*{Lista de acrônimos}
+
+\vspace{20px}
+\begin{acronym}[XXXXXXXXXX]
+\acro{NLP}[NLP]{\textit{Natural Language Processing}}
+\acro{NLTK}[NLTK]{\textit{Natural Language Toolkit}}
+\acro{MaxEnt}[MaxEnt]{\textit{Maximum Entropy}}
+\acro{RNTN}[RNTN]{\textit{Recursive Neural Tensor Networks}}
+\end{acronym}
+\listoffigures
+\listoftables
+
+\keyword{Kinect}
+\keyword{Blender}
+\keyword{Animação 3D}
+
+\begin{abstract}
+
+%TODO Inserir Abstract
+
+\end{abstract}
+
+
+\acresetall
+
+\include{capitulos/introducao}
+\include{capitulos/capitulo1}
+\include{capitulos/capitulo2}
+\include{capitulos/capitulo3}
+% \include{capitulos/capitulo4}
+% \include{capitulos/capitulo5}
+% \include{capitulos/capitulo6}
+% \include{capitulos/capitulo7}
+
+\bibliography{tcc}
+\bibliographystyle{abnt}
+
+\end{document}

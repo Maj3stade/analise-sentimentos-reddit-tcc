@@ -1,0 +1,22 @@
+\chapter{Blender}\label{cpBlender}
+
+O Blender é um software gratuito e coberto por uma licença GNU GPL (\textit{GNU General Public License}) utilizado para criação de modelos, animações e jogos 2D ou 3D \cite{blender2013}. Este software é utilizado por estudantes, artitas que trabalham sozinhos com modelagem e animação e até mesmo por equipes que produzem filmes animados como \textit{Sintel} e \textit{Big Buck Bunny} \cite{blenderwiki}.
+
+Assim como outros softwares utilizados para modelagem e animação, como por exemplo o \textit{3ds Max} e o \textit{Maya}, o Blender oferece uma grande quantidade de ferramentas e recursos para criação de cenas estáticas ou dinâmicas \cite{mullen2011}. O software possui código aberto e utiliza a linguagem de programação Python dentro de sua API (\textit{Application Programming Interface}). Além disso, o software possibilita a implementação de \textit{addons} feitos pelo usuário, adicionando novas funcionalidades sem a necessidade de alterar o código fonte.
+
+\section{\textit{Armature}}
+O Blender possibilita que seja feita a animação de personagens 3D através do uso de um recurso chamado \textit{armature}. Um \textit{armature} é uma espécie de esqueleto do personagem ou objeto, composto por \textit{bones} e seus relacionamentos, conexões e restrições, que permite com que parte do modelo 3D seja movimentado sem que haja distorção ou deformação da imagem original, preservando a modelagem \cite{mullen2011}. Na figura \ref{fig:armature1} pode-se visualizar um exemplo de \textit{armature} do Blender.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=200px]{imagens/armature1.png}
+ \caption{Exemplo de \textit{armature} no Blender.}
+ \label{fig:armature1}
+\end{figure}
+
+\newpage
+
+\subsection{\textit{Bones}}
+Os \textit{bones} de um \textit{armature} são os ossos que compõe o esqueleto do modelo 3D. O número de \textit{bones} presentes em um \textit{armature} varia de acordo com a precisão e naturalidade de movimento que o animador quer dar ao personagem.
+
+

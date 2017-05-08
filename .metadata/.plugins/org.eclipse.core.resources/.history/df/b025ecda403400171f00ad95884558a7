@@ -1,0 +1,91 @@
+\chapter{Aplicações de Integração}
+\label{cap:AplicaIntegra}
+A integração do Kinect com o Blender possibilita uma melhora no método utilizado para a geração de uma animação 3D, tornando o processo mais ágil e menos custoso \cite{mullen2011}. Esta integração não é algo inovador, sendo que já existem algumas aplicações que realizam essa integração, como, por exemplo, o Ni Mate \cite{delicode} e o \ac{Bloop} \cite{bloop}.
+
+\section{Delicode Ni Mate}
+O \ac{Ni Mate} é um \textit{software} produzido pela Delicode, que processa as informações coletadas de sensores como o Kinect através do uso do OpenNI \cite{delicode}. O \textit{software} recebe as informações sobre a detecção do usuário e possibilita a utilização dessas informações em outros programas, tais como o Blender e o Maya \cite{delicode}. O \textit{software} é multiplataforma e não é gratuito, entretanto é possível solicitar uma licença de avaliação que é vinculada ao número de série do sensor utilizado \cite{delicode}.
+
+O Ni Mate possui diversas abas de configuração da ferramenta, sendo possível configurar tanto opções de processamento da imagem e de profundidade, quanto da geração do esqueleto do usuário \cite{delicode}. Para utilização do Ni Mate em conjunto com o Blender, duas destas abas de configurações são importantes, que são as abas \textit{Full Skeleton} e \textit{\ac{OSC} Controller}. 
+
+A aba \textit{Full Skeleton} permite que um nome seja atribuído a cada vértice do esqueleto, conforme pode-se observar na Figura \ref{fig:delicode1}. Esse esqueleto, com seus vértices nomeados e suas coordenadas, é enviado para o Blender através do protocolo \textit{OSC} \cite{osc}.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=170px]{imagens/delicode1.png}
+ \caption{Aba de configuração do esqueleto do Ni Mate.}
+ \label{fig:delicode1}
+\end{figure}
+
+\newpage
+A aba \textit{OSC Controller} permite que sejam configuradas as opções de envio de mensagens para o Blender. Os dados de movimentação do usuário são convertidos em mensagens, e essas são transmitidas através do protocolo \ac{OSC} para o Blender \cite{delicode}. Além disso, também é possível configurar os limites da captura do sinal e o número máximo de pessoas na cena (Figura \ref{fig:delicode2}). Este controlador possui um algoritmo de detecção de usuário diferente do \textit{Full Skeleton}. Neste, o esqueleto do usuário não é detectado, mas sim, as partes do seu corpo através do processamento da imagem de profundidade \cite{delicode}.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=170px]{imagens/delicode2.png}
+ \caption{Aba de configuração do controlador \ac{OSC} do Ni Mate.}
+ \label{fig:delicode2}
+\end{figure}
+
+Após os dados serem enviados via \ac{OSC}, o Blender efetua o processamento das mensagens recebidas. Entretanto, o \textit{software} não possui tal funcionalidade implementada, sendo necessária a instalação de um \textit{addon} oficial da Delicode \cite{delicode}. Esse \textit{addon}, que é gratuito e apresenta uma licença GNU \textit{GPL}, possibilita que o usuário defina a porta em que as mensagens serão recebidas e inicie ou pare o processo de recepção das mensagens (Figura \ref{fig:delicode3}).
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=120px]{imagens/delicode3.png}
+ \caption{\textit{Addon} do Blender para a recepção de mensagens enviadas do Ni Mate.}
+ \label{fig:delicode3}
+\end{figure}
+\newpage
+As mensagens recebidas pelo Blender são processadas e a ligação dos vértices recebidos com o \textit{armature} é feita considerando o nome do vértice e o nome do \textit{bone}, ou seja, vértices e \textit{bones} que possuem o mesmo nome são associados na cena de forma automática. Também é possível associar um grupo de \textit{bones} à uma parte do corpo específica. Nesse caso, o grupo de \textit{bones} e a parte do corpo também devem possuir o mesmo nome. Na Figura \ref{fig:delicode4} pode-se observar um \textit{armature} com \textit{bones} nomeados no Blender, e um esqueleto gerado pelo Ni Mate.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=200px]{imagens/delicode4.png}
+ \caption{\textit{Armature} com \textit{bones} nomeados, assim como o esqueleto gerado pelo Ni Mate.}
+ \label{fig:delicode4}
+\end{figure}
+
+O Ni Mate possui algumas limitações com relação ao uso do \textit{Kinect for Xbox 360}. Existem duas versões do Ni Mate para Windows, sendo que uma delas suporta o novo sensor \textit{Kinect for Windows} e a outra suporta o sensor \textit{Kinect for Xbox 360}. A versão que suporta o sensor \textit{Kinect for Windows} funciona com a nova versão do OpenNI e os \textit{drivers} oficiais da Microsoft. Entretanto, se utilizado o sensor do Xbox com essa versão, o aplicativo não inicia, informando incompatibilidade com o sensor. Já a versão que suporta o sensor \textit{Kinect for Xbox 360} funciona somente com uma versão antiga do OpenNI e requer a instalação de \textit{drivers} não-oficiais do sensor. Devido a incompatibilidade entre a versão que suporta o sensor \textit{Kinect for Xbox 360} e o OpenNI 2, não foi possível realizar testes com essa ferramenta.
+
+\section{Bloop}
+O Bloop, também conhecido como \textit{Blender Loop Station} é uma ferramenta similar ao Ni Mate, que possibilita que as informações coletadas pelo Kinect sejam processados pelo Blender para a geração de uma animação de um personagem 3D \cite{bloop}. O projeto foi criado por dois estudantes da Universidade de Bremen, na Alemanha, e utiliza o Microsoft Kinect \textit{SDK} para o processamento do sinal e do esqueleto do usuário \cite{bloop}.
+
+O Bloop funciona por comando de voz, ou seja, o usuário utiliza a fala para enviar um comando para o Kinect, que executa a ação e envia os dados para o Blender \cite{bloop}. O usuário pode, por exemplo, falar o comando ``\textit{Start}'' para que o Kinect envie um sinal para o Blender começar a gravação da animação. Além disso, a ferramenta possibilita ainda o mapeamento do personagem via gestos e permite que mais que um usuário controle o mesmo personagem \cite{bloop}.
+
+Assim como no Ni Mate, a comunicação entre o Kinect e o Bloop é feita através do protocolo \ac{OSC} \cite{bloop}. Entretanto, o Bloop recebe os dados via \ac{OSC} diretamente, ou seja, com exceção do programa que transmite o sinal do Kinect via \ac{OSC}, toda a aplicação foi escrita como um \textit{addon} do Blender \cite{bloop}.
+
+O princípio do Bloop é utilizar a movimentação dos \textit{control bones} do Blender para realizar uma animação, não abrindo mão da utilização de \textit{constraints}. Na Figura \ref{fig:bloop1} pode-se visualizar a modelagem de um canguru com os \textit{control bones} que o Bloop utiliza para a animação.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=150px]{imagens/bloop1.png}
+ \caption{Modelagem de um canguru no Blender, com os \textit{control bones} utilizados para a animação com o Bloop.}
+ \label{fig:bloop1}
+\end{figure}
+\newpage
+O Bloop é um projeto que aparentemente foi abandonado, pois desde 2011 não recebe atualizações \cite{bloop}. Desta forma, essa ferramenta foi desenvolvida para uma versão antiga do Blender, além de utilizar a versão beta do Microsoft Kinect \textit{SDK}, já que a versão 1.0 do \textit{SDK} foi lançada somente em 2012 \cite{mssdk}. Além disso, como a aplicação utiliza as informações processadas pelo Microsoft Kinect \textit{SDK}, a ferramenta só funciona no sistema operacional Windows. Devido a ferramenta estar desatualizada, não foi possível realizar testes com a mesma.
+
+\section{Comparativo entre as Ferramentas}
+Pode-se concluir que a utilização do Bloop é inviável devido à falta de atualizações da ferramenta. De fato, através desse só é possível realizar a integração somente com versões mais antigas do Blender e do próprio Microsoft Kinect \textit{SDK}. Já a utilização no Ni Mate é viável, entretanto o \textit{software} não é gratuito e utiliza uma versão antiga do \textit{framework} OpenNI para integração com o \textit{Kinect for Xbox 360}. Desta forma, através desse não é possível utilizar os novos recursos oferecidos pelo OpenNI. Na Tabela \ref{tb:feramentas} tem-se um comparativo entre as soluções de integração já existentes.
+
+\begin{table}[ht!]
+    \centering
+		\caption{Tabela de comparação das ferramentas de integração entre Kinect e Blender.}
+		\label{tb:feramentas}		
+		\begin{tabular}{ | l | l | l |}		
+		\cline{2-3}
+    \multicolumn{1}{l |}{ } & \textbf{Ni Mate} & \textbf{Bloop} \\ \hline
+    \textbf{Gratuito} & Não & Sim  \\ \hline
+    \textbf{Código Aberto} & Não & Sim   \\ \hline
+    \textbf{Plataformas} & Windows, Linux, Mac & Windows \\ \hline
+		\textbf{Comunicação} & \ac{OSC} & \ac{OSC} \\ \hline
+		\textbf{\textit{Framework}} & OpenNI & Microsoft Kinect \textit{SDK} \\ \hline
+		\textbf{Atualizado} & Sim & Não \\ \hline
+		\textbf{\textit{Kinect for Xbox 360}} & Suportado\protect\footnotemark[1] & Suportado \\ \hline
+		\textbf{\textit{Kinect for Windows}} & Suportado\protect\footnotemark[2] & Não Suportado \\ \hline
+		\textbf{Outros Sensores} & Suportado & Não Suportado \\ \hline
+    \end{tabular}		
+\end{table}
+\footnotetext[1]{Somente com a versão 1.x do OpenNI e drivers não-oficiais.}
+\footnotetext[2]{Somente com a versão 2.x do OpenNI e somente no Windows.}
+
+Assim sendo, as opções disponíveis atualmente não satisfazem a necessidade de todos os usuários. Isso deve-se principalmente à inexistência de uma ferramenta gratuita, multiplataforma e atualizada que realize a integração entre Kinect e Blender. Desta forma, optou-se pelo desenvolvimento de uma aplicação que atenda as necessidades desses usuários.

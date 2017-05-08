@@ -1,0 +1,52 @@
+@book{borenstein2012,
+  author    = "Greg Borenstein",
+  title     = "Making Things See",
+  year      = "2012",
+  publisher = "Make"
+}
+
+@book{giorioefascinari2013,
+  author    = "Clemente Giorio and Massimo Fascinari",
+  title     = "Kinect in Motion - Audio and Visual Tracking by Example",
+  year      = "2013",
+  publisher = "Packt",
+  address   = "Birmingham, Inglaterra"
+}
+
+@book{jana2012,
+  author    = "Abhijit Jana",
+  title     = "Kinect for Windows SDK Programming Guide",
+  year      = "2012",
+  publisher = "Packt",
+  address   = "Birmingham, Inglaterra"
+}
+
+@book{falahati2013,
+  author    = "Soroush Falahati",
+  title     = "OpenNI Cookbook",
+  year      = "2013",
+  publisher = "Packt",
+  address   = "Birmingham, Inglaterra"
+}
+
+@misc{mocap,
+  author    = "Jai Mashalkar",
+  title     = "Motion Capture and Rigging using Microsoft Kinect",
+  year      = "2012",
+  publisher = "Indian Institute of Technology Bombay",
+  note      = "$<$Disponível em: \url{http://www.cse.iitb.ac.in/~jaaim/seminar/mocapKinectReport.pdf}$>$. Acesso em 01 de setembro de 2013."
+}
+
+@misc{blender2013,
+  author    = "{Blender Foundation}",
+  title     = "Blender",
+  year      = "2013",
+  note      = "$<$Disponível em: \url{http://www.blender.org/}$>$. Acesso em 01 de setembro de 2013."
+}
+
+@misc{blenderwiki,
+  author    = "{Blender Wiki}",
+  title     = "Blender Wiki",
+  year      = "2013",
+  note      = "$<$Disponível em: \url{http://wiki.blender.org/}$>$. Acesso em 27 de outubro de 2013."
+}

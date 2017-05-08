@@ -1,0 +1,47 @@
+\begin{thebibliography}{\hspace{\parindent}}
+
+\bibitem[{Alexa}(2017){Alexa}]{alexa} {Alexa}. \textbf{Alexa Top 500 Global
+  Sites}. $<$Disponível em: \url{http://www.alexa.com/topsites/}$>$. Acesso
+  em: 27 de Fevereiro de 2017.
+
+\bibitem[{Apache OpenNLP}(2017){Apache OpenNLP}]{opennlp} {Apache OpenNLP}.
+  \textbf{Apache OpenNLP}. $<$Disponível em:
+  \url{https://opennlp.apache.org/}$>$. Acesso em: 27 de Fevereiro de 2017.
+
+\bibitem[BRILL(1992)BRILL]{Brill:1992:SRP:974499.974526} BRILL, E\@. A Simple
+  Rule-based Part of Speech Tagger. In: THIRD CONFERENCE ON APPLIED NATURAL
+  LANGUAGE PROCESSING, Stroudsburg, PA, USA. \textbf{Proceedings{\ldots}}
+  Association for Computational Linguistics, 1992. p.152--155. (ANLC '92).
+
+\bibitem[DOMINGOS; PAZZANI(1997)DOMINGOS; PAZZANI]{domingos97naivebayes}
+  DOMINGOS, P.; PAZZANI, M.~J\@. On the Optimality of the Simple Bayesian
+  Classifier under Zero-One Loss. \textbf{Machine Learning}, [S.l.], v.29,
+  n.2-3, p.103--130, 1997.
+
+\bibitem[HANCOX(2017)HANCOX]{history} HANCOX, P.~J\@. \textbf{A brief history
+  of Natural Language Processing}. $<$Disponível em:
+  \url{http://www.cs.bham.ac.uk/~pjh/sem1a5/pt1/pt1_history.html/}$>$. Acesso
+  em: 02 de Abril de 2017.
+
+\bibitem[JACKSON; MOULINIER(2007)JACKSON; MOULINIER]{jacksonmoulinier2007}
+  JACKSON, P.; MOULINIER, I\@. \textbf{Natural Language Processing for Online
+  Applications}: text retrieval, extraction and categorization. [S.l.]: John
+  Benjamins Publishing Company, 2007.
+
+\bibitem[MANNING; SCHüTZE(1999)MANNING; SCHüTZE]{manningschutze1999} MANNING,
+  C.~D.; SCHüTZE, H\@. \textbf{Foundations of Statistical Natural Language
+  Processing}. [S.l.]: MIT Press, 1999.
+
+\bibitem[{Natural Language Toolkit}(2017){Natural Language Toolkit}]{nltk}
+  {Natural Language Toolkit}. \textbf{Natural Language Toolkit}. $<$Disponível
+  em: \url{http://www.nltk.org/}$>$. Acesso em: 27 de Fevereiro de 2017.
+
+\bibitem[{Spacy}(2017){Spacy}]{spacy} {Spacy}. \textbf{Spacy}. $<$Disponível
+  em: \url{https://spacy.io/}$>$. Acesso em: 27 de Fevereiro de 2017.
+
+\bibitem[{Stanford CoreNLP}(2017){Stanford CoreNLP}]{corenlp} {Stanford
+  CoreNLP}. \textbf{Stanford CoreNLP}. $<$Disponível em:
+  \url{http://stanfordnlp.github.io/CoreNLP/}$>$. Acesso em: 27 de Fevereiro de
+  2017.
+
+\end{thebibliography}

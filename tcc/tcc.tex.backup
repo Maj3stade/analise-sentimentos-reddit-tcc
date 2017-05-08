@@ -1,0 +1,146 @@
+\documentclass{iiufrgs}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[section]{placeins}
+\usepackage{setspace}
+\usepackage{fontenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{url}
+\usepackage[printonlyused]{acronym}
+\usepackage{rotating}
+\usepackage{bytefield}
+\usepackage[table]{xcolor}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{lscape}
+\usepackage{enumitem}
+\usepackage{fixltx2e}
+\usepackage{longtable}
+\usepackage{mathtools}
+\usepackage{tabularx}
+%\usepackage[brazilian]{babel}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\onehalfspacing
+
+\setdescription{topsep=1em,parsep=0pt,partopsep=0pt,itemsep=0pt}
+\setitemize{topsep=1em,parsep=0pt,partopsep=0pt,itemsep=0pt}
+\setenumerate{topsep=1em,parsep=0pt,partopsep=0pt,itemsep=0pt}
+
+\course{\cgcc}
+\title{Kinected Blender: Uma solução para criação de animações 3D utilizando Kinect e Blender}
+\author{Melo}{Fernando Castilhos}
+\advisor[]{Martinotto}{André Luis}
+\coadvisor[]{Reinaldo}{Gelson Cardoso}
+\location{Caxias do Sul}{}
+\bibpunct{(}{)}{;}{a}{,}{,}
+
+\begin{document}
+
+\maketitle
+
+\begin{titlepage}
+%\setcounter{page}{2} - Inclui o número da página
+%\thispagestyle{headings}
+\vfill
+
+\begin{center}
+{\setlength{\unitlength}{1cm}\makebox(12,6.5){\parbox[c]{12cm}{\setlength{\parskip}{0.8cm}\center\vskip -1.2cm\LARGE{\bf Kinected Blender: Uma solução para criação de animações 3D utilizando Kinect e Blender}\par \normalsize por\par \large Fernando Castilhos Melo\par}}}
+\end{center}
+
+{\large Projeto de Diplomação submetido ao curso de Bacharelado em Ciência da Computação do Centro de Computação e Tecnologia da Informação da Universidade de Caxias do Sul, como requisito obrigatório para graduação.}
+
+\vfill
+
+\begin{center}
+{\Large\bf Projeto de Diplomação}
+\end{center}
+
+\vfill
+
+\begin{singlespace}
+Orientador: {André Luis Martinotto\par}
+Coorientador: {Gelson Cardoso Reinaldo\par}
+
+Banca examinadora:\par
+\hspace{1cm} {\setlength{\unitlength}{1cm}
+\makebox(9,1){\parbox[c]{9cm}{\center André Gustavo Adami\\ CCTI/UCS}}}\par
+\hspace{1cm} {\setlength{\unitlength}{1cm}
+\makebox(9,1){\parbox[c]{9cm}{\center Carlos Eduardo Nery\\ CCTI/UCS}}}\par
+
+\vfill
+
+\hfill{\setlength{\unitlength}{1cm}\makebox(9,2.5){\parbox[c]{9cm}{\setlength{\parskip}{0.8cm}\center\vskip -1.2cm Projeto de Diplomação apresentado em\\ 5 de Dezembro de 2013\par Daniel Luís Notari\\ Coordenador}}}
+
+\end{singlespace}
+
+\end{titlepage}
+
+\tableofcontents
+
+\chapter*{Lista de acrônimos}
+
+\vspace{20px}
+
+\begin{acronym}[XXXXXXXXXX]
+\acro{3D}[3D]{3 Dimensões}
+\acro{API}[\textit{API}]{\textit{Application Programming Interface}}
+\acro{Bloop}[Bloop]{\textit{Blender Loop Station}}
+\acro{GNU GPL}[GNU \textit{GPL}]{GNU \textit{General Public License}}
+\acro{Ni Mate}[Ni Mate]{\textit{Natural Interaction Mate}}
+\acro{NiTE}[NiTE]{\textit{Natural Interface Technology for End-User}}
+\acro{NUI}[\textit{NUI}]{\textit{Natural User Interface}}
+\acro{OpenNI}[OpenNI]{\textit{Open Natural Interaction}}
+\acro{OSC}[\textit{OSC}]{\textit{Open Sound Control}}
+\acro{RGB}[\textit{RGB}]{\textit{Red, Green, Blue}}
+\acro{SDK}[\textit{SDK}]{\textit{Software Development Kit}}
+\acro{TCC}[TCC]{Trabalho de Conclusão de Curso}
+
+\end{acronym}
+
+\listoffigures
+\listoftables
+
+\keyword{Kinect}
+\keyword{Blender}
+\keyword{Animação}
+
+\begin{abstract}
+
+A geração de uma animação de um personagem 3D é complexa e custosa, especialmente para animadores que não possuem uma equipe que auxilie na sua produção. Isso deve-se ao fato do animador necessitar mudar a pose do personagem a cada quadro gravado, gastando-se muito tempo e gerando muito trabalho para a produção da animação.
+
+Com a utilização do Blender como \textit{software} de modelagem e animação 3D, e do Kinect como sensor de movimentos, pode-se desenvolver uma aplicação que integre esses dois recursos com o objetivo de facilitar o processo de criação de animações 3D. 
+
+O Blender é um \textit{software} de modelagem e animação 3D, sendo assim, é possível realizar a animação de um personagem através do uso desse \textit{software}. Mesmo em pequenas animações, nota-se uma complexidade particular de cada cena e percebe-se o quão trabalhoso é criar uma animação que tente manter a fidelidade da linguagem corporal do ser humano.
+
+O Kinect é um sensor capaz de capturar movimentos, e através dessa captura pode-se obter a linguagem corporal das pessoas. Essa linguagem corporal pode ser utilizada para mover um personagem em uma animação 3D, preservando-se a naturalidade do movimento.
+
+
+Sendo assim, propõe-se o desenvolvimento de uma aplicação que realize a integração entre Kinect e Blender com o objetivo de facilitar a criação da animação de um personagem 3D, de forma gratuita, multiplataforma e atual. Para tanto, serão utilizados o \textit{framework} OpenNI e o \textit{middleware} NiTE, responsáveis pelo processamento dos movimentos capturados pelo Kinect. Com a utilização das informações coletadas pode-se animar um personagem 3D, facilitando a produção da animação e mantendo-se a naturalidade do movimento.
+
+\end{abstract}
+
+\begin{englishabstract}{Kinected Blender: A solution to create 3D animations using Kinect and Blender}{Kinect, Blender, Animation}
+
+Generating a 3D character animation is complex and costly, particularly for animators who do not have a team to assist in its production. Using Blender as a 3D modeling and animation tool, and Kinect as a motion sensor, it is possible to build an application that integrates these two resources in order to facilitate the process to create 3D animations.
+
+Even in small animations, there is a particular complexity of each scene and it is possible to realize how much work is needed to create an animation that represents the fidelity of human body language. Using Kinect you can capture such body language and send it to Blender using OpenNI framework and NITE middleware.
+
+Therefore, we propose the development of an application that performs the integration between Kinect and Blender in order to facilitate the creation of a 3D character animation, in a free, cross-plataform and current way.
+
+\end{englishabstract}
+
+\acresetall
+
+\include{capitulos/introducao}
+\include{capitulos/capitulo1}
+\include{capitulos/capitulo2}
+\include{capitulos/capitulo3}
+\include{capitulos/capitulo4}
+\include{capitulos/capitulo5}
+\include{capitulos/capitulo6}
+
+\bibliography{tcc}
+\bibliographystyle{abnt}
+
+\end{document}

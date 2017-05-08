@@ -1,0 +1,66 @@
+\chapter{Kinect}
+\label{cap:Kinect}
+
+Criado pela Microsoft em parceria com a PrimeSense \cite{giorioefascinari2013}, o Kinect é um sensor capaz de detectar os movimentos de uma pessoa e determinar a distância desta pessoa ou de outros objetos. 
+
+Diferente das câmeras comuns, o Kinect funciona como uma câmera de profundidade. Segundo \citet{borenstein2012}, as câmeras RGB (\textit{Red, Green, Blue}) comuns capturam a luz refletida em objetos e transformam esta luz em uma imagem, sendo que essa imagem é exibida na tela do computador de forma que cada \textit{pixel} recebe uma determinada cor, ou seja, a imagem capturada é exibida de forma similar ao que o olho humano consegue visualizar. Este tipo de imagem não fornece dados sobre a profundidade dos objetos na cena, pois a imagem apresenta somente \textit{pixels} de diferentes cores, entretanto fornece alguns dados importantes, como por exemplo a aparência dos objetos.
+
+O Kinect (Figura \ref{fig:kinect1}) é formado por uma câmera RGB que possibilita determinar a forma dos objetos em uma determinada cena. No entanto, as informações obtidas por essa câmera não são suficientes para determinar a profundidade dos objetos. Para isto, o Kinect possui um projetor de luz infravermelha e uma câmera infravermelha, também chamada de câmera de profundidade \cite{giorioefascinari2013}. 
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=150px]{imagens/kinect1.png}
+ \caption{Kinect sem o revestimento de plástico.}
+ \label{fig:kinect1}
+ Fonte: \citet{borenstein2012}
+\end{figure}
+
+\newpage
+
+Através do projetor de luz infravermelha, o Kinect emite uma grade de pontos infravermelhos sobre os objetos. Estes pontos são invisíveis ao olho nu, entretanto a câmera infravermelha consegue capturar estes pontos de luz. Desta forma, o Kinect consegue determinar a distância entre o sensor e o objeto através da distorção dos pontos projetados. Isso só é possível graças ao fato do Kinect armazenar uma informação obtida pela sua primeira calibragem de fábrica: a posição original da projeção desses pontos infravermelhos. Quando calibrado na fábrica, o Kinect emite essa grade de luz sobre uma parede que está posicionada a uma distância \textit{x} \cite{borenstein2012}. Toda essa grade de pontos é armazenada no Kinect em correlação com essa distância \textit{x}, ou seja, quando esses pontos atingem um objeto que está a uma distância diferente da distância armazenada, estes pontos aparentam um padrão distorcido se comparado ao original. Sendo assim, é possível determinar a distância do objeto através da distorção dos pontos comparada a grade de pontos original \cite{giorioefascinari2013}.
+
+O Kinect possui algumas limitações com relação à sua câmera de profundidade. Dentre estas pode-se citar a distância mínima entre o objeto e o sensor. A câmera de profundidade não consegue capturar objetos que estejam a uma distância inferior a 40 centímetros. Sendo assim, objetos que estão muito próximos ao sensor são tratados da mesma forma que objetos que estão a uma distância muito grande \cite{borenstein2012}. O sensor também não funciona corretamente em ambientes afetados por luz solar intensa, superfícies refletivas ou sob interferência de luzes que estão em uma faixa de onda similar à luz infravermelha \cite{giorioefascinari2013}. Além disso, a luz infravermelha também pode reproduzir sombras na imagem, não sendo possível determinar a profundidade da área atingida por esta sombra. Na Figura \ref{fig:kinect2} pode-se observar a sombra (área circulada na figura) gerada pela luz infravermelha.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=180px]{imagens/kinect2.png}
+ \caption{Sombra gerada pela luz infravermelha.}
+ \label{fig:kinect2}
+\end{figure}
+
+\section{Imagem de Profundidade}
+A manipulação da profundidade da imagem pode ser realizada com o funcionamento em conjunto da câmera de profundidade, da câmera RGB e do projetor infravermelho. Com a união destes três equipamentos é possível modificar as cores de uma imagem de acordo com sua posição na cena, ignorar objetos que estejam a uma determinada distância e até mesmo determinar a proximidade entre os objetos e o sensor \cite{borenstein2012}. Na Figura \ref{fig:kinect3}a tem-se a imagem manipulada em tons de amarelo. Já na Figura \ref{fig:kinect3}b tem-se a imagem original correspondente à mesma cena. Na imagem manipulada, todo objeto que está próximo ao sensor recebe tons mais claros de amarelo, enquanto tudo que está no fundo da cena recebe tons mais escuros de amarelo. Além disso, objetos que estejam fora da faixa de alcance do sensor são ignorados na cena e recebem a cor preta.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=150px]{imagens/kinect3.png}
+ \caption{Imagem de profundidade em escalas de amarelo.}
+ \label{fig:kinect3}
+\end{figure}
+
+Na Figura \ref{fig:kinect4} tem-se uma ilustração do processo de geração de uma imagem de profundidade no Kinect. O \textit{chip}  envia um sinal de ativação para o emissor de luz infravermelha e para a câmera de profundidade. Após a ativação, o emissor de luz infravermelha projeta uma grade de pontos de luz nos objetos da cena e a câmera de profundidade lê os dados coletados. Em seguida, estes dados são enviados para o \textit{chip} e processados, disponibilizando a imagem de profundidade solicitada.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=300px]{imagens/kinect4.png}
+ \caption{Geração da imagem de profundidade}
+ \label{fig:kinect4}
+ Fonte: \citet{jana2012}
+\end{figure}
+
+A imagem de profundidade gerada pelo processamento da luz infravermelha contém dados relativos à distância dos objetos na cena. A imagem pode ser exibida em diversas cores na tela após o processamento, entretanto é comum serem utilizadas as escalas de cinza para determinar a posição dos objetos \cite{borenstein2012}. Ou seja, em uma imagem monocromática, cada pixel na tela possui um valor entre 0 e 255, sendo 0 representando a cor preta e 255 representando a cor branca. Qualquer valor intermediário entre estes dois extremos será uma tonalidade da cor cinza. Objetos que estão no fundo da cena recebem uma tonalidade mais escura, enquanto os objetos próximos ao sensor recebem uma cor mais clara. Desta forma, a partir do valor de cada pixel é possível determinar a posição de um objeto no cenário.
+
+
+\section{Dados de Esqueleto}
+O Kinect consegue identificar a presença de pessoas e informar onde elas estão com a ajuda de um software adicional. Através do uso de uma biblioteca, é possível detectar a posição de diversas partes do corpo, como por exemplo a cabeça, os braços e as mãos sem ter a necessidade de desenvolver algoritmos para o reconhecimento do corpo \cite{borenstein2012}. O uso desta biblioteca em uma aplicação torna possível a criação de um conjunto de nós interligados e devidamente posicionados, chamado de esqueleto. Um esqueleto detalhado contém 20 pontos no modo normal, que é o modo em que a pessoa está em pé, e 10 pontos no modo sentado \cite{giorioefascinari2013}.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=300px]{imagens/kinect5.png}
+ \caption{Esqueleto no modo normal e sentado, respectivamente.}
+ Fonte: \citet{giorioefascinari2013}
+ \label{fig:kinect5}
+\end{figure}
+
+\newpage
+As arestas determinadas por estes pontos representam as partes do corpo, enquanto os pontos funcionam como ``juntas'' que delimitam onde uma parte do corpo termina e outra inicia. O Kinect consegue reconhecer até seis pessoas na cena, entretanto somente duas podem ser mapeadas detalhadamente \cite{giorioefascinari2013}. A detecção e geração do esqueleto depende de qual biblioteca será utilizada para o desenvolvimento da aplicação, sendo que algumas bibliotecas necessitam de calibragem para a detecção do esqueleto, como por exemplo a OpenNI \cite{falahati2013}.

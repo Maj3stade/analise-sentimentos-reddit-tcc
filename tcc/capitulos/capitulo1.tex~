@@ -1,0 +1,65 @@
+\chapter{Animação}
+\label{cap:Animacao}
+Uma animação consiste na criação de uma série de imagens que, quando vistas rapidamente em sequência, geram uma ilusão de ótica, causando a sensação de movimento \cite{mullen2011}. Esta técnica é utilizada desde os primeiros desenhos animados, sendo aprimorada ao longo dos anos. 
+
+As primeiras ideias de animação originaram-se com a criação do taumatrópio em 1780 \cite{beckerman2012}. O taumatrópio era um brinquedo composto por um disco de papelão, com duas figuras distintas em cada um dos lados, e por dois elásticos presos nas laterais do disco. Quando estes elásticos eram torcidos, o disco sofria uma rotação e causava uma ilusão de ótica, dando a impressão que a imagem havia se tornado uma só, conforme pode-se observar na Figura \ref{fig:taumatropio}.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=120px]{imagens/taumatropio.PNG}
+ \caption{Taumatrópio que demonstra a união de duas imagens distintas.}
+ \label{fig:taumatropio}
+Fonte: \citet{beckerman2012}
+\end{figure}
+
+Já em 1832 foi criado um disco chamado fenacistoscópio, dando origem às primeiras animações \cite{beckerman2012}. Este disco possuía diversas imagens similares em sequência ao longo de sua circunferência e fendas no disco separando as imagens. Quando este disco era girado em torno de seu eixo em frente a um espelho, causava a sensação de movimento das imagens (Figura \ref{fig:fenacistoscopio}).
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=120px]{imagens/fenacistoscopio.PNG}
+ \caption{Exemplo de funcionamento de um fenacistoscópio.}
+ \label{fig:fenacistoscopio}
+Fonte: \citet{beckerman2012}
+\end{figure}
+
+\newpage
+O zootrópio (Figura \ref{fig:zootropio}), também conhecido como roda-da-vida, foi outro instrumento criado na mesma época, mas ao contrário do fenacistoscópio, no zootrópio não se necessitava de um espelho para visualizar a animação \cite{beckerman2012}. O zootrópio era uma espécie de copo com fendas nas bordas. A sequência dos desenhos era disposta dentro do copo, e, quando rotacionado, era possível visualizar a animação através das fendas.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=120px]{imagens/zootropio.PNG}
+ \caption{Modelo de um zootrópio.}
+ \label{fig:zootropio}
+Fonte: \citet{beckerman2012}
+\end{figure}
+
+Houveram diversas evoluções tecnológicas na época, como por exemplo o surgimento da fotografia e, a partir desta, surgiram os filmes que não passavam de várias fotos em sequência \cite{beckerman2012}. O surgimento da indústria cinematográfica fez com que não somente filmes, mas também desenhos animados ficassem mais populares \cite{beckerman2012}. 
+
+Entretanto, devido a demanda de oportunidades, era muito trabalhoso somente um artista desenhar todos os quadros de uma animação, processo este conhecido como animação manual \cite{mullen2011}. Sendo assim, a animação manual sofreu uma evolução com o passar do tempo. Os animadores passaram a desenhar o personagem somente em alguns pontos cruciais, enquanto assistentes desenhavam os quadros intermediários entre cada um desses pontos, completando o processo de animação. Estes pontos cruciais são chamados de \textit{keyframes} \cite{mullen2011}.
+
+\section{Tipos de Animação}
+Em uma animação tradicional existem dois métodos para a criação da mesma, que são: a animação em linha reta ou a animação pose a pose. A animação em linha reta (Figura \ref{fig:linhareta1}) é basicamente ir do início ao fim da animação, gerando manualmente cada movimento, contendo assim uma grande quantidade de detalhes e criando um movimento mais natural e expressivo, desde que seja gerado um número de quadros adequado \cite{vasconcelos2011}. 
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=150px]{imagens/linhareta1.PNG}
+ \caption{Início e fim dos quadros de uma animação com técnica em linha reta.}
+ \label{fig:linhareta1}
+Fonte: \citet{charbonneau}
+\end{figure}
+
+Já a animação pose a pose (Figura \ref{fig:poseapose1}) consiste em gravar a posição dos personagens e objetos da cena em diferentes momentos (\textit{keyframes}), gerando quadros intermediários posteriormente \cite{mullen2011}. Enquanto a animação em linha reta provê maior naturalidade na movimentação, a animação pose a pose dispõe de uma flexibilidade maior no tempo e posicionamento dos objetos da cena, além de uma chance maior de manter a proporção dos personagens \cite{mullen2011}.
+
+\begin{figure}[htbp]
+ \centering
+ \includegraphics[height=150px]{imagens/poseapose1.PNG}
+ \caption{Início e fim dos quadros de uma animação com técnica pose a pose.}
+ \label{fig:poseapose1}
+Fonte: \citet{charbonneau}
+\end{figure}
+
+Observa-se que o melhor método de se produzir animação é um método híbrido entre estes dois tipos, preservando a naturalidade dos movimentos obtida pela animação em linha reta e obtendo a flexibilidade e a proporção obtidas pela animação pose a pose.
+
+Nos dias atuais, as técnicas de pose a pose e linha reta ainda são utilizadas na produção de animações, entretanto, com a evolução tecnológica, nem sempre o papel e lápis são utilizados como base do desenho. Muitos artistas utilizam o computador tanto para desenhar quanto para animar seus personagens e cenas, embora alguns ainda prefiram o método tradicional de desenho \cite{UNIVESP}. Os esboços dos personagens ainda são feitos no papel e só depois transferidos para o computador, principalmente, em filmes de animação 3D \cite{jornaldaglobo}. Estes filmes, além de serem trabalhosos para a equipe, necessitam de muito tempo, equipamentos e horas de processamento, dependendo da complexidade da animação. Como exemplo, pode-se citar o filme ``Rio'' que, devido a sua complexidade, levou 3 anos para ser produzido \cite{jornaldaglobo}.
+
+

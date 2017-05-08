@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="net.sourceforge.texlipse.viewer.launchConfigurationType">
+<stringAttribute key="viewerCurrent" value="yap"/>
+<stringAttribute key="yap.arguments" value="-1 -s &quot;%line %texfile&quot; %file"/>
+<stringAttribute key="yap.command" value=""/>
+<stringAttribute key="yap.ddeCloseCommand" value=""/>
+<stringAttribute key="yap.ddeCloseServer" value=""/>
+<stringAttribute key="yap.ddeCloseTopic" value=""/>
+<stringAttribute key="yap.ddeViewCommand" value=""/>
+<stringAttribute key="yap.ddeViewServer" value=""/>
+<stringAttribute key="yap.ddeViewTopic" value=""/>
+</launchConfiguration>
