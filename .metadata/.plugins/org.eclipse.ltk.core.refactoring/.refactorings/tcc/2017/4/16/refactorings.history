@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;tcc/imagens/markov2 (1).png&apos; to &apos;markov2.png&apos;" description="Rename resource &apos;markov2 (1).png&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="imagens/markov2 (1).png" name="markov2.png" stamp="1492728955475" updateReferences="true"/>
-</session>
