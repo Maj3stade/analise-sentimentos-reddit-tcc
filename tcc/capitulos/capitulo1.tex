@@ -59,12 +59,10 @@ constantemente modificadas pelo loucutor, se torna extremamente difícil a cria�
 
 \subsection{Método Simbólico} 
 O método simbólico ou racionalista está
-baseado no campo da Linguística e faz o uso da manipulação de símbolos,
-significados e regras, de um texto. Um exemplo de método simbólico é o método de
-Brill \cite{Brill:1992:SRP:974499.974526}.
-
-Por exemplo, no método de Brill a frase ``João pintou a casa de branco'', será
-separada em palavras que serão classificadas através de um dicionário pré-definido.
+baseado no campo da Linguística e faz o uso da manipulação dos símbolos,
+significados e das regras de um texto. Um exemplo de método simbólico é o
+método de Brill \cite{Brill:1992:SRP:974499.974526}. Por exemplo, no método de
+Brill a frase ``João pintou a casa de branco'', será separada em palavras que serão classificadas através de um dicionário pré-definido.
 
 \begin{table}[htb]
 \centering
@@ -81,9 +79,14 @@ Classificação:   & 			   & Verbo  & Artigo & Substantivo & Preposição & Adje
 
 Observa-se que algumas palavras não foram
 identificadas, como ``João'' ou classificadas de forma errada, como
-``branco". Desta forma, o método utiliza-se de outras duas regras para a
+``branco". Desta forma, o método utiliza-se de outras duas regras para uma
 classificação inicial.
-A primeira classifica todas as palavras desconhecidas que iniciam em maiúsculo como substantivos, por exemplo, a palavra ``João''.
+A primeira regra classifica todas as palavras desconhecidas que iniciam em
+maiúsculo como substantivos, por exemplo, a palavra ``João''. Já a segunda regra, atribui para a palavra desconhecida a mesma classificação
+de outas palavras que terminam com as mesmas três letras. Por exemplo, supondo que o
+método não tivesse encontrado a palavra ``pintou'' no dicionário, ele irá
+associar essa palavra a outras palavras terminadas com o sufixo ``tou''. Ou
+seja, ele iria classificar a palavra ``pintou'' como verbo.
 
 \begin{table}[htb]
 \centering
@@ -99,20 +102,16 @@ Preposição & Adjetivo
 \label{my-label}
 \end{table}
 
-Já a segunda regra, atribui para a palavra desconhecida a mesma classificação
-de outas palavras que terminam com as mesmas três letras. Por exemplo, supondo que o
-método não tivesse encontrado a palavra ``pintou'' no dicionário, ele irá
-associar essa palavra a outras com o sufixo ``tou''. Ou seja, ele iria
-classificar a palavra ``pintou'' como verbo.
 
-Após essa classificação inicial, o método executa as seguintes regras:
+
+Após essa classificação inicial, o método executa o seguinte conjunto de regras:
 \newpage
 \begin{itemize}
    \item Se uma palavra tem a classificação \textbf{A} e está no contexto
   \textbf{C} então a sua classificação deverá ser mudada para \textbf{B}. Por
-  exemplo, se uma palavra \textbf{A} é um adjetivo e uma das duas palavras
-  anteriores é uma preposição (contexto \textbf{C}), mude para sua
-  classificação para substantivo (classificação \textbf{B}).
+  exemplo, se uma palavra \textbf{A} (branco no exemplo) é um adjetivo e uma das
+  duas palavras anteriores é uma preposição (``casa de'' no contexto \textbf{C}
+  ), mude para sua classificação para substantivo (classificação \textbf{B}).
   
   \[\overbrace{\text{João}}^\text{Substantivo}
   \overbrace{\text{pintou}}^\text{Verbo}
@@ -125,9 +124,9 @@ Após essa classificação inicial, o método executa as seguintes regras:
  \]
  
   \item Se uma palavra tem a classificação \textbf{A} e tem uma propriedade
-  \textbf{P} então a sua classificação deverá ser \textbf{B}. Por exemplo, se
-  uma palavra \textbf{A} foi classificada como um adjetivo e essa inicia com
-  letra maiúscula (propriedade \textbf{P}), sua classificação deverá ser
+  \textbf{P} então a sua classificação deverá ser alterada para \textbf{B}. Por
+  exemplo, se uma palavra \textbf{A} (``Linda'') foi classificada como um
+  adjetivo e essa inicia com letra maiúscula (propriedade \textbf{P}), sua classificação deverá ser
   alterada para substantivo (classificação \textbf{B}).
   
   \[\overbrace{\text{Comprei}}^\text{Verbo}
@@ -139,9 +138,9 @@ Após essa classificação inicial, o método executa as seguintes regras:
  
   \item Se uma palavra tem a classificação \textbf{A} e uma palavra com a
   propriedade \textbf{P} está na região \textbf{R}, sua classificação deverá
-  ser \textbf{B}. Por exemplo, se uma das duas palavras anteriores (região
-  \textbf{R}) iniciam com letra maiúscula (propriedade \textbf{P}), sua
-  classificação deverá ser alterada para substantivo (classificação \textbf{B}).
+  ser \textbf{B}. Por exemplo, se uma das duas palavras anteriores (``João
+  adora" na região \textbf{R}) iniciam com letra maiúscula (propriedade
+  \textbf{P}), sua classificação deverá ser alterada para substantivo (classificação \textbf{B}).
   
    \[\underbrace{\overbrace{\text{João}}^\text{Substantivo}
   \overbrace{\text{adora}}^\text{Verbo}}_\text{Região \textbf{R}}
