@@ -1,24 +1,25 @@
 \select@language {brazilian}
-\contentsline {chapter}{Lista de acr\IeC {\^o}nimos}{3}
-\contentsline {chapter}{Lista de Figuras}{4}
-\contentsline {chapter}{Lista de Tabelas}{5}
-\contentsline {chapter}{Resumo}{6}
-\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{7}
-\contentsline {section}{\numberline {1.1}Objetivos do Trabalho}{8}
-\contentsline {section}{\numberline {1.2}Estrutura do Trabalho}{8}
-\contentsline {chapter}{\numberline {2}Processamento de Linguagem Natural}{9}
-\contentsline {section}{\numberline {2.1}Lingu\IeC {\'\i }stica}{9}
-\contentsline {section}{\numberline {2.2}M\IeC {\'e}todos de Processamento de Linguagem Natural}{10}
-\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{10}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{11}
-\contentsline {section}{\numberline {2.3}Classificadores}{14}
-\contentsline {subsection}{\numberline {2.3.1}Naive Bayes}{14}
-\contentsline {subsection}{\numberline {2.3.2}\textit {Maximum Entropy}}{16}
-\contentsline {chapter}{\numberline {3}Frameworks}{18}
-\contentsline {section}{\numberline {3.1}Natural Language Toolkit}{18}
-\contentsline {subsection}{\numberline {3.1.1}An\IeC {\'a}lise de Sentimentos}{18}
-\contentsline {section}{\numberline {3.2}Stanford CoreNLP}{19}
-\contentsline {subsection}{\numberline {3.2.1}An\IeC {\'a}lise de Sentimentos}{19}
-\contentsline {chapter}{\numberline {4}Rede Social Reddit}{21}
-\contentsline {section}{\numberline {4.1}API}{22}
-\contentsline {chapter}{Refer{\^e}ncias}{23}
+\contentsline {chapter}{Lista de acr\IeC {\^o}nimos}{4}
+\contentsline {chapter}{Lista de Figuras}{5}
+\contentsline {chapter}{Lista de Tabelas}{6}
+\contentsline {chapter}{Resumo}{7}
+\contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{8}
+\contentsline {section}{\numberline {1.1}Objetivos do Trabalho}{9}
+\contentsline {section}{\numberline {1.2}Estrutura do Trabalho}{9}
+\contentsline {chapter}{\numberline {2}Processamento de Linguagem Natural}{10}
+\contentsline {section}{\numberline {2.1}Lingu\IeC {\'\i }stica}{10}
+\contentsline {section}{\numberline {2.2}M\IeC {\'e}todos de Processamento de Linguagem Natural}{11}
+\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{11}
+\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{12}
+\contentsline {section}{\numberline {2.3}Classificadores}{15}
+\contentsline {subsection}{\numberline {2.3.1}Naive Bayes}{15}
+\contentsline {subsection}{\numberline {2.3.2}\textit {Maximum Entropy}}{17}
+\contentsline {subsection}{\numberline {2.3.3}\textit {VADER}}{18}
+\contentsline {chapter}{\numberline {3}Frameworks}{20}
+\contentsline {section}{\numberline {3.1}Natural Language Toolkit}{20}
+\contentsline {subsection}{\numberline {3.1.1}An\IeC {\'a}lise de Sentimentos}{20}
+\contentsline {section}{\numberline {3.2}Stanford CoreNLP}{21}
+\contentsline {subsection}{\numberline {3.2.1}An\IeC {\'a}lise de Sentimentos}{21}
+\contentsline {chapter}{\numberline {4}Rede Social Reddit}{23}
+\contentsline {section}{\numberline {4.1}API}{24}
+\contentsline {chapter}{Refer{\^e}ncias}{25}

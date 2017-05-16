@@ -486,3 +486,56 @@ distribuição que máximiza a entropia, ou seja, a mais uniforme.
 
 
 
+
+\subsection{\textit{VADER}}
+
+O \ac{VADER} é um dicionário e classificador de sentimentos que se baseia em
+regras, portanto, um método de classificação simbólico. Ele é especialmente
+ajustado para funcionar em redes sociais aonde temos um contexto vago e pouca
+quantidade de texto, nesse contexto, ele é extremamente eficaz, podendo se
+comparar a classificação feita por humanos \cite{conf/icwsm/HuttoG14}.
+
+Esse método faz uso de um dicionário que foi construído levando em consideração
+gírias e emoticons utilizados em redes sociais. Neste dicionário as palavras
+estão previamente associadas a uma polaridade de sentimento (positivo e
+negativo) e intensidade em uma escala de -4 até +4, como por exemplo, a palavra
+\textit{great} tem a intensidade de 3.1 e \textit{horrible} -2.5. Essa
+associação foi construída utilizando o método de \textit{``wisdom of the
+crowd''} aonde um grupo de pessoas atribuiu os valores para cada palavra ao
+invés de somente uma pessoa especializada ou uma classificação automática
+através de estatística.
+
+Ele faz uso de cinco regras gerais:
+
+
+\begin{itemize}
+  \item Pontuação. O ponto de exclamação (!) aumenta a magnitude da
+  intensidade sem modificar a orientação semântica. Como por exemplo,
+  \textit{``This place is great!!!''} é mais intenso que \textit{``This place
+  is great''}.
+  \item Capitalização. Especificamente, uma palavra que é relevante para a
+  análise de sentimentos, quando essa é escrita em letras maiúsculas, é
+  aumentada a magnitude da intensidade do sentimento sem modificar a orientação
+  semântica. Como por exemplo, na frase \textit{``This place is GREAT''}, temos
+  a palavra \textit{``GREAT''} (Ótimo) que está relacionada com o sentimento
+  positivo. Neste caso aonde ela está escrita em letras maiúsculas, ela é mais
+  intensa que \textit{``This place is great''}.
+  \item Advérbios intensificadores. Estes impactam a intensidade do sentimento
+  aumentando ou diminuindo a intensidade do sentimento. Na frase \textit{``This
+  place is extremelly good''} o advérbio \textit{extremelly} (extremamente)
+  aumenta a intensidade do sentimento expresso pela frase (\textit{good} ou
+  bom), enquanto na frase \textit{``This place is marginally good''}, a palavra
+  \textit{``marginally'' ou marginalmente} acaba diminuindo a intensidade do
+  sentimento expresso.
+  \item A palavra \textit{``but''}. Essa palavra indica uma troca no sentimento
+  da frase expressa aonde que o texto seguinte a ela expressa um sentimento mais
+  dominante. Por exemplo, a frase \textit{``This place is great but today, the
+  service was horrible''} convém um sentimento misto.
+  \item Por fim, ao examinar as três palavras anteriores, o método consegue
+  identificar 90\% dos casos aonde uma negação inverte a polaridade de um texto.
+  Como por exemplo, na frase \textit{``This place isn't that great''}, a
+  palavra \textit{great} demonstra um sentimento positivo, porém, ao analisar
+  as três palavras anteriores \textit{``place isn't that''} encontramos uma
+  negação, mudando o sentimento expresso da frase de positivo para negativo.
+\end{itemize}
+
