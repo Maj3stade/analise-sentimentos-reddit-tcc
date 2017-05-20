@@ -20,9 +20,9 @@ e modelos já treinados incluindo:
 
 \subsection{Análise de Sentimentos}
 
-Para a análise de sentimentos, o \ac{NLTK} já possui implementado as dois
-classificadores citados anteriormente, \textit{Naive Bayes} e também
-\ac{MaxEnt}.
+Para a análise de sentimentos, o \ac{NLTK} já possui implementado os três
+classificadores citados anteriormente, \textit{Naive Bayes},
+\ac{MaxEnt} e também \ac{VADER}.
 
 Podemos utilizar o classificador Naive Bayes a partir da classe
 
@@ -66,7 +66,13 @@ de cada rótulo.
 um classificador treinado, retorna os atributos mais relevantes.
 \end{itemize}
 
-Ele também contém um pacote contendo classes úteis para a análise de sentimentos
+Para utilização do \ac{VADER} é utilizada a classe
+\textit{SentimentIntensityAnalyzer} do módulo \textit{vaderSentiment} através
+do método \textit{polarity\_scores}. Este método recebe uma frase e retorna um
+objeto contendo a intensidade positiva, neutra e negativa da frase.
+
+O \textit{framework}
+também contém um pacote contendo classes úteis para a análise de sentimentos
 chamado de \textit{nltk.sentiment}. Nesse pacote temos os seguintes módulos:
 
 
@@ -76,7 +82,6 @@ chamado de \textit{nltk.sentiment}. Nesse pacote temos os seguintes módulos:
   especialmente para demonstrações e ensino.
   \item Módulo \textit{nltk.sentiment.util} - Contém diversas classes de
   demonstrações e utilitários como conversão de \textit{json} para \textit{csv}.
-  \item Módulo \textit{nltk.sentiment.vader} - Ferramenta de Análise VADER.
 \end{itemize}
 
 \section{Stanford CoreNLP}

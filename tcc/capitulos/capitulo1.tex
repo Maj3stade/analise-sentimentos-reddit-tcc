@@ -6,26 +6,25 @@
 % programa executável seguindo exatamente o algoritmo utilizado. Por isso, temos o
 % termo Natural no Processamento de Linguagem. 
 
-O objetivo da área de Processamento de Linguagem Natural é interpretar e
-analisar a linguagem natural, ou seja, a linguagem utilizada pelo seres humanos não
+O objetivo da área de Processamento de Linguagem Natural é analisar a linguagem natural, ou seja, a linguagem utilizada pelo seres humanos não
 importando se essa é escrita ou falada \cite{manningschutze1999}.
 
 O Processamento de Linguagem Natural é uma área antiga, sendo anterior a
 invenção dos computadores modernos. De fato, sua primeira grande aplicação foi
 um dicionário desenvolvido no Birkbeck College em Londres no ano de 1948. Por ser
 uma área complexa, seus primeiros trabalhos foram notavelmente falhos o que
-causou uma hostilidade por parte das agências fundadoras de pesquisas.
+causou uma certa hostilidade por parte das agências formentadoras de pesquisas.
 
 Os primeiros pesquisadores eram muitas vezes bilíngues, como por exemplo,
 nativos alemães que imigraram para os Estados Unidos. Acreditava-se que pelo
-fato destes terem conhecimento de ambas as linguas, Ingles e Alemão, eles teriam
+fato desses terem conhecimento de ambas as linguas, Ingles e Alemão, eles teriam
 capacidade de desenvolver programas de computadores que efetuariam a tradução das linguas
 de modo satisfatório. Uma vez que esses encontraram muitas dificuldades,
 ficou claro que o maior problema não era o conhecimento de ambas as
 línguas e sim como expressar esse conhecimento na forma de um programa de
 computador \cite{history}.
 
-Para fazermos com que um computador seja capaz de interpretar uma
+Para que um computador seja capaz de interpretar uma
 língua, necessitamos antes entender como nós efetuamos essa
 interpretação.
 Por isso, uma parte considerável do Processamento de Linguagem Natural está apoiado na área de Linguística.
@@ -39,8 +38,9 @@ escrita e outras mídias de comunicação \cite{manningschutze1999}.
 Na linguagem tanto escrita, como na falada, existem regras que são utilizadas
 para estruturar as expressões. Uma série de dificuldades no Processamento de
 Linguagem Natural são ocasionadas pelo fato de que as pessoas constantemente
-mudam as regras para satisfazerem suas necessidades de comunicação \cite{manningschutze1999}. Uma vez que as regras são
-constantemente modificadas pelo loucutor, se torna extremamente difícil a criação de um software ou hardware efetue a interpretação de uma língua. 
+mudam essas regras para satisfazerem suas necessidades de comunicação
+\cite{manningschutze1999}. Uma vez que as regras são constantemente modificadas pelo loucutor, se torna extremamente difícil a criação de um software ou hardware efetue a interpretação de uma língua. 
+
 
 % \subsection{Sintaxe e Semântica}
 % 
@@ -51,18 +51,43 @@ constantemente modificadas pelo loucutor, se torna extremamente difícil a cria�
 % A primeira frase, do ponto de vista sintático é correta, porém, assim como a
 % segunda frase, semânticamente não faz sentido.
 % 
-% O fato que podemos modificar as regras da lingua de duas formas distintas é
+% O fato de que podemos modificar as regras da lingua de duas formas distintas é
 % utilizado como evidência para a separação da sintaxe e semântica na língua.
 % \cite{jacksonmoulinier2007}
 
 \section{Métodos de Processamento de Linguagem Natural}
+
+O \ac{NLP} tem como o objetivo a execução de diversas tarefas como categorização
+de documentos, tradução e geração de textos a partir de um banco de dados de
+computador, etc. Podemos destacar duas formas ou métodos para a execução dessas
+tarefas, o método simbólico e o método estatístico, com origem o campo da linguística. 
+
+Nos final dos anos 50 e 60, existiam excelentes métodos quantitativos
+desenvolvidos durante a segunda guerra mundial para a solução de problemas
+científicos \cite{shannon48}.
+Porém, no ano de 1957, Chomsky publicou o seu trabalho ``Syntactic Structures''
+e com isso, temos a primeira aparição da teoria de gramática gerativa, que
+considera a gramática como um conjunto de regras. Essa abordagem através de um
+conjunto de regras ao invés de um modelo matemático entra em conflito com os
+trabalhos anteriores, criando duas comunidades no campo de Linguística. Como
+reflexo das duas comunidades, a área de \ac{NLP} que crescia em paralelo a
+linguística também foi dividida em duas, uma área que fazia uso de métodos que
+utilizavam regras(simbólico) e uma outra área que fazia uso de métodos
+quantitativos(estatísticos).
+
+
+Essa seção tem como objetivo explicar os dois métodos principais de
+abordagem e demonstrar as diferenças entre os dois métodos através de um exemplo
+de desambiguação de categoria de palavras.
+
 
 \subsection{Método Simbólico} 
 O método simbólico ou racionalista está
 baseado no campo da Linguística e faz o uso da manipulação dos símbolos,
 significados e das regras de um texto. Um exemplo de método simbólico é o
 método de Brill \cite{Brill:1992:SRP:974499.974526}. Por exemplo, no método de
-Brill a frase ``João pintou a casa de branco'', será separada em palavras que serão classificadas através de um dicionário pré-definido.
+Brill a frase ``João pintou a casa de branco'', será separada em palavras que
+serão classificadas através de um dicionário pré-definido, como:
 
 \begin{table}[htb]
 \centering
@@ -83,10 +108,10 @@ identificadas, como ``João'' ou classificadas de forma errada, como
 classificação inicial.
 A primeira regra classifica todas as palavras desconhecidas que iniciam em
 maiúsculo como substantivos, por exemplo, a palavra ``João''. Já a segunda regra, atribui para a palavra desconhecida a mesma classificação
-de outas palavras que terminam com as mesmas três letras. Por exemplo, supondo que o
-método não tivesse encontrado a palavra ``pintou'' no dicionário, ele irá
-associar essa palavra a outras palavras terminadas com o sufixo ``tou''. Ou
-seja, ele iria classificar a palavra ``pintou'' como verbo.
+de outras palavras que terminam com as mesmas três letras. Por exemplo, supondo
+que a palavra ``pintou'' não fosse encontrada no dicionário, essa seria
+associada a outras palavras terminadas com o sufixo ``tou''. Ou seja, essa seria
+associada como verbo.
 
 \begin{table}[htb]
 \centering
@@ -105,12 +130,12 @@ Preposição & Adjetivo
 
 
 Após essa classificação inicial, o método executa o seguinte conjunto de regras:
-\newpage
+
 \begin{itemize}
    \item Se uma palavra tem a classificação \textbf{A} e está no contexto
   \textbf{C} então a sua classificação deverá ser mudada para \textbf{B}. Por
   exemplo, se uma palavra \textbf{A} (branco no exemplo) é um adjetivo e uma das
-  duas palavras anteriores é uma preposição (``casa de'' no contexto \textbf{C}
+  duas palavras anteriores é uma preposição (``de'' no contexto \textbf{C}
   ), mude para sua classificação para substantivo (classificação \textbf{B}).
   
   \[\overbrace{\text{João}}^\text{Substantivo}
@@ -126,8 +151,8 @@ Após essa classificação inicial, o método executa o seguinte conjunto de reg
   \item Se uma palavra tem a classificação \textbf{A} e tem uma propriedade
   \textbf{P} então a sua classificação deverá ser alterada para \textbf{B}. Por
   exemplo, se uma palavra \textbf{A} (``Linda'') foi classificada como um
-  adjetivo e essa inicia com letra maiúscula (propriedade \textbf{P}), sua classificação deverá ser
-  alterada para substantivo (classificação \textbf{B}).
+  adjetivo e é iniciada com uma letra maiúscula (propriedade \textbf{P}), sua
+  classificação deverá ser alterada para substantivo (classificação \textbf{B}).
   
   \[\overbrace{\text{Comprei}}^\text{Verbo}
   \overbrace{\text{flores}}^\text{Substantivo}
@@ -153,22 +178,23 @@ Após essa classificação inicial, o método executa o seguinte conjunto de reg
 
 \subsection{Método Estatístico} 
 O método estatístico ou empírico utiliza-se de grandes
-quantidades de texto como páginas da internet, procurando por padrões e
+quantidades de texto, procurando por padrões e
 associações a modelos, sendo que esses podem ou não estarem relacionados com
 regras sintáticas ou semânticas. Como exemplo, podemos citar a utilização de
-Modelos de Markov com o algorítmo de Viterbi. Neste, a partir de um conjunto de
+Modelos de Markov pela algoritmo de Viterbi. Onde, a partir de um conjunto de
 dados já classificados, ou seja, um \textit{training set} é verificada a
 possibilidade de transição entre as classes gramaticais.
-Como por exemplo, se no nosso \textit{training set}, temos 10000 substantivos que em 7000 dos casos são seguidos por um verbo:
+Por exemplo, se no nosso \textit{training set}, temos 10000 substantivos que em
+7000 dos casos são seguidos por um verbo, temos:
 
 \[ P(VB|SM) = \frac{C(SM,VB)}{C(SM)} = \frac{7000}{10000} = 0.7 \]
 
-Aonde que \textbf{VB} são verbos e \textbf{SM} substantivos. Portanto, a
-probabilidade de um substantivo ser seguido de um verbo
+Onde \textbf{VB} são verbos e \textbf{SM} substantivos. Como pode ser observado
+na equação, a probabilidade de um substantivo ser seguido de um verbo
 (\textbf{(VB$\vert$SM)}) é igual a ocorrência de substantivos seguidos de verbos (\textbf{C(SM,VB)})
 dividida pela quantidade total de substantivos em nosso \textit{training set}.
 
-Após, é verificada a probabilidade de cada palavra ser associada com uma classe.
+Após, é calculada a probabilidade de cada palavra ser associada com uma classe.
 Supondo que dos 10000 substantivos, 150 são a palavra ``um'' classificada
 dentre artigo, substantivo e pronome, como substantivo:
 
@@ -257,8 +283,6 @@ Ao efetuar o cálculo de todos os caminhos, para determinar qual a classificaç�
 correta de uma palavra, é escolhido o caminho que tem maior probabilidade, no
 caso apresentado, a palavra ``um'' é classificada como artigo.
 
-\newpage
-
 \begin{figure}[htbp]
  \centering
  \includegraphics[height=180px]{imagens/markov2.png}
@@ -292,13 +316,13 @@ problema.
 % estatísticos qual o significado correto para cada frase
 % \cite{jacksonmoulinier2007}.
 
-\section{Classificadores}
+\section{Métodos estatísticos e simbólicos aplicados na análise de sentimentos}
 \label{cap:Classificadores}
 
-Para o \ac{NLP} e também para o campo de estatísticas, classificadores são
-algorítmos que identificam a qual categoria determinado item pertence. Essa
-classificação é feita a partir de dados já classificados corretamente, ou seja,
-um \textit{training set}.
+%Para o \ac{NLP} e também para o campo de estatísticas, classificadores são
+%algorítmos que identificam a qual categoria determinado item pertence. Essa
+%classificação é feita a partir de dados já classificados corretamente, ou seja,
+%um \textit{training set}.
 
 \subsection{Naive Bayes}
 

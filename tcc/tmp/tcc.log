@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  15 MAY 2017 22:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  20 MAY 2017 12:07
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1112,9 +1112,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 \openout2 = `capitulos/introducao.aux'.
 
  (./capitulos/introducao.tex
-Overfull \hbox (8.98137pt too wide) in paragraph at lines 17--24
-\OT1/cmr/m/it/12 soft-ware \OT1/cmr/m/n/12 para o Pro-ces-sa-mento de Lin-gua-g
-em Na-tu-ral, sendo que en-tre es-ses destacam-
+Overfull \hbox (13.87587pt too wide) in paragraph at lines 17--24
+\OT1/cmr/m/it/12 softwa-res \OT1/cmr/m/n/12 para o Pro-ces-sa-mento de Lin-gua-
+gem Na-tu-ral, sendo que en-tre es-ses destacam-
  []
 
 
@@ -1138,23 +1138,23 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-Overfull \hbox (22.3792pt too wide) in paragraph at lines 93--103
+Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
+although it is yet undefined on input line 60.
+ [11]
+Overfull \hbox (22.3792pt too wide) in paragraph at lines 118--128
  [][][] 
  []
-
-[11]
-Underfull \vbox (badness 7540) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 12
  []
 
-[12] <imagens/markov.png, id=57, 432.61626pt x 231.86626pt>
+[12] <imagens/markov.png, id=55, 432.61626pt x 231.86626pt>
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
-Package pdftex.def Info: imagens/markov.png used on input line 225.
+Package pdftex.def Info: imagens/markov.png used on input line 251.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
  [13]
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1166,10 +1166,8 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
-Package pdftex.def Info: imagens/markov2.png used on input line 264.
+Package pdftex.def Info: imagens/markov2.png used on input line 288.
 (pdftex.def)             Requested size: 310.24245pt x 180.67566pt.
-Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
-although it is yet undefined on input line 298.
  [15 <./imagens/markov2.png>]
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 16
@@ -1178,18 +1176,18 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [16]
 Package acronym Info: Label `acro:MaxEnt' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 401.
+although it is yet undefined on input line 425.
  [17]
 Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 492.
+although it is yet undefined on input line 516.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 18
  []
 
 [18]
-Overfull \hbox (5.47568pt too wide) in paragraph at lines 516--523
+Overfull \hbox (5.47568pt too wide) in paragraph at lines 540--547
 \OT1/cmr/m/n/12 Como por exem-plo, na frase \OT1/cmr/m/it/12 ``This place is GR
 EAT''\OT1/cmr/m/n/12 , te-mos a pa-la-vra \OT1/cmr/m/it/12 ``GREAT''
  []
@@ -1229,33 +1227,33 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 
 
 ]
-Overfull \hbox (8.96303pt too wide) in paragraph at lines 74--77
+Overfull \hbox (8.96303pt too wide) in paragraph at lines 80--83
 [][]\OT1/cmr/m/n/12 Classe \OT1/cmr/m/it/12 nltk.sentiment.sentiment[]analyzer.
 SentimentAnalyzer \OT1/cmr/m/n/12 - Fer-ra-men-tas para
  []
 
 Package acronym Info: Label `acro:RNTN' newly defined as it shall be overridden
 
-although it is yet undefined on input line 94.
-<imagens/corenlp.png, id=89, 758.835pt x 400.49625pt>
+although it is yet undefined on input line 99.
+[21] <imagens/corenlp.png, id=92, 758.835pt x 400.49625pt>
 File: imagens/corenlp.png Graphic file (type png)
 
 <use imagens/corenlp.png>
-Package pdftex.def Info: imagens/corenlp.png used on input line 100.
+Package pdftex.def Info: imagens/corenlp.png used on input line 105.
 (pdftex.def)             Requested size: 427.92049pt x 225.84457pt.
 
-Overfull \hbox (1.12914pt too wide) in paragraph at lines 100--101
+Overfull \hbox (1.12914pt too wide) in paragraph at lines 105--106
  [][][] 
  []
 
-[21] <imagens/corenlp1.png, id=93, 521.69907pt x 128.73094pt>
+<imagens/corenlp1.png, id=93, 521.69907pt x 128.73094pt>
 File: imagens/corenlp1.png Graphic file (type png)
 
 <use imagens/corenlp1.png>
-Package pdftex.def Info: imagens/corenlp1.png used on input line 111.
+Package pdftex.def Info: imagens/corenlp1.png used on input line 116.
 (pdftex.def)             Requested size: 488.15233pt x 120.45044pt.
 
-Overfull \hbox (61.36098pt too wide) in paragraph at lines 111--112
+Overfull \hbox (61.36098pt too wide) in paragraph at lines 116--117
  [][][] 
  []
 
@@ -1309,10 +1307,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8845 strings out of 493013
- 120842 string characters out of 6136993
- 216343 words of memory out of 5000000
- 12128 multiletter control sequences out of 15000+600000
+ 8848 strings out of 493013
+ 120893 string characters out of 6136993
+ 217393 words of memory out of 5000000
+ 12131 multiletter control sequences out of 15000+600000
  12878 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,18n,37p,1215b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1332,7 +1330,7 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1
 msfonts/cm/cmtt12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/s
 frm0800.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
 b>
-Output written on tcc.pdf (27 pages, 284906 bytes).
+Output written on tcc.pdf (27 pages, 286501 bytes).
 PDF statistics:
  164 PDF objects out of 1000 (max. 8388607)
  111 compressed objects within 2 object streams
