@@ -293,24 +293,23 @@ João:
 
 \[ v_t(j) = v_{t-1} a_{ij} b_j(o_t) \]
 
-Aonde que $v_t$ é a probabilidade do caminho atual, $v_{t-1}$ é a
-probabilidade do caminho anterior, $a_{ij}$ é a probabilidade de transição e $b_j(o_t)$ é a
+Aonde que $v_t$ é a probabilidade do caminho atual, $v_{t-1}$ é o resultado do
+caminho anterior, $a_{ij}$ é a probabilidade de transição e $b_j(o_t)$ é a
 probabilidade de associação.
 
 Portanto a palavra ``João'', $v_{t-1}$ é representada pelo valor 1, visto
-que essa é a primeira palavra e não existe probabilidade de caminho
-anterior, $a_{ij}$ é a probabilidade de transição entre ``Início'' e um
-substantivo, disponível na tabela \ref{tabela:transicao} e $b_j(o_t)$ é
+que essa é a primeira palavra e não foram feitos cálculos anteriores, $a_{ij}$ é
+a probabilidade de transição entre ``Início'' e um substantivo, disponível na tabela \ref{tabela:transicao} e $b_j(o_t)$ é
 a probabilidade de associação da palavra João com substantivo, disponível na
 tabela \ref{tabela:associacao}:
 
-\[ v_t(j) = 1 * 0.3 * 1 = 0.3 \]
+\[ v_t(j) = 1 * 0.3 * 0.1 = 0.003 \]
 
 Para ``comprou'', além dos valores retirados das tabelas \ref{tabela:transicao}
-e \ref{tabela:associacao}, $v_{t-1}$ é representado pelo cálculo anterior do
-caminho anterior, ou seja, 0.3:
+e \ref{tabela:associacao}, $v_{t-1}$ é representado pelo cálculo do
+caminho anterior, ou seja, 0.003:
 
-\[ v_t(j) = 0.3 * 0.2 * 1 = 0.06 \] 
+\[ v_t(j) = 0.003 * 0.2 * 1 = 0.0006 \] 
 
 Ao efetuar o cálculo de todos os caminhos, para determinar qual a classificação
 correta de uma palavra, é escolhido o caminho que tem maior probabilidade, no
