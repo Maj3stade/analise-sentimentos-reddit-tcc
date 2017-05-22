@@ -180,12 +180,72 @@ Após essa classificação inicial, o método executa o seguinte conjunto de reg
 O método estatístico ou empírico utiliza-se de grandes
 quantidades de texto, procurando por padrões e
 associações a modelos, sendo que esses podem ou não estarem relacionados com
-regras sintáticas ou semânticas. Como exemplo, podemos citar a utilização de
-Modelos de Markov pela algoritmo de Viterbi. Onde, a partir de um conjunto de
-dados já classificados, ou seja, um \textit{training set} é verificada a
-possibilidade de transição entre as classes gramaticais.
-Por exemplo, se no nosso \textit{training set}, temos 10000 substantivos que em
-7000 dos casos são seguidos por um verbo, temos:
+regras sintáticas ou semânticas. 
+
+O método estatístico para o aprendizado de máquina é considerado um
+aprendizado supervisionado. Em um aprendizado supervisionado, a classificação é
+feita a partir de um conjunto de dados já classificado corretamente,
+também chamado de \textit{training set}. Esse conjunto de dados é normalmente
+classificado por pessoas especialistas e após essa classificação inicial, esse
+conjunto de dados é generalizado através do classificador para que possa ser
+aplicado a qualquer entrada.
+
+Como exemplo, a classificação da frase ``João comprou um
+carro" utilizando Modelos de Markov com o algoritmo de
+Viterbi será feita da seguinte forma:
+
+Primeiramente é
+necessário um \textit{training set}. Como a aquisição de um \textit{training
+set} se faz trabalhosa, neste exemplo será utilizado um \textit{training set} hipotético composto de textos retirados de \textit{web-sites}, com a classe gramatical das palavras já
+identificada.
+
+Ao efetuarmos a classificação de um texto, o algoritmo
+classificador irá utilizar o \textit{training set} para inferir a classificação
+das palavras da seguinte forma:
+
+É calculada a probabilidade de cada palavra pertencer a uma classe através da
+seguinte equação:
+
+\[ P(palavra|classe) = \frac{C(classe,palavra)}{C(classe)} \]
+
+Como as palavras ``João'', ``comprou'' e ``carro'' possuem somente uma classe
+gramátical, será utilizada a palavra ``um'' como exemplo. Supondo que no nosso
+\textit{training set} hipotético ele contém 10000 substantivos, que desses, 150
+são a palavra ``um'' classificada dentre artigo, substantivo e pronome, como substantivo:
+
+\[ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0.015 \]
+
+\textbf{Um} é a palavra que está sendo classificada e \textbf{SM}
+são os substantivos existentes no nosso \textit{training set}. Portanto a
+probabilidade de um substantivo ser associada a palavra ``um''
+(\textbf{P(um$\vert$SM)}) é igual a quantidade da palavra ``um''
+classificada como substantivo (\textbf{C(SM,um)}) dividida pela quantidade de
+substantivos em nosso \textit{training set}.
+
+Para as demais palavras, serão considerados os seguintes valores:
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+            & João & comprou & um    & carro \\ \hline
+Substantivo & 0.01 & 0       & 0.015 & 0.02  \\ \hline
+Verbo       & 0    & 0.012   & 0     & 0     \\ \hline
+Artigo      & 0    & 0       & 0.030 & 0     \\ \hline
+Pronome     & 0    & 0       & 0.005 & 0     \\ \hline
+\end{tabular}
+\caption{Tabela de Probabilidades de Associação}
+\label{tabela:associacao}
+\end{table}
+
+Também, é calculada a probabilidade de transição de uma classe para a outra
+através da seguinte equação:
+
+\[ P(transicao|classe) = \frac{C(classe,transicao)}{C(classe)} \]
+
+Supondo que no nosso
+\textit{training set} hipotético, dos 10000 substantivos, 7000 são seguidos por
+uma outra palavra classificada como verbo:
 
 \[ P(VB|SM) = \frac{C(SM,VB)}{C(SM)} = \frac{7000}{10000} = 0.7 \]
 
@@ -194,21 +254,7 @@ na equação, a probabilidade de um substantivo ser seguido de um verbo
 (\textbf{(VB$\vert$SM)}) é igual a ocorrência de substantivos seguidos de verbos (\textbf{C(SM,VB)})
 dividida pela quantidade total de substantivos em nosso \textit{training set}.
 
-Após, é calculada a probabilidade de cada palavra ser associada com uma classe.
-Supondo que dos 10000 substantivos, 150 são a palavra ``um'' classificada
-dentre artigo, substantivo e pronome, como substantivo:
-
-\[ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0.015 \]
-
-Aonde que \textbf{um} é a palavra que está sendo classificada e \textbf{SM}
-são os substantivos existentes no nosso \textit{training set}. Portanto a
-probabilidade de um substantivo ser associada a palavra ``um''
-(\textbf{P(um$\vert$SM)}) é igual a quantidade da palavra ``um''
-classificada como substantivo (\textbf{C(SM,um)}) dividida pela quantidade de
-substantivos em nosso \textit{training set}.
-Como exemplo, vamos supor os seguintes dados compilados através dos dois métodos
-citados anteriormente, aonde a primeira tabela representa a probabilidade de
-transição e a segunda tabela representa a probabilidade de associação:
+Para as demais transições, serão considerados os seguintes valores:
 
 \begin{table}[htb]
 \centering
@@ -225,24 +271,11 @@ Pronome     & 0.7         & 0.005 & 0.005  & 0.8     \\ \hline
 \label{tabela:transicao}
 \end{table} 
 
-\begin{table}[htb]
-\centering
-\begin{tabular}{|l|l|l|l|l|}
-\hline
-            & João & comprou & um    & carro \\ \hline
-Substantivo & 1    &         & 0.015 & 1     \\ \hline
-Verbo       &      & 1       &       &       \\ \hline
-Artigo      &      &         & 0.030 &       \\ \hline
-Pronome     &      &         & 0.005 &       \\ \hline
-\end{tabular}
-\caption{Tabela de Probabilidades de Associação}
-\label{tabela:associacao}
-\end{table}
+Aonde que Substantivo, Verbo, Artigo e Pronome são classes gramaticais e Início
+indica a primeira palavra de uma frase, aonde não existe uma palavra anterior
+para fazer a transição.
 
-
-Portanto, para a classificação da frase anterior, as palavras João, Comprou
-e Carro, só podem ser classificadas como substantivo (SM), verbo (VB) e
-substantivo (SM) respectivamente. Porém, a palavra ``um" pode ser classificada
+Como a palavra ``um" pode ser classificada
 em substantivo (SM), artigo (ART) e pronome (PRO). A seguinte imagem representa
 as possibilidades de caminho que o classificador pode percorrer neste exemplo:
 
