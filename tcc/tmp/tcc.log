@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  22 MAY 2017 21:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  23 MAY 2017 20:26
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1152,29 +1152,20 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
 although it is yet undefined on input line 60.
  [11]
-Overfull \hbox (22.3792pt too wide) in paragraph at lines 120--130
+Overfull \hbox (22.3792pt too wide) in paragraph at lines 122--132
  [][][] 
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 12
  []
 
-[12]
-Overfull \hbox (4.58612pt too wide) in paragraph at lines 197--202
-[][]\OT1/cmr/m/n/12 As pa-la-vras ``Jo~ao'', ``com-prou'' e ``carro'' pos-suem 
-so-mente uma classe gram^^Satical,
- []
-
-<imagens/markov.png, id=56, 432.61626pt x 231.86626pt>
+[12] <imagens/markov.png, id=56, 432.61626pt x 231.86626pt>
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
-Package pdftex.def Info: imagens/markov.png used on input line 205.
+Package pdftex.def Info: imagens/markov.png used on input line 211.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
  [13 <./imagens/markov.png>]
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1185,10 +1176,10 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
-Package pdftex.def Info: imagens/markov2.png used on input line 312.
+Package pdftex.def Info: imagens/markov2.png used on input line 308.
 (pdftex.def)             Requested size: 310.24245pt x 180.67566pt.
  [15 <./imagens/markov2.png>]
-Overfull \hbox (8.32231pt too wide) in paragraph at lines 343--343
+Overfull \hbox (8.32231pt too wide) in paragraph at lines 339--339
 []\OT1/cmss/bx/n/17.28 3 M[]ETODOS ES-TAT[]ISTICOS E SIMB[]OLICOS APLI-
  []
 
@@ -1205,7 +1196,7 @@ Underfull \vbox (badness 2772) has occurred while \output is active []
  [17]
 Package acronym Info: Label `acro:MaxEnt' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 449.
+although it is yet undefined on input line 445.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 18
@@ -1214,9 +1205,9 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [18]
 Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 540.
+although it is yet undefined on input line 536.
  [19]
-Overfull \hbox (5.47568pt too wide) in paragraph at lines 564--571
+Overfull \hbox (5.47568pt too wide) in paragraph at lines 560--567
 \OT1/cmr/m/n/12 Como por exem-plo, na frase \OT1/cmr/m/it/12 ``This place is GR
 EAT''\OT1/cmr/m/n/12 , te-mos a pa-la-vra \OT1/cmr/m/it/12 ``GREAT''
  []
@@ -1360,7 +1351,7 @@ onts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1
 msfonts/cm/cmtt12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/s
 frm0800.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pf
 b>
-Output written on tcc.pdf (28 pages, 288790 bytes).
+Output written on tcc.pdf (28 pages, 288292 bytes).
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams

@@ -59,14 +59,14 @@ mudam essas regras para satisfazerem suas necessidades de comunicação
 
 O \ac{NLP} tem como objetivo a execução de diferentes tarefas, como por exemplo,
 a categorização de documentos, a tradução e a geração de textos a partir de um
-banco de dados, etc. Podemos citar dois tipos de métodos para a execução dessas
-tarefas, que são o método simbólico e o método estatístico.
+banco de dados, etc. Podemos citar duas classes de métodos para a execução deste
+tipo de tarefas, que são os métodos simbólico e o método estatísticos.
 
-Nos final dos anos 50 e 60, existiam excelentes métodos quantitativos, que foram
+Nos final dos anos 50 e 60, existiam excelentes métodos esatatísticos, que foram
 desenvolvidos durante a segunda guerra mundial, para a solução de problemas
 científicos \cite{shannon48}.
 Porém, no ano de 1957, Chomsky publicou o trabalho intitulado de
-\textit{``Syntactic Structures''} e com isso, temos a primeira aparição da
+\textit{``Syntactic Structures''} onde descreve a
 teoria de gramática gerativa, que considera a gramática como um conjunto de regras. Essa abordagem através de um
 conjunto de regras, ao invés de um modelo matemático, entra em conflito com os
 trabalhos anteriores, criando duas comunidades no campo de Linguística. Como
@@ -76,11 +76,13 @@ métodos baseados em regras (simbólico) e a segunda que fazia uso de métodos
 quantitativos (estatísticos).
 
 
-Esta seção serão apresentados um método simbólico e um método estatístico.
-Destaca-se que essa descrição apresenta como objetivo diferenciar ambos os
-métodos, através de seus requisitos e forma de execução. Métodos 
-utilizados na análise de sentimentos serão descritos no capítulo
-\ref{cap:Classificadores}.
+Nesta seção será apresentado um exemplo de método simbólico e de um método
+estatístico.
+Destaca-se que essa descrição apresenta como principal objetivo diferenciar
+ambas as classes de métodos, através de seus requisitos e forma de execução.
+Destaca-se ainda que os métodos apresentados não são utilizados na
+análise de sentimentos. Os métodos utilizados especificamente na identificação
+de sentimentos serão descritos no capítulo \ref{cap:Classificadores}.
 
 
 \subsection{Método Simbólico} 
@@ -106,14 +108,14 @@ Classificação:   & 			   & Verbo  & Artigo & Substantivo & Preposição & Adje
 
 Observa-se que algumas palavras não foram
 identificadas, como ``João'' ou classificadas de forma errada, como
-``branco". Desta forma, o método utiliza-se de outras duas regras para uma
-classificação inicial.
+``branco". Desta forma, o método utiliza-se de outras duas regras para a
+classificação.
 A primeira regra classifica todas as palavras desconhecidas que iniciam em
 maiúsculo como substantivos, por exemplo, a palavra ``João''. Já a segunda regra, atribui para a palavra desconhecida a mesma classificação
 de outras palavras que terminam com as mesmas três letras. Por exemplo, supondo
 que a palavra ``pintou'' não fosse encontrada no dicionário, essa seria
-associada a outras palavras terminadas com o sufixo ``tou''. Ou seja, essa seria
-associada como verbo.
+associada a outras palavras terminadas com o sufixo ``tou'', ou seja, essa seria
+classificada como verbo.
 
 \begin{table}[htb]
 \centering
@@ -131,7 +133,8 @@ Preposição & Adjetivo
 
 
 
-Após essa classificação inicial, o método executa o seguinte conjunto de regras:
+Após essa classificação inicial, o método executa o seguinte conjunto de
+regras, ou ainda, regras derivadas dessas:
 
 \begin{itemize}
    \item Se uma palavra tem a classificação \textbf{A} e está no contexto
@@ -179,26 +182,29 @@ Após essa classificação inicial, o método executa o seguinte conjunto de reg
 \end{itemize}
 
 \subsection{Método Estatístico} 
-O método estatístico ou empírico utiliza-se de grandes
+Um método estatístico utiliza-se de grandes
 quantidades de texto, procurando por padrões e
-associações a modelos, sendo que esses podem ou não estarem relacionados com
-regras sintáticas ou semânticas. 
+associações a modelos, sendo que esses padrões podem ou não estar relacionados
+com regras sintáticas ou semânticas. 
 
-O método estatístico para o aprendizado de máquina é considerado um
-aprendizado supervisionado. Em um aprendizado supervisionado, a classificação é
-feita a partir de um conjunto de dados já classificado, que é chamado de
-\textit{training set}, um exemplo de método estatístico é a utilização de
-Modelos de Markov com a aplicação do algoritmo de Viterbi.
+Um método estatístico baseia-se na utilização de um aprendizado supervisionado,
+ou seja, a classificação é feita a partir de um conjunto de dados já
+classificado, que é chamado de \textit{training set}. Um exemplo de método
+estatístico é a utilização de Modelos de Markov com a aplicação do algoritmo de
+Viterbi \cite{manningschutze1999}.
 
-Neste, a classificação da frase ``João comprou um
+Em um Modelo de Markov, a classificação da frase ``João comprou um
 carro" é feita a partir de um \textit{training set} que pode, por exemplo, ser
-composto de textos retirados de \textit{web-sites}, com a classe gramatical das palavras já identificada.
+composto por textos retirados de \textit{web-sites}, sendo que as palavras
+destes textos já devem estar classificadas.
 
-As palavras ``João'', ``comprou'' e ``carro''
-possuem somente uma classe gramátical, sendo essa substantivo, verbo e substantivo,
-respectivamente. Já a palavra ``um'' pode ser classificada em artigo (ART),
-substantivo (SM) e pronome (PRO). A seguinte imagem representa
-as possibilidades de caminho que o classificador pode percorrer neste exemplo:
+A partir deste \textit{training set}, as palavras ``João'', ``comprou'' e
+``carro'' já devem estar classificadas em substantivo, verbo e substantivo,
+respectivamente. Já a palavra ``um'' apresenta uma ambiguidade uma vez que pode
+ser classificada como um artigo (ART), ou um substantivo (SM) ou um pronome
+(PRO).
+A seguinte imagem representa as possibilidades de caminho que o classificador
+pode percorrer neste exemplo.
 
 \begin{figure}[htbp]
  \centering
@@ -207,47 +213,37 @@ as possibilidades de caminho que o classificador pode percorrer neste exemplo:
  \label{fig:markov}
 \end{figure}
 
-Sendo assim, o algoritmo classificador irá utilizar o \textit{training set} para
-inferir essa classificação, por exemplo, se o \textit{training set} tiver 10000 substantivos,
-aonde que, 150 são a palavra ``um'' classificada como substantivo, ele irá
-calcular a probabilidade da palavra ``um'' pertencer a uma determinada classe
-através de:
+O Modelo de Markov irá utilizar-se do \textit{training set} para
+inferir a classificação da palavra ``um''. Por exemplo, se o \textit{training
+set} possuir 10000 substantivos, sendo que 150 deles, são a palavra ``um''
+classificada como substantivo, a probabilidade da palavra ser um substantivo é
+dada pela equação:
 
 \[ P(palavra|classe) = \frac{C(classe,palavra)}{C(classe)} \]
 
 \[ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0.015 \]
 
-\textbf{Um} é a palavra que está sendo classificada e \textbf{SM}
-são os substantivos existentes no nosso \textit{training set}. Portanto a
-probabilidade de um substantivo ser associada a palavra ``um''
-(\textbf{P(um$\vert$SM)}) é igual a quantidade da palavra ``um''
-classificada como substantivo (\textbf{C(SM,um)}) dividida pela quantidade de
-substantivos em nosso \textit{training set}.
-
-% Para as demais palavras, serão considerados os seguintes valores:
-% 
-
+Da mesma forma, é calculada a probabilidade de ``um'' pertencer as demais
+classes, neste caso, pronome ou artigo.
 
 Além da probabilidade de associação a uma determinada classe, é calculada a
-probabilidade de transição de uma classe para a outra. Supondo que no nosso
+probabilidade de transição de uma classe para a outra. Por exemplo, no nosso
 \textit{training set} hipotético, dos 10000 substantivos, 7000 são seguidos por
-uma outra palavra classificada como verbo, essa probabilidade será calculada
-através de:
+um verbo, a probabilidade de transição é dada pela equação:
 
 \[ P(transicao|classe) = \frac{C(classe,transicao)}{C(classe)} \]
 
 \[ P(VB|SM) = \frac{C(SM,VB)}{C(SM)} = \frac{7000}{10000} = 0.7 \]
 
-Onde \textbf{VB} são verbos e \textbf{SM} substantivos. Como pode ser observado
-na equação, a probabilidade de um substantivo ser seguido de um verbo
-(\textbf{(VB$\vert$SM)}) é igual a ocorrência de substantivos seguidos de verbos (\textbf{C(SM,VB)})
-dividida pela quantidade total de substantivos em nosso \textit{training set}.
-
-A probabilidade de associação é cálculada para todas as classes e também
-para todas as palavras que estão sendo classificadas, assim como a
-probabilidade de transição é calculada para todas as classes. Neste, serão
-considerados os seguintes valores calculados a partir do nosso \textit{training
-set} de exemplo:
+A probabilidade de associação é cálculada para todas as classes e 
+para todas as palavras classificadas, da mesma forma, a probabilidade de
+transição é calculada para todas as classes. Na tabela
+\ref{tabela:associacao} tem-se a probabilidade de associação onde foi
+feito o cálculo para todas as palavras classificadas e todas as classes
+possíveis, na \ref{tabela:transicao} tem-se a probabilidade de transição onde
+foi feito o cálculo para todas as classes possíveis para classificação, aonde
+que ``Início'' representa o começo da frase, aonde não existe palavra anterior
+a que está sendo classificada.
 
 \begin{table}[htb]
 \centering
@@ -278,10 +274,10 @@ Pronome     & 0.7         & 0.005 & 0.005  & 0.8     \\ \hline
 \label{tabela:transicao}
 \end{table} 
 
-Para identificação do caminho correto de classificação (Figura \ref{fig:markov})
-e portanto a classe gramatical da palavra ``um'', é utilizado o algoritmo de Viterbi, o qual tem o
-objetivo de encontrar a sequência de eventos com mais probabilidade de ocorrer.
-Começando pelo início da frase, essa sequência é calculada através de:
+Para a classificação da palavra ``um'', é utilizado o algoritmo de Viterbi, o
+qual tem como base os possíveis caminhos da Figura \ref{fig:markov}. A partir
+dessa é calculada a sequência de eventos com mais probabilidade de ocorrer. Esse
+é feito começando pelo início da frase, essa sequência é calculada através de:
 
 \[ v_t(j) = v_{t-1} a_{ij} b_j(o_t) \]
 
