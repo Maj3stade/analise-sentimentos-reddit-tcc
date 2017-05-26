@@ -60,7 +60,7 @@ mudam essas regras para satisfazerem suas necessidades de comunicação
 O \ac{NLP} tem como objetivo a execução de diferentes tarefas, como por exemplo,
 a categorização de documentos, a tradução e a geração de textos a partir de um
 banco de dados, etc. Podemos citar duas classes de métodos para a execução deste
-tipo de tarefas, que são os métodos simbólico e o método estatísticos.
+tipo de tarefas, que são os métodos simbólicos e os métodos estatísticos.
 
 Nos final dos anos 50 e 60, existiam excelentes métodos esatatísticos, que foram
 desenvolvidos durante a segunda guerra mundial, para a solução de problemas
@@ -70,19 +70,19 @@ Porém, no ano de 1957, Chomsky publicou o trabalho intitulado de
 teoria de gramática gerativa, que considera a gramática como um conjunto de regras. Essa abordagem através de um
 conjunto de regras, ao invés de um modelo matemático, entra em conflito com os
 trabalhos anteriores, criando duas comunidades no campo de Linguística. Como
-reflexo das duas comunidades, a área de \ac{NLP} que crescia em paralelo a
-linguística também foi dividida em duas áreas. A primeira que fazia uso de
-métodos baseados em regras (simbólico) e a segunda que fazia uso de métodos
-quantitativos (estatísticos).
+reflexo dessas duas comunidades, a área de \ac{NLP} que crescia em paralelo a
+linguística também foi dividida em duas áreas. A primeira dessas áreas que fazia
+uso de métodos baseados em regras (simbólico) e a segunda que fazia o uso de
+métodos quantitativos (estatísticos).
 
 
 Nesta seção será apresentado um exemplo de método simbólico e de um método
 estatístico.
-Destaca-se que essa descrição apresenta como principal objetivo diferenciar
+Destaca-se que essa descrição apresenta como objetivo somente diferenciar
 ambas as classes de métodos, através de seus requisitos e forma de execução.
 Destaca-se ainda que os métodos apresentados não são utilizados na
-análise de sentimentos. Os métodos utilizados especificamente na identificação
-de sentimentos serão descritos no capítulo \ref{cap:Classificadores}.
+análise de sentimentos, sendo que os métodos específicos que são utilizados para
+identificação de sentimentos serão descritos no Capítulo \ref{cap:Classificadores}.
 
 
 \subsection{Método Simbólico} 
@@ -107,7 +107,7 @@ Classificação:   & 			   & Verbo  & Artigo & Substantivo & Preposição & Adje
 \end{table}
 
 Observa-se que algumas palavras não foram
-identificadas, como ``João'' ou classificadas de forma errada, como
+identificadas, como ``João'' ou classificadas de forma incorreta, como
 ``branco". Desta forma, o método utiliza-se de outras duas regras para a
 classificação.
 A primeira regra classifica todas as palavras desconhecidas que iniciam em
@@ -182,13 +182,13 @@ regras, ou ainda, regras derivadas dessas:
 \end{itemize}
 
 \subsection{Método Estatístico} 
-Um método estatístico utiliza-se de grandes
-quantidades de texto, procurando por padrões e
+Um método estatístico utiliza-se de uma grandes
+quantidade de texto, procurando por padrões e
 associações a modelos, sendo que esses padrões podem ou não estar relacionados
 com regras sintáticas ou semânticas. 
 
-Um método estatístico baseia-se na utilização de um aprendizado supervisionado,
-ou seja, a classificação é feita a partir de um conjunto de dados já
+Os métodos estatísticos baseia-se na utilização de um sistema de aprendizado
+supervisionado, ou seja, a classificação é feita a partir de um conjunto de dados já
 classificado, que é chamado de \textit{training set}. Um exemplo de método
 estatístico é a utilização de Modelos de Markov com a aplicação do algoritmo de
 Viterbi \cite{manningschutze1999}.
@@ -196,15 +196,13 @@ Viterbi \cite{manningschutze1999}.
 Em um Modelo de Markov, a classificação da frase ``João comprou um
 carro" é feita a partir de um \textit{training set} que pode, por exemplo, ser
 composto por textos retirados de \textit{web-sites}, sendo que as palavras
-destes textos já devem estar classificadas.
-
-A partir deste \textit{training set}, as palavras ``João'', ``comprou'' e
-``carro'' já devem estar classificadas em substantivo, verbo e substantivo,
-respectivamente. Já a palavra ``um'' apresenta uma ambiguidade uma vez que pode
+destes textos já devem estar classificadas. A partir deste \textit{training
+set}, as palavras ``João'', ``comprou'' e ``carro'' seriam classificadas como
+substantivo, verbo e substantivo, respectivamente. Já a palavra ``um'' apresenta uma ambiguidade uma vez que pode
 ser classificada como um artigo (ART), ou um substantivo (SM) ou um pronome
 (PRO).
-A seguinte imagem representa as possibilidades de caminho que o classificador
-pode percorrer neste exemplo.
+A Figura \ref{fig:markov} representa o conjunto de possibilidades que o
+classificador pode utilizar para a classificação completa da frase.
 
 \begin{figure}[htbp]
  \centering
@@ -213,71 +211,100 @@ pode percorrer neste exemplo.
  \label{fig:markov}
 \end{figure}
 
-O Modelo de Markov irá utilizar-se do \textit{training set} para
-inferir a classificação da palavra ``um''. Por exemplo, se o \textit{training
-set} possuir 10000 substantivos, sendo que 150 deles, são a palavra ``um''
-classificada como substantivo, a probabilidade da palavra ser um substantivo é
-dada pela equação:
+A idéia central da utilização de Modelos de Markov é
+escolher, entre esses caminhos (Figura \ref{fig:markov}), o caminho de maior
+probabilidade. Para tanto, se faz necessário calcular a probabilidade de todos
+os caminhos seguindo o Modelo de Markov e após este cálculo, utilizar o
+Algoritmo de Viterbi para definir qual caminho é o mais provável.
+
+O Modelo de Markov irá utilizar-se do \textit{training set} para inferir a
+classificação da palavra ``um''. Para este exemplo, vamos considerar um
+\textit{training set} hipotético com as seguintes características: 10000
+Substantivos aonde 150 são a palavra ``um'', 10
+são a palavra ``João'' e 50 são a palavra ``carro'', 20000 Artigos aonde 500 são
+a palavra ``um'', 12000 Verbos aonde 50 são a palavra ``comprou'' e 15000
+Pronomes aonde 50 são a palavra ``um''. Neste caso, a probabilidade da palavra
+ser um substantivo é dada pela equação:
 
 \[ P(palavra|classe) = \frac{C(classe,palavra)}{C(classe)} \]
 
 \[ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0.015 \]
 
 Da mesma forma, é calculada a probabilidade de ``um'' pertencer as demais
-classes, neste caso, pronome ou artigo.
-
-Além da probabilidade de associação a uma determinada classe, é calculada a
-probabilidade de transição de uma classe para a outra. Por exemplo, no nosso
-\textit{training set} hipotético, dos 10000 substantivos, 7000 são seguidos por
-um verbo, a probabilidade de transição é dada pela equação:
-
-\[ P(transicao|classe) = \frac{C(classe,transicao)}{C(classe)} \]
-
-\[ P(VB|SM) = \frac{C(SM,VB)}{C(SM)} = \frac{7000}{10000} = 0.7 \]
-
-A probabilidade de associação é cálculada para todas as classes e 
-para todas as palavras classificadas, da mesma forma, a probabilidade de
-transição é calculada para todas as classes. Na tabela
-\ref{tabela:associacao} tem-se a probabilidade de associação onde foi
-feito o cálculo para todas as palavras classificadas e todas as classes
-possíveis, na \ref{tabela:transicao} tem-se a probabilidade de transição onde
-foi feito o cálculo para todas as classes possíveis para classificação, aonde
-que ``Início'' representa o começo da frase, aonde não existe palavra anterior
-a que está sendo classificada.
+classes, neste caso, pronome ou artigo. Por exemplo, a probabilidade da palavra
+``um'' ser um pronome seria 0.0033 e a probabilidade da palavra ``um'' ser um
+artigo seria 0.025. Esse cálculo é realizado para todas as palavras da frase
+que está sendo classificada e todas as classes possíveis. A Tabela
+\ref{tabela:associacao} apresenta o cálculo realizado anteriormente para as
+demais palavras e classes.
 
 \begin{table}[htb]
 \centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
-            & João & comprou & um    & carro \\ \hline
-Substantivo & 0.01 & 0       & 0.015 & 0.02  \\ \hline
-Verbo       & 0    & 0.012   & 0     & 0     \\ \hline
-Artigo      & 0    & 0       & 0.030 & 0     \\ \hline
-Pronome     & 0    & 0       & 0.005 & 0     \\ \hline
+            & João  & comprou & um     & carro  \\ \hline
+Substantivo & 0.001 & 0       & 0.015  & 0.005  \\ \hline
+Verbo       & 0     & 0.0042  & 0      & 0      \\ \hline
+Artigo      & 0     & 0       & 0.025  & 0      \\ \hline
+Pronome     & 0     & 0       & 0.0033 & 0      \\ \hline
 \end{tabular}
 \caption{Tabela de Probabilidades de Associação}
 \label{tabela:associacao}
 \end{table}
+
+Além da probabilidade de associação a uma determinada classe, é calculada a
+probabilidade de transição de uma classe para a outra. Neste caso, o
+\textit{training set} hipotético apresenta as seguintes características:
+
+\begin{itemize}
+   \item De 20000 frases, 2500 iniciam com um substantivo, 5000 iniciam com um
+   verbo, 5000 iniciam com um artigo e 5000 iniciam com um pronome.
+   \item De 10000 substantivos, 10000
+   são seguidos por verbos.
+   \item De 12000 verbos, 3000 são seguidos por um substantivo, 2000
+   são seguidos por um outro verbo, 5000 são seguidos por um artigo e 2000 são
+   seguidos por um pronome.
+   \item De 20000 artigos, 20000 são seguidos por um substantivo.
+   \item De 15000 pronomes, 10000 são seguidos por um substantivo e 5000 são
+   seguidos por um verbo.
+    
+   
+\end{itemize}
+  
+Neste caso, a probabilidade de transição de um verbo para um substantivo é dada
+pela equação:
+
+\[ P(transicao|classe) = \frac{C(classe,transicao)}{C(classe)} \]
+
+\[ P(SM|VB) = \frac{C(VB,SM)}{C(VB)} = \frac{3000}{12000} = 0.25 \]
+
+Da mesma forma, a probabilidade de transição é cálculada para todas as
+demais classes. Por exemplo, a probabilidade de
+transição de um verbo para outro verbo é 0.17, de um verbo para um artigo é 0.42
+e de um verbo para um pronome é 0.17. Também, é utilizada a mesma equação para
+o cálculo da probabilidade da frase iníciar com determinada classe. A Tabela
+\ref{tabela:transicao} tem-se a probabilidade de transição onde foi feito o cálculo anterior para todas as classes possíveis para classificação do nosso \textit{training set}.
+
+
 
 \begin{table}[htb]
 \centering
 \begin{tabular}{|l|l|l|l|l|}
 \hline
             & Substantivo & Verbo & Artigo & Pronome \\ \hline
-Início      & 0.30        & 0.25  & 0.35   & 0.4     \\ \hline
-Substantivo & 0.4         & 0.2   & 0.015  & 0.85    \\ \hline
-Verbo       & 0.5         & 0.2   & 0.3    & 0.07    \\ \hline
-Artigo      & 0.1         & 0.001 & 0.030  & 0.005   \\ \hline
-Pronome     & 0.7         & 0.005 & 0.005  & 0.8     \\ \hline
+Início      & 0.125       & 0.25  & 0.25   & 0.25    \\ \hline
+Substantivo & 0.0         & 1.0   & 0.0    & 0.0     \\ \hline
+Verbo       & 0.25        & 0.17  & 0.42   & 0.17    \\ \hline
+Artigo      & 1.0         & 0.0   & 0.0    & 0.0     \\ \hline
+Pronome     & 0.67        & 0.33  & 0.0    & 0.0     \\ \hline
 \end{tabular}
 \caption{Tabela de Probabilidade de Transição}
 \label{tabela:transicao}
 \end{table} 
 
-Para a classificação da palavra ``um'', é utilizado o algoritmo de Viterbi, o
-qual tem como base os possíveis caminhos da Figura \ref{fig:markov}. A partir
-dessa é calculada a sequência de eventos com mais probabilidade de ocorrer. Esse
-é feito começando pelo início da frase, essa sequência é calculada através de:
+A partir das probabilidades anteriores cálculadas através do Modelo de Markov, é
+utilizado o algoritmo de Viterbi para determinar o caminho mais provável. Esse cálculo
+é feito começando pelo início da frase, calculada através de:
 
 \[ v_t(j) = v_{t-1} a_{ij} b_j(o_t) \]
 
@@ -291,13 +318,13 @@ a probabilidade de transição entre ``Início'' e um substantivo, disponível n
 a probabilidade de associação da palavra João com substantivo, disponível na
 tabela \ref{tabela:associacao}:
 
-\[ v_t(j) = 1 * 0.3 * 0.1 = 0.003 \]
+\[ v_t(j) = 1 * 0.125 * 0.001 = 0.000125 \]
 
 Para ``comprou'', além dos valores retirados das tabelas \ref{tabela:transicao}
 e \ref{tabela:associacao}, $v_{t-1}$ é representado pelo cálculo do
-caminho anterior, ou seja, 0.003:
+caminho anterior, ou seja, 0.000125:
 
-\[ v_t(j) = 0.003 * 0.2 * 1 = 0.0006 \] 
+\[ v_t(j) = 0.000125 * 1 * 0.0042 = 0.000000525 \] 
 
 Ao efetuar o cálculo de todos os caminhos, para determinar qual a classificação
 correta de uma palavra, é escolhido o caminho que tem maior probabilidade, no

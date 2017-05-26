@@ -11,15 +11,15 @@
 \contentsline {section}{\numberline {2.2}M\IeC {\'e}todos de Processamento de Linguagem Natural}{11}
 \contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{11}
 \contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{13}
-\contentsline {chapter}{\numberline {3}M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}{16}
-\contentsline {section}{\numberline {3.1}Naive Bayes}{16}
-\contentsline {section}{\numberline {3.2}\textit {Maximum Entropy}}{18}
-\contentsline {section}{\numberline {3.3}\textit {VADER}}{19}
-\contentsline {chapter}{\numberline {4}Frameworks}{21}
-\contentsline {section}{\numberline {4.1}Natural Language Toolkit}{21}
-\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{21}
-\contentsline {section}{\numberline {4.2}Stanford CoreNLP}{22}
-\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{22}
-\contentsline {chapter}{\numberline {5}Rede Social Reddit}{24}
-\contentsline {section}{\numberline {5.1}API}{25}
-\contentsline {chapter}{Refer{\^e}ncias}{26}
+\contentsline {chapter}{\numberline {3}M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}{17}
+\contentsline {section}{\numberline {3.1}Naive Bayes}{17}
+\contentsline {section}{\numberline {3.2}\textit {Maximum Entropy}}{19}
+\contentsline {section}{\numberline {3.3}\textit {VADER}}{20}
+\contentsline {chapter}{\numberline {4}Frameworks}{22}
+\contentsline {section}{\numberline {4.1}Natural Language Toolkit}{22}
+\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{22}
+\contentsline {section}{\numberline {4.2}Stanford CoreNLP}{23}
+\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{23}
+\contentsline {chapter}{\numberline {5}Rede Social Reddit}{25}
+\contentsline {section}{\numberline {5.1}API}{26}
+\contentsline {chapter}{Refer{\^e}ncias}{27}
