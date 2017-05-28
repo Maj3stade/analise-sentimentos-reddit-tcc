@@ -4,7 +4,7 @@
 Para a extração dos dados para a análise de sentimentos foi criado um
 \textit{crawler} ou robô de navegação. Esse robô tem como objetivo a navegação
 automática no conteúdo web do Reddit, extraindo os dados referentes a tópicos e
-a comentários e persistindo esses em um banco de dados. 
+a comentários e persistindo esses em um banco de dados.
 
 \section{\textit{Crawler}}
 
@@ -14,17 +14,17 @@ sua facilidade de implementação. A Figura \ref{fig:crawler} representa a
 arquitetura utilizada para desenvolvimento deste software.
 
 \begin{figure}[htbp]
- \centering
- \includegraphics[height=225px]{imagens/arquitetura.png}
- \caption{Arquitetura do \textit{Crawler}}
- \label{fig:crawler}
+\centering
+\includegraphics[height=225px]{imagens/arquitetura.png}
+\caption{Arquitetura do \textit{Crawler}}
+\label{fig:crawler}
 \end{figure}
 
 A partir de um \textit{link} para um tópico, o software tem como tarefa, a
 extração e pesquisa de dados relacionados com o tópico em questão. Isso se faz
 da seguinte forma, primeiramente, é enviada uma requisição para o \textit{link}
 utilizando o sufixo ``.json'', de forma demonstrada na API, a partir dessa
-requisição, o \textit{website} retorna um objeto \ac{JSON}. 
+requisição, o \textit{website} retorna um objeto \ac{JSON}.
 
 Como o \ac{JSON} possui 68 campos que assim como seus tipos de dados, não se
 encontram em nenhuma documentação, foi utilizado o \textit{website}
@@ -38,7 +38,7 @@ ao código fonte da aplicação.
 A anotação ``@JsonProperty'' é relativa ao
 mapeamento do objeto Java com relação ao \ac{JSON} e nos permite com
 intermédio da classe \textit{Object Mapper} instanciar o objeto
-\textit{RedditPost} a partir de um objeto \textit{String} em formato \ac{JSON}. 
+\textit{RedditPost} a partir de um objeto \textit{String} em formato \ac{JSON}.
 
 \begin{lstlisting}
 RedditPost post = objectMapper.readValue(iteratorPost.get("data").toString(),
@@ -93,3 +93,85 @@ Hibernate. Como a API do Reddit possui uma restrição do número de comentário
 disponibilizados, são efetuadas novas requisições para a seção \textit{``more''}
 disponível no \ac{JSON} de retorno.
 
+\section{Tópicos Selecionados}
+
+Para análise de sentimentos e comparação dos resultados obtidos, foram
+selecionados 25 tópicos controversos, selecionados com o objetivo de encontrar
+padrões de opinião entre seus comentários, distribuídos da seguinte forma:
+
+Tópicos relacionados com o cenário político nacional:
+\begin{itemize}
+  \item
+  \textit{Brazil Seeks To Copy U.S. Gun Culture ``to allow embattled
+  citizens the right to defend themselves from
+  criminals''}\footnote{
+  \url{https://www.reddit.com/r/worldnews/comments/36ny58/brazil_blogger_known_for_reporting_on_corruption/}}.
+  \item
+  \textit{Brazil descends into chaos as Olympics looms}\footnote{
+  \url{https://www.reddit.com/r/worldnews/comments/4bqcc3/brazil_descends_into_chaos_as_olympics_looms/}}.
+  \item
+  \textit{Plane carrying Brazil Supreme Court judge crashes into sea}
+  \footnote{\url{https://www.reddit.com/r/worldnews/comments/5oyz3b/plane_carrying_brazil_supreme_court_judge_crashes/}}.
+  \item
+  \textit{Brazil passes Internet governance Bill: Brazil has made history with
+  the approval of a post-Snowden Bill which sets out principles, rights and guarantees for Internet users.}\footnote{\url{https://www.reddit.com/r/worldnews/comments/21f3as/brazil_passes_internet_governance_bill_brazil_has/}}.
+  \item
+  \textit{FIFA generated more than \$4 billion in sales from the 2014 World Cup,
+  and is Giving Brazil \$100 Million After The Country Spent \$15 Billion On The
+  World Cup}\footnote{\url{https://www.reddit.com/r/worldnews/comments/2t65ql/fifa_generated_more_than_4_billion_in_sales_from/}}.
+  \item
+  \textit{Brazil Seeks To Copy U.S. Gun Culture "to allow embattled citizens the
+  right to defend themselves from
+  criminals"}\footnote{\url{https://www.reddit.com/r/worldnews/comments/3skpe7/brazil_seeks_to_copy_us_gun_culture_to_allow/}}.
+\end{itemize}
+
+Tópicos relacionados sobre política internacional.
+\begin{itemize}
+  \item
+  \textit{2.6 terabyte leak of Panamanian shell company data reveals "how a
+  global industry led by major banks, legal firms, and asset management companies
+  secretly manages the estates of politicians, Fifa officials, fraudsters and
+  drug smugglers, celebrities and professional
+  athletes."}.\footnote{\url{https://www.reddit.com/r/worldnews/comments/4d75i7/26_terabyte_leak_of_panamanian_shell_company_data/}}.
+  \item
+  \textit{Fidel Castro is dead at
+  90.}\footnote{\url{https://www.reddit.com/r/worldnews/comments/5exz2e/fidel_castro_is_dead_at_90/}}.
+  
+  \item
+  \textit{Donald Trump to strip all funding from State Dept team promoting women's rights around the world - Leaked plan comes as First Daughter Ivanka defends her father's record with women}\footnote{\url{https://www.reddit.com/r/worldnews/comments/67ivae/donald_trump_to_strip_all_funding_from_state_dept/}}.
+  
+  \item
+  \textit{Manchester Arena 'explosions': Two loud bangs heard at MEN Arena}\footnote{\url{https://www.reddit.com/r/worldnews/comments/6cqdye/manchester_arena_explosions_two_loud_bangs_heard/}}.
+  
+  \item
+  \textit{Sweden asks the U.S. to explain Trump comment on
+  Sweden}\footnote{\url{https://www.reddit.com/r/worldnews/comments/5uzetf/sweden_asks_the_us_to_explain_trump_comment_on/}}
+  
+  \item\textit{“Canada will welcome you,” Trudeau invites refugees as Trump bans
+  them}\footnote{\url{https://www.reddit.com/r/worldnews/comments/5qqa51/canada_will_welcome_you_trudeau_invites_refugees/}}
+\end{itemize}
+
+Tópicos diversos.
+\begin{itemize}
+  \item
+  \textit{I’m Bill Gates, co-chair of the Bill \& Melinda Gates Foundation. Ask
+  Me Anything.}\footnote{\url{https://www.reddit.com/r/IAmA/comments/5whpqs/im_bill_gates_cochair_of_the_bill_melinda_gates/}}.
+  \item
+  \textit{Hey, it's Lars from Metallica. AMA}\footnote{\url{https://www.reddit.com/r/IAmA/comments/1wl9ic/hey_its_lars_from_metallica_ama/}}.
+  
+  \item
+  \textit{I'm the CEO of Renault and Nissan and we're making autonomous driving vehicles happen by 2020. Ask me anything!}\footnote{\url{https://www.reddit.com/r/IAmA/comments/2s7obx/im_the_ceo_of_renault_and_nissan_and_were_making/}}.
+  
+  \item
+  \textit{I am Julian Assange founder of WikiLeaks -- Ask Me Anything}\footnote{\url{https://www.reddit.com/r/IAmA/comments/5n58sm/i_am_julian_assange_founder_of_wikileaks_ask_me/}}.
+  
+\end{itemize}
+
+
+A partir destes tópicos selecionados, foram extraídos seus dados, como conteúdo,
+usuário de criação e número de \textit{upvotes}. Somente foram extraídos
+comentários em resposta ao tópico em questão, comentários em resposta a outros
+comentários foram desconsiderados pois estes podem não estar relacionados com o
+tópico em questão, o que torna a sua análise de sentimento inaproveitável. Além
+de não existirem \textit{softwares} ou \textit{frameworks} preparados para a
+análise de sentimentos de uma conversa sobre um determinado tópico.

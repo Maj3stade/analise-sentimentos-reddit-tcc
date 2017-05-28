@@ -24,4 +24,5 @@
 \contentsline {section}{\numberline {5.1}API}{26}
 \contentsline {chapter}{\numberline {6}Extra\IeC {\c c}\IeC {\~a}o de Dados}{27}
 \contentsline {section}{\numberline {6.1}\textit {Crawler}}{27}
-\contentsline {chapter}{Refer{\^e}ncias}{30}
+\contentsline {section}{\numberline {6.2}T\IeC {\'o}picos Selecionados}{29}
+\contentsline {chapter}{Refer{\^e}ncias}{32}
