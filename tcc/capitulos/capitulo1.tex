@@ -452,17 +452,22 @@ P(\textit{This place is great}|Positiva) \times
 P(Positiva)
 \]
 
-Porém, a frase \textit{``This place is great''} não existe no
-\textit{training set} tornando sua probabilidade 0.
+P(Positiva) e P(Negativa) são definido pela frequência que frases positivas e
+negativas aparecem no \textit{training set}, neste caso, \textit{``The food was
+great''}, \textit{``I love the food here''}, \textit{``This place is
+wonderful''} são positivas totalizando $\frac{3}{5}$ e as demais
+frases ``\textit{They are horrible!}'' e ``\textit{Forgettable experience}'' são
+negativas, e por tanto representam $\frac{2}{5}$.
+Porém, a frase \textit{``This place is great''} não existe no \textit{training
+set} tornando o resultado da equação o valor 0. Neste caso, se faz o uso do
+\textit{Naive Bayes} visando solucionar esse problema e
+facilitando o uso de \textit{training sets} que passam a não mais necessitar uma
+inúmera quantidade de frases já classificadas.
 
-\subsection{\textit{Naive}}
-
-O método \textit{Naive Bayes} surge para solucionar o problema anterior,
-aonde se torna díficil obter um \textit{training set} com inúmeras frases
-já classificadas tornando o resultado do cálculo de probabilidade como 0.
+\subsection{\textit{Naive Bayes} aplicado ao Teorema}
 
 Bayes como visto, é relacionado com o teorema utilizado para cálculo da
-probabilidade, já a palavra \textit{naive}, ou ingênuo é relacionado com sua
+probabilidade, já a palavra \textit{naive}, ou ingênuo, é relacionada com sua
 outra característica, que é a
 independência entre atributos. Esses, para o aprendizado de máquina, são
 características da informação que estamos classificando. Por exemplo, ao efetuar uma classificação relacionada com medicina, atributos que seriam considerados poderiam ser histórico de doença, altura da pessoa e peso. No caso da análise de sentimentos, os atributos
@@ -476,22 +481,40 @@ P(\textit{great}|Positiva)
 
 Aonde que, por exemplo, P(\textit{This}$\vert$Positiva) é a quantidade de vezes que a
 palavra \textit{This} foi classificada como positiva em nosso \textit{training
-set} dividido pelo total de palavras classificadas como positiva:
+set}, dividido pelo total de palavras classificadas como positiva:
 \[P(\textit{This}|Positiva) = 1 / 13\]
 
-Como algumas palavras podem não existir em nosso \textit{training set}, tornando
-o resultado final da multiplicação das probabilidades de cada palavra como 0, é
-utilizado \textit{Laplace smoothing} para que não ocorra essa possibilidade.
-Neste caso, é somado 1 a cada palavra e ao total de palavras, são somadas as
-quantidades de palavras diferentes do \textit{training set}, que neste caso são
+Aplicando o mesmo cálculo para as demais palavras da frase obtermos a seguinte
+tabela:
+\begin{table}[htb]
+\centering
+\renewcommand{\arraystretch}{1.5}% Spread rows out...
+\begin{tabular}{lll}
+\hline
+
+Palavra & Positiva & Negativa \\ \hline
+This & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+place & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+is & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+great & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+\end{tabular}
+\caption{Tabela de Palavras e Probabilidades.}
+\label{tab:probabilidadesnb}
+\end{table}
+
+Como algumas palavras não existem em nosso \textit{training set} para
+determinadas situações, elas acabam tornando o resultado final da multiplicação
+das probabilidades de cada palavra como 0, para evitar que uma única palavra
+invalide uma frase é utilizado \textit{Laplace smoothing}. Neste, é somado
+1 a cada palavra e ao total de palavras, são somadas as quantidades de palavras diferentes do \textit{training set}, que neste caso são
 as seguintes 16 palavras distintas: \textit{``The''}, \textit{``food''},
 \textit{``was"}, \textit{``great"}, \textit{``They"}, \textit{``are"},
 \textit{``horrible!''}, \textit{``I"}, \textit{``love"}, \textit{``here''},
 \textit{``This"}, \textit{``place"}, \textit{``is"}, \textit{``wonderful"},
-\textit{``Forgettable"}, \textit{``experience"} 
-
-Neste caso, o cálculo da probabilidade da frase de exemplo \textit{``This place
-is great''} para cada classe é representado pela tabela abaixo:
+\textit{``Forgettable"}, \textit{``experience"}. Neste caso, o cálculo da
+probabilidade da frase de exemplo \textit{``This place is great''} para cada
+classe já aplicado o \textit{Laplace smoothing} é representado pela tabela
+abaixo:
 
 \begin{table}[htb]
 \centering
@@ -505,23 +528,23 @@ place & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
 is & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
 great & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
 \end{tabular}
-\caption{Tabela de Palavras e Probabilidades.}
+\caption{Tabela de Probabilidades - \textit{Laplace smoothing}.}
 \label{tab:probabilidadesnb}
 \end{table}
 
-Utilizando a tabela \ref{tab:probabilidadesnb}, o classificador irá inferir a
-probabilidade da frase \textit{``This place is great''} ser classificada como
+Com a aplicação do \textit{Laplace smoothing} utilizando a tabela
+\ref{tab:probabilidadesnb}, o classificador irá inferir a probabilidade da frase \textit{``This place is great''} ser classificada como
 positiva ou negativa:
 \[ P(Positiva|\textit{This place is great})
 =
 P(\textit{This place is great}|Positiva) \times
 P(Positiva)
 \]
-\[ P(\textit{This place is great}|Positiva) = \frac{1 + 1}{13 + 16} \times
+\[ P(Positiva|\textit{This place is great}) = \frac{1 + 1}{13 + 16} \times
 \frac{1 + 1}{13 + 16} \times \frac{1 + 1}{13 + 16} \times
 \frac{1 + 1}{13 + 16} \times \frac{3}{5}
 \]
-\[ P(\textit{This place is great}|Positiva) = 0.138
+\[ P(Positiva|\textit{This place is great})  = 0.138
 \]
 
 \[ P(Negativa|\textit{This place is great})
@@ -529,11 +552,11 @@ P(Positiva)
 P(\textit{This place is great}|Negativa) \times
 P(Negativa)
 \]
-\[ P(\textit{This place is great}|Negativa) = \frac{0 + 1}{5 + 16} \times
+\[  P(Negativa|\textit{This place is great}) = \frac{0 + 1}{5 + 16} \times
 \frac{0 + 1}{5 + 16} \times \frac{0 + 1}{5 + 16} \times
 \frac{0 + 1}{5 + 16} \times \frac{2}{5}
 \]
-\[ P(\textit{This place is great}|Negativa) = 0.0000021
+\[ P(Negativa|\textit{This place is great}) = 0.0000021
 \]
 
 Portanto, a partir dessas duas possibilidade, utilizando o método de

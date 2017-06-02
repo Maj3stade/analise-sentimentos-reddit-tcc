@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  1 JUN 2017 23:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  2 JUN 2017 00:16
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -929,6 +929,9 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 
 LaTeX Warning: Label `my-label' multiply defined.
 
+
+LaTeX Warning: Label `tab:probabilidadesnb' multiply defined.
+
 ) (./capitulos/capitulo2.aux
 
 LaTeX Warning: Label `fig:corenlp' multiply defined.
@@ -1202,6 +1205,9 @@ Overfull \hbox (1.27254pt too wide) detected at line 423
 [17
 
 ]
+Underfull \vbox (badness 1509) has occurred while \output is active []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 18
  []
@@ -1209,15 +1215,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 [18] [19]
 Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 548.
+although it is yet undefined on input line 571.
 
-Overfull \hbox (5.47568pt too wide) in paragraph at lines 572--579
+Overfull \hbox (5.47568pt too wide) in paragraph at lines 595--602
 \OT1/cmr/m/n/12 Como por exem-plo, na frase \OT1/cmr/m/it/12 ``This place is GR
 EAT''\OT1/cmr/m/n/12 , te-mos a pa-la-vra \OT1/cmr/m/it/12 ``GREAT''
  []
-
-
-Underfull \vbox (badness 4569) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1503,7 +1506,7 @@ cmtt10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pf
 b><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texl
 ive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2016/t
 exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tcc.pdf (34 pages, 379816 bytes).
+Output written on tcc.pdf (34 pages, 381548 bytes).
 PDF statistics:
  200 PDF objects out of 1000 (max. 8388607)
  135 compressed objects within 2 object streams
