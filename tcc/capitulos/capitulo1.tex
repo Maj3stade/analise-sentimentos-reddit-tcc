@@ -6,22 +6,23 @@
 % programa executável seguindo exatamente o algoritmo utilizado. Por isso, temos o
 % termo Natural no Processamento de Linguagem.
 
-O objetivo da área de Processamento de Linguagem Natural é analisar a linguagem natural, ou seja, a linguagem utilizada pelo seres humanos não
-importando se essa é escrita ou falada \cite{manningschutze1999}.
+O objetivo da área de Processamento de Linguagem Natural é analisar a linguagem
+natural, ou seja, a linguagem utilizada pelo seres humanos seja ela escrita
+ou falada \cite{manningschutze1999}.
 
 O Processamento de Linguagem Natural é uma área antiga, sendo anterior a
 invenção dos computadores modernos. De fato, sua primeira grande aplicação foi
 um dicionário desenvolvido no Birkbeck College em Londres no ano de 1948. Por ser
 uma área complexa, seus primeiros trabalhos foram notavelmente falhos o que
-causou uma certa hostilidade por parte das agências formentadoras de pesquisas.
+causou uma certa hostilidade por parte das agências fomentadoras de pesquisas.
 
 Os primeiros pesquisadores eram muitas vezes bilíngues, como por exemplo,
 nativos alemães que imigraram para os Estados Unidos. Acreditava-se que pelo
 fato desses terem conhecimento de ambas as linguas, Ingles e Alemão, eles teriam
-capacidade de desenvolver programas de computadores que efetuariam a tradução das linguas
+capacidade de desenvolver programas de computadores que efetuariam a tradução 
 de modo satisfatório. Uma vez que esses encontraram muitas dificuldades,
-ficou claro que o maior problema não era o conhecimento de ambas as
-línguas e sim como expressar esse conhecimento na forma de um programa de
+ficou claro que o maior problema não era o conhecimento das
+línguas, e sim como expressar esse conhecimento na forma de um programa de
 computador \cite{history}.
 
 Para que um computador seja capaz de interpretar uma
@@ -32,7 +33,7 @@ Por isso, uma parte considerável do Processamento de Linguagem Natural está ap
 \section{Linguística}
 
 O objetivo da Linguística é compreender como os humanos adquirem, produzem e
-entendem as diversas línguas, ou seja, a forma com que conversamos, a nossa
+entendem as diversas línguas, ou seja, a forma como conversamos, a nossa
 escrita e outras mídias de comunicação \cite{manningschutze1999}.
 
 Na linguagem tanto escrita, como na falada, existem regras que são utilizadas
@@ -62,26 +63,26 @@ a categorização de documentos, a tradução e a geração de textos a partir d
 banco de dados, etc. Podemos citar duas classes de métodos para a execução deste
 tipo de tarefas, que são os métodos simbólicos e os métodos estatísticos.
 
-Nos final dos anos 50 e 60, existiam excelentes métodos esatatísticos, que foram
+Nos final dos anos 50 e 60, existiam excelentes métodos estatísticos, que foram
 desenvolvidos durante a segunda guerra mundial, para a solução de problemas
-científicos \cite{shannon48}.
+Linguísticos \cite{shannon48}.
 Porém, no ano de 1957, Chomsky publicou o trabalho intitulado de
 \textit{``Syntactic Structures''} onde descreve a
-teoria de gramática gerativa, que considera a gramática como um conjunto de regras. Essa abordagem através de um
+teoria da gramática gerativa, que considera a gramática como um conjunto de regras. Essa abordagem através de um
 conjunto de regras, ao invés de um modelo matemático, entra em conflito com os
-trabalhos anteriores, criando duas comunidades no campo de Linguística. Como
+trabalhos anteriores, criando duas comunidades no campo da Linguística. Como
 reflexo dessas duas comunidades, a área de \ac{NLP} que crescia em paralelo a
 linguística também foi dividida em duas áreas. A primeira dessas áreas que fazia
-uso de métodos baseados em regras (simbólico) e a segunda que fazia o uso de
-métodos quantitativos (estatísticos).
+uso de métodos baseados em regras (simbólica) e a segunda que fazia o uso de
+métodos quantitativos (estatísticas).
 
 
 Nesta seção será apresentado um exemplo de método simbólico e de um método
 estatístico.
-Destaca-se que essa descrição apresenta como objetivo somente diferenciar
-ambas as classes de métodos, através de seus requisitos e forma de execução.
-Destaca-se ainda que os métodos apresentados não são utilizados na
-análise de sentimentos, sendo que os métodos específicos que são utilizados para
+Destaca-se que essa descrição apresenta como principal objetivo
+diferenciar ambas as classes de métodos, através de seus requisitos e forma de execução.
+Destaca-se ainda que os métodos apresentados nesta seção não são utilizados na
+análise de sentimentos, sendo que os métodos específicos para
 identificação de sentimentos serão descritos no Capítulo \ref{cap:Classificadores}.
 
 
@@ -107,12 +108,12 @@ Classificação:   & 			   & Verbo  & Artigo & Substantivo & Preposição & Adje
 \end{table}
 
 Observa-se que algumas palavras não foram
-identificadas, como ``João'' ou classificadas de forma incorreta, como
-``branco". Desta forma, o método utiliza-se de outras duas regras para a
-classificação.
-A primeira regra classifica todas as palavras desconhecidas que iniciam em
-maiúsculo como substantivos, por exemplo, a palavra ``João''. Já a segunda regra, atribui para a palavra desconhecida a mesma classificação
-de outras palavras que terminam com as mesmas três letras. Por exemplo, supondo
+identificadas, como ``João'', ou classificadas de forma incorreta, como
+``branco". Desta forma, o método de Brill utiliza-se de outras duas regras para
+a classificação.
+A primeira regra classifica todas as palavras desconhecidas que iniciam com uma
+letra em maiúscula como substantivos, por exemplo, a palavra ``João''. Já a
+segunda regra, atribui para a palavra desconhecida a mesma classificação de outras palavras que terminam com as mesmas três letras. Por exemplo, supondo
 que a palavra ``pintou'' não fosse encontrada no dicionário, essa seria
 associada a outras palavras terminadas com o sufixo ``tou'', ou seja, essa seria
 classificada como verbo.
@@ -168,9 +169,9 @@ regras, ou ainda, regras derivadas dessas:
   
   \item Se uma palavra tem a classificação \textbf{A} e uma palavra com a
   propriedade \textbf{P} está na região \textbf{R}, sua classificação deverá
-  ser \textbf{B}. Por exemplo, se uma das duas palavras anteriores (``João
-  adora" na região \textbf{R}) iniciam com letra maiúscula (propriedade
-  \textbf{P}), sua classificação deverá ser alterada para substantivo (classificação \textbf{B}).
+  ser \textbf{B}. Por exemplo, se uma das duas palavras anteriores à palavra
+  ``Linda'' (``João adora" na região \textbf{R}) iniciam com letra maiúscula
+  (propriedade \textbf{P}), sua classificação deverá ser alterada para substantivo (classificação \textbf{B}).
   
   \[\underbrace{\overbrace{\text{João}}^\text{Substantivo}
   \overbrace{\text{adora}}^\text{Verbo}}_\text{Região \textbf{R}}
@@ -182,7 +183,7 @@ regras, ou ainda, regras derivadas dessas:
 \end{itemize}
 
 \subsection{Método Estatístico}
-Um método estatístico utiliza-se de uma grandes
+Um método estatístico utiliza-se de uma grande
 quantidade de texto, procurando por padrões e
 associações a modelos, sendo que esses padrões podem ou não estar relacionados
 com regras sintáticas ou semânticas.
@@ -194,7 +195,7 @@ estatístico é a utilização de Modelos de Markov com a aplicação do algorit
 Viterbi \cite{manningschutze1999}.
 
 Em um Modelo de Markov, a classificação da frase ``João comprou um
-carro" é feita a partir de um \textit{training set} que pode, por exemplo, ser
+carro'' é feita a partir de um \textit{training set} que pode, por exemplo, ser
 composto por textos retirados de \textit{web-sites}, sendo que as palavras
 destes textos já devem estar classificadas. A partir deste \textit{training
 set}, as palavras ``João'', ``comprou'' e ``carro'' seriam classificadas como
@@ -202,7 +203,7 @@ substantivo, verbo e substantivo, respectivamente. Já a palavra ``um'' apresent
 ser classificada como um artigo (ART), ou um substantivo (SM) ou um pronome
 (PRO).
 A Figura \ref{fig:markov} representa o conjunto de possibilidades que o
-classificador pode utilizar para a classificação completa da frase.
+classificador apresenta para uma classificação completa da frase.
 
 \begin{figure}[htbp]
 \centering
@@ -212,31 +213,36 @@ classificador pode utilizar para a classificação completa da frase.
 \end{figure}
 
 A idéia central da utilização de Modelos de Markov é
-escolher, entre esses caminhos (Figura \ref{fig:markov}), o caminho de maior
+escolher, entre esses caminhos (Figura \ref{fig:markov}), pelo caminho de maior
 probabilidade. Para tanto, se faz necessário calcular a probabilidade de todos
-os caminhos seguindo o Modelo de Markov e após este cálculo, utilizar o
-Algoritmo de Viterbi para definir qual caminho é o mais provável.
+os caminhos através de um Modelo de Markov. Após, utiliza-se o
+Algoritmo de Viterbi para definir qual caminho com maior probabilidade.
 
 O Modelo de Markov irá utilizar-se do \textit{training set} para inferir a
-classificação da palavra ``um''. Para este exemplo, vamos considerar um
+classificação da palavra ``um''. Por exemplo, considerando-se um
 \textit{training set} hipotético com as seguintes características: 10000
-Substantivos aonde 150 são a palavra ``um'', 10
-são a palavra ``João'' e 50 são a palavra ``carro'', 20000 Artigos aonde 500 são
-a palavra ``um'', 12000 Verbos aonde 50 são a palavra ``comprou'' e 15000
-Pronomes aonde 50 são a palavra ``um''. Neste caso, a probabilidade da palavra
-ser um substantivo é dada pela equação:
+substantivos aonde 150 são a palavra ``um''; 10
+são a palavra ``João''; 50 são a palavra ``carro''; 20000 artigos aonde 500 são
+a palavra ``um''; 12000 verbos aonde 50 são a palavra ``comprou''; 15000
+pronomes aonde 50 são a palavra ``um''. Neste caso, a probabilidade da palavra
+ser um substantivo é dada pela Equação \ref{eq:associacao}, onde no
+\textit{training set} temos 150 instâncias da palavra ``um'' classificadas como
+substantivo e um total de 10000 substantivos.
+\begin{equation}
+\begin{split}
+P(palavra|classe) = \frac{C(classe,palavra)}{C(classe)}  \\
+P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0,015.
+\end{split}
+\label{eq:associacao}
+\end{equation}
 
-\[ P(palavra|classe) = \frac{C(classe,palavra)}{C(classe)} \]
-
-\[ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0.015 \]
-
-Da mesma forma, é calculada a probabilidade de ``um'' pertencer as demais
-classes, neste caso, pronome ou artigo. Por exemplo, a probabilidade da palavra
-``um'' ser um pronome seria 0.0033 e a probabilidade da palavra ``um'' ser um
-artigo seria 0.025. Esse cálculo é realizado para todas as palavras da frase
-que está sendo classificada e todas as classes possíveis. A Tabela
-\ref{tabela:associacao} apresenta o cálculo realizado anteriormente para as
-demais palavras e classes.
+Desta forma tem-se que a probabilidade de ``um'' ser um substantivo é de 0,015.
+A Equação \ref{eq:associacao} também é aplicada para as demais classes,
+neste caso, pronome ou artigo. Por exemplo, a probabilidade da palavra ``um'' ser um pronome
+seria 0,0033 e a probabilidade da palavra ``um'' ser um artigo seria 0,025. Esse
+cálculo de probabilidade é realizado para todas as palavras da frase que está
+sendo classificada. Na Tabela \ref{tabela:associacao} tem-se os resultados
+obtidos para todas as palavras da frame ``João comprou um carro''.
 
 \begin{table}[htb]
 \centering
@@ -272,20 +278,26 @@ probabilidade de transição de uma classe para a outra. Neste caso, o
 \end{itemize}
 
 Neste caso, a probabilidade de transição de um verbo para um substantivo é dada
-pela equação:
+pela Equação \ref{eq:transicao}, onde no \textit{training set} existem 12000
+verbos, os quais 3000 são seguidos por um substantivo, desta forma para a
+transição de um verbo para substantivo tem-se:
 
-\[ P(transicao|classe) = \frac{C(classe,transicao)}{C(classe)} \]
-
-\[ P(SM|VB) = \frac{C(VB,SM)}{C(VB)} = \frac{3000}{12000} = 0.25 \]
+\begin{equation}
+\begin{split}
+P(transicao|classe) = \frac{C(classe,transicao)}{C(classe)} \\
+P(SM|VB) = \frac{C(VB,SM)}{C(VB)} = \frac{3000}{12000} = 0,25 
+\end{split}
+\label{eq:transicao}
+\end{equation}
 
 Da mesma forma, a probabilidade de transição é cálculada para todas as
 demais classes. Por exemplo, a probabilidade de
-transição de um verbo para outro verbo é 0.17, de um verbo para um artigo é 0.42
-e de um verbo para um pronome é 0.17. Também, é utilizada a mesma equação para
-o cálculo da probabilidade da frase iníciar com determinada classe. A Tabela
-\ref{tabela:transicao} tem-se a probabilidade de transição onde foi feito o cálculo anterior para todas as classes possíveis para classificação do nosso \textit{training set}.
-
-
+transição de um verbo para outro verbo é 0,17, de um verbo para um artigo é 0,42
+e de um verbo para um pronome é 0,17. Também, a Equação \ref{eq:transicao} é
+utilizada para o cálculo da probabilidade da frase iníciar com determinada
+classe.
+A Tabela \ref{tabela:transicao} tem-se a probabilidade de transição para todas
+as classes do \textit{training set} de exemplo.
 
 \begin{table}[htb]
 \centering
@@ -302,32 +314,47 @@ Pronome     & 0.67        & 0.33  & 0.0    & 0.0     \\ \hline
 \label{tabela:transicao}
 \end{table}
 
-A partir das probabilidades anteriores cálculadas através do Modelo de Markov, é
-utilizado o algoritmo de Viterbi para determinar o caminho mais provável. Esse cálculo
-é feito começando pelo início da frase, calculada através de:
+A partir das probabilidades calculadas através do Modelo de Markov, é
+utilizado o algoritmo de Viterbi para determinar o caminho mais provável. 
 
-\[ v_t(j) = v_{t-1} a_{ij} b_j(o_t) \]
+\begin{equation}
+\begin{split}
+v_t(j) = v_{t-1} a_{ij} b_j(o_t)
+\end{split}
+\label{eq:viterbi}
+\end{equation}
 
-Aonde que $v_t$ é a probabilidade do caminho atual, $v_{t-1}$ é o resultado do
-caminho anterior, $a_{ij}$ é a probabilidade de transição e $b_j(o_t)$ é a
-probabilidade de associação.
-
+O caminho mais provável é obtido através da Equação \ref{eq:viterbi}, sendo que
+essa é aplicada a todas as palavras da frase. Na Equação \ref{eq:viterbi} os
+termos $v_t$, $v_{t-1}$, $a_{ij}$ e $b_j(o_t)$ correspondem respectivamente a
+probabilidade do caminho atual, resultado do caminho anterior, a probabilidade
+de transição e a probabilidade de associação. 
 Portanto a palavra ``João'', $v_{t-1}$ é representada pelo valor 1, visto
-que essa é a primeira palavra e não foram feitos cálculos anteriores, $a_{ij}$ é
-a probabilidade de transição entre ``Início'' e um substantivo, disponível na tabela \ref{tabela:transicao} e $b_j(o_t)$ é
-a probabilidade de associação da palavra João com substantivo, disponível na
-tabela \ref{tabela:associacao}:
+que essa é a primeira palavra, ou seja, não foram calculados os valores de
+$v_t$ para as palavras anteriores, $a_{ij}$ é a probabilidade de transição entre
+``Início'' e um substantivo (Tabela \ref{tabela:transicao}) e $b_j(o_t)$ é a
+probabilidade de associação da palavra João com substantivo (Tabela
+\ref{tabela:associacao}). Desta forma tem-se que $v_t$ para a palavra João é:
 
-\[ v_t(j) = 1 * 0.125 * 0.001 = 0.000125 \]
+\begin{equation}
+\begin{split}
+v_t(j) = 1 * 0,125 * 0,001 = 0,000125.
+\end{split}
+\label{eq:joao}
+\end{equation}
 
-Para ``comprou'', além dos valores retirados das tabelas \ref{tabela:transicao}
-e \ref{tabela:associacao}, $v_{t-1}$ é representado pelo cálculo do
-caminho anterior, ou seja, 0.000125:
+Já para a palavra ``comprou'' tem-se:
+\begin{equation}
+\begin{split}
+v_t(j) = 0,000125 * 1 * 0,0042 = 0,000000525.
+\end{split}
+\label{eq:comprou}
+\end{equation}
 
-\[ v_t(j) = 0.000125 * 1 * 0.0042 = 0.000000525 \]
-
-Ao efetuar o cálculo de todos os caminhos, para determinar qual a classificação
-correta de uma palavra, é escolhido o caminho que tem maior probabilidade, no
+Aonde além das probabilidades de transição e associação respecitvamente
+retirados das Tabelas \ref{tabela:transicao} e \ref{tabela:associacao}, $v_{t-1}$ é representado pelo cálculo do
+caminho anterior, ou seja, 0,000125. Ao efetuar o cálculo de todos os caminhos,
+para determinar qual a classificação correta de uma palavra, é escolhido o caminho que tem maior probabilidade, no
 caso apresentado, a palavra ``um'' é classificada como artigo.
 
 \begin{figure}[htbp]
@@ -405,24 +432,15 @@ negativa e a partir dessas duas possibilidades, será escolhida a maior.
 \subsection{Teorema de Bayes}
 
 Para cálcular a probabilidade da frase ``This place is great'' pertencer a cada categoria
-utilizando o teorema da Bayes, é aplicada a seguinte equação:
+utilizando o teorema da Bayes, é aplicada a Equação \ref{eq:teorema}:
+\begin{equation}
+\begin{gathered}
+P(c|d) = \frac{P(d|c) \times P(c)}{P(d)} \\
+\label{eq:teorema}
+\end{gathered}
+\end{equation}
 
-\[ P(c|d)
-=
-\frac{P(d|c) \times P(c)}{P(d)}
-\]
-\[ P(Positiva|\textit{This place is great})
-=
-\frac{P(\textit{This place is great}|Positiva) \times
-P(Positiva)}{P(\textit{This place is great})}
-\]
-\[ P(Negativa|\textit{This place is great})
-=
-\frac{P(\textit{This place is great}|Negativa) \times
-P(Negativa)}{P(\textit{This place is great})}
-\]
-
-
+Os termos da Equação \ref{eq:teorema} são determinados da seguinte forma:
 \begin{itemize}
   \item P(c$\vert$d) é a probabilidade de \textbf{d} pertencer a classe
   \textbf{c}. Ou seja, a probabilidade de \textit{``This place is great''} ser
@@ -438,54 +456,97 @@ P(Negativa)}{P(\textit{This place is great})}
   set}.
 \end{itemize}
 
-Como ambas as equações, para cálculo da probabilidade de ser negativa e positiva
-tem como divisor a frase que estamos classificando, a comparação entre as
-classificações é realizada através de:
-\[ P(Negativa|\textit{This place is great})
+Como ambas as Equações terão como divisor P(d), este é removido da equação, tendo como
+comparação entre as probabilidades negativas e positivas as Equações
+\ref{eq:teoreman} e \ref{eq:teoremap}:
+\begin{equation}
+\begin{gathered}
+P(Negativa|\textit{This place is great})
 =
 P(\textit{This place is great}|Negativa) \times
 P(Negativa)
-\]
-\[ P(Positiva|\textit{This place is great})
+\label{eq:teoreman}
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great})
 =
 P(\textit{This place is great}|Positiva) \times
 P(Positiva)
-\]
+\label{eq:teoremap}
+\end{gathered}
+\end{equation}
 
-P(Positiva) e P(Negativa) são definido pela frequência que frases positivas e
-negativas aparecem no \textit{training set}, neste caso, \textit{``The food was
-great''}, \textit{``I love the food here''}, \textit{``This place is
-wonderful''} são positivas totalizando $\frac{3}{5}$ e as demais
-frases ``\textit{They are horrible!}'' e ``\textit{Forgettable experience}'' são
-negativas, e por tanto representam $\frac{2}{5}$.
-Porém, a frase \textit{``This place is great''} não existe no \textit{training
-set} tornando o resultado da equação o valor 0. Neste caso, se faz o uso do
-\textit{Naive Bayes} visando solucionar esse problema e
-facilitando o uso de \textit{training sets} que passam a não mais necessitar uma
-inúmera quantidade de frases já classificadas.
+Os termos P(Positiva) e P(Negativa) são definidos pela frequência que frases
+positivas e negativas aparecem no \textit{training set}, sendo determinados
+através das Equações \ref{eq:frasespositivas} e \ref{eq:frasesnegativas}. Neste
+caso, \textit{``The food was great''}, \textit{``I love the food here''}, \textit{``This place is
+wonderful''} são frases positivas e as demais frases ``\textit{They are horrible!}'' e
+``\textit{Forgettable experience}'' são negativas, do conjunto de 5 frases do 
+\textit{training set}.
+\begin{equation}
+\begin{gathered}
+P(Positiva)
+=
+\frac{3}{5} = 0,6
+\label{eq:frasespositivas}
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+P(Negativa)
+=
+\frac{2}{5} = 0,4
+\label{eq:frasesnegativas}
+\end{gathered}
+\end{equation}
+Porém, a frase \textit{``This place is great''} não existe por completo no
+\textit{training set} tornando o termo P(d$\vert$c) da Equação
+\ref{eq:teorema} 0 e impossibilitando o cálculo de probabilidade para essa frase.
+Neste caso, se faz o uso do \textit{Naive Bayes} o qual passa a
+considerar palavras ao invés de frases completas, solucionando o problema de
+frases não encontradas no \textit{training sets}.
 
 \subsection{\textit{Naive Bayes} aplicado ao Teorema}
 
 Bayes como visto, é relacionado com o teorema utilizado para cálculo da
-probabilidade, já a palavra \textit{naive}, ou ingênuo, é relacionada com sua
+probabilidade, já a palavra \textit{naive}, ou ingênuo, é relacionada uma
 outra característica, que é a
 independência entre atributos. Esses, para o aprendizado de máquina, são
 características da informação que estamos classificando. Por exemplo, ao efetuar uma classificação relacionada com medicina, atributos que seriam considerados poderiam ser histórico de doença, altura da pessoa e peso. No caso da análise de sentimentos, os atributos
 são as próprias palavras do texto, ou seja, em sua classificação, ele ignora a
 ordem das palavras e somente considera a frequência na qual elas aparecem.
-Portanto para o \textit{Naive Bayes}:
-\[ P(\textit{This place is great}|Positiva) =\]\[ P(\textit{This}|Positiva) \times
-P(\textit{place}|Positiva) \times P(\textit{is}|Positiva) \times
+Portanto para o \textit{Naive Bayes} o termo P(\textit{This place is
+great}$\vert$ Positiva) visto na Equação \ref{eq:teoremap} é dado pela Equação
+\ref{eq:frasespositivas1}:
+\begin{equation}
+\begin{gathered}
+P(\textit{This place is great}|Positiva) = P(\textit{This}|Positiva)
+\times P(\textit{place}|Positiva) \\ \times P(\textit{is}|Positiva) \times
 P(\textit{great}|Positiva)
-\]
+\label{eq:frasespositivas1}
+\end{gathered}
+\end{equation}
 
-Aonde que, por exemplo, P(\textit{This}$\vert$Positiva) é a quantidade de vezes que a
-palavra \textit{This} foi classificada como positiva em nosso \textit{training
-set}, dividido pelo total de palavras classificadas como positiva:
-\[P(\textit{This}|Positiva) = 1 / 13\]
+A partir da Equação \ref{eq:frasespositivas1} se faz necessário cálcular os
+termos P(\textit{This}$\vert$Positiva),
+P(\textit{place}$\vert$Positiva), P(\textit{is}$\vert$Positiva), P(\textit{great}$\vert$Positiva).
+Aonde que, por exemplo, P(\textit{This}$\vert$Positiva) é a quantidade de vezes
+que a palavra \textit{This} foi classificada como positiva em nosso
+\textit{training set}, dividido pelo total de palavras classificadas como positiva:
 
-Aplicando o mesmo cálculo para as demais palavras da frase obtermos a seguinte
-tabela:
+\begin{equation}
+\begin{gathered}
+P(\textit{This}|Positiva) = \frac{1}{13}
+\label{eq:thispositiva}
+\end{gathered}
+\end{equation}
+
+
+Da mesma forma, a Equação \ref{eq:thispositiva} é aplicada para as demais
+palavras da frase que está sendo classificada obtendo os valores representados
+pela Tabela \ref{tab:probabilidadesnb}:
 \begin{table}[htb]
 \centering
 \renewcommand{\arraystretch}{1.5}% Spread rows out...
@@ -504,17 +565,18 @@ great & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
 
 Como algumas palavras não existem em nosso \textit{training set} para
 determinadas situações, elas acabam tornando o resultado final da multiplicação
-das probabilidades de cada palavra como 0, para evitar que uma única palavra
-invalide uma frase é utilizado \textit{Laplace smoothing}. Neste, é somado
+das probabilidades de cada palavra (Equação \ref{eq:frasespositivas1}) como 0,
+para evitar que uma única palavra invalide uma frase é utilizado \textit{Laplace smoothing}. Neste, é somado
 1 a cada palavra e ao total de palavras, são somadas as quantidades de palavras diferentes do \textit{training set}, que neste caso são
 as seguintes 16 palavras distintas: \textit{``The''}, \textit{``food''},
 \textit{``was"}, \textit{``great"}, \textit{``They"}, \textit{``are"},
 \textit{``horrible!''}, \textit{``I"}, \textit{``love"}, \textit{``here''},
 \textit{``This"}, \textit{``place"}, \textit{``is"}, \textit{``wonderful"},
-\textit{``Forgettable"}, \textit{``experience"}. Neste caso, o cálculo da
-probabilidade da frase de exemplo \textit{``This place is great''} para cada
-classe já aplicado o \textit{Laplace smoothing} é representado pela tabela
-abaixo:
+\textit{``Forgettable"}, \textit{``experience"}. Neste caso, aplicando o
+\textit{Laplace smoothing} para a Tabela \ref{tab:probabilidadesnb} é obtida a
+Tabela \ref{tab:probabilidadesl}.
+
+\newpage
 
 \begin{table}[htb]
 \centering
@@ -529,40 +591,53 @@ is & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
 great & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
 \end{tabular}
 \caption{Tabela de Probabilidades - \textit{Laplace smoothing}.}
-\label{tab:probabilidadesnb}
+\label{tab:probabilidadesl}
 \end{table}
 
-Com a aplicação do \textit{Laplace smoothing} utilizando a tabela
-\ref{tab:probabilidadesnb}, o classificador irá inferir a probabilidade da frase \textit{``This place is great''} ser classificada como
-positiva ou negativa:
-\[ P(Positiva|\textit{This place is great})
-=
-P(\textit{This place is great}|Positiva) \times
-P(Positiva)
-\]
-\[ P(Positiva|\textit{This place is great}) = \frac{1 + 1}{13 + 16} \times
-\frac{1 + 1}{13 + 16} \times \frac{1 + 1}{13 + 16} \times
-\frac{1 + 1}{13 + 16} \times \frac{3}{5}
-\]
-\[ P(Positiva|\textit{This place is great})  = 0.138
-\]
+Utilizando as probabilidades obtidas na Tabela
+\ref{tab:probabilidadesl} sob os termos da Equação \ref{eq:frasespositivas1} o
+classificador obtem a seguinte Equação:
 
-\[ P(Negativa|\textit{This place is great})
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great}) = \frac{1 + 1}{13 + 16} \times
+\frac{1 + 1}{13 + 16} \times \frac{1 + 1}{13 + 16} \times
+\frac{1 + 1}{13 + 16} = 0,000023.
+\label{eq:ppositivaplace}
+\end{gathered}
+\end{equation}
+
+Com o termo P(Positiva $\vert$ \textit{This place is great}) definido através da
+Equação \ref{eq:ppositivaplace}, este é aplicado a Equação \ref{eq:teoreman},
+junto com o termo P(Positiva) definido através da Equação \ref{eq:frasespositivas}, obtendo a probabilidade da frase
+\textit{``This place is great''} ser classificada como positiva através da
+Equação \ref{eq:positiva}:
+
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great})
 =
-P(\textit{This place is great}|Negativa) \times
-P(Negativa)
-\]
-\[  P(Negativa|\textit{This place is great}) = \frac{0 + 1}{5 + 16} \times
-\frac{0 + 1}{5 + 16} \times \frac{0 + 1}{5 + 16} \times
-\frac{0 + 1}{5 + 16} \times \frac{2}{5}
-\]
-\[ P(Negativa|\textit{This place is great}) = 0.0000021
-\]
+0,000023 \times
+0,6 = 0,0000138.
+\label{eq:positiva}
+\end{gathered}
+\end{equation}
+
+Efetuando o mesmo processo para a probabilidade da frase ser negativa, obtemos:
+\begin{equation}
+\begin{gathered}
+P(Negativa|\textit{This place is great})
+=
+0,0000049 \times
+0,4 = 0,00000196.
+\label{eq:negativa}
+\end{gathered}
+\end{equation}
 
 Portanto, a partir dessas duas possibilidade, utilizando o método de
 classificação Naive Bayes para efetuar a análise de sentimentos, ele iria
 classificar a frase ``This place is great'' como positiva por essa probabilidade
-(0.138) ser maior que a probabilidade dessa frase ser negativa (0.0000021).
+(0,0000138) ser maior que a probabilidade dessa frase ser negativa (0,00000196).
 
 
 
