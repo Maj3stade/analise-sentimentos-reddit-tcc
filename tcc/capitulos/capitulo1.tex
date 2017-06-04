@@ -827,10 +827,15 @@ da Equação \ref{eq:vader}:
 \end{gathered}
 \end{equation}
 
-Portanto para a frase \textit{``This place is great''} aonde somente a palavra
-\textit{great} possui pontuação e essa tem o valor de 3,1, ele irá atribuir a
-pontuação final de 0,6249 através da Equação \ref{eq:vaderscore}, considerando
-ela uma frase positiva.
+A frase \textit{``This place is great''} aonde somente a palavra
+\textit{great} possui pontuação e essa tem o valor de 3,1, será atribuida
+pontuação final de 0,6249 através da Equação \ref{eq:vaderscore}.  Caso essa
+pontuação fosse menor que -1 ou maior que 1, essa seria limitada a -1 ou 1
+respectivamente. Para o \ac{VADER}, são consideradas frases negativas aquelas
+com pontuação de -1 até 0,5, frases neutras aquelas com pontuação de -0,5 até
+0,5 e frases positivas aquelas com pontuação 0,5 até 1, portanto a frase
+\textit{``This place is great''} com pontuação 0,6249 seria classificada como
+positiva.
 
 \begin{equation}
 \begin{gathered}
