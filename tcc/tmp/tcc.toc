@@ -13,17 +13,17 @@
 \contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{13}
 \contentsline {chapter}{\numberline {3}M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}{17}
 \contentsline {section}{\numberline {3.1}Naive Bayes}{17}
-\contentsline {subsection}{\numberline {3.1.1}Teorema de Bayes}{17}
-\contentsline {subsection}{\numberline {3.1.2}\textit {Naive Bayes} aplicado ao Teorema}{18}
-\contentsline {section}{\numberline {3.2}\textit {VADER}}{20}
-\contentsline {chapter}{\numberline {4}Frameworks}{22}
-\contentsline {section}{\numberline {4.1}Natural Language Toolkit}{22}
-\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{22}
-\contentsline {section}{\numberline {4.2}Stanford CoreNLP}{23}
-\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{24}
-\contentsline {chapter}{\numberline {5}Rede Social Reddit}{25}
-\contentsline {section}{\numberline {5.1}API}{26}
-\contentsline {chapter}{\numberline {6}Extra\IeC {\c c}\IeC {\~a}o de Dados}{27}
-\contentsline {section}{\numberline {6.1}\textit {Crawler}}{27}
-\contentsline {section}{\numberline {6.2}T\IeC {\'o}picos Selecionados}{29}
-\contentsline {chapter}{Refer{\^e}ncias}{32}
+\contentsline {subsection}{\numberline {3.1.1}Teorema de Bayes}{18}
+\contentsline {subsection}{\numberline {3.1.2}\textit {Naive Bayes} aplicado ao Teorema}{19}
+\contentsline {section}{\numberline {3.2}\textit {VADER}}{21}
+\contentsline {chapter}{\numberline {4}Frameworks}{23}
+\contentsline {section}{\numberline {4.1}Natural Language Toolkit}{23}
+\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{23}
+\contentsline {section}{\numberline {4.2}Stanford CoreNLP}{24}
+\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{25}
+\contentsline {chapter}{\numberline {5}Rede Social Reddit}{26}
+\contentsline {section}{\numberline {5.1}API}{27}
+\contentsline {chapter}{\numberline {6}Extra\IeC {\c c}\IeC {\~a}o de Dados}{28}
+\contentsline {section}{\numberline {6.1}\textit {Crawler}}{28}
+\contentsline {section}{\numberline {6.2}T\IeC {\'o}picos Selecionados}{30}
+\contentsline {chapter}{Refer{\^e}ncias}{33}

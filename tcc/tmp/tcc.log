@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  3 JUN 2017 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  3 JUN 2017 23:12
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1190,12 +1190,18 @@ Overfull \hbox (8.32231pt too wide) in paragraph at lines 393--393
 []\OT1/cmss/bx/n/17.28 3 M[]ETODOS ES-TAT[]ISTICOS E SIMB[]OLICOS APLI-
  []
 
-[17
+
+Underfull \vbox (badness 6348) has occurred while \output is active []
+
+ [17
 
 ]
-Overfull \hbox (0.87251pt too wide) detected at line 470
+Overfull \hbox (0.87251pt too wide) detected at line 488
 [] []
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1203,7 +1209,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [18]
-Overfull \hbox (50.87178pt too wide) in paragraph at lines 532--538
+Overfull \hbox (50.87178pt too wide) in paragraph at lines 550--556
 \OT1/cmr/m/n/12 P(\OT1/cmr/m/it/12 place$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Pos
 itiva), P(\OT1/cmr/m/it/12 is$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positiva), P(\
 OT1/cmr/m/it/12 great$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positiva). Aonde que, 
@@ -1212,25 +1218,31 @@ va)
  []
 
 [19]
-Overfull \hbox (22.01466pt too wide) detected at line 608
+Overfull \hbox (22.01466pt too wide) detected at line 627
 [] []
  []
 
-Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
-n
-although it is yet undefined on input line 646.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 20
  []
 
 [20]
-Overfull \hbox (5.47568pt too wide) in paragraph at lines 670--677
+Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 665.
+
+Overfull \hbox (5.47568pt too wide) in paragraph at lines 688--695
 \OT1/cmr/m/n/12 Como por exem-plo, na frase \OT1/cmr/m/it/12 ``This place is GR
 EAT''\OT1/cmr/m/n/12 , te-mos a pa-la-vra \OT1/cmr/m/it/12 ``GREAT''
  []
 
-) [21]
+[21])
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 22
+ []
+
+[22]
 \openout2 = `capitulos/capitulo2.aux'.
 
  (./capitulos/capitulo2.tex
@@ -1258,12 +1270,7 @@ Overfull \hbox (7.4739pt too wide) in paragraph at lines 44--47
 one, la-bels=None, gaus-
  []
 
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 22
- []
-
-[22
+[23
 
 
 
@@ -1279,8 +1286,12 @@ although it is yet undefined on input line 99.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [23]
-<imagens/corenlp.png, id=98, 758.835pt x 400.49625pt>
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 24
+ []
+
+[24] <imagens/corenlp.png, id=102, 758.835pt x 400.49625pt>
 File: imagens/corenlp.png Graphic file (type png)
 
 <use imagens/corenlp.png>
@@ -1291,7 +1302,7 @@ Overfull \hbox (1.12914pt too wide) in paragraph at lines 105--106
  [][][] 
  []
 
-<imagens/corenlp1.png, id=99, 521.69907pt x 128.73094pt>
+<imagens/corenlp1.png, id=103, 521.69907pt x 128.73094pt>
 File: imagens/corenlp1.png Graphic file (type png)
 
 <use imagens/corenlp1.png>
@@ -1302,16 +1313,16 @@ Overfull \hbox (61.36098pt too wide) in paragraph at lines 116--117
  [][][] 
  []
 
-)
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 24
- []
-
-[24 <./imagens/corenlp.png> <./imagens/corenlp1.png>]
+) [25 <./imagens/corenlp.png> <./imagens/corenlp1.png>]
 \openout2 = `capitulos/capitulo3.aux'.
 
 
-(./capitulos/capitulo3.tex [25
+(./capitulos/capitulo3.tex
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 26
+ []
+
+[26
 
 
 
@@ -1322,16 +1333,11 @@ Overfull \hbox (1.96046pt too wide) in paragraph at lines 52--134
 om/reddit/.
  []
 
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 26
- []
-
-[26]
+[27]
 \openout2 = `capitulos/capitulo4.aux'.
 
  (./capitulos/capitulo4.tex
-<imagens/arquitetura.png, id=110, 475.7775pt x 334.24875pt>
+<imagens/arquitetura.png, id=113, 475.7775pt x 334.24875pt>
 File: imagens/arquitetura.png Graphic file (type png)
 
 <use imagens/arquitetura.png>
@@ -1340,7 +1346,12 @@ Package pdftex.def Info: imagens/arquitetura.png used on input line 18.
 Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
 although it is yet undefined on input line 27.
- [27
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 28
+ []
+
+[28
 
 
 
@@ -1348,12 +1359,7 @@ although it is yet undefined on input line 27.
 Package acronym Info: Label `acro:POJO' newly defined as it shall be overridden
 
 although it is yet undefined on input line 32.
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 28
- []
-
-[28]
+ [29]
 Underfull \hbox (badness 10000) in paragraph at lines 108--108
 [][]$\OT1/cmtt/m/n/10 https : / / www . reddit . com / r / worldnews / comments
  / 36ny58 / brazil _ blogger _ known _ for _
@@ -1386,7 +1392,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 121--121
 
 Underfull \vbox (badness 1867) has occurred while \output is active []
 
- [29]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 30
+ []
+
+[30]
 Underfull \hbox (badness 10000) in paragraph at lines 125--125
 [][]$\OT1/cmtt/m/n/10 https : / / www . reddit . com / r / worldnews / comments
  / 3skpe7 / brazil _ seeks _ to _ copy _ us _
@@ -1452,27 +1463,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 166--166
 58sm / i _ am _ julian _ assange _ founder _ of _
  []
 
-
+[31])
 Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 30
+\OT1/cmr/m/n/10.95 32
  []
 
-[30]) [31] (./tcc.bbl
+[32] (./tcc.bbl
 Underfull \hbox (badness 2384) in paragraph at lines 16--20
 [][]\OT1/cmr/m/n/12 HANCOX, P. J. \OT1/cmr/bx/n/12 A brief his-tory of Na-tu-ra
 l Lan-guage Pro-ces-sing\OT1/cmr/m/n/12 .
  []
 
+[33
 
+
+]) AED: lastpage setting LastPage
 Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 32
+\OT1/cmr/m/n/10.95 34
  []
 
-[32
-
-
-]) AED: lastpage setting LastPage [33] (./tcc.aux
-(./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
+[34] (./tcc.aux (./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
 (./capitulos/capitulo2.aux) (./capitulos/capitulo3.aux)
 (./capitulos/capitulo4.aux))
 
@@ -1509,10 +1519,10 @@ cmtt10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pf
 b><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texl
 ive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2016/t
 exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tcc.pdf (34 pages, 382771 bytes).
+Output written on tcc.pdf (35 pages, 384103 bytes).
 PDF statistics:
- 200 PDF objects out of 1000 (max. 8388607)
- 135 compressed objects within 2 object streams
+ 203 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

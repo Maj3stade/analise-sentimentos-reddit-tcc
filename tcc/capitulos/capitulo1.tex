@@ -393,6 +393,24 @@ problema.
 \chapter{Métodos estatísticos e simbólicos aplicados na análise de sentimentos}
 \label{cap:Classificadores}
 
+Antigamente, para sabermos a opinião de outras pessoas sobre um
+determinado produto, tinhamos que perguntar diretamente. Com a
+popularização da Internet e também de redes sociais, milhares de pessoas
+compartilham para todos as suas opinões sobre produtos, política, serviços e
+demais itens sujeitos a nossa crítica. Porém, muitas vezes essas opiniões acabam
+por ser esquecidas pela dificuldade de se analisar uma grande quantidade de
+textos. Como saber a opinião geral sobre determinado produto em uma seção de
+comentários com mais de 1000 opiniões diferentes? A análise de sentimentos,
+considerada uma tarefa do \ac{NLP}, tem como função identificar e quantificar
+esses sentimentos expressos através de textos.
+
+Neste capítulo serão descritos um método estatístico e um método simbólico
+aplicados na análise de sentimentos. Ambos considerando o uso da língua Inglesa,
+visto que o \textit{Website} analisado (Reddit) possui a maioria de seus
+comentários nessa língua e não foram encontrados métodos que façam uso da língua
+Portuguesa com similar precisão.
+
+
 %Para o \ac{NLP} e também para o campo de estatísticas, classificadores são
 %algorítmos que identificam a qual categoria determinado item pertence. Essa
 %classificação é feita a partir de dados já classificados corretamente, ou seja,
@@ -504,7 +522,7 @@ P(Negativa)
 Porém, a frase \textit{``This place is great''} não existe por completo no
 \textit{training set} tornando o termo P(d$\vert$c) da Equação
 \ref{eq:teorema} 0 e impossibilitando o cálculo de probabilidade para essa frase.
-Neste caso, se faz o uso do \textit{Naive Bayes} o qual passa a
+Neste caso, se faz o uso do \textit{Naive Bayes}, o qual passa a
 considerar palavras ao invés de frases completas, solucionando o problema de
 frases não encontradas no \textit{training sets}.
 
@@ -547,6 +565,8 @@ P(\textit{This}|Positiva) = \frac{1}{13}
 Da mesma forma, a Equação \ref{eq:thispositiva} é aplicada para as demais
 palavras da frase que está sendo classificada obtendo os valores representados
 pela Tabela \ref{tab:probabilidadesnb}:
+
+\newpage
 \begin{table}[htb]
 \centering
 \renewcommand{\arraystretch}{1.5}% Spread rows out...
@@ -576,7 +596,6 @@ as seguintes 16 palavras distintas: \textit{``The''}, \textit{``food''},
 \textit{Laplace smoothing} para a Tabela \ref{tab:probabilidadesnb} é obtida a
 Tabela \ref{tab:probabilidadesl}.
 
-\newpage
 
 \begin{table}[htb]
 \centering
@@ -660,7 +679,6 @@ invés de somente uma pessoa especializada ou uma classificação automática
 através de estatística.
 
 Ele faz uso de cinco regras gerais:
-
 
 \begin{itemize}
   \item Pontuação. O ponto de exclamação (!) aumenta a magnitude da
