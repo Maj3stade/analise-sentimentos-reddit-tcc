@@ -19,7 +19,7 @@ causou uma certa hostilidade por parte das agências fomentadoras de pesquisas.
 Os primeiros pesquisadores eram muitas vezes bilíngues, como por exemplo,
 nativos alemães que imigraram para os Estados Unidos. Acreditava-se que pelo
 fato desses terem conhecimento de ambas as linguas, Ingles e Alemão, eles teriam
-capacidade de desenvolver programas de computadores que efetuariam a tradução 
+capacidade de desenvolver programas de computadores que efetuariam a tradução
 de modo satisfatório. Uma vez que esses encontraram muitas dificuldades,
 ficou claro que o maior problema não era o conhecimento das
 línguas, e sim como expressar esse conhecimento na forma de um programa de
@@ -285,7 +285,7 @@ transição de um verbo para substantivo tem-se:
 \begin{equation}
 \begin{split}
 P(transicao|classe) = \frac{C(classe,transicao)}{C(classe)} \\
-P(SM|VB) = \frac{C(VB,SM)}{C(VB)} = \frac{3000}{12000} = 0,25 
+P(SM|VB) = \frac{C(VB,SM)}{C(VB)} = \frac{3000}{12000} = 0,25
 \end{split}
 \label{eq:transicao}
 \end{equation}
@@ -315,7 +315,7 @@ Pronome     & 0.67        & 0.33  & 0.0    & 0.0     \\ \hline
 \end{table}
 
 A partir das probabilidades calculadas através do Modelo de Markov, é
-utilizado o algoritmo de Viterbi para determinar o caminho mais provável. 
+utilizado o algoritmo de Viterbi para determinar o caminho mais provável.
 
 \begin{equation}
 \begin{split}
@@ -328,7 +328,7 @@ O caminho mais provável é obtido através da Equação \ref{eq:viterbi}, sendo
 essa é aplicada a todas as palavras da frase. Na Equação \ref{eq:viterbi} os
 termos $v_t$, $v_{t-1}$, $a_{ij}$ e $b_j(o_t)$ correspondem respectivamente a
 probabilidade do caminho atual, resultado do caminho anterior, a probabilidade
-de transição e a probabilidade de associação. 
+de transição e a probabilidade de associação.
 Portanto a palavra ``João'', $v_{t-1}$ é representada pelo valor 1, visto
 que essa é a primeira palavra, ou seja, não foram calculados os valores de
 $v_t$ para as palavras anteriores, $a_{ij}$ é a probabilidade de transição entre
@@ -501,7 +501,7 @@ positivas e negativas aparecem no \textit{training set}, sendo determinados
 através das Equações \ref{eq:frasespositivas} e \ref{eq:frasesnegativas}. Neste
 caso, \textit{``The food was great''}, \textit{``I love the food here''}, \textit{``This place is
 wonderful''} são frases positivas e as demais frases ``\textit{They are horrible!}'' e
-``\textit{Forgettable experience}'' são negativas, do conjunto de 5 frases do 
+``\textit{Forgettable experience}'' são negativas, do conjunto de 5 frases do
 \textit{training set}.
 \begin{equation}
 \begin{gathered}
@@ -665,48 +665,178 @@ classificar a frase ``This place is great'' como positiva por essa probabilidade
 O \ac{VADER} é um dicionário e classificador de sentimentos que se baseia em
 regras, portanto, um método de classificação simbólico. Ele é especialmente
 ajustado para funcionar em redes sociais aonde temos um contexto vago e pouca
-quantidade de texto, nesse contexto, ele é extremamente eficaz, podendo se
+quantidade de texto, levando em consideração
+gírias e emoticons, nesse contexto, ele é extremamente eficaz, podendo se
 comparar a classificação feita por humanos \cite{conf/icwsm/HuttoG14}.
 
-Esse método faz uso de um dicionário que foi construído levando em consideração
-gírias e emoticons utilizados em redes sociais. Neste dicionário as palavras
-estão previamente associadas a uma polaridade de sentimento (positivo e
-negativo) e intensidade em uma escala de -4 até +4, como por exemplo, a palavra
-\textit{great} tem a intensidade de 3.1 e \textit{horrible} -2.5. Essa
-associação foi construída utilizando o método de \textit{``wisdom of the
-crowd''} aonde um grupo de pessoas atribuiu os valores para cada palavra ao
-invés de somente uma pessoa especializada ou uma classificação automática
-através de estatística.
+A classificação do sentimento é feita através da separação da frase em palavras
+e para cada palavra da frase é atribuída uma pontuação de intensidade em uma escala de -4 até +4, como por exemplo, a palavra \textit{great} tem a
+intensidade de 3.1 e \textit{horrible} -2.5. Essa pontuação é obtida
+através de um dicionário construído utilizando o método de \textit{``wisdom of
+the crowd''} aonde um grupo de pessoas atribuiu os valores de intensidade para
+cada palavra ao invés uma única pessoa especializada ou uma classificação
+automática através de estatística. Por
+exemplo, a frase \textit{``This place is great''} seria classificada da seguinte forma:
 
-Ele faz uso de cinco regras gerais:
 
+\begin{table}[htb]
+\centering
+\begin{tabular}{l|l|l|l|l|l|l}
+Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+\textit{great}
+\\
+%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+% Substantivo \\
+Intensidade:   &  &   &  & 3,1
+\end{tabular}
+\label{my-label}
+\end{table}
+
+As palavras \textit{``This''}, \textit{``place''} e \textit{``is''},
+respectivamente ``Esse'', ``lugar'' e ``é'' não existem no dicionário pois não
+expressam sentimentos e portanto são desconsideradas. Após, ele
+faz uso do seguinte conjunto de regras para inferir a intensidade do
+sentimento:
 \begin{itemize}
-  \item Pontuação. O ponto de exclamação (!) aumenta a magnitude da
-  intensidade sem modificar a orientação semântica. Como por exemplo,
-  \textit{``This place is great!!!''} é mais intenso que \textit{``This place
-  is great''}.
-  \item Capitalização. Especificamente, uma palavra que é relevante para a
-  análise de sentimentos, quando essa é escrita em letras maiúsculas, é
-  aumentada a magnitude da intensidade do sentimento sem modificar a orientação
-  semântica. Como por exemplo, na frase \textit{``This place is GREAT''}, temos
-  a palavra \textit{``GREAT''} (Ótimo) que está relacionada com o sentimento
-  positivo. Neste caso aonde ela está escrita em letras maiúsculas, ela é mais
-  intensa que \textit{``This place is great''}.
-  \item Advérbios intensificadores. Estes impactam a intensidade do sentimento
-  aumentando ou diminuindo a intensidade do sentimento. Na frase \textit{``This
-  place is extremelly good''} o advérbio \textit{extremelly} (extremamente)
-  aumenta a intensidade do sentimento expresso pela frase (\textit{good} ou
-  bom), enquanto na frase \textit{``This place is marginally good''}, a palavra
-  \textit{``marginally'' ou marginalmente} acaba diminuindo a intensidade do
-  sentimento expresso.
-  \item A palavra \textit{``but''}. Essa palavra indica uma troca no sentimento
-  da frase expressa aonde que o texto seguinte a ela expressa um sentimento mais
-  dominante. Por exemplo, a frase \textit{``This place is great but today, the
-  service was horrible''} convém um sentimento misto.
-  \item Por fim, ao examinar as três palavras anteriores, o método consegue
-  identificar 90\% dos casos aonde uma negação inverte a polaridade de um texto.
-  Como por exemplo, na frase \textit{``This place isn't that great''}, a
-  palavra \textit{great} demonstra um sentimento positivo, porém, ao analisar
-  as três palavras anteriores \textit{``place isn't that''} encontramos uma
-  negação, mudando o sentimento expresso da frase de positivo para negativo.
+\item A primeira regra verifica quando uma palavra com pontuação atribuída, ou
+seja, uma palavra que expressa sentimentos, é escrita em letras maiúsculas.
+  Neste caso, é aumentada a magnitude da intensidade do sentimento sem modificar
+  a orientação semântica, somando 0,733 a intensidade do
+  sentimento caso este tenha intensidade maior que 0 ou subtraído
+  este mesmo valor caso este tenha intensidade menor que 0.
+  \begin{table}[htb]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{GREAT}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & 3,1 \textrightarrow 3,833
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+
+\newpage 
+\item Após, verifica se alguma das três palavras anteriores a uma palavra com
+pontuação atribuída é um advérbio intensificador. Neste caso, estes impactam a
+intensidade do sentimento aumentando ou diminuindo 0,293 conforme o advérbio. 
+  \begin{table}[htb]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{incredibly} & \textit{great}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & Advérbio & 3,1 \textrightarrow 3,393 
+	
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+   
+   
+  \begin{table}[htb]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{somewhat} & \textit{great}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & Advérbio & 3,1 \textrightarrow 2,807
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+   
+
+\item A terceira regra, verifica se a frase contém a palavra \textit{``but''}
+(mas).
+Caso encontrada, essa palavra indica uma troca no sentimento da frase expressa aonde
+que o texto seguinte a ela expressa um sentimento mais dominante. Neste caso,
+o método multiplica a intensidade dos sentimentos expressos até a palavra
+\textit{``but''} por 0,5 e os sentimentos expressos após a palavra
+\textit{``but''} são multiplicados por 1,5.
+
+   
+   \begin{table}[!htbp]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l|l|l}
+	Palavra         & \textit{Great} & \textit{place}      & \textbf{\textit{but}}
+	& \textit{today} & \textit{the}      &
+	\textit{food} & \textit{was}      & \textit{horrible}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade: & 3,1 \textrightarrow 1,55  &   &  &  & & & &  -2,5
+	\textrightarrow -3,75
+	\end{tabular}
+	\label{my-label5}
+   \end{table}
+
+\item Também, verifica se a frase possui pontos de exclamação (!). Estes,
+aumentam a magnitude da intensidade sem modificar a orientação semântica,
+somando 0,292 a cada ponto de exclamação considerando um máximo de 4 pontos de
+exclamação.
+
+ \begin{table}[!htbp]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{great!}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & 3,1 \textrightarrow 3,392
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+   
+
+\item Por fim, a última regra examina as três palavras anteriores,
+identificando 90\% dos casos aonde uma negação inverte a polaridade de um texto.
+Quando encontrada uma negação na frase, é multiplicada a intensidade de cada
+palavra que possui sentimento por -0,74.
+
+ \begin{table}[!htbp]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{wasn't}     
+	&
+	\textit{great}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   & Negação & 3,1 \textrightarrow 2,294
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+
+
 \end{itemize}
+
+Após ter a pontuação de intensidade, o método normaliza essa pontuação através
+da Equação \ref{eq:vader}:
+
+\begin{equation}
+\begin{gathered}
+\text{Pontuação Normalizada}
+=
+\frac{\text{Pontuação}}{\sqrt{\text{Pontuação}^2 + 15}}
+\label{eq:vader}
+\end{gathered}
+\end{equation}
+
+Portanto para a frase \textit{``This place is great''} aonde somente a palavra
+\textit{great} possui pontuação e essa tem o valor de 3,1, ele irá atribuir a
+pontuação final de 0,6249 através da Equação \ref{eq:vaderscore}, considerando
+ela uma frase positiva.
+
+\begin{equation}
+\begin{gathered}
+\text{Pontuação Normalizada}
+=
+\frac{\text{3,1}}{\sqrt{\text{3,1}^2 + 15}} = 0,6249
+\label{eq:vaderscore}
+\end{gathered}
+\end{equation}
