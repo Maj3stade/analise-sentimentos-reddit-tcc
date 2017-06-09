@@ -1,6 +1,24 @@
 \chapter{Frameworks}
 \label{cap:Frameworks}
 
+Para implementação de um \textit{software} que efetue a análise de sentimentos e
+auxilie a categorizar extrair as informações de modo a análisar padrões de
+comportamento, se destacam os seguintes \textit{frameworks}:
+
+\begin{itemize}
+\item \textit{Stanford's Core NLP Suite}.
+\item \textit{Natural Language Toolkit}.
+\item \textit{Apache OpenNLP}.
+\item \textit{Spacy}.
+\end{itemize}
+
+Essa seção visa analisar os métodos
+disponíveis nestes para a análise de sentimentos a fim de encontrar \textit{frameworks}
+que possibilitem a utilização dos métodos apresentados no
+Capítulo \ref{cap:Classificadores} e também possibilitam atender outras
+necessidades do processamento de linguagem natural.
+
+
 \section{Natural Language Toolkit}
 
 O \ac{NLTK} é um \textit{Framework} para Python
@@ -21,8 +39,7 @@ e modelos já treinados incluindo:
 \subsection{Análise de Sentimentos}
 
 Para a análise de sentimentos, o \ac{NLTK} já possui implementado os três
-classificadores citados anteriormente, \textit{Naive Bayes},
-\ac{MaxEnt} e também \ac{VADER}.
+classificadores citados anteriormente, \textit{Naive Bayes} e \ac{VADER}.
 
 Podemos utilizar o classificador Naive Bayes a partir da classe
 
@@ -34,36 +51,6 @@ Podemos utilizar o classificador Naive Bayes a partir da classe
   \item \textit{most\_informative\_features(n=100)} - A partir de um
   classificador treinado, retorna os atributos mais relevantes.
   \item \textit{train(trainingset)} - Treina um classificador a partir de um \textit{training set}.
-\end{itemize}
-
-Podemos utilizar o classificador \ac{MaxEnt} a partir do módulo
-\textbf{nltk.classify.maxent} através dos seguintes métodos:
-
-\begin{itemize}
-  \item \textit{train(train\_toks, algorithm=None, trace=3,
-  encoding=None, labels=None, gaussian\_prior\_sigma=0, **cutoffs)} - Treina um
-  classificador \ac{MaxEnt} a partir de um \textit{training set}.
-  \begin{itemize}
-    \item \textit{train\_toks} - \textit{Training set}.
-  \item \textit{algorithm} - Algorítmo a ser usado para treinar o classificador. 
-%   Pode receber: \textit{Generalized Iterative Scaling ('GIS')}, \textit{Improved
-%   Iterative Scaling ('IIS')} ou LM-BFGS ('megam'). O algorítmo utilizado
-%   por padrão é IIS.
-  \item \textit{trace} - Nível de detalhe utilizado no log.
-  \item \textit{encoding}
-  \item \textit{labels} - Uma lista de possíveis rótulos, se nenhuma for
-  especificada, todos os labels do \textit{training set} serão utilizados.
-  \item \textit{gaussian\_prior\_sigma=0} - Somente utilizado no LM-BFGS.
-  \item \textit{cutoffs} - Argumentos que especificam condições em que o
-  processo será terminado.
-  \end{itemize}
-\item \textit{classify(featureset)} - Classifica a partir de um conjunto de
-  atributos.
-\item \textit{explain(featureset, columns=4)} - Mostra uma tabela demonstrando
-os efetiso de cada atributo e como eles combinam para determinar a probabilidade
-de cada rótulo.
-\item \textit{show\_most\_informative\_features(n=10, show='all')} - A partir de
-um classificador treinado, retorna os atributos mais relevantes.
 \end{itemize}
 
 Para utilização do \ac{VADER} é utilizada a classe
@@ -100,7 +87,7 @@ modelo de rede neural construído em cima de estruturas gramaticais chamado de
 banco de dados que possui 215.154 orações distribuidas em 11.855 árvores de
 frases com sentimentos já classificados.
 
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
  \centering
  \includegraphics[height=225px]{imagens/corenlp.png}
  \caption{Frase já classificada disponível no Sentiment Treebank}
@@ -109,9 +96,9 @@ frases com sentimentos já classificados.
 
 A sua utilização pode ser feita de diversas formas, como linha de comando,
 através de um servidor \textit{web} e através de sua API java:
+\newpage
 
-
-\begin{figure}[htbp]
+\begin{figure}[!htbp]
  \centering
  \includegraphics[height=120px]{imagens/corenlp1.png}
  \caption{Exemplo de implementação}

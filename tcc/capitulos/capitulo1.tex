@@ -26,21 +26,23 @@ línguas, e sim como expressar esse conhecimento na forma de um programa de
 computador \cite{history}.
 
 Para que um computador seja capaz de interpretar uma
-língua, necessitamos antes entender como nós efetuamos essa
+língua, primariamente necessitamos compreender como nós efetuamos essa
 interpretação.
 Por isso, uma parte considerável do Processamento de Linguagem Natural está apoiado na área de Linguística.
 
 \section{Linguística}
 
-O objetivo da Linguística é compreender como os humanos adquirem, produzem e
-entendem as diversas línguas, ou seja, a forma como conversamos, a nossa
+O objetivo da Linguística é compreender como os seres humanos adquirem, produzem
+e entendem as diversas línguas, ou seja, a forma como conversamos, a nossa
 escrita e outras mídias de comunicação \cite{manningschutze1999}.
 
 Na linguagem tanto escrita, como na falada, existem regras que são utilizadas
 para estruturar as expressões. Uma série de dificuldades no Processamento de
 Linguagem Natural são ocasionadas pelo fato de que as pessoas constantemente
 mudam essas regras para satisfazerem suas necessidades de comunicação
-\cite{manningschutze1999}. Uma vez que as regras são constantemente modificadas pelo loucutor, se torna extremamente difícil a criação de um software ou hardware efetue a interpretação de uma língua.
+\cite{manningschutze1999}. Uma vez que as regras são constantemente modificadas
+pelo locutor, se torna extremamente difícil a criação de um software ou hardware
+que efetue a interpretação de uma língua.
 
 
 % \subsection{Sintaxe e Semântica}
@@ -68,29 +70,29 @@ desenvolvidos durante a segunda guerra mundial, para a solução de problemas
 Linguísticos \cite{shannon48}.
 Porém, no ano de 1957, Chomsky publicou o trabalho intitulado de
 \textit{``Syntactic Structures''} onde descreve a
-teoria da gramática gerativa, que considera a gramática como um conjunto de regras. Essa abordagem através de um
-conjunto de regras, ao invés de um modelo matemático, entra em conflito com os
-trabalhos anteriores, criando duas comunidades no campo da Linguística. Como
-reflexo dessas duas comunidades, a área de \ac{NLP} que crescia em paralelo a
-linguística também foi dividida em duas áreas. A primeira dessas áreas que fazia
-uso de métodos baseados em regras (simbólica) e a segunda que fazia o uso de
-métodos quantitativos (estatísticas).
+teoria da gramática gerativa, que é uma teoria que considera a
+gramática como um conjunto de regras. Essa abordagem através de um conjunto de
+regras, ao invés de um modelo matemático, entra em conflito com os trabalhos
+anteriores, criando duas comunidades no campo da Linguística. Como reflexo
+dessas duas comunidades, a área de \ac{NLP} que crescia em paralelo, também foi
+dividida em duas áreas. A primeira dessas áreas que fazia uso de métodos
+baseados em regras (simbólica) e a segunda que fazia o uso de métodos quantitativos (estatísticas).
 
 
 Nesta seção será apresentado um exemplo de método simbólico e de um método
 estatístico.
-Destaca-se que essa descrição apresenta como principal objetivo
+Destaca-se que essa descrição apresenta como objetivo, apenas
 diferenciar ambas as classes de métodos, através de seus requisitos e forma de execução.
 Destaca-se ainda que os métodos apresentados nesta seção não são utilizados na
-análise de sentimentos, sendo que os métodos específicos para
-identificação de sentimentos serão descritos no Capítulo \ref{cap:Classificadores}.
+análise de sentimentos, sendo que os métodos específicos para essa
+identificação serão descritos no Capítulo \ref{cap:Classificadores}.
 
 
 \subsection{Método Simbólico}
 O método simbólico ou racionalista está
 baseado no campo da Linguística e faz o uso da manipulação dos símbolos,
-significados e das regras de um texto. Um exemplo de método simbólico é o
-método de Brill \cite{Brill:1992:SRP:974499.974526}. Por exemplo, no método de
+significados e das regras de um texto. Um exemplo simples de um método simbólico
+é o método de Brill \cite{Brill:1992:SRP:974499.974526}. Por exemplo, no método de
 Brill a frase ``João pintou a casa de branco'', será separada em palavras que
 serão classificadas através de um dicionário pré-definido, como:
 
@@ -142,7 +144,7 @@ regras, ou ainda, regras derivadas dessas:
   \textbf{C} então a sua classificação deverá ser mudada para \textbf{B}. Por
   exemplo, se uma palavra \textbf{A} (branco no exemplo) é um adjetivo e uma das
   duas palavras anteriores é uma preposição (``de'' no contexto \textbf{C}
-  ), mude para sua classificação para substantivo (classificação \textbf{B}).
+  ), mude a sua classificação para um substantivo (classificação \textbf{B}).
   
   \[\overbrace{\text{João}}^\text{Substantivo}
   \overbrace{\text{pintou}}^\text{Verbo}
@@ -202,8 +204,8 @@ set}, as palavras ``João'', ``comprou'' e ``carro'' seriam classificadas como
 substantivo, verbo e substantivo, respectivamente. Já a palavra ``um'' apresenta uma ambiguidade uma vez que pode
 ser classificada como um artigo (ART), ou um substantivo (SM) ou um pronome
 (PRO).
-A Figura \ref{fig:markov} representa o conjunto de possibilidades que o
-classificador apresenta para uma classificação completa da frase.
+A Figura \ref{fig:markov} ilustra o conjunto de possibilidades criadas pelo
+classificador para a classificação completa da frase.
 
 \begin{figure}[htbp]
 \centering
@@ -213,10 +215,11 @@ classificador apresenta para uma classificação completa da frase.
 \end{figure}
 
 A idéia central da utilização de Modelos de Markov é
-escolher, entre esses caminhos (Figura \ref{fig:markov}), pelo caminho de maior
-probabilidade. Para tanto, se faz necessário calcular a probabilidade de todos
+escolher, entre os caminhos possíveis (Figura \ref{fig:markov}), o caminho
+de maior probabilidade. Para tanto, se faz necessário calcular a probabilidade de todos
 os caminhos através de um Modelo de Markov. Após, utiliza-se o
-Algoritmo de Viterbi para definir qual caminho com maior probabilidade.
+Algoritmo de Viterbi para definir qual o caminho com maior probabilidade
+\cite{manningschutze1999}.
 
 O Modelo de Markov irá utilizar-se do \textit{training set} para inferir a
 classificação da palavra ``um''. Por exemplo, considerando-se um
@@ -404,11 +407,24 @@ comentários com mais de 1000 opiniões diferentes? A análise de sentimentos,
 considerada uma tarefa do \ac{NLP}, tem como função identificar e quantificar
 esses sentimentos expressos através de textos.
 
-Neste capítulo serão descritos um método estatístico e um método simbólico
-aplicados na análise de sentimentos. Ambos considerando o uso da língua Inglesa,
+Outros possíveis métodos de análise de sentimentos através de aprendizado de
+máquina são \ac{SVM} e \ac{MaxEnt}, os quais possuem
+performance similar ao Naive Bayes \cite{domingos97naivebayes}.
+
+
+Neste capítulo serão descritos um método estatístico, Naive Bayes e um método
+simbólico, \ac{VADER}, aplicados na análise de sentimentos. Outros possíveis
+métodos estatísticos para a análise de sentimentos são \ac{SVM} e \ac{MaxEnt},
+os quais possuem performance similar ao Naive Bayes \cite{Pang:2002:TUS:1118693.1118704}. O método simbólico
+\ac{VADER} foi selecionado pois este, segundo seus criadores, apresenta
+performance superior aos métodos já existentes \cite{conf/icwsm/HuttoG14}.
+
+Ambos métodos selecionados consideram o uso da língua Inglesa,
 visto que o \textit{Website} analisado (Reddit) possui a maioria de seus
 comentários nessa língua e não foram encontrados métodos que façam uso da língua
 Portuguesa com similar precisão.
+
+
 
 
 %Para o \ac{NLP} e também para o campo de estatísticas, classificadores são
@@ -566,7 +582,6 @@ Da mesma forma, a Equação \ref{eq:thispositiva} é aplicada para as demais
 palavras da frase que está sendo classificada obtendo os valores representados
 pela Tabela \ref{tab:probabilidadesnb}:
 
-\newpage
 \begin{table}[htb]
 \centering
 \renewcommand{\arraystretch}{1.5}% Spread rows out...
@@ -717,7 +732,6 @@ seja, uma palavra que expressa sentimentos, é escrita em letras maiúsculas.
 	\label{my-label}
    \end{table}
 
-\newpage 
 \item Após, verifica se alguma das três palavras anteriores a uma palavra com
 pontuação atribuída é um advérbio intensificador. Neste caso, estes impactam a
 intensidade do sentimento aumentando ou diminuindo 0,293 conforme o advérbio. 

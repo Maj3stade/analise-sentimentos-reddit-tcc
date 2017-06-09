@@ -18,9 +18,9 @@
 \contentsline {section}{\numberline {3.2}\textit {VADER}}{21}
 \contentsline {chapter}{\numberline {4}Frameworks}{24}
 \contentsline {section}{\numberline {4.1}Natural Language Toolkit}{24}
-\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{24}
+\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{25}
 \contentsline {section}{\numberline {4.2}Stanford CoreNLP}{25}
-\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{26}
+\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{25}
 \contentsline {chapter}{\numberline {5}Rede Social Reddit}{27}
 \contentsline {section}{\numberline {5.1}API}{28}
 \contentsline {chapter}{\numberline {6}Extra\IeC {\c c}\IeC {\~a}o de Dados}{29}
