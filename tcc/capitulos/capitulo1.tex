@@ -228,9 +228,16 @@ substantivos aonde 150 são a palavra ``um''; 10
 são a palavra ``João''; 50 são a palavra ``carro''; 20000 artigos aonde 500 são
 a palavra ``um''; 12000 verbos aonde 50 são a palavra ``comprou''; 15000
 pronomes aonde 50 são a palavra ``um''. Neste caso, a probabilidade da palavra
-ser um substantivo é dada pela Equação \ref{eq:associacao}, onde no
-\textit{training set} temos 150 instâncias da palavra ``um'' classificadas como
-substantivo e um total de 10000 substantivos.
+``um'' ser um substantivo é dada pela Equação \ref{eq:associacao}, uma vez que
+no \textit{training set} temos 150 instâncias da palavra ``um'' classificadas como
+substantivo e um total de 10000 substantivos. Ou seja, a probabilidade de ``um'' ser um substantivo é
+de 0,015. A Equação \ref{eq:associacao} também é aplicada para as demais
+possíveis classes da palavra ``um'', neste caso, pronome ou artigo. Por exemplo, a
+probabilidade da palavra ``um'' ser um pronome seria 0,0033 e a probabilidade da palavra ``um'' ser um artigo seria 0,025. Esse
+cálculo de probabilidade é realizado para todas as palavras da frase que está
+sendo classificada. Na Tabela \ref{tabela:associacao} tem-se os resultados
+obtidos para todas as palavras da frame ``João comprou um carro''.
+
 \begin{equation}
 \begin{split}
 P(palavra|classe) = \frac{C(classe,palavra)}{C(classe)}  \\
@@ -239,13 +246,7 @@ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0,015.
 \label{eq:associacao}
 \end{equation}
 
-Desta forma tem-se que a probabilidade de ``um'' ser um substantivo é de 0,015.
-A Equação \ref{eq:associacao} também é aplicada para as demais classes,
-neste caso, pronome ou artigo. Por exemplo, a probabilidade da palavra ``um'' ser um pronome
-seria 0,0033 e a probabilidade da palavra ``um'' ser um artigo seria 0,025. Esse
-cálculo de probabilidade é realizado para todas as palavras da frase que está
-sendo classificada. Na Tabela \ref{tabela:associacao} tem-se os resultados
-obtidos para todas as palavras da frame ``João comprou um carro''.
+Desta forma tem-se que 
 
 \begin{table}[htb]
 \centering
@@ -268,12 +269,12 @@ probabilidade de transição de uma classe para a outra. Neste caso, o
 \begin{itemize}
   \item De 20000 frases, 2500 iniciam com um substantivo, 5000 iniciam com um
   verbo, 5000 iniciam com um artigo e 5000 iniciam com um pronome.
-  \item De 10000 substantivos, 10000
+  \item De 10000 substantivos, os 10000
   são seguidos por verbos.
   \item De 12000 verbos, 3000 são seguidos por um substantivo, 2000
   são seguidos por um outro verbo, 5000 são seguidos por um artigo e 2000 são
   seguidos por um pronome.
-  \item De 20000 artigos, 20000 são seguidos por um substantivo.
+  \item De 20000 artigos, os 20000 são seguidos por um substantivo.
   \item De 15000 pronomes, 10000 são seguidos por um substantivo e 5000 são
   seguidos por um verbo.
   
@@ -281,9 +282,8 @@ probabilidade de transição de uma classe para a outra. Neste caso, o
 \end{itemize}
 
 Neste caso, a probabilidade de transição de um verbo para um substantivo é dada
-pela Equação \ref{eq:transicao}, onde no \textit{training set} existem 12000
-verbos, os quais 3000 são seguidos por um substantivo, desta forma para a
-transição de um verbo para substantivo tem-se:
+pela Equação \ref{eq:transicao}, uma vez que no \textit{training set} tem-se
+12000 verbos, os quais 3000 são seguidos por um substantivo.
 
 \begin{equation}
 \begin{split}
@@ -297,8 +297,8 @@ Da mesma forma, a probabilidade de transição é cálculada para todas as
 demais classes. Por exemplo, a probabilidade de
 transição de um verbo para outro verbo é 0,17, de um verbo para um artigo é 0,42
 e de um verbo para um pronome é 0,17. Também, a Equação \ref{eq:transicao} é
-utilizada para o cálculo da probabilidade da frase iníciar com determinada
-classe.
+utilizada também para o cálculo da probabilidade da frase iníciar com
+determinada classe.
 A Tabela \ref{tabela:transicao} tem-se a probabilidade de transição para todas
 as classes do \textit{training set} de exemplo.
 
@@ -318,7 +318,17 @@ Pronome     & 0.67        & 0.33  & 0.0    & 0.0     \\ \hline
 \end{table}
 
 A partir das probabilidades calculadas através do Modelo de Markov, é
-utilizado o algoritmo de Viterbi para determinar o caminho mais provável.
+utilizado o algoritmo de Viterbi para determinar o caminho mais provável. O
+caminho mais provável é obtido através da Equação \ref{eq:viterbi}, sendo que
+essa é aplicada a todas as palavras da frase. Na Equação \ref{eq:viterbi} os
+termos $v_t$, $v_{t-1}$, $a_{ij}$ e $b_j(o_t)$ correspondem, respectivamente, o
+caminho mais provável atual, o caminho mais provável anterior, a probabilidade
+de transição e a probabilidade de associação.
+Portanto a palavra ``João'', $v_{t-1}$ é representada pelo valor 1, visto
+que essa é a primeira palavra da frase: $a_{ij}$ é a probabilidade de transição entre
+``Início'' e um substantivo (Tabela \ref{tabela:transicao}) e $b_j(o_t)$ é a
+probabilidade de associação da palavra João com substantivo (Tabela
+\ref{tabela:associacao}). Desta forma tem-se que $v_t$ para a palavra João é:
 
 \begin{equation}
 \begin{split}
@@ -327,17 +337,7 @@ v_t(j) = v_{t-1} a_{ij} b_j(o_t)
 \label{eq:viterbi}
 \end{equation}
 
-O caminho mais provável é obtido através da Equação \ref{eq:viterbi}, sendo que
-essa é aplicada a todas as palavras da frase. Na Equação \ref{eq:viterbi} os
-termos $v_t$, $v_{t-1}$, $a_{ij}$ e $b_j(o_t)$ correspondem respectivamente a
-probabilidade do caminho atual, resultado do caminho anterior, a probabilidade
-de transição e a probabilidade de associação.
-Portanto a palavra ``João'', $v_{t-1}$ é representada pelo valor 1, visto
-que essa é a primeira palavra, ou seja, não foram calculados os valores de
-$v_t$ para as palavras anteriores, $a_{ij}$ é a probabilidade de transição entre
-``Início'' e um substantivo (Tabela \ref{tabela:transicao}) e $b_j(o_t)$ é a
-probabilidade de associação da palavra João com substantivo (Tabela
-\ref{tabela:associacao}). Desta forma tem-se que $v_t$ para a palavra João é:
+
 
 \begin{equation}
 \begin{split}
@@ -347,6 +347,7 @@ v_t(j) = 1 * 0,125 * 0,001 = 0,000125.
 \end{equation}
 
 Já para a palavra ``comprou'' tem-se:
+
 \begin{equation}
 \begin{split}
 v_t(j) = 0,000125 * 1 * 0,0042 = 0,000000525.
@@ -354,24 +355,19 @@ v_t(j) = 0,000125 * 1 * 0,0042 = 0,000000525.
 \label{eq:comprou}
 \end{equation}
 
-Aonde além das probabilidades de transição e associação respecitvamente
-retirados das Tabelas \ref{tabela:transicao} e \ref{tabela:associacao}, $v_{t-1}$ é representado pelo cálculo do
-caminho anterior, ou seja, 0,000125. Ao efetuar o cálculo de todos os caminhos,
-para determinar qual a classificação correta de uma palavra, é escolhido o caminho que tem maior probabilidade, no
-caso apresentado, a palavra ``um'' é classificada como artigo.
+Onde os valores 1 e 0,0042 são as probabilidades de transição (Tabela
+\ref{tabela:transicao}) e associação (Tabela \ref{tabela:associacao}) e
+0,000125 é o caminho mais provável anterior (Equação \ref{eq:viterbi}).
+Após efetuar o cálculo de todos os caminhos, é escolhido o caminho que tem maior
+probabilidade, sendo que neste caso a palavra ``um'' é classificada como
+artigo.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[height=180px]{imagens/markov2.png}
-\caption{Caminhos já decididos de classificação}
+\caption{Caminhos definidos para a classificação pelo Algoritmo de Viterbi}
 \label{fig:markov2}
 \end{figure}
-
-Como visto, o método simbólico para resolver problemas de Processamento de
-Linguagem Natural faz uso da criação de regras baseadas no conhecimento humano,
-enquanto o método estatístico, decide através de cálculos probabilísticos
-apoiados em estatísticas de um banco de dados para a resolução correta do
-problema.
 
 
 % Uma maneira de diferenciarmos os dois métodos é através do problema de
@@ -400,12 +396,12 @@ Antigamente, para sabermos a opinião de outras pessoas sobre um
 determinado produto, tinhamos que perguntar diretamente. Com a
 popularização da Internet e também de redes sociais, milhares de pessoas
 compartilham para todos as suas opinões sobre produtos, política, serviços e
-demais itens sujeitos a nossa crítica. Porém, muitas vezes essas opiniões acabam
-por ser esquecidas pela dificuldade de se analisar uma grande quantidade de
-textos. Como saber a opinião geral sobre determinado produto em uma seção de
-comentários com mais de 1000 opiniões diferentes? A análise de sentimentos,
-considerada uma tarefa do \ac{NLP}, tem como função identificar e quantificar
-esses sentimentos expressos através de textos.
+demais assuntos. Porém, muitas vezes essas opiniões acabam
+por ser esquecidas devido a dificuldade de se analisar uma grande quantidade de
+textos. De fato, uma das maiores dificuldades reside em como obter a opinião
+geral sobre determinado produto em uma seção de comentários com mais de 1000
+opiniões diferentes. Dentro dessa contexto, a análise de sentimentos,
+considerada uma tarefa do \ac{NLP}, tem como função identificar e quantificar esses sentimentos expressos através de textos.
 
 Outros possíveis métodos de análise de sentimentos através de aprendizado de
 máquina são \ac{SVM} e \ac{MaxEnt}, os quais possuem
@@ -419,10 +415,10 @@ os quais possuem performance similar ao Naive Bayes \cite{Pang:2002:TUS:1118693.
 \ac{VADER} foi selecionado pois este, segundo seus criadores, apresenta
 performance superior aos métodos já existentes \cite{conf/icwsm/HuttoG14}.
 
-Ambos métodos selecionados consideram o uso da língua Inglesa,
+Ambos métodos selecionados serão descritos para o uso da língua Inglesa,
 visto que o \textit{Website} analisado (Reddit) possui a maioria de seus
-comentários nessa língua e não foram encontrados métodos que façam uso da língua
-Portuguesa com similar precisão.
+comentários em língua Inglesa. Além disso, não foram encontrados métodos que
+façam uso da língua Portuguesa com similar precisão.
 
 
 
@@ -435,12 +431,10 @@ Portuguesa com similar precisão.
 \section{Naive Bayes}
 
 O Naive Bayes é um método estatístico para a classificação o qual podemos
-aplicar para a análise de sentimento. Ele faz uso do teorema de Bayes para
-que a partir de um \textit{training set} se possa inferir uma classificação.
-
-Por exemplo, precisamos determinar se a seguinte frase demonstra um sentimento
-negativo ou positivo: ``This place is great.'', como este método faz uso de um
-\textit{training set} para a classificação, será considerado o seguinte \textit{training set} hipotético:
+aplicar para a análise de sentimento. Esse faz o uso do teorema de Bayes e um
+\textit{training set} para inferir a classificação de uma frase. Por exemplo,
+precisamos determinar se a frase ``This place is great.'' demonstra um
+sentimento negativo ou positivo. 
 
 \begin{table}[htb]
 \centering
@@ -457,16 +451,15 @@ Forgettable experience  & Negativa     \\ \hline
 \label{tab:trainingsetnb}
 \end{table}
 
-A partir do \textit{training set} representado pela tabela
-\ref{tab:trainingsetnb} o método irá calcular a probabilidade da frase ``This
-place is great'' ser positiva e também a possibilidade dela ser uma frase
-negativa e a partir dessas duas possibilidades, será escolhida a maior.
-
-
-\subsection{Teorema de Bayes}
+A partir do \textit{training set} hipotético (Tabela
+\ref{tab:trainingsetnb}) o método irá calcular a probabilidade da frase ``This
+place is great'' ser positiva e também de ser negativa sendo que a partir dessas
+duas possibilidades, será escolhida a de maior probabilidade.
 
 Para cálcular a probabilidade da frase ``This place is great'' pertencer a cada categoria
-utilizando o teorema da Bayes, é aplicada a Equação \ref{eq:teorema}:
+é utilizado o teorema de Bayes \cite{manningschutze1999}, através da Equação
+\ref{eq:teorema}.
+
 \begin{equation}
 \begin{gathered}
 P(c|d) = \frac{P(d|c) \times P(c)}{P(d)} \\
@@ -474,25 +467,38 @@ P(c|d) = \frac{P(d|c) \times P(c)}{P(d)} \\
 \end{gathered}
 \end{equation}
 
-Os termos da Equação \ref{eq:teorema} são determinados da seguinte forma:
-\begin{itemize}
-  \item P(c$\vert$d) é a probabilidade de \textbf{d} pertencer a classe
-  \textbf{c}. Ou seja, a probabilidade de \textit{``This place is great''} ser
-  uma frase positiva ou negativa.
-  \item P(d$\vert$c) é a probabilidade da classe \textbf{c} ser \textbf{d}. Ou
-  seja, dentre todas as frases negativas ou positivas, a probabilidade de
-  uma frase ser \textit{``This place is great''}.
-  \item P(c) é a probabilidade da classe \textbf{c}. Ou seja, a frequência que
-  frases negativas ou positivas aparecem em nosso \textit{training
-  set}.
-  \item P(d) é a probabilidade de \textbf{d}. Ou seja, a frequência que
-  a frase \textit{``This place is great''} aparece em nosso \textit{training
-  set}.
-\end{itemize}
+\begin{equation}
+\begin{gathered}
+P(Negativa|\textit{This place is great})
+=
+\frac{P(\textit{This place is great}|Negativa) \times
+P(Negativa)}{\textit{This place is great}}
+\label{eq:teoreman1}
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great})
+=
+\frac{P(\textit{This place is great}|Positiva) \times
+P(Positiva)}{\textit{This place is great}}
+\label{eq:teoremap1}
+\end{gathered}
+\end{equation}
 
-Como ambas as Equações terão como divisor P(d), este é removido da equação, tendo como
-comparação entre as probabilidades negativas e positivas as Equações
-\ref{eq:teoreman} e \ref{eq:teoremap}:
+
+Onde o termo P(c$\vert$d) é a probabilidade da frase \textbf{d} pertencer a
+classe \textbf{c}. Ou seja, a probabilidade de \textit{``This place is great''} ser
+  uma frase positiva ou negativa. O Termo P(d$\vert$c) é a probabilidade da
+  classe \textbf{c} ser a frase \textbf{d}. Ou seja, dentre todas as frases
+  negativas ou positivas, a probabilidade de uma frase ser \textit{``This place
+  is great''}. Já P(c) é a probabilidade da classe \textbf{c}. Ou seja, a frequência que
+  frases negativas ou positivas aparecem em nosso \textit{training
+  set}. E, por fim, P(d) é a probabilidade de \textbf{d}. Ou seja, a frequência que
+  a frase \textit{``This place is great''} aparece em nosso \textit{training
+  set}. Como ambas as Equações \ref{eq:teoreman1} e \ref{eq:teoremap1} terão
+  como divisor P(d), este pode ser simplificado resultando nas equações
+  \ref{eq:teoreman} e \ref{eq:teoremap}.
 \begin{equation}
 \begin{gathered}
 P(Negativa|\textit{This place is great})
@@ -517,8 +523,8 @@ positivas e negativas aparecem no \textit{training set}, sendo determinados
 através das Equações \ref{eq:frasespositivas} e \ref{eq:frasesnegativas}. Neste
 caso, \textit{``The food was great''}, \textit{``I love the food here''}, \textit{``This place is
 wonderful''} são frases positivas e as demais frases ``\textit{They are horrible!}'' e
-``\textit{Forgettable experience}'' são negativas, do conjunto de 5 frases do
-\textit{training set}.
+``\textit{Forgettable experience}'' são negativas.
+
 \begin{equation}
 \begin{gathered}
 P(Positiva)
@@ -535,25 +541,18 @@ P(Negativa)
 \label{eq:frasesnegativas}
 \end{gathered}
 \end{equation}
-Porém, a frase \textit{``This place is great''} não existe por completo no
-\textit{training set} tornando o termo P(d$\vert$c) da Equação
-\ref{eq:teorema} 0 e impossibilitando o cálculo de probabilidade para essa frase.
-Neste caso, se faz o uso do \textit{Naive Bayes}, o qual passa a
-considerar palavras ao invés de frases completas, solucionando o problema de
-frases não encontradas no \textit{training sets}.
+Uma vez que a frase \textit{``This place is great''} não existe por completo no
+\textit{training set}, tem-se que o termo P(d$\vert$c) da Equação
+\ref{eq:teoreman} e \ref{eq:teoremap} é igual a zero (0) (impossibilitando o
+cálculo de probabilidade para essa frase). Neste caso, se faz o uso do
+\textit{Naive Bayes}, o qual passa a considerar as palavras ao invés de frases
+completas, isso elimina o problema com frases que não se
+encontram no \textit{training sets}. Neste caso, considera-se somente a
+fraquência que cada palavra aparece em uma frase positiva e em uma negativa.
+Portanto para o \textit{Naive Bayes} o termo $P(\textit{This place is
+great}|Positiva)$ visto na Equação \ref{eq:teoremap} é dado pela Equação
+\ref{eq:frasespositivas1}.
 
-\subsection{\textit{Naive Bayes} aplicado ao Teorema}
-
-Bayes como visto, é relacionado com o teorema utilizado para cálculo da
-probabilidade, já a palavra \textit{naive}, ou ingênuo, é relacionada uma
-outra característica, que é a
-independência entre atributos. Esses, para o aprendizado de máquina, são
-características da informação que estamos classificando. Por exemplo, ao efetuar uma classificação relacionada com medicina, atributos que seriam considerados poderiam ser histórico de doença, altura da pessoa e peso. No caso da análise de sentimentos, os atributos
-são as próprias palavras do texto, ou seja, em sua classificação, ele ignora a
-ordem das palavras e somente considera a frequência na qual elas aparecem.
-Portanto para o \textit{Naive Bayes} o termo P(\textit{This place is
-great}$\vert$ Positiva) visto na Equação \ref{eq:teoremap} é dado pela Equação
-\ref{eq:frasespositivas1}:
 \begin{equation}
 \begin{gathered}
 P(\textit{This place is great}|Positiva) = P(\textit{This}|Positiva)
@@ -563,12 +562,13 @@ P(\textit{great}|Positiva)
 \end{gathered}
 \end{equation}
 
-A partir da Equação \ref{eq:frasespositivas1} se faz necessário cálcular os
+A partir da Equação \ref{eq:frasespositivas1} é necessário calcular os
 termos P(\textit{This}$\vert$Positiva),
 P(\textit{place}$\vert$Positiva), P(\textit{is}$\vert$Positiva), P(\textit{great}$\vert$Positiva).
-Aonde que, por exemplo, P(\textit{This}$\vert$Positiva) é a quantidade de vezes
-que a palavra \textit{This} foi classificada como positiva em nosso
-\textit{training set}, dividido pelo total de palavras classificadas como positiva:
+O termo P(\textit{This}$\vert$Positiva) é calculado pela razão entre a
+quantidade de vezes que a palavra \textit{This} foi classificada como positiva em nosso
+\textit{training set}, e o total de palavras classificadas como positiva
+(Equação \ref{eq:thispositiva}).
 
 \begin{equation}
 \begin{gathered}
@@ -578,9 +578,9 @@ P(\textit{This}|Positiva) = \frac{1}{13}
 \end{equation}
 
 
-Da mesma forma, a Equação \ref{eq:thispositiva} é aplicada para as demais
-palavras da frase que está sendo classificada obtendo os valores representados
-pela Tabela \ref{tab:probabilidadesnb}:
+Da mesma forma, a Equação \ref{eq:thispositiva} deve ser aplicada para as demais
+palavras da frase \textit{``This place is great''}, obtendo-se os valores
+apresentados na Tabela \ref{tab:probabilidadesnb}.
 
 \begin{table}[htb]
 \centering
@@ -598,16 +598,13 @@ great & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
 \label{tab:probabilidadesnb}
 \end{table}
 
-Como algumas palavras não existem em nosso \textit{training set} para
-determinadas situações, elas acabam tornando o resultado final da multiplicação
-das probabilidades de cada palavra (Equação \ref{eq:frasespositivas1}) como 0,
-para evitar que uma única palavra invalide uma frase é utilizado \textit{Laplace smoothing}. Neste, é somado
-1 a cada palavra e ao total de palavras, são somadas as quantidades de palavras diferentes do \textit{training set}, que neste caso são
-as seguintes 16 palavras distintas: \textit{``The''}, \textit{``food''},
-\textit{``was"}, \textit{``great"}, \textit{``They"}, \textit{``are"},
-\textit{``horrible!''}, \textit{``I"}, \textit{``love"}, \textit{``here''},
-\textit{``This"}, \textit{``place"}, \textit{``is"}, \textit{``wonderful"},
-\textit{``Forgettable"}, \textit{``experience"}. Neste caso, aplicando o
+Uma vez que algumas palavras não encontram-se no \textit{training set}
+para determinadas situações, elas acabam zerando o resultado final da
+multiplicação das probabilidades de cada palavra (Equação
+\ref{eq:frasespositivas1}). De modo, a evitar que uma única palavra
+invalide uma frase é utilizado \textit{Laplace smoothing} \cite{Manning:2008:IIR:1394399}. Neste, é
+somado 1 a cada palavra e ao total de palavras, são somadas as quantidades de
+palavras distintas do \textit{training set} (16). Aplicando o
 \textit{Laplace smoothing} para a Tabela \ref{tab:probabilidadesnb} é obtida a
 Tabela \ref{tab:probabilidadesl}.
 
@@ -629,8 +626,7 @@ great & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
 \end{table}
 
 Utilizando as probabilidades obtidas na Tabela
-\ref{tab:probabilidadesl} sob os termos da Equação \ref{eq:frasespositivas1} o
-classificador obtem a seguinte Equação:
+\ref{tab:probabilidadesl} na Equação \ref{eq:frasespositivas1} tem-se:
 
 \begin{equation}
 \begin{gathered}
@@ -641,11 +637,12 @@ P(Positiva|\textit{This place is great}) = \frac{1 + 1}{13 + 16} \times
 \end{gathered}
 \end{equation}
 
-Com o termo P(Positiva $\vert$ \textit{This place is great}) definido através da
-Equação \ref{eq:ppositivaplace}, este é aplicado a Equação \ref{eq:teoreman},
-junto com o termo P(Positiva) definido através da Equação \ref{eq:frasespositivas}, obtendo a probabilidade da frase
-\textit{``This place is great''} ser classificada como positiva através da
-Equação \ref{eq:positiva}:
+Uma vez que o termo P(Positiva $\vert$ \textit{This place is great})
+encontra-se definido através da Equação \ref{eq:ppositivaplace}, pode-se
+utilizar a Equação \ref{eq:teoreman}, onde o termo P(Positiva) é igual a 0,6
+definido através da Equação \ref{eq:frasespositivas}. Neste caso, tem-se que a
+probabilidade da frase \textit{``This place is great''} ser classificada como
+positiva é dada através da Equação \ref{eq:positiva}.
 
 \begin{equation}
 \begin{gathered}
@@ -657,7 +654,7 @@ P(Positiva|\textit{This place is great})
 \end{gathered}
 \end{equation}
 
-Efetuando o mesmo processo para a probabilidade da frase ser negativa, obtemos:
+Efetuando o mesmo processo para a probabilidade da frase ser negativa, tem-se:
 \begin{equation}
 \begin{gathered}
 P(Negativa|\textit{This place is great})
@@ -668,30 +665,24 @@ P(Negativa|\textit{This place is great})
 \end{gathered}
 \end{equation}
 
-Portanto, a partir dessas duas possibilidade, utilizando o método de
-classificação Naive Bayes para efetuar a análise de sentimentos, ele iria
-classificar a frase ``This place is great'' como positiva por essa probabilidade
-(0,0000138) ser maior que a probabilidade dessa frase ser negativa (0,00000196).
-
-
+Portanto, tem-se que a frase ``This place is great'' é positiva, uma vez que a
+probabilidade de ser positiva (0,0000138) é maior que a probabilidade dessa
+frase ser negativa (0,00000196).
 
 \section{\textit{VADER}}
 
 O \ac{VADER} é um dicionário e classificador de sentimentos que se baseia em
-regras, portanto, um método de classificação simbólico. Ele é especialmente
-ajustado para funcionar em redes sociais aonde temos um contexto vago e pouca
-quantidade de texto, levando em consideração
-gírias e emoticons, nesse contexto, ele é extremamente eficaz, podendo se
-comparar a classificação feita por humanos \cite{conf/icwsm/HuttoG14}.
+regras, portanto, um método de classificação simbólico. Esse foi desenvolvido
+especificadamente para funcionar em redes sociais onde-se tem um contexto
+vago, pouca quantidade de texto, gírias e emoticons \cite{conf/icwsm/HuttoG14}.
 
 A classificação do sentimento é feita através da separação da frase em palavras
-e para cada palavra da frase é atribuída uma pontuação de intensidade em uma escala de -4 até +4, como por exemplo, a palavra \textit{great} tem a
-intensidade de 3.1 e \textit{horrible} -2.5. Essa pontuação é obtida
-através de um dicionário construído utilizando o método de \textit{``wisdom of
-the crowd''} aonde um grupo de pessoas atribuiu os valores de intensidade para
-cada palavra ao invés uma única pessoa especializada ou uma classificação
-automática através de estatística. Por
-exemplo, a frase \textit{``This place is great''} seria classificada da seguinte forma:
+e para cada palavra da frase é atribuída uma pontuação de intensidade em uma
+escala de -4 até +4. Como por exemplo, a palavra \textit{great} tem a
+intensidade de 3.1 e \textit{horrible} -2.5. Essa pontuação é obtida através de
+um dicionário que é construído utilizando o método de \textit{``wisdom of the
+crowd''} onde um grupo de pessoas atribuiu os valores de intensidade para cada palavra. Por
+exemplo, a frase \textit{``This place is great''} seria classificada com:
 
 
 \begin{table}[htb]
@@ -707,18 +698,18 @@ Intensidade:   &  &   &  & 3,1
 \label{my-label}
 \end{table}
 
-As palavras \textit{``This''}, \textit{``place''} e \textit{``is''},
-respectivamente ``Esse'', ``lugar'' e ``é'' não existem no dicionário pois não
-expressam sentimentos e portanto são desconsideradas. Após, ele
-faz uso do seguinte conjunto de regras para inferir a intensidade do
-sentimento:
+As palavras \textit{``This''}, \textit{``place''} e \textit{``is''} são
+desconsideradas uma vez que não existem no dicionário e não expressam
+sentimentos. Após, ele faz uso do seguinte conjunto de regras para inferir a
+intensidade do sentimento:
 \begin{itemize}
-\item A primeira regra verifica quando uma palavra com pontuação atribuída, ou
-seja, uma palavra que expressa sentimentos, é escrita em letras maiúsculas.
+\item A primeira regra consistem em verificar quando uma palavra com pontuação
+atribuída (uma palavra que expressa sentimentos) é escrita em letras
+maiúsculas.
   Neste caso, é aumentada a magnitude da intensidade do sentimento sem modificar
-  a orientação semântica, somando 0,733 a intensidade do
-  sentimento caso este tenha intensidade maior que 0 ou subtraído
-  este mesmo valor caso este tenha intensidade menor que 0.
+  a orientação semântica. Para isso, é somado 0,733 a intensidade do
+  sentimento caso este tenha intensidade positiva ou subtraído
+  0,733 caso este tenha intensidade negativa.
   \begin{table}[htb]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|l}
@@ -732,8 +723,7 @@ seja, uma palavra que expressa sentimentos, é escrita em letras maiúsculas.
 	\label{my-label}
    \end{table}
 
-\item Após, verifica se alguma das três palavras anteriores a uma palavra com
-pontuação atribuída é um advérbio intensificador. Neste caso, estes impactam a
+\item A segunda regra verifica se alguma das três palavras anteriores é um advérbio intensificador. Neste caso, estes impactam a
 intensidade do sentimento aumentando ou diminuindo 0,293 conforme o advérbio. 
   \begin{table}[htb]
 	\centering
@@ -764,13 +754,11 @@ intensidade do sentimento aumentando ou diminuindo 0,293 conforme o advérbio.
    \end{table}
    
 
-\item A terceira regra, verifica se a frase contém a palavra \textit{``but''}
-(mas).
-Caso encontrada, essa palavra indica uma troca no sentimento da frase expressa aonde
-que o texto seguinte a ela expressa um sentimento mais dominante. Neste caso,
-o método multiplica a intensidade dos sentimentos expressos até a palavra
-\textit{``but''} por 0,5 e os sentimentos expressos após a palavra
-\textit{``but''} são multiplicados por 1,5.
+\item A terceira regra verifica se a frase contém a palavra \textit{``but''}.
+Caso encontrada, essa palavra indica uma troca do sentimento da frase, uma vez
+que o texto seguinte a palavra \textit{``but''} expressa um sentimento mais
+dominante. Neste caso, o método multiplica a intensidade dos sentimentos
+expressos até a palavra \textit{``but''} por 0,5 e os sentimentos expressos após a palavra \textit{``but''} por 1,5.
 
    
    \begin{table}[!htbp]
@@ -788,10 +776,10 @@ o método multiplica a intensidade dos sentimentos expressos até a palavra
 	\label{my-label5}
    \end{table}
 
-\item Também, verifica se a frase possui pontos de exclamação (!). Estes,
-aumentam a magnitude da intensidade sem modificar a orientação semântica,
-somando 0,292 a cada ponto de exclamação considerando um máximo de 4 pontos de
-exclamação.
+\item A quarta regra verifica se a frase possui pontos de exclamação (!). Este
+tipo de pontuação aumenta a magnitude da intensidade sem modificar a
+orientação semântica. 0,292 a cada ponto de exclamação considerando um
+máximo de 4 pontos de exclamação.
 
  \begin{table}[!htbp]
 	\centering
@@ -807,10 +795,10 @@ exclamação.
    \end{table}
    
 
-\item Por fim, a última regra examina as três palavras anteriores,
-identificando 90\% dos casos aonde uma negação inverte a polaridade de um texto.
-Quando encontrada uma negação na frase, é multiplicada a intensidade de cada
-palavra que possui sentimento por -0,74.
+\item Por fim, a quinta regra examina as três palavras anteriores,
+procurando a existência de uma negação que inverte a polaridade de um texto.
+Quando é encontrada uma negação na frase, a intensidade de cada palavra de
+sentimento é multiplicada por -0,74.
 
  \begin{table}[!htbp]
 	\centering
@@ -829,8 +817,8 @@ palavra que possui sentimento por -0,74.
 
 \end{itemize}
 
-Após ter a pontuação de intensidade, o método normaliza essa pontuação através
-da Equação \ref{eq:vader}:
+Após esse cálculo de pontuação de intensidade, é feita a normalização dessa
+pontuação através da Equação \ref{eq:vader}.
 
 \begin{equation}
 \begin{gathered}
@@ -841,15 +829,6 @@ da Equação \ref{eq:vader}:
 \end{gathered}
 \end{equation}
 
-A frase \textit{``This place is great''} aonde somente a palavra
-\textit{great} possui pontuação e essa tem o valor de 3,1, será atribuida
-pontuação final de 0,6249 através da Equação \ref{eq:vaderscore}.  Caso essa
-pontuação fosse menor que -1 ou maior que 1, essa seria limitada a -1 ou 1
-respectivamente. Para o \ac{VADER}, são consideradas frases negativas aquelas
-com pontuação de -1 até 0,5, frases neutras aquelas com pontuação de -0,5 até
-0,5 e frases positivas aquelas com pontuação 0,5 até 1, portanto a frase
-\textit{``This place is great''} com pontuação 0,6249 seria classificada como
-positiva.
 
 \begin{equation}
 \begin{gathered}
@@ -859,3 +838,13 @@ positiva.
 \label{eq:vaderscore}
 \end{gathered}
 \end{equation}
+
+Neste caos para a frase \textit{``This place is great''} (aonde somente a
+palavra \textit{great} possui pontuação e essa tem o valor de 3,1) será
+atribuida pontuação final de 0,6249.  Caso essa
+pontuação fosse menor que -1 ou maior que 1, essa seria limitada aos valores de
+-1 ou 1 respectivamente. Para o \ac{VADER}, são consideradas frases negativas aquelas
+com pontuação de -1 até -0,5, frases neutras aquelas com pontuação de -0,5 até
+0,5 e frases positivas aquelas com pontuação 0,5 até 1. Portanto a frase
+\textit{``This place is great''} com pontuação 0,6249 seria classificada como
+positiva.
