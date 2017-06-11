@@ -839,7 +839,7 @@ pontuação através da Equação \ref{eq:vader}.
 \end{gathered}
 \end{equation}
 
-Neste caos para a frase \textit{``This place is great''} (aonde somente a
+Neste caso para a frase \textit{``This place is great''} (aonde somente a
 palavra \textit{great} possui pontuação e essa tem o valor de 3,1) será
 atribuida pontuação final de 0,6249.  Caso essa
 pontuação fosse menor que -1 ou maior que 1, essa seria limitada aos valores de
@@ -848,3 +848,81 @@ com pontuação de -1 até -0,5, frases neutras aquelas com pontuação de -0,5 
 0,5 e frases positivas aquelas com pontuação 0,5 até 1. Portanto a frase
 \textit{``This place is great''} com pontuação 0,6249 seria classificada como
 positiva.
+
+\subsection{Método Selecionado}
+
+A partir dos métodos citados anteriormente, foi selecionado o método que
+demonstra a maior performance reportada por outros artigos. Por estes serem
+realizados em outras mídias sociais, também foi considerada a similaridade desta
+mídia social para o Reddit.
+
+A avaliação de performance na classificação de textos é medida através do $F_1$
+Score (ou também \textit{F-Score} ou \textit{F-Measure}). Este é realizado
+utilizando o valor de revocação, ou seja, a porcentagem do texto
+classificada corretamente, representado pela Equação \ref{eq:recall} e também
+o valor de precisão, representado pela Equação \ref{eq:precision} aplicados a
+Equação \ref{eq:f1score}.
+
+\begin{equation}
+\begin{gathered}
+\text{Revocação}
+=
+\frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} +
+\text{Falsos Negativos}}
+\label{eq:recall}
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+\text{Precisão}
+=
+\frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} +
+\text{Falsos Positivos}}
+\label{eq:precision}
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+F_1 \text{Score}
+= 2 \times
+\frac{\text{Precisão} \times \text{Revocação}}{\text{Precisão} +
+\text{Revocação}}
+\label{eq:f1score}
+\end{gathered}
+\end{equation}
+
+A utilização do Naive Bayes para classificação de avaliações de filmes enviados
+por usuários do website IMDB\footnote{http://www.imdb.com} segundo
+Pang \cite{Pang:2002:TUS:1118693.1118704}, atinge em média a precisão de 80\%
+para análise de sentimentos em determinados casos. Ainda que passando o valor de
+50\% de precisão apresentado por uma escolha aleatória, este valor está distante
+do apresentado pelo mesmo método quando utilizado para a classificação de
+tópicos \cite{Nigam:2000:TCL:347709.347724}.
+
+Quando da utilização do método para a análise de \textit{Tweets}, um cenário com
+maior similaridade ao Reddit, segundo Pålsson e Szerszen
+\cite{SentimentinSocialMedia}, o método apresenta $F_1$ Score de 58,2\% na análise
+de \textit{Tweets} e 58,3\% na análise de \textit{Tweets} pré processados aonde
+foram substituídos os \textit{emoticons} por palavras similares como
+\textit{happy, sad ou neutral}. Em contraste, a
+utilização do \ac{VADER} apresenta respectivamente o $F_1$
+Score de 72,3\% e 74,9\% nos mesmos cenários.
+
+Também, segundo Hutto \cite{conf/icwsm/HuttoG14}, o único cenário no qual o
+Naive Bayes apresenta melhor precisão utilizando três classes (positivo,
+neutro e negativo) é o de análise de sentimentos em avaliações de filmes,
+apresentando $F_1$ Score de 75\% utilizando um \textit{training set}
+especializado para avaliações de filmes contra 61\% apresentado pelo \ac{VADER}.
+Nos outros cenários avaliados, \textit{Tweets}, avaliações de produtos da
+Amazon e editoriais do New York Times, o \ac{VADER} apresentou melhor
+performance com o $F_1$ Score de 96\%, 63\% e 55\% respectivamente, contra 56\%,
+49\%, 44\% apresentados pelo Naive Bayes.
+
+Por não necessitar de um \textit{training set} adequado
+especificadamente ao tema que está sendo analisado e por consequência apresentar
+maior precisão em diversos cenários, foi selecionado o \ac{VADER} para a
+utilização na análise de sentimentos na rede social Reddit, visto que essa
+abrange inúmeros assuntos.
+

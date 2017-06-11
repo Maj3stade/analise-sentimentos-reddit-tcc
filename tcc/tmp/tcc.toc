@@ -14,14 +14,15 @@
 \contentsline {chapter}{\numberline {3}M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}{17}
 \contentsline {section}{\numberline {3.1}Naive Bayes}{18}
 \contentsline {section}{\numberline {3.2}\textit {VADER}}{21}
-\contentsline {chapter}{\numberline {4}Frameworks}{23}
-\contentsline {section}{\numberline {4.1}Natural Language Toolkit}{23}
-\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{24}
-\contentsline {section}{\numberline {4.2}Stanford CoreNLP}{24}
-\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{24}
-\contentsline {chapter}{\numberline {5}Rede Social Reddit}{26}
-\contentsline {section}{\numberline {5.1}API}{27}
-\contentsline {chapter}{\numberline {6}Extra\IeC {\c c}\IeC {\~a}o de Dados}{28}
-\contentsline {section}{\numberline {6.1}\textit {Crawler}}{28}
-\contentsline {section}{\numberline {6.2}T\IeC {\'o}picos Selecionados}{30}
-\contentsline {chapter}{Refer{\^e}ncias}{33}
+\contentsline {subsection}{\numberline {3.2.1}M\IeC {\'e}todo Selecionado}{23}
+\contentsline {chapter}{\numberline {4}Frameworks}{25}
+\contentsline {section}{\numberline {4.1}Natural Language Toolkit}{25}
+\contentsline {subsection}{\numberline {4.1.1}An\IeC {\'a}lise de Sentimentos}{26}
+\contentsline {section}{\numberline {4.2}Stanford CoreNLP}{26}
+\contentsline {subsection}{\numberline {4.2.1}An\IeC {\'a}lise de Sentimentos}{26}
+\contentsline {chapter}{\numberline {5}Rede Social Reddit}{28}
+\contentsline {section}{\numberline {5.1}API}{29}
+\contentsline {chapter}{\numberline {6}Extra\IeC {\c c}\IeC {\~a}o de Dados}{30}
+\contentsline {section}{\numberline {6.1}\textit {Crawler}}{30}
+\contentsline {section}{\numberline {6.2}T\IeC {\'o}picos Selecionados}{32}
+\contentsline {chapter}{Refer{\^e}ncias}{35}
