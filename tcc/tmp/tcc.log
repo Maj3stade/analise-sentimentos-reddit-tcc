@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  11 JUN 2017 13:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  12 JUN 2017 21:26
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -947,11 +947,15 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
-) (./capitulos/capitulo2.aux
+) (./capitulos/capitulo2.aux) (./capitulos/capitulo3.aux)
+(./capitulos/capitulo4.aux
 
-LaTeX Warning: Label `fig:corenlp' multiply defined.
+LaTeX Warning: Label `cap:Extracao' multiply defined.
 
-) (./capitulos/capitulo3.aux) (./capitulos/capitulo4.aux))
+
+LaTeX Warning: Label `fig:crawler' multiply defined.
+
+))
 \openout1 = `tcc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
@@ -968,8 +972,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
-
-(c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+ (c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 58.
@@ -1101,7 +1104,12 @@ OS NA AN[]ALISE
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 18--18
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+ [][]  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--20
  [][]  
  []
 
@@ -1113,12 +1121,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--23
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
- [][]  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 28--28
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
  [][]  
  []
 
@@ -1169,9 +1172,12 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
 although it is yet undefined on input line 63.
  [11]
-Overfull \hbox (22.3792pt too wide) in paragraph at lines 125--135
+Overfull \hbox (22.3792pt too wide) in paragraph at lines 126--136
  [][][] 
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1182,7 +1188,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
-Package pdftex.def Info: imagens/markov.png used on input line 212.
+Package pdftex.def Info: imagens/markov.png used on input line 213.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
  [13 <./imagens/markov.png>]
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1193,7 +1199,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
-Package pdftex.def Info: imagens/markov2.png used on input line 367.
+Package pdftex.def Info: imagens/markov2.png used on input line 368.
 (pdftex.def)             Requested size: 310.24245pt x 180.67566pt.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
@@ -1201,30 +1207,30 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [16 <./imagens/markov2.png>]
-Overfull \hbox (8.32231pt too wide) in paragraph at lines 392--392
+Overfull \hbox (8.32231pt too wide) in paragraph at lines 393--393
 []\OT1/cmss/bx/n/17.28 3 M[]ETODOS ES-TAT[]ISTICOS E SIMB[]OLICOS APLI-
  []
 
 Package acronym Info: Label `acro:SVM' newly defined as it shall be overridden
-although it is yet undefined on input line 407.
+although it is yet undefined on input line 408.
 Package acronym Info: Label `acro:MaxEnt' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 407.
+although it is yet undefined on input line 408.
 Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 412.
+although it is yet undefined on input line 413.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17
 
 ]
-Overfull \hbox (3.2725pt too wide) detected at line 478
+Overfull \hbox (3.2725pt too wide) detected at line 479
 [] []
  []
 
 
-Overfull \hbox (0.87251pt too wide) detected at line 510
+Overfull \hbox (0.87251pt too wide) detected at line 511
 [] []
  []
 
@@ -1234,14 +1240,14 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [18]
-Overfull \hbox (48.991pt too wide) in paragraph at lines 565--572
+Overfull \hbox (48.991pt too wide) in paragraph at lines 566--573
 [][]\OT1/cmr/m/n/12 A par-tir da Equa^^Xc~ao 3.8[] ^^Se ne-cess^^Sario cal-cu-l
 ar os ter-mos P(\OT1/cmr/m/it/12 This$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positi
 va), P(\OT1/cmr/m/it/12 place$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positiva),
  []
 
 [19]
-Overfull \hbox (22.01466pt too wide) detected at line 638
+Overfull \hbox (22.01466pt too wide) detected at line 639
 [] []
  []
 
@@ -1251,7 +1257,7 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [20]
-Overfull \hbox (6.51804pt too wide) in paragraph at lines 706--725
+Overfull \hbox (6.51804pt too wide) in paragraph at lines 707--726
 \OT1/cmr/m/n/12 atribu^^S^^Pda (uma pa-la-vra que ex-pressa sen-ti-men-tos) ^^S
 e es-crita em le-tras mai^^Susculas.
  []
@@ -1261,209 +1267,141 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 22
  []
 
-[22] [23])
+[22] [23]
+Package acronym Info: Label `acro:NLTK' newly defined as it shall be overridden
+
+although it is yet undefined on input line 944.
+
+Underfull \hbox (badness 10000) in paragraph at lines 955--955
+[][]$\OT1/cmss/m/n/10 https : / / docs . google . com / document / d / 1eYubSwL
+kpB7ZgfQVxxAwgsmAqS[][]
+ []
+
+)
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 24
  []
 
 [24]
-\openout2 = `capitulos/capitulo2.aux'.
+\openout2 = `capitulos/capitulo3.aux'.
 
- (./capitulos/capitulo2.tex
-Package acronym Info: Label `acro:NLTK' newly defined as it shall be overridden
-
-although it is yet undefined on input line 24.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [25
+ (./capitulos/capitulo3.tex [25
 
 
 
 ]
-Overfull \hbox (6.96246pt too wide) in paragraph at lines 46--47
-[][]\OT1/cmr/bx/n/12 nltk.classify.naivebayes.NaiveBayesClassifier \OT1/cmr/m/n
-/12 atrav^^Ses dos se-guin-tes m^^Setodos: 
- []
+<imagens/arquitetura.png, id=107, 475.7775pt x 334.24875pt>
+File: imagens/arquitetura.png Graphic file (type png)
 
+<use imagens/arquitetura.png>
+Package pdftex.def Info: imagens/arquitetura.png used on input line 65.
+(pdftex.def)             Requested size: 321.4844pt x 225.84457pt.
+Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
-Overfull \hbox (8.96303pt too wide) in paragraph at lines 67--70
-[][]\OT1/cmr/m/n/12 Classe \OT1/cmr/m/it/12 nltk.sentiment.sentiment[]analyzer.
-SentimentAnalyzer \OT1/cmr/m/n/12 - Fer-ra-men-tas para
- []
+although it is yet undefined on input line 74.
+Package acronym Info: Label `acro:POJO' newly defined as it shall be overridden
 
-Package acronym Info: Label `acro:RNTN' newly defined as it shall be overridden
-
-although it is yet undefined on input line 86.
-<imagens/corenlp.png, id=106, 758.835pt x 400.49625pt>
-File: imagens/corenlp.png Graphic file (type png)
-
-<use imagens/corenlp.png>
-Package pdftex.def Info: imagens/corenlp.png used on input line 92.
-(pdftex.def)             Requested size: 427.92049pt x 225.84457pt.
-
-Overfull \hbox (1.12914pt too wide) in paragraph at lines 92--93
- [][][] 
- []
-
+although it is yet undefined on input line 79.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 26
  []
 
-[26] <imagens/corenlp1.png, id=110, 521.69907pt x 128.73094pt>
-File: imagens/corenlp1.png Graphic file (type png)
-
-<use imagens/corenlp1.png>
-Package pdftex.def Info: imagens/corenlp1.png used on input line 103.
-(pdftex.def)             Requested size: 488.15233pt x 120.45044pt.
-
-Overfull \hbox (61.36098pt too wide) in paragraph at lines 103--104
- [][][] 
+[26 <./imagens/arquitetura.png>] [27]
+Overfull \hbox (1.17177pt too wide) in paragraph at lines 155--158
+\OT1/cmss/m/n/12 worldnews / comments / 36ny58 / brazil[]blogger[]known[]for[]r
+eporting[]on[]corruption/$\OT1/cmr/m/n/12 . 
  []
 
-) [27 <./imagens/corenlp.png> <./imagens/corenlp1.png>]
-\openout2 = `capitulos/capitulo3.aux'.
+
+Overfull \hbox (14.06398pt too wide) in paragraph at lines 158--161
+\OT1/cmss/m/n/12 reddit . com / r / worldnews / comments / 4bqcc3 / brazil[]des
+cends[]into[]chaos[]as[]olympics[]
+ []
 
 
-(./capitulos/capitulo3.tex
+Overfull \hbox (35.57382pt too wide) in paragraph at lines 161--164
+\OT1/cmss/m/n/12 https : / / www . reddit . com / r / worldnews / comments / 5o
+yz3b / plane[]carrying[]brazil[]supreme[]
+ []
+
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 28
  []
 
-[28
-
-
-
-])
-Overfull \hbox (1.96046pt too wide) in paragraph at lines 52--135
-[][]\OT1/cmr/m/n/12 O \OT1/cmr/m/it/12 web-site \OT1/cmr/m/n/12 pos-sui uma API
- \OT1/cmr/m/it/12 open source \OT1/cmr/m/n/12 lo-ca-li-zada em https://github.c
-om/reddit/.
- []
-
-[29]
-\openout2 = `capitulos/capitulo4.aux'.
-
- (./capitulos/capitulo4.tex
-<imagens/arquitetura.png, id=120, 475.7775pt x 334.24875pt>
-File: imagens/arquitetura.png Graphic file (type png)
-
-<use imagens/arquitetura.png>
-Package pdftex.def Info: imagens/arquitetura.png used on input line 18.
-(pdftex.def)             Requested size: 321.4844pt x 225.84457pt.
-Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
-
-although it is yet undefined on input line 27.
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 30
- []
-
-[30
-
-
-
- <./imagens/arquitetura.png>]
-Package acronym Info: Label `acro:POJO' newly defined as it shall be overridden
-
-although it is yet undefined on input line 32.
- [31]
-Overfull \hbox (16.30855pt too wide) in paragraph at lines 107--110
-\OT1/cmtt/m/n/12 com / r / worldnews / comments / 36ny58 / brazil _ blogger _ k
-nown _ for _ reporting _
+[28]
+Overfull \hbox (5.87729pt too wide) in paragraph at lines 183--185
+\OT1/cmss/m/n/12 reddit . com / r / worldnews / comments / 4d75i7 / 26[]terabyt
+e[]leak[]of[]panamanian[]shell[]
  []
 
 
-Overfull \hbox (10.13354pt too wide) in paragraph at lines 110--113
-\OT1/cmtt/m/n/12 reddit . com / r / worldnews / comments / 4bqcc3 / brazil _ de
-scends _ into _ chaos _
+Overfull \hbox (14.4836pt too wide) in paragraph at lines 186--187
+[][]\OT1/cmr/m/it/12 Fidel Cas-tro is dead at 90. \OT1/cmr/m/n/12 - Dis-pon^^S^
+^Pvel em: $\OT1/cmss/m/n/12 https : / / www . reddit . com / r / worldnews /
  []
 
 
-Overfull \hbox (10.13354pt too wide) in paragraph at lines 113--116
-\OT1/cmtt/m/n/12 https : / / www . reddit . com / r / worldnews / comments / 5o
-yz3b / plane _ carrying _
+Overfull \hbox (2.67477pt too wide) in paragraph at lines 189--190
+\OT1/cmss/m/n/12 worldnews / comments / 67ivae / donald[]trump[]to[]strip[]all[
+]funding[]from[]state[]dept/$\OT1/cmr/m/n/12 . 
  []
 
 
-Overfull \hbox (13.3974pt too wide) in paragraph at lines 117--119
-\OT1/cmtt/m/n/12 comments / 21f3as / brazil _ passes _ internet _ governance _ 
-bill _ brazil _ has/$\OT1/cmr/m/n/12 . 
+Overfull \hbox (10.10654pt too wide) in paragraph at lines 192--193
+\OT1/cmr/m/n/12 pon^^S^^Pvel em: $\OT1/cmss/m/n/12 https : / / www . reddit . c
+om / r / worldnews / comments / 6cqdye / manchester[]
  []
 
 
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 32
- []
-
-[32]
-Overfull \hbox (22.48355pt too wide) in paragraph at lines 125--126
-\OT1/cmtt/m/n/12 com / r / worldnews / comments / 3skpe7 / brazil _ seeks _ to 
-_ copy _ us _ gun _ culture _
+Overfull \hbox (34.95264pt too wide) in paragraph at lines 196--197
+\OT1/cmss/m/n/12 https : / / www . reddit . com / r / worldnews / comments / 5u
+zetf / sweden[]asks[]the[]us[]to[]explain[]
  []
 
 
-Overfull \hbox (34.83356pt too wide) in paragraph at lines 135--137
-\OT1/cmtt/m/n/12 reddit . com / r / worldnews / comments / 4d75i7 / 26 _ teraby
-te _ leak _ of _ panamanian _
+Overfull \hbox (7.47119pt too wide) in paragraph at lines 199--200
+\OT1/cmr/m/n/12 Dis-pon^^S^^Pvel em: $\OT1/cmss/m/n/12 https : / / www . reddit
+ . com / r / worldnews / comments / 5qqa51 / canada[]
  []
 
 
-Overfull \hbox (3.95854pt too wide) in paragraph at lines 141--142
-\OT1/cmtt/m/n/12 worldnews / comments / 67ivae / donald _ trump _ to _ strip _ 
-all _ funding _ from _
+Overfull \hbox (9.97649pt too wide) in paragraph at lines 206--208
+\OT1/cmr/m/it/12 Anything. \OT1/cmr/m/n/12 - Dis-pon^^S^^Pvel em: $\OT1/cmss/m/
+n/12 https : / / www . reddit . com / r / IAmA / comments / 5whpqs /
  []
 
 
-Overfull \hbox (47.77316pt too wide) in paragraph at lines 144--145
-\OT1/cmr/m/n/12 pon^^S^^Pvel em: $\OT1/cmtt/m/n/12 https : / / www . reddit . c
-om / r / worldnews / comments / 6cqdye / manchester _
+Overfull \hbox (11.80751pt too wide) in paragraph at lines 211--212
+\OT1/cmss/m/n/12 reddit . com / r / IAmA / comments / 2s7obx / im[]the[]ceo[]of
+[]renault[]and[]nissan[]and[]were[]
  []
 
 
-Overfull \hbox (16.30855pt too wide) in paragraph at lines 148--149
-\OT1/cmtt/m/n/12 https : / / www . reddit . com / r / worldnews / comments / 5u
-zetf / sweden _ asks _ the _
- []
-
-
-Overfull \hbox (16.30855pt too wide) in paragraph at lines 163--164
-\OT1/cmtt/m/n/12 reddit . com / r / IAmA / comments / 2s7obx / im _ the _ ceo _
- of _ renault _ and _ nissan _
+Overfull \hbox (9.7389pt too wide) in paragraph at lines 214--215
+\OT1/cmss/m/n/12 https : / / www . reddit . com / r / IAmA / comments / 5n58sm 
+/ i[]am[]julian[]assange[]founder[]
  []
 
 
 Underfull \vbox (badness 4254) has occurred while \output is active []
 
- [33]
-Overfull \hbox (10.13354pt too wide) in paragraph at lines 166--167
-\OT1/cmtt/m/n/12 https : / / www . reddit . com / r / IAmA / comments / 5n58sm 
-/ i _ am _ julian _ assange _
- []
-
-)
+ [29])
 Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 34
+\OT1/cmr/m/n/10.95 30
  []
 
-[34] (./tcc.bbl
-Underfull \hbox (badness 2384) in paragraph at lines 21--25
-[][]\OT1/cmr/m/n/12 HANCOX, P. J. \OT1/cmr/bx/n/12 A brief his-tory of Na-tu-ra
-l Lan-guage Pro-ces-sing\OT1/cmr/m/n/12 .
- []
-
-[35
+[30] (./tcc.bbl [31
 
 
 ]) AED: lastpage setting LastPage
 Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 36
+\OT1/cmr/m/n/10.95 32
  []
 
-[36] (./tcc.aux (./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
-(./capitulos/capitulo2.aux) (./capitulos/capitulo3.aux)
-(./capitulos/capitulo4.aux))
+[32] (./tcc.aux (./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
+(./capitulos/capitulo3.aux))
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.28pt have occurred.
@@ -1473,11 +1411,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9335 strings out of 493013
- 126197 string characters out of 6136993
- 231590 words of memory out of 5000000
- 12602 multiletter control sequences out of 15000+600000
- 15776 words of font info for 55 fonts, out of 8000000 for 9000
+ 9318 strings out of 493013
+ 125799 string characters out of 6136993
+ 233590 words of memory out of 5000000
+ 12593 multiletter control sequences out of 15000+600000
+ 17419 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,18n,72p,1215b,1162s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
@@ -1490,18 +1428,19 @@ onts/cm/cmmi8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 r10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c
 :/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2
 016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2016/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2016/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmtt10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pf
-b><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texl
-ive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2016/t
-exmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tcc.pdf (37 pages, 384246 bytes).
+ist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2016/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmssbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pf
+b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/tex
+live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2016/
+texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2016/texmf-dist
+/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on tcc.pdf (33 pages, 360702 bytes).
 PDF statistics:
- 212 PDF objects out of 1000 (max. 8388607)
- 144 compressed objects within 2 object streams
+ 199 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

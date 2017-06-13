@@ -10,9 +10,5 @@
 \contentsline {figure}{\numberline {Figura\nobreakspace 2.2:}{\ignorespaces Caminhos definidos para a classifica\IeC {\c c}\IeC {\~a}o pelo Algoritmo de Viterbi}}{16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {Figura\nobreakspace 4.1:}{\ignorespaces Frase j\IeC {\'a} classificada dispon\IeC {\'\i }vel no Sentiment Treebank}}{27}
-\contentsline {figure}{\numberline {Figura\nobreakspace 4.2:}{\ignorespaces Exemplo de implementa\IeC {\c c}\IeC {\~a}o}}{27}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
-\contentsline {figure}{\numberline {Figura\nobreakspace 6.1:}{\ignorespaces Arquitetura do \textit {Crawler}}}{30}
+\contentsline {figure}{\numberline {Figura\nobreakspace 4.1:}{\ignorespaces Arquitetura do \textit {Crawler}}}{26}
 \addvspace {10\p@ }

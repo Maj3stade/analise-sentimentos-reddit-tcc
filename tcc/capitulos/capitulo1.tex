@@ -92,8 +92,9 @@ identificação serão descritos no Capítulo \ref{cap:Classificadores}.
 O método simbólico ou racionalista está
 baseado no campo da Linguística e faz o uso da manipulação dos símbolos,
 significados e das regras de um texto. Um exemplo simples de um método simbólico
-é o método de Brill \cite{Brill:1992:SRP:974499.974526}. Por exemplo, no método de
-Brill a frase ``João pintou a casa de branco'', será separada em palavras que
+é o método de Brill \cite{Brill:1992:SRP:974499.974526} utilizado para a
+análise léxica, ou seja, identificar a classe de cada palavra.
+Por exemplo, no método de Brill a frase ``João pintou a casa de branco'', será separada em palavras que
 serão classificadas através de um dicionário pré-definido, como:
 
 \begin{table}[htb]
@@ -926,3 +927,38 @@ maior precisão em diversos cenários, foi selecionado o \ac{VADER} para a
 utilização na análise de sentimentos na rede social Reddit, visto que essa
 abrange inúmeros assuntos.
 
+\subsection{Implementação do Método}
+
+A implementação de um software de análise de sentimentos pode ser feita através
+de um software escrito a partir de seu início, utilizando como base os métodos
+já existentes ou também pode ser feito utilizando \textit{frameworks} já
+disponíveis. Métodos estatísticos como o Naive Bayes analisado no Capítulo
+\ref{cap:Classificadores} podem ser encontrados tanto em implementações de
+aprendizado de máquina, quanto implementações para voltadas para o \ac{NLP}.
+Já métodos simbólicos, por suas implementações serem específicas para a o
+\ac{NLP} ou análise de sentimentos, somente encontramos implementações destes em
+\textit{frameworks} de \ac{NLP}.
+
+O método selecionado para a análise de sentimentos, \ac{VADER}, é
+disponibilizado como um \textit{package} Python e também através do
+\textit{framework} \ac{NLTK}, o qual é considerado um \textit{kit} de
+ferramentas não só para análise de sentimentos mas como o \ac{NLP} como um todo.
+
+Por trazer diversas outras implementações que possam a vir facilitar a
+identificação de padrões de sentimentos, foi escolhido utilizar o \ac{NLTK} para
+acessar o \ac{VADER} ao invés de somente a utilização do próprio
+\textit{package} desse.
+
+O \ac{NLTK} é um \textit{framework open source} para Python
+criado em 2001 na Universidade de Pensilvânia atualmente utilizado por mais de
+30 universidades em diversos
+países\footnote{\url{https://docs.google.com/document/d/1eYubSwLkpB7ZgfQVxxAwgsmAqS__BRfbMyP9qV6ngD8/edit}}.
+Esse apresenta tanto métodos estatísticos, como \ac{MaxEnt} e Naive Bayes como métodos simbólicos, contendo
+mais de 50 dicionários e modelos já treinados como \textit{Sentiment Polarity Dataset Version 2.0}, conjunto de dados já classificados que contém mais de 1000 filmes avaliados de forma positiva e 1000 filmes avaliados de forma negativa, \textit{SentiWordNet},
+um dicionário com as palavras extraídas do WordNet já classificadas em
+positividade, negatividade e objetividade e \ac{VADER} o qual foi selecionado
+para aplicação da análise de sentimentos.
+
+Além da execução de análise de sentimentos, o \textit{framework} executa outras
+tarefas pertencentes ao \ac{NLP} como o reconhecimento de entidade mencionada e
+análise léxica.

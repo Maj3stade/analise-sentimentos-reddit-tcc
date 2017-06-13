@@ -1,110 +1,38 @@
 \chapter{Frameworks}
 \label{cap:Frameworks}
 
-Para implementação de um \textit{software} que efetue a análise de sentimentos e
-auxilie a categorizar extrair as informações de modo a análisar padrões de
-comportamento, se destacam os seguintes \textit{frameworks}:
+A implementação de um software de análise de sentimentos pode ser feita através
+de um software escrito a partir de seu início, utilizando como base os métodos
+já existentes ou também pode ser feito utilizando \textit{frameworks} já
+disponíveis. Métodos estatísticos como o Naive Bayes analisado no Capítulo
+\ref{cap:Classificadores} podem ser encontrados tanto em implementações de
+aprendizado de máquina, quanto implementações para voltadas para o \ac{NLP}.
+Já métodos simbólicos, por suas implementações serem específicas para a o
+\ac{NLP} ou análise de sentimentos, somente encontramos implementações destes em
+\textit{frameworks} de \ac{NLP}.
 
-\begin{itemize}
-\item \textit{Stanford's Core NLP Suite}.
-\item \textit{Natural Language Toolkit}.
-\item \textit{Apache OpenNLP}.
-\item \textit{Spacy}.
-\end{itemize}
+O método selecionado para a análise de sentimentos, \ac{VADER}, é
+disponibilizado como um \textit{package} Python e também através do
+\textit{framework} \ac{NLTK}, o qual é considerado um \textit{kit} de
+ferramentas não só para análise de sentimentos mas como o \ac{NLP} como um todo.
 
-Essa seção visa analisar os métodos
-disponíveis nestes para a análise de sentimentos a fim de encontrar \textit{frameworks}
-que possibilitem a utilização dos métodos apresentados no
-Capítulo \ref{cap:Classificadores} e também possibilitam atender outras
-necessidades do processamento de linguagem natural.
+Por trazer diversas outras implementações que possam a vir facilitar a
+identificação de padrões de sentimentos, foi escolhido utilizar o \ac{NLTK} para
+acessar o \ac{VADER} ao invés de somente a utilização do próprio
+\textit{package} desse.
 
+O \ac{NLTK} é um \textit{framework open source} para Python
+criado em 2001 na Universidade de Pensilvânia atualmente utilizado por mais de
+30 universidades em diversos
+países\footnote{\url{https://docs.google.com/document/d/1eYubSwLkpB7ZgfQVxxAwgsmAqS__BRfbMyP9qV6ngD8/edit}}.
+Esse apresenta tanto métodos estatísticos, como \ac{MaxEnt} e Naive Bayes como métodos simbólicos, contendo
+mais de 50 dicionários e modelos já treinados como \textit{Sentiment Polarity Dataset Version 2.0}, conjunto de dados já classificados que contém mais de 1000 filmes avaliados de forma positiva e 1000 filmes avaliados de forma negativa, \textit{SentiWordNet},
+um dicionário com as palavras extraídas do WordNet já classificadas em
+positividade, negatividade e objetividade e \ac{VADER} o qual foi selecionado
+para aplicação da análise de sentimentos.
 
-\section{Natural Language Toolkit}
+Além da execução de análise de sentimentos, o \textit{framework} executa outras
+tarefas pertencentes ao \ac{NLP} como o reconhecimento de entidade mencionada e
+análise léxica.
 
-O \ac{NLTK} é um \textit{Framework} para Python
-criado em 2001 na Universidade de Pensilvânia. Ele contém mais de 50 dicionários
-e modelos já treinados incluindo:
-
-\begin{itemize}
-  \item \textit{Sentiment Polarity Dataset Version 2.0} - Conjunto de dados já
-  classificados que contém mais de 1000 filmes avaliados de forma positiva e
-  1000 filmes avaliados de forma negativa.
-  \item \textit{SentiWordNet} - Provém um dicionário com as palavras extraídas
-  do WordNet já classificadas em positividade, negatividade e objetividade.
-  \item \textit{VADER Sentiment Lexicon} - Dicionário especificamente ajustado
-  para análise de sentimentos expressos em mídias sociais.
-\end{itemize}
-
-
-\subsection{Análise de Sentimentos}
-
-Para a análise de sentimentos, o \ac{NLTK} já possui implementado os três
-classificadores citados anteriormente, \textit{Naive Bayes} e \ac{VADER}.
-
-Podemos utilizar o classificador Naive Bayes a partir da classe
-
-\textbf{nltk.classify.naivebayes.NaiveBayesClassifier} através dos seguintes métodos:
-
-\begin{itemize}
-  \item \textit{classify(featureset)} - Classifica a partir de um conjunto de
-  atributos.
-  \item \textit{most\_informative\_features(n=100)} - A partir de um
-  classificador treinado, retorna os atributos mais relevantes.
-  \item \textit{train(trainingset)} - Treina um classificador a partir de um \textit{training set}.
-\end{itemize}
-
-Para utilização do \ac{VADER} é utilizada a classe
-\textit{SentimentIntensityAnalyzer} do módulo \textit{vaderSentiment} através
-do método \textit{polarity\_scores}. Este método recebe uma frase e retorna um
-objeto contendo a intensidade positiva, neutra e negativa da frase.
-
-O \textit{framework}
-também contém um pacote contendo classes úteis para a análise de sentimentos
-chamado de \textit{nltk.sentiment}. Nesse pacote temos os seguintes módulos:
-
-
-\begin{itemize}
-  \item Classe \textit{nltk.sentiment.sentiment\_analyzer.SentimentAnalyzer} -
-  Ferramentas para facilitar e implementar análise de sentimentos,
-  especialmente para demonstrações e ensino.
-  \item Módulo \textit{nltk.sentiment.util} - Contém diversas classes de
-  demonstrações e utilitários como conversão de \textit{json} para \textit{csv}.
-\end{itemize}
-
-\section{Stanford CoreNLP}
-
-O Stanford CoreNLP é um conjunto de ferramentas escrito em Java para
-processamento de linguagem natural. Dentre essas ferramentas, estão incluídos:
-\textit{Part-of-Speech Tagging} ou classificação gramatical, reconhecimento de
-entidade e análise de sentimentos. Também possui suporte a diversas linguas além
-do inglês, como: árabe, chinês, francês, alemão e espanhol.
-
-\subsection{Análise de Sentimentos}
-
-A análise de sentimentos do Stanford CoreNLP é realizada através de um novo
-modelo de rede neural construído em cima de estruturas gramaticais chamado de
-\ac{RNTN}. Seu modelo é treinado a partir do \textit{Sentiment Treebank}, um
-banco de dados que possui 215.154 orações distribuidas em 11.855 árvores de
-frases com sentimentos já classificados.
-
-\begin{figure}[!htbp]
- \centering
- \includegraphics[height=225px]{imagens/corenlp.png}
- \caption{Frase já classificada disponível no Sentiment Treebank}
- \label{fig:corenlp}
-\end{figure}
-
-A sua utilização pode ser feita de diversas formas, como linha de comando,
-através de um servidor \textit{web} e através de sua API java:
-\newpage
-
-\begin{figure}[!htbp]
- \centering
- \includegraphics[height=120px]{imagens/corenlp1.png}
- \caption{Exemplo de implementação}
- \label{fig:corenlp}
-\end{figure}
-
-Como resultado, o console java irá imprimir que a frase é muito positiva ou
-\textit{Very positive}.
 
