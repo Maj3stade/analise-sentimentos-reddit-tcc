@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  12 JUN 2017 21:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  15 JUN 2017 12:55
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -947,15 +947,7 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
-) (./capitulos/capitulo2.aux) (./capitulos/capitulo3.aux)
-(./capitulos/capitulo4.aux
-
-LaTeX Warning: Label `cap:Extracao' multiply defined.
-
-
-LaTeX Warning: Label `fig:crawler' multiply defined.
-
-))
+) (./capitulos/capitulo3.aux))
 \openout1 = `tcc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
@@ -972,7 +964,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
 LaTeX Font Info:    ... okay on input line 58.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
- (c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
+
+(c:/texlive/2016/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 58.
@@ -1109,19 +1102,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--19
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 20--20
- [][]  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
- [][]  
- []
-
-[2
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 26--26
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
  [][]  
  []
 
@@ -1129,49 +1110,57 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--26
 \tf@toc=\write4
 \openout4 = `tcc.toc'.
 
- [3] [4
+ [2
+
+] [3
 
 ] (./tcc.lof)
 \tf@lof=\write5
 \openout5 = `tcc.lof'.
 
- [5
+ [4
 
 ] (./tcc.lot)
 \tf@lot=\write6
 \openout6 = `tcc.lot'.
 
- [6
+ [5
 
-] [7
+] [6
 
 ]
 \openout2 = `capitulos/introducao.aux'.
 
  (./capitulos/introducao.tex
+Overfull \hbox (13.02539pt too wide) in paragraph at lines 19--26
+\OT1/cmr/m/it/12 guage To-ol-kit \OT1/cmr/m/n/12 (Na-tu-ral Lan-guage To-ol-kit
+, 2017), \OT1/cmr/m/it/12 Apa-che OpenNLP \OT1/cmr/m/n/12 (Apa-che OpenNLP,
+ []
+
+[7
+
+
+])
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 8
  []
 
-[8
-
-
-]) [9]
+[8]
 \openout2 = `capitulos/capitulo1.aux'.
 
- (./capitulos/capitulo1.tex
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 10
- []
-
-[10
+ (./capitulos/capitulo1.tex [9
 
 
 
 ]
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
 although it is yet undefined on input line 63.
- [11]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 10
+ []
+
+[10]
 Overfull \hbox (22.3792pt too wide) in paragraph at lines 126--136
  [][][] 
  []
@@ -1179,59 +1168,67 @@ Overfull \hbox (22.3792pt too wide) in paragraph at lines 126--136
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 12
- []
-
-[12] <imagens/markov.png, id=56, 432.61626pt x 231.86626pt>
+ [11]
+<imagens/markov.png, id=52, 432.61626pt x 231.86626pt>
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
 Package pdftex.def Info: imagens/markov.png used on input line 213.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
- [13 <./imagens/markov.png>]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 12
+ []
+
+[12 <./imagens/markov.png>] [13]
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 14
  []
 
-[14] [15] <imagens/markov2.png, id=71, 432.61626pt x 251.94125pt>
+[14] <imagens/markov2.png, id=68, 432.61626pt x 251.94125pt>
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
-Package pdftex.def Info: imagens/markov2.png used on input line 368.
+Package pdftex.def Info: imagens/markov2.png used on input line 379.
 (pdftex.def)             Requested size: 310.24245pt x 180.67566pt.
+ [15 <./imagens/markov2.png>]
+Overfull \hbox (8.32231pt too wide) in paragraph at lines 404--404
+[]\OT1/cmss/bx/n/17.28 3 M[]ETODOS ES-TAT[]ISTICOS E SIMB[]OLICOS APLI-
+ []
+
+Package acronym Info: Label `acro:SVM' newly defined as it shall be overridden
+although it is yet undefined on input line 419.
+Package acronym Info: Label `acro:MaxEnt' newly defined as it shall be overridd
+en
+although it is yet undefined on input line 419.
+Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 424.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 16
  []
 
-[16 <./imagens/markov2.png>]
-Overfull \hbox (8.32231pt too wide) in paragraph at lines 393--393
-[]\OT1/cmss/bx/n/17.28 3 M[]ETODOS ES-TAT[]ISTICOS E SIMB[]OLICOS APLI-
- []
-
-Package acronym Info: Label `acro:SVM' newly defined as it shall be overridden
-although it is yet undefined on input line 408.
-Package acronym Info: Label `acro:MaxEnt' newly defined as it shall be overridd
-en
-although it is yet undefined on input line 408.
-Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
-n
-although it is yet undefined on input line 413.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17
+[16
 
 ]
-Overfull \hbox (3.2725pt too wide) detected at line 479
+Overfull \hbox (3.2725pt too wide) detected at line 490
 [] []
  []
 
 
-Overfull \hbox (0.87251pt too wide) detected at line 511
+Overfull \hbox (0.87251pt too wide) detected at line 522
 [] []
+ []
+
+[17]
+Overfull \hbox (48.991pt too wide) in paragraph at lines 577--584
+[][]\OT1/cmr/m/n/12 A par-tir da Equa^^Xc~ao 3.8[] ^^Se ne-cess^^Sario cal-cu-l
+ar os ter-mos P(\OT1/cmr/m/it/12 This$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positi
+va), P(\OT1/cmr/m/it/12 place$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positiva),
  []
 
 
@@ -1240,15 +1237,14 @@ Underfull \hbox (badness 10000) has occurred while \output is active
  []
 
 [18]
-Overfull \hbox (48.991pt too wide) in paragraph at lines 566--573
-[][]\OT1/cmr/m/n/12 A par-tir da Equa^^Xc~ao 3.8[] ^^Se ne-cess^^Sario cal-cu-l
-ar os ter-mos P(\OT1/cmr/m/it/12 This$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positi
-va), P(\OT1/cmr/m/it/12 place$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positiva),
+Overfull \hbox (22.01466pt too wide) detected at line 650
+[] []
  []
 
 [19]
-Overfull \hbox (22.01466pt too wide) detected at line 639
-[] []
+Overfull \hbox (6.51804pt too wide) in paragraph at lines 718--737
+\OT1/cmr/m/n/12 atribu^^S^^Pda (uma pa-la-vra que ex-pressa sen-ti-men-tos) ^^S
+e es-crita em le-tras mai^^Susculas.
  []
 
 
@@ -1256,41 +1252,34 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 20
  []
 
-[20]
-Overfull \hbox (6.51804pt too wide) in paragraph at lines 707--726
-\OT1/cmr/m/n/12 atribu^^S^^Pda (uma pa-la-vra que ex-pressa sen-ti-men-tos) ^^S
-e es-crita em le-tras mai^^Susculas.
- []
-
-[21]
+[20] [21]
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 22
  []
 
-[22] [23]
+[22]
 Package acronym Info: Label `acro:NLTK' newly defined as it shall be overridden
 
-although it is yet undefined on input line 944.
+although it is yet undefined on input line 955.
 
-Underfull \hbox (badness 10000) in paragraph at lines 955--955
+Underfull \hbox (badness 10000) in paragraph at lines 966--966
 [][]$\OT1/cmss/m/n/10 https : / / docs . google . com / document / d / 1eYubSwL
 kpB7ZgfQVxxAwgsmAqS[][]
  []
 
-)
+) [23]
+\openout2 = `capitulos/capitulo3.aux'.
+
+ (./capitulos/capitulo3.tex
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 24
  []
 
-[24]
-\openout2 = `capitulos/capitulo3.aux'.
-
- (./capitulos/capitulo3.tex [25
+[24
 
 
 
-]
-<imagens/arquitetura.png, id=107, 475.7775pt x 334.24875pt>
+] <imagens/arquitetura.png, id=104, 475.7775pt x 334.24875pt>
 File: imagens/arquitetura.png Graphic file (type png)
 
 <use imagens/arquitetura.png>
@@ -1302,12 +1291,12 @@ although it is yet undefined on input line 74.
 Package acronym Info: Label `acro:POJO' newly defined as it shall be overridden
 
 although it is yet undefined on input line 79.
-
+ [25 <./imagens/arquitetura.png>]
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 26
  []
 
-[26 <./imagens/arquitetura.png>] [27]
+[26]
 Overfull \hbox (1.17177pt too wide) in paragraph at lines 155--158
 \OT1/cmss/m/n/12 worldnews / comments / 36ny58 / brazil[]blogger[]known[]for[]r
 eporting[]on[]corruption/$\OT1/cmr/m/n/12 . 
@@ -1325,12 +1314,7 @@ Overfull \hbox (35.57382pt too wide) in paragraph at lines 161--164
 yz3b / plane[]carrying[]brazil[]supreme[]
  []
 
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 28
- []
-
-[28]
+[27]
 Overfull \hbox (5.87729pt too wide) in paragraph at lines 183--185
 \OT1/cmss/m/n/12 reddit . com / r / worldnews / comments / 4d75i7 / 26[]terabyt
 e[]leak[]of[]panamanian[]shell[]
@@ -1387,20 +1371,21 @@ Overfull \hbox (9.7389pt too wide) in paragraph at lines 214--215
 
 Underfull \vbox (badness 4254) has occurred while \output is active []
 
- [29])
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 28
+ []
+
+[28]) [29] (./tcc.bbl
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 30
  []
 
-[30] (./tcc.bbl [31
+[30
 
 
-]) AED: lastpage setting LastPage
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 32
- []
-
-[32] (./tcc.aux (./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
+]) AED: lastpage setting LastPage [31] (./tcc.aux
+(./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
 (./capitulos/capitulo3.aux))
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1411,10 +1396,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 9318 strings out of 493013
- 125799 string characters out of 6136993
+ 9309 strings out of 493013
+ 125625 string characters out of 6136993
  233590 words of memory out of 5000000
- 12593 multiletter control sequences out of 15000+600000
+ 12590 multiletter control sequences out of 15000+600000
  17419 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,18n,72p,1215b,1162s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1437,10 +1422,10 @@ b><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb><c:/tex
 live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/texlive/2016/
 texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2016/texmf-dist
 /fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tcc.pdf (33 pages, 360702 bytes).
+Output written on tcc.pdf (32 pages, 358283 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 196 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

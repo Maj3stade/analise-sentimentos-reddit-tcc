@@ -39,7 +39,7 @@ escrita e outras mídias de comunicação \cite{manningschutze1999}.
 Na linguagem tanto escrita, como na falada, existem regras que são utilizadas
 para estruturar as expressões. Uma série de dificuldades no Processamento de
 Linguagem Natural são ocasionadas pelo fato de que as pessoas constantemente
-mudam essas regras para satisfazerem suas necessidades de comunicação
+mudam as regras para satisfazerem suas necessidades de comunicação
 \cite{manningschutze1999}. Uma vez que as regras são constantemente modificadas
 pelo locutor, se torna extremamente difícil a criação de um software ou hardware
 que efetue a interpretação de uma língua.
@@ -72,16 +72,16 @@ Porém, no ano de 1957, Chomsky publicou o trabalho intitulado de
 \textit{``Syntactic Structures''} onde descreve a
 teoria da gramática gerativa, que é uma teoria que considera a
 gramática como um conjunto de regras. Essa abordagem através de um conjunto de
-regras, ao invés de um modelo matemático, entra em conflito com os trabalhos
+regras, ao invés de um modelo estatístico, entra em conflito com os trabalhos
 anteriores, criando duas comunidades no campo da Linguística. Como reflexo
 dessas duas comunidades, a área de \ac{NLP} que crescia em paralelo, também foi
 dividida em duas áreas. A primeira dessas áreas que fazia uso de métodos
-baseados em regras (simbólica) e a segunda que fazia o uso de métodos quantitativos (estatísticas).
+baseados em regras (simbólica) e a segunda que fazia o uso de métodos quantitativos (estatística).
 
 
 Nesta seção será apresentado um exemplo de método simbólico e de um método
 estatístico.
-Destaca-se que essa descrição apresenta como objetivo, apenas
+Destaca-se que a descrição realizada nesta seção apresenta como objetivo, apenas
 diferenciar ambas as classes de métodos, através de seus requisitos e forma de execução.
 Destaca-se ainda que os métodos apresentados nesta seção não são utilizados na
 análise de sentimentos, sendo que os métodos específicos para essa
@@ -234,10 +234,7 @@ no \textit{training set} temos 150 instâncias da palavra ``um'' classificadas c
 substantivo e um total de 10000 substantivos. Ou seja, a probabilidade de ``um'' ser um substantivo é
 de 0,015. A Equação \ref{eq:associacao} também é aplicada para as demais
 possíveis classes da palavra ``um'', neste caso, pronome ou artigo. Por exemplo, a
-probabilidade da palavra ``um'' ser um pronome seria 0,0033 e a probabilidade da palavra ``um'' ser um artigo seria 0,025. Esse
-cálculo de probabilidade é realizado para todas as palavras da frase que está
-sendo classificada. Na Tabela \ref{tabela:associacao} tem-se os resultados
-obtidos para todas as palavras da frame ``João comprou um carro''.
+probabilidade da palavra ``um'' ser um pronome seria 0,0033 e a probabilidade da palavra ``um'' ser um artigo seria 0,025. 
 
 \begin{equation}
 \begin{split}
@@ -247,7 +244,10 @@ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0,015.
 \label{eq:associacao}
 \end{equation}
 
-Desta forma tem-se que 
+O
+cálculo de probabilidade é realizado para todas as palavras da frase que está
+sendo classificada. Na Tabela \ref{tabela:associacao} tem-se os resultados
+obtidos para todas as palavras da frame ``João comprou um carro''.
 
 \begin{table}[htb]
 \centering
@@ -296,9 +296,9 @@ P(SM|VB) = \frac{C(VB,SM)}{C(VB)} = \frac{3000}{12000} = 0,25
 
 Da mesma forma, a probabilidade de transição é cálculada para todas as
 demais classes. Por exemplo, a probabilidade de
-transição de um verbo para outro verbo é 0,17, de um verbo para um artigo é 0,42
-e de um verbo para um pronome é 0,17. Também, a Equação \ref{eq:transicao} é
-utilizada também para o cálculo da probabilidade da frase iníciar com
+transição de um verbo para outro verbo é de 0,17, de um verbo para um artigo é
+de 0,42 e de um verbo para um pronome é de 0,17. A Equação
+\ref{eq:transicao} é utilizada também para o cálculo da probabilidade da frase iníciar com
 determinada classe.
 A Tabela \ref{tabela:transicao} tem-se a probabilidade de transição para todas
 as classes do \textit{training set} de exemplo.
@@ -325,11 +325,14 @@ essa é aplicada a todas as palavras da frase. Na Equação \ref{eq:viterbi} os
 termos $v_t$, $v_{t-1}$, $a_{ij}$ e $b_j(o_t)$ correspondem, respectivamente, o
 caminho mais provável atual, o caminho mais provável anterior, a probabilidade
 de transição e a probabilidade de associação.
-Portanto a palavra ``João'', $v_{t-1}$ é representada pelo valor 1, visto
-que essa é a primeira palavra da frase: $a_{ij}$ é a probabilidade de transição entre
-``Início'' e um substantivo (Tabela \ref{tabela:transicao}) e $b_j(o_t)$ é a
-probabilidade de associação da palavra João com substantivo (Tabela
-\ref{tabela:associacao}). Desta forma tem-se que $v_t$ para a palavra João é:
+Por exemplo, para a palavra ``João'', tem-se que $v_{t-1}$ é igual a
+1 (visto que essa é a primeira palavra
+da frase);
+$a_{ij}$ que é a probabilidade de transição entre ``Início'' e um substantivo, é
+igual a 0,125 (Tabela \ref{tabela:transicao}); e $b_j(o_t)$ que é a
+probabilidade de associação da palavra João com substantivo é igual a 0,0001 (Tabela
+\ref{tabela:associacao}).
+Desta forma, tem-se que $v_t$ para a palavra João é:
 
 \begin{equation}
 \begin{split}
@@ -356,12 +359,20 @@ v_t(j) = 0,000125 * 1 * 0,0042 = 0,000000525.
 \label{eq:comprou}
 \end{equation}
 
-Onde os valores 1 e 0,0042 são as probabilidades de transição (Tabela
-\ref{tabela:transicao}) e associação (Tabela \ref{tabela:associacao}) e
-0,000125 é o caminho mais provável anterior (Equação \ref{eq:viterbi}).
-Após efetuar o cálculo de todos os caminhos, é escolhido o caminho que tem maior
-probabilidade, sendo que neste caso a palavra ``um'' é classificada como
-artigo.
+Onde
+0,000125 é o caminho mais provável anterior (Equação \ref{eq:viterbi}). Já os
+valores 1 e 0,0042 são as probabilidades de transição (Tabela
+\ref{tabela:transicao}) e associação (Tabela \ref{tabela:associacao}).
+Após efetuar o cálculo de probabilidade de todos os caminhos, é escolhido o
+caminho que tem a maior probabilidade, sendo que neste caso o caminoh que
+apresenta a maior probabilidade é o que possui a palavra ``um'' como artigo.
+De fato, esse possui uma probabilidade de $ (0,000000525 *
+0,42 * 0,025)$ que é igual a 0,0000000055125, já o que apresenta a palavra
+``um'' como pronome possui uma probabilidade de $(0,000000525 * 0,17 * 0,0033)$
+igual a 0,000000000294525, enquanto o que apresenta a palavra ``um'' como
+substantivo possui uma probabilidade de $(0,000000525 * 0,25 * 0,015)$ igual a
+0,00000000196875.
+
 
 \begin{figure}[htbp]
 \centering
