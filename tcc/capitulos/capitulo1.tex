@@ -405,30 +405,23 @@ substantivo possui uma probabilidade de $(0,000000525 * 0,25 * 0,015)$ igual a
 \label{cap:Classificadores}
 
 Antigamente, para sabermos a opinião de outras pessoas sobre um
-determinado produto, tinhamos que perguntar diretamente. Com a
+determinado produto, tinhamos que perguntar diretamente a essas pessoas. Com a
 popularização da Internet e também de redes sociais, milhares de pessoas
-compartilham para todos as suas opinões sobre produtos, política, serviços e
+compartilham as suas opinões sobre produtos, política, serviços e
 demais assuntos. Porém, muitas vezes essas opiniões acabam
 por ser esquecidas devido a dificuldade de se analisar uma grande quantidade de
 textos. De fato, uma das maiores dificuldades reside em como obter a opinião
-geral sobre determinado produto em uma seção de comentários com mais de 1000
-opiniões diferentes. Dentro dessa contexto, a análise de sentimentos,
-considerada uma tarefa do \ac{NLP}, tem como função identificar e quantificar esses sentimentos expressos através de textos.
+geral das pessoas sobre determinado produto em uma seção de comentários com mais
+de 1000 opiniões diferentes. Dentro dessa contexto, a análise de sentimentos,
+tem como função identificar e quantificar esses sentimentos expressos através de textos.
 
-Outros possíveis métodos de análise de sentimentos através de aprendizado de
-máquina são \ac{SVM} e \ac{MaxEnt}, os quais possuem
-performance similar ao Naive Bayes \cite{domingos97naivebayes}.
-
-
-Neste capítulo serão descritos um método estatístico, Naive Bayes e um método
-simbólico, \ac{VADER}, aplicados na análise de sentimentos. Outros possíveis
-métodos estatísticos para a análise de sentimentos são \ac{SVM} e \ac{MaxEnt},
+Neste capítulo serão descritos um método estatístico (Naive Bayes) e um método
+simbólico (\ac{VADER}), que podem ser aplicados na análise de sentimentos.
+Outros possíveis métodos estatísticos para a análise de sentimentos são \ac{SVM} e \ac{MaxEnt},
 os quais possuem performance similar ao Naive Bayes \cite{Pang:2002:TUS:1118693.1118704}. O método simbólico
 \ac{VADER} foi selecionado pois este, segundo seus criadores, apresenta
-performance superior aos métodos já existentes \cite{conf/icwsm/HuttoG14}.
-
-Ambos métodos selecionados serão descritos para o uso da língua Inglesa,
-visto que o \textit{Website} analisado (Reddit) possui a maioria de seus
+performance superior aos métodos já existentes \cite{conf/icwsm/HuttoG14}. Ambos
+métodos serão descritos para o uso da língua Inglesa, visto que o \textit{Website} analisado (Reddit) possui a maioria de seus
 comentários em língua Inglesa. Além disso, não foram encontrados métodos que
 façam uso da língua Portuguesa com similar precisão.
 
@@ -442,11 +435,11 @@ façam uso da língua Portuguesa com similar precisão.
 
 \section{Naive Bayes}
 
-O Naive Bayes é um método estatístico para a classificação o qual podemos
-aplicar para a análise de sentimento. Esse faz o uso do teorema de Bayes e um
+O Naive Bayes é um método estatístico para a classificação e que pode ser
+utilizado para a análise de sentimento. Esse faz o uso do teorema de Bayes e um
 \textit{training set} para inferir a classificação de uma frase. Por exemplo,
-precisamos determinar se a frase ``This place is great.'' demonstra um
-sentimento negativo ou positivo. 
+precisamos determinar se a frase \textit{``This place is great.''} demonstra um
+sentimento negativo ou positivo.
 
 \begin{table}[htb]
 \centering
@@ -464,13 +457,22 @@ Forgettable experience  & Negativa     \\ \hline
 \end{table}
 
 A partir do \textit{training set} hipotético (Tabela
-\ref{tab:trainingsetnb}) o método irá calcular a probabilidade da frase ``This
-place is great'' ser positiva e também de ser negativa sendo que a partir dessas
-duas possibilidades, será escolhida a de maior probabilidade.
+\ref{tab:trainingsetnb}) o método irá calcular a probabilidade da frase
+\textit{``This place is great''} ser positiva e também de ser negativa sendo que
+a partir dessas duas possibilidades, será escolhida a de maior probabilidade.
 
-Para cálcular a probabilidade da frase ``This place is great'' pertencer a cada categoria
-é utilizado o teorema de Bayes \cite{manningschutze1999}, através da Equação
-\ref{eq:teorema}.
+Para cálcular a probabilidade da frase \textit{``This place is great''}
+pertencer a cada categoria é utilizado o teorema de Bayes \cite{manningschutze1999}, através da Equação
+\ref{eq:teorema}, onde o termo P(c$\vert$d) é a probabilidade da frase
+\textbf{d} pertencer a classe \textbf{c}. Ou seja, a probabilidade de \textit{``This place is great''} ser
+  uma frase positiva ou negativa. O Termo P(d$\vert$c) é a probabilidade da
+  classe \textbf{c} ser a frase \textbf{d}. Ou seja, dentre todas as frases
+  negativas ou positivas, a probabilidade de uma frase ser \textit{``This place
+  is great''}. Já P(c) é a probabilidade da classe \textbf{c}, que é a
+  frequência que frases negativas ou positivas aparecem em nosso \textit{training
+  set}. E, por fim, P(d) é a probabilidade de \textbf{d}, que é a
+  frequência que a frase \textit{``This place is great''} aparece em nosso \textit{training
+  set}.
 
 \begin{equation}
 \begin{gathered}
@@ -499,18 +501,7 @@ P(Positiva)}{\textit{This place is great}}
 \end{equation}
 
 
-Onde o termo P(c$\vert$d) é a probabilidade da frase \textbf{d} pertencer a
-classe \textbf{c}. Ou seja, a probabilidade de \textit{``This place is great''} ser
-  uma frase positiva ou negativa. O Termo P(d$\vert$c) é a probabilidade da
-  classe \textbf{c} ser a frase \textbf{d}. Ou seja, dentre todas as frases
-  negativas ou positivas, a probabilidade de uma frase ser \textit{``This place
-  is great''}. Já P(c) é a probabilidade da classe \textbf{c}. Ou seja, a frequência que
-  frases negativas ou positivas aparecem em nosso \textit{training
-  set}. E, por fim, P(d) é a probabilidade de \textbf{d}. Ou seja, a frequência que
-  a frase \textit{``This place is great''} aparece em nosso \textit{training
-  set}. Como ambas as Equações \ref{eq:teoreman1} e \ref{eq:teoremap1} terão
-  como divisor P(d), este pode ser simplificado resultando nas equações
-  \ref{eq:teoreman} e \ref{eq:teoremap}.
+
 \begin{equation}
 \begin{gathered}
 P(Negativa|\textit{This place is great})
@@ -530,12 +521,14 @@ P(Positiva)
 \end{gathered}
 \end{equation}
 
+Uma vez que as Equações \ref{eq:teoreman1} e \ref{eq:teoremap1}
+apresentam P(d) como divisor (\textit{``This place is great''}), este pode ser
+simplificado resultando nas Equações \ref{eq:teoreman} e \ref{eq:teoremap}.
 Os termos P(Positiva) e P(Negativa) são definidos pela frequência que frases
 positivas e negativas aparecem no \textit{training set}, sendo determinados
-através das Equações \ref{eq:frasespositivas} e \ref{eq:frasesnegativas}. Neste
-caso, \textit{``The food was great''}, \textit{``I love the food here''}, \textit{``This place is
-wonderful''} são frases positivas e as demais frases ``\textit{They are horrible!}'' e
-``\textit{Forgettable experience}'' são negativas.
+através das Equações \ref{eq:frasespositivas} e \ref{eq:frasesnegativas}. Tem-se um total de 5 frases onde 3
+dessas são positivas (Equação \ref{eq:frasespositivas}) e as outras 2 são
+negativas (Equação \ref{eq:frasesnegativas}).
 
 \begin{equation}
 \begin{gathered}
@@ -553,16 +546,17 @@ P(Negativa)
 \label{eq:frasesnegativas}
 \end{gathered}
 \end{equation}
+
 Uma vez que a frase \textit{``This place is great''} não existe por completo no
 \textit{training set}, tem-se que o termo P(d$\vert$c) da Equação
 \ref{eq:teoreman} e \ref{eq:teoremap} é igual a zero (0) (impossibilitando o
 cálculo de probabilidade para essa frase). Neste caso, se faz o uso do
-\textit{Naive Bayes}, o qual passa a considerar as palavras ao invés de frases
-completas, isso elimina o problema com frases que não se
-encontram no \textit{training sets}. Neste caso, considera-se somente a
-fraquência que cada palavra aparece em uma frase positiva e em uma negativa.
-Portanto para o \textit{Naive Bayes} o termo $P(\textit{This place is
-great}|Positiva)$ visto na Equação \ref{eq:teoremap} é dado pela Equação
+\textit{Naive Bayes}, o qual passa a considerar todas as palavras ao invés da
+frase completa, o uso do Naive Bayes elimina o problema com frases que não se
+encontram no \textit{training sets}. Neste caso, é considerado somente a
+frequência que cada palavra aparece em uma frase positiva e em uma negativa.
+Portanto, o termo $P(\textit{This place is
+great}|Positiva)$ da Equação \ref{eq:teoremap} é dado pela Equação
 \ref{eq:frasespositivas1}.
 
 \begin{equation}
@@ -578,8 +572,8 @@ A partir da Equação \ref{eq:frasespositivas1} é necessário calcular os
 termos P(\textit{This}$\vert$Positiva),
 P(\textit{place}$\vert$Positiva), P(\textit{is}$\vert$Positiva), P(\textit{great}$\vert$Positiva).
 O termo P(\textit{This}$\vert$Positiva) é calculado pela razão entre a
-quantidade de vezes que a palavra \textit{This} foi classificada como positiva em nosso
-\textit{training set}, e o total de palavras classificadas como positiva
+quantidade de vezes que a palavra \textit{This} foi classificada como positiva
+no \textit{training set}, e o total de palavras classificadas como positiva
 (Equação \ref{eq:thispositiva}).
 
 \begin{equation}
@@ -611,14 +605,15 @@ great & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
 \end{table}
 
 Uma vez que algumas palavras não encontram-se no \textit{training set}
-para determinadas situações, elas acabam zerando o resultado final da
-multiplicação das probabilidades de cada palavra (Equação
+essas acabam zerando o resultado final da
+multiplicação das probabilidades (Equação
 \ref{eq:frasespositivas1}). De modo, a evitar que uma única palavra
-invalide uma frase é utilizado \textit{Laplace smoothing} \cite{Manning:2008:IIR:1394399}. Neste, é
-somado 1 a cada palavra e ao total de palavras, são somadas as quantidades de
-palavras distintas do \textit{training set} (16). Aplicando o
-\textit{Laplace smoothing} para a Tabela \ref{tab:probabilidadesnb} é obtida a
-Tabela \ref{tab:probabilidadesl}.
+invalide uma frase é utilizado o método \textit{Laplace smoothing}
+\cite{Manning:2008:IIR:1394399}. Neste, é somado 1 a cada palavra da frase, já
+ao total de palavras positivas é somada a quantidade de palavras distintas do
+\textit{training set} (16). Aplicando o \textit{Laplace smoothing} para os
+valores apresentados na Tabela \ref{tab:probabilidadesnb} são obtidos os valores
+que são apresentados na Tabela \ref{tab:probabilidadesl}.
 
 
 \begin{table}[htb]
@@ -650,11 +645,10 @@ P(Positiva|\textit{This place is great}) = \frac{1 + 1}{13 + 16} \times
 \end{equation}
 
 Uma vez que o termo P(Positiva $\vert$ \textit{This place is great})
-encontra-se definido através da Equação \ref{eq:ppositivaplace}, pode-se
+encontra-se definido, pode-se
 utilizar a Equação \ref{eq:teoreman}, onde o termo P(Positiva) é igual a 0,6
-definido através da Equação \ref{eq:frasespositivas}. Neste caso, tem-se que a
-probabilidade da frase \textit{``This place is great''} ser classificada como
-positiva é dada através da Equação \ref{eq:positiva}.
+(Equação \ref{eq:frasespositivas}). Neste caso, tem-se que a probabilidade da
+frase \textit{``This place is great''} ser classificada como positiva é.
 
 \begin{equation}
 \begin{gathered}
@@ -683,18 +677,18 @@ frase ser negativa (0,00000196).
 
 \section{\textit{VADER}}
 
-O \ac{VADER} é um dicionário e classificador de sentimentos que se baseia em
-regras, portanto, um método de classificação simbólico. Esse foi desenvolvido
-especificadamente para funcionar em redes sociais onde-se tem um contexto
+O método de \ac{VADER} é um dicionário e classificador de sentimentos que se
+baseia em regras, portanto, um método de classificação simbólico. Esse foi desenvolvido
+especificadamente para ser utilizado em redes sociais onde-se tem um contexto
 vago, pouca quantidade de texto, gírias e emoticons \cite{conf/icwsm/HuttoG14}.
 
-A classificação do sentimento é feita através da separação da frase em palavras
-e para cada palavra da frase é atribuída uma pontuação de intensidade em uma
-escala de -4 até +4. Como por exemplo, a palavra \textit{great} tem a
+A classificação do sentimento é feita através da separação da frase em palavras,
+sendo que para cada palavra da frase é atribuída uma pontuação de intensidade em
+uma escala de -4 até +4. Como por exemplo, a palavra \textit{great} tem a
 intensidade de 3.1 e \textit{horrible} -2.5. Essa pontuação é obtida através de
 um dicionário que é construído utilizando o método de \textit{``wisdom of the
-crowd''} onde um grupo de pessoas atribuiu os valores de intensidade para cada palavra. Por
-exemplo, a frase \textit{``This place is great''} seria classificada com:
+crowd''}, onde um grupo de pessoas atribuiu os valores de intensidade para cada
+palavra. Por exemplo, a frase \textit{``This place is great''} seria classificada com:
 
 
 \begin{table}[htb]
@@ -715,11 +709,11 @@ desconsideradas uma vez que não existem no dicionário e não expressam
 sentimentos. Após, ele faz uso do seguinte conjunto de regras para inferir a
 intensidade do sentimento:
 \begin{itemize}
-\item A primeira regra consistem em verificar quando uma palavra com pontuação
+\item Verificar quando uma palavra com pontuação
 atribuída (uma palavra que expressa sentimentos) é escrita em letras
 maiúsculas.
   Neste caso, é aumentada a magnitude da intensidade do sentimento sem modificar
-  a orientação semântica. Para isso, é somado 0,733 a intensidade do
+  a orientação semântica. Neste caso, é somado 0,733 a intensidade do
   sentimento caso este tenha intensidade positiva ou subtraído
   0,733 caso este tenha intensidade negativa.
   \begin{table}[htb]
@@ -735,8 +729,9 @@ maiúsculas.
 	\label{my-label}
    \end{table}
 
-\item A segunda regra verifica se alguma das três palavras anteriores é um advérbio intensificador. Neste caso, estes impactam a
-intensidade do sentimento aumentando ou diminuindo 0,293 conforme o advérbio. 
+\item Verificar se alguma das três palavras anteriores é um advérbio
+intensificador. Neste caso, estes impactam a intensidade do sentimento
+aumentando ou diminuindo em 0,293 o valor deste.
   \begin{table}[htb]
 	\centering
 	\begin{tabular}{l|l|l|l|l|l|l}
@@ -766,9 +761,8 @@ intensidade do sentimento aumentando ou diminuindo 0,293 conforme o advérbio.
    \end{table}
    
 
-\item A terceira regra verifica se a frase contém a palavra \textit{``but''}.
-Caso encontrada, essa palavra indica uma troca do sentimento da frase, uma vez
-que o texto seguinte a palavra \textit{``but''} expressa um sentimento mais
+\item Verificar se a frase contém a palavra \textit{``but''}. Essa palavra
+indica uma troca do sentimento da frase, uma vez que o texto seguinte a palavra \textit{``but''} expressa um sentimento mais
 dominante. Neste caso, o método multiplica a intensidade dos sentimentos
 expressos até a palavra \textit{``but''} por 0,5 e os sentimentos expressos após a palavra \textit{``but''} por 1,5.
 
@@ -788,10 +782,10 @@ expressos até a palavra \textit{``but''} por 0,5 e os sentimentos expressos ap�
 	\label{my-label5}
    \end{table}
 
-\item A quarta regra verifica se a frase possui pontos de exclamação (!). Este
+\item Verificar se a frase possui pontos de exclamação (!). Este
 tipo de pontuação aumenta a magnitude da intensidade sem modificar a
-orientação semântica. 0,292 a cada ponto de exclamação considerando um
-máximo de 4 pontos de exclamação.
+orientação semântica. Neste caso, deve ser adicionado um valor de 0,292 a cada
+ponto de exclamação considerando um máximo de 4 pontos de exclamação.
 
  \begin{table}[!htbp]
 	\centering
@@ -807,8 +801,8 @@ máximo de 4 pontos de exclamação.
    \end{table}
    
 
-\item Por fim, a quinta regra examina as três palavras anteriores,
-procurando a existência de uma negação que inverte a polaridade de um texto.
+\item Examinar as três palavras anteriores,
+procurando a existência de uma negação que inverte a polaridade do texto.
 Quando é encontrada uma negação na frase, a intensidade de cada palavra de
 sentimento é multiplicada por -0,74.
 
@@ -821,7 +815,7 @@ sentimento é multiplicada por -0,74.
 	\\
 	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
 	% Substantivo \\
-	Intensidade:   &  &   & Negação & 3,1 \textrightarrow 2,294
+	Intensidade:   &  &   & Negação & 3,1 \textrightarrow -2,294
 	\end{tabular}
 	\label{my-label}
    \end{table}
@@ -829,8 +823,9 @@ sentimento é multiplicada por -0,74.
 
 \end{itemize}
 
-Após esse cálculo de pontuação de intensidade, é feita a normalização dessa
-pontuação através da Equação \ref{eq:vader}.
+Após o cálculo de intensidade, é feita a normalização dessa
+pontuação, totalizando-se a Equação \ref{eq:vader}. Neste caso, 15 é um valor
+fixo para aproximar o resultado final do valor máximo esperado.
 
 \begin{equation}
 \begin{gathered}
@@ -853,90 +848,33 @@ pontuação através da Equação \ref{eq:vader}.
 
 Neste caso para a frase \textit{``This place is great''} (aonde somente a
 palavra \textit{great} possui pontuação e essa tem o valor de 3,1) será
-atribuida pontuação final de 0,6249.  Caso essa
-pontuação fosse menor que -1 ou maior que 1, essa seria limitada aos valores de
--1 ou 1 respectivamente. Para o \ac{VADER}, são consideradas frases negativas aquelas
-com pontuação de -1 até -0,5, frases neutras aquelas com pontuação de -0,5 até
+atribuida pontuação final de 0,6249.  Caso a
+pontuação da frase fosse menor que -1 ou maior que 1, essa seria limitada aos
+valores de -1 ou 1, respectivamente. Para o \ac{VADER}, são consideradas frases negativas
+aquelas com pontuação de -1 até -0,5, frases neutras aquelas com pontuação de -0,5 até
 0,5 e frases positivas aquelas com pontuação 0,5 até 1. Portanto a frase
 \textit{``This place is great''} com pontuação 0,6249 seria classificada como
 positiva.
 
-\subsection{Método Selecionado}
+\subsection{Seleção de Método}
 
-A partir dos métodos citados anteriormente, foi selecionado o método que
-demonstra a maior performance reportada por outros artigos. Por estes serem
-realizados em outras mídias sociais, também foi considerada a similaridade desta
-mídia social para o Reddit.
-
-A avaliação de performance na classificação de textos é medida através do $F_1$
-Score (ou também \textit{F-Score} ou \textit{F-Measure}). Este é realizado
-utilizando o valor de revocação, ou seja, a porcentagem do texto
-classificada corretamente, representado pela Equação \ref{eq:recall} e também
-o valor de precisão, representado pela Equação \ref{eq:precision} aplicados a
-Equação \ref{eq:f1score}.
-
-\begin{equation}
-\begin{gathered}
-\text{Revocação}
-=
-\frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} +
-\text{Falsos Negativos}}
-\label{eq:recall}
-\end{gathered}
-\end{equation}
-
-\begin{equation}
-\begin{gathered}
-\text{Precisão}
-=
-\frac{\text{Verdadeiros Positivos}}{\text{Verdadeiros Positivos} +
-\text{Falsos Positivos}}
-\label{eq:precision}
-\end{gathered}
-\end{equation}
-
-\begin{equation}
-\begin{gathered}
-F_1 \text{Score}
-= 2 \times
-\frac{\text{Precisão} \times \text{Revocação}}{\text{Precisão} +
-\text{Revocação}}
-\label{eq:f1score}
-\end{gathered}
-\end{equation}
-
-A utilização do Naive Bayes para classificação de avaliações de filmes enviados
-por usuários do website IMDB\footnote{http://www.imdb.com} segundo
-Pang \cite{Pang:2002:TUS:1118693.1118704}, atinge em média a precisão de 80\%
-para análise de sentimentos em determinados casos. Ainda que passando o valor de
-50\% de precisão apresentado por uma escolha aleatória, este valor está distante
-do apresentado pelo mesmo método quando utilizado para a classificação de
-tópicos \cite{Nigam:2000:TCL:347709.347724}.
-
-Quando da utilização do método para a análise de \textit{Tweets}, um cenário com
-maior similaridade ao Reddit, segundo Pålsson e Szerszen
-\cite{SentimentinSocialMedia}, o método apresenta $F_1$ Score de 58,2\% na análise
-de \textit{Tweets} e 58,3\% na análise de \textit{Tweets} pré processados aonde
-foram substituídos os \textit{emoticons} por palavras similares como
-\textit{happy, sad ou neutral}. Em contraste, a
-utilização do \ac{VADER} apresenta respectivamente o $F_1$
-Score de 72,3\% e 74,9\% nos mesmos cenários.
-
-Também, segundo Hutto \cite{conf/icwsm/HuttoG14}, o único cenário no qual o
-Naive Bayes apresenta melhor precisão utilizando três classes (positivo,
-neutro e negativo) é o de análise de sentimentos em avaliações de filmes,
-apresentando $F_1$ Score de 75\% utilizando um \textit{training set}
-especializado para avaliações de filmes contra 61\% apresentado pelo \ac{VADER}.
-Nos outros cenários avaliados, \textit{Tweets}, avaliações de produtos da
-Amazon e editoriais do New York Times, o \ac{VADER} apresentou melhor
-performance com o $F_1$ Score de 96\%, 63\% e 55\% respectivamente, contra 56\%,
+Para o desenvolvimento deste trabalho optou-se pelo \ac{VADER}, uma vez que este
+apresentou melhores resultados segundo a literatura, em casos de usos
+similares. Segundo Pålsson e Szerszen
+\cite{SentimentinSocialMedia}, para a análise de \textit{Tweets} a
+utilização do \ac{VADER} apresenta o $F_1$
+Score de 72,3\% nos mesmos cenários. Já na análise conduzida por Hutto
+\cite{conf/icwsm/HuttoG14}, nos cenários de análise de \textit{tweets}, avaliações de produtos da
+Amazon e editoriais do New York Times, o \ac{VADER} apresentou melhor performance com o $F_1$ Score de 96\%, 63\% e 55\% respectivamente, contra 56\%,
 49\%, 44\% apresentados pelo Naive Bayes.
 
-Por não necessitar de um \textit{training set} adequado
-especificadamente ao tema que está sendo analisado e por consequência apresentar
-maior precisão em diversos cenários, foi selecionado o \ac{VADER} para a
-utilização na análise de sentimentos na rede social Reddit, visto que essa
-abrange inúmeros assuntos.
+Destaca-se que por não necessitar de um \textit{training set} adequado
+especificadamente ao tema que está sendo analisado, o \ac{VADER} apresenta
+melhor performance e também adaptabilidade. Por isso, foi
+selecionado o \ac{VADER} para a utilização na análise de sentimentos na rede
+social Reddit, visto que os temas selecionados para análise abrangem uma
+quantidade diversificada de tópicos, não sendo necessário especializar o
+\textit{training set} para determinado assunto.
 
 \subsection{Implementação do Método}
 

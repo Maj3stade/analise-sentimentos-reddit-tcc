@@ -12,11 +12,11 @@
 \contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{10}
 \contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{12}
 \contentsline {chapter}{\numberline {3}M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}{16}
-\contentsline {section}{\numberline {3.1}Naive Bayes}{17}
-\contentsline {section}{\numberline {3.2}\textit {VADER}}{20}
-\contentsline {subsection}{\numberline {3.2.1}M\IeC {\'e}todo Selecionado}{22}
-\contentsline {subsection}{\numberline {3.2.2}Implementa\IeC {\c c}\IeC {\~a}o do M\IeC {\'e}todo}{23}
-\contentsline {chapter}{\numberline {4}Rede Social Reddit}{24}
-\contentsline {section}{\numberline {4.1}Extra\IeC {\c c}\IeC {\~a}o de Dados}{25}
-\contentsline {section}{\numberline {4.2}T\IeC {\'o}picos Selecionados}{27}
-\contentsline {chapter}{Refer{\^e}ncias}{30}
+\contentsline {section}{\numberline {3.1}Naive Bayes}{16}
+\contentsline {section}{\numberline {3.2}\textit {VADER}}{19}
+\contentsline {subsection}{\numberline {3.2.1}Sele\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todo}{21}
+\contentsline {subsection}{\numberline {3.2.2}Implementa\IeC {\c c}\IeC {\~a}o do M\IeC {\'e}todo}{22}
+\contentsline {chapter}{\numberline {4}Rede Social Reddit}{23}
+\contentsline {section}{\numberline {4.1}Extra\IeC {\c c}\IeC {\~a}o de Dados}{24}
+\contentsline {section}{\numberline {4.2}T\IeC {\'o}picos Selecionados}{26}
+\contentsline {chapter}{Refer{\^e}ncias}{29}
