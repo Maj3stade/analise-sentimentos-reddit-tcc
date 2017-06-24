@@ -47,6 +47,14 @@ acessados no ano de 2016:
   como que foi ensinado para eles sobre a existência da Coreia do Norte.
 \end{itemize}
 
+A identificação de padrões de sentimentos expressos por determinados grupos
+dessa comunidade, se faz útil visto que a partir dessa avaliação é possível construir
+ferramentas que apoiam decisões tanto de um ponto de vista político, como por
+exemplo, entender qual é a opinião sobre um determinado assunto de um conjunto
+de eleitores, tanto quanto um ponto de vista de negócios, para entender qual a
+opinião dos consumidores de um produto, ou de seu competidor, a respeito de um
+determinado assunto.
+
 \section{Extração de Dados}
 \label{cap:Extracao}
 
@@ -70,8 +78,8 @@ arquitetura utilizada para desenvolvimento deste software.
 A partir de um \textit{link} para um tópico, o software tem como tarefa, a
 extração e pesquisa de dados relacionados com o tópico em questão. Isso se faz
 da seguinte forma, primeiramente, é enviada uma requisição para o \textit{link}
-utilizando o sufixo ``.json'', de forma demonstrada na API, a partir dessa
-requisição, o \textit{website} retorna um objeto \ac{JSON}.
+utilizando o sufixo ``.json'' (Exemplo: https://www.reddit.com/r/iama.json), a
+partir dessa requisição, o \textit{website} retorna um objeto \ac{JSON}.
 
 Como o \ac{JSON} possui 68 campos que assim como seus tipos de dados, não se
 encontram em nenhuma documentação, foi utilizado o \textit{website}
@@ -136,14 +144,14 @@ sufixo ``\textit{.json}'' no final. O \textit{website} retorna um
 \textit{JSON} com os dados referentes ao tópico solicitado e aos comentários
 deste tópico. Este objeto \ac{JSON} é convertido em um \ac{POJO} através da
 biblioteca Jackson e persistida no banco de dados através do \textit{framework}
-Hibernate. Como a API do Reddit possui uma restrição do número de comentários
+Hibernate. Como o Reddit possui uma restrição do número de comentários
 disponibilizados, são efetuadas novas requisições para a seção \textit{``more''}
 disponível no \ac{JSON} de retorno.
 
 \section{Tópicos Selecionados}
 
 Para análise de sentimentos e comparação dos resultados obtidos, foram
-selecionados 25 tópicos controversos, selecionados com o objetivo de encontrar
+selecionados 16 tópicos controversos, selecionados com o objetivo de encontrar
 padrões de opinião entre seus comentários, distribuídos da seguinte forma:
 
 Tópicos relacionados com o cenário político nacional:

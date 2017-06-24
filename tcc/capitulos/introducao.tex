@@ -30,8 +30,7 @@ Através deste \textit{website}, seus usuários podem criar ou se inscrever em
 comunidades, também conhecidas como \textit{subreddits}.
 Uma vez que as comunidades são criadas pelos próprios usuários, podemos encontrar
 comunidades sobre todos os assuntos, sejam notícias do mundo, comunidades
-partidárias, comunidades criadas para pessoas de uma mesma localidade, comunidades
-de imagens engraçadas, etc.
+partidárias ou de pessoas de uma mesma localidade, etc.
 
 Nestas comunidades é possível visualizar e comentar \textit{links} enviados por
 outros usuários.
@@ -45,8 +44,9 @@ tiroteio ocorrido em Paris em 15 de Novembro de 2015.
 
 Dentro deste contexto neste trabalho será desenvolvido um software que permita
 realizar a análise dos comentários do \textit{website} Reddit. Mais
-especificamente os comentários do Reddit serão analisados com o objetivo de
-identificar padrões de sentimentos, ou seja, determinar se a opinião expressada com relação a um determinado tópico é neutra, positiva ou negativa.
+especificamente, os comentários do Reddit serão analisados com o objetivo de
+identificar padrões de sentimentos dos usuários, ou seja, determinar se a
+opinião expressada com relação a um determinado tópico é neutra, positiva ou negativa.
 
 \section{Objetivos do Trabalho}
 
@@ -55,13 +55,27 @@ Este trabalho tem como objetivo a análise dos comentários disponíveis no
 usuários de suas comunidades. De forma a atingir o objetivo principal desse
 trabalho, os seguintes objetivos específicos devem ser realizados:
 \begin{itemize}
-  \item Desenvolver uma ferramenta para o Processamento Natural de Linguagem através de
-\textit{frameworks} já existentes.
+  
  \item Construção de uma base de dados a partir do \textit{website} Reddit.
+ \item Desenvolver uma ferramenta para o Processamento Natural de Linguagem
+ através de \textit{frameworks} já existentes.
  \item Efetuar o processamento da base de dados criada utilizando-se a
  ferramenta desenvolvida.
 \end{itemize}
 
 \section{Estrutura do Trabalho}
+
+O presente trabalho está estruturado da seguinte forma: no Capítulo
+\ref{cap:Processamento} será apresentado uma introdução ao Processamento de
+Linguagem Natural, assim como uma introdução a métodos estatísticos e
+simbólicos a fim de demonstrar a diferença entre ambos.
+No Capítulo \ref{cap:Classificadores} será apresentada uma descrição da análise
+de sentimentos, e métodos estatísticos e simbólicos aplicados nessa análise a fim de se determinar o
+método de análise de sentimentos a ser utilizado. Por fim, o Capítulo apresenta
+a forma de implementação do método selecionado. O Capítulo \ref{cap:Reddit} tem
+o objetivo de descrever a forma que foi criado e populado o banco de dados para a análise de sentimentos, descrevendo a rede social em questão, os tópicos
+selecionados para a criação da base e a implementação para extração dos
+comentários para criação da base.
+
 %O presente trabalho está estruturado da seguinte forma: no Capítulo
 % \ref{cap:Animacao} será apresentada a história da animação, seu surgimento e conceitos. No Capítulo \ref{cap:Blender} são apresentadas informações sobre o \textit{software} Blender, assim como os métodos disponíveis nesse para a criação de animações 3D. No Capítulo \ref{cap:Kinect} será apresentado o sensor Kinect, assim como seu funcionamento e alguns conceitos sobre as imagens capturadas. No Capítulo \ref{cap:DesenvKinect} serão apresentadas as bibliotecas e ferramentas para o desenvolvimento de aplicações utilizando Kinect. Além disso, é realizado um comparativo, onde são apresentadas as vantagens e desvantagens de cada uma dessas ferramentas. No Capítulo \ref{cap:AplicaIntegra} serão apresentados alguns \textit{softwares} que já fazem a integração entre o sensor e a ferramenta, assim como o funcionamento desses. No Capítulo \ref{cap:Implementacao} serão apresentados os detalhes da solução desenvolvida e da animação gerada, bem como são apresentados os testes realizados e os resultados obtidos. Por fim, no Capítulo \ref{cap:Consideracoes} são apresentadas as considerações finais e sugestões de trabalhos futuros.
