@@ -227,27 +227,113 @@ foram desconsiderados uma vez que esses podem não estar relacionados com o
 tópico em questão, tornando inválida ou prejudicando a análise de sentimento.
 
 
-\section{Conclusão Parcial}
+\chapter{Conclusão Parcial}
 
-No Capítulo \ref{cap:Processamento} foram introduzidos dois tipos de métodos
-distintos para o \ac{NLP}, métodos simbólicos e
-métodos estatísticos, os quais foram estudados para a análise de sentimentos
-através do Capítulo \ref{cap:Classificadores}.
+Como visto, o \ac{NLP} tem como objetivo a analise de linguagem natural, seja
+essa escrita ou falada. Dentre diversas tarefas que ela executa, uma delas é a
+análise de sentimentos, a qual se faz útil visto que cada vez
+mais as pessoas se comunicam através de redes sociais, gerando um grande volume
+de dados. A análise e quantificação da opinião expressa por esses dados, seja
+por fins políticos, comerciais ou quaisquer outros, se torna díficil quando
+feita de forma manual por sua quantidade de dados.
 
-Através do Capítulo \ref{cap:Classificadores}, foram comparados um método
-simbólico e outro método estatístico a fim de se determinar qual apresenta melhor performance na análise de sentimentos
-aplicada em uma rede social, sendo que a literatura apontou que o método mais
-assertivo é o método \ac{VADER}, o qual está disponível através do
-\textit{framework} \ac{NLTK}.
+Através do estudo realizado, foram encontrados dois métodos de \ac{NLP}
+distintos, métodos simbólicos, os quais se baseiam em regras, como por exemplo o
+Método de Brill para análise léxica e estatísticos, como por exemplo a
+utilização de Modelos de Markov, que utilizam aprendizado supervisionado. Dentro
+da área do \ac{NLP} de análise de sentimentos, através da literatura, foram
+verificados os métodos estatísticos \ac{SVM}, \ac{MaxEnt} e Naive Bayes, os quais apresentam
+características e assertividade similar, a partir desses três foi
+selecionado o método Naive Bayes para estudo e comparação com um método
+simbólico. O método simbólico escolhido para estudo e comparação foi o
+\ac{VADER}, visto que foi desenvolvido específicamente para o funcionamento em
+redes sociais.
+ 
+Através da literatura, foi verificado que o método \ac{VADER} se mostra superior
+ao Naive Bayes na utilização para a análise de sentimentos nas avaliações de
+produtos da Amazon, editoriais do New York Times e mais importante, na análise
+de \textit{Tweets} da rede social Twitter. A justificativa para isso, se dá ao
+fato de métodos estatísticos necessitarem de um \textit{training set}
+especializado para obter resultados similares ou superiores aos métodos
+simbólicos. Portanto, foi optado pelo método \ac{VADER}, visto que a não
+especialização do \textit{training set} impactaria na assertividade da análise
+de sentimentos e a especialização de um \textit{training set} para cada tema
+distinto se faz inviável devido a quantidade de temas abordados pela rede social
+Reddit. 
 
-Já no Capítulo \ref{cap:banco}, foi apresentada como funciona a rede social
-Reddit, os tópicos selecionados para a análise de sentimentos, e por fim foi
-apresentado a forma na qual esses tópicos serão extraídos para população da base
-de dados.
+Para implementação do método \ac{VADER} foram verificadas diversas
+ferramentas, porém, somente o \ac{NLTK} apresentou uma implementação deste,
+visto que a utilização deste \textit{framework} facilitaria a execução da
+análise de sentimentos, não só por já conter a implementação do \ac{VADER}, mas
+também por conter outras implementações relacionadas com o \ac{NLP}, foi optada
+pela utilização deste.
+ 
+Por fim, se fez necessária a criação de uma base de dados para armazenar os
+dados disponibilizados pelo Reddit, para isso, foi utilizado um banco de
+dados MySQL, o qual através de uma ferramenta desenvolvida utilizando a
+linguagem Java, elabora requisições para o Reddit e
+persiste as respostas obtidas no formato JSON através da biblioteca
+Hibernate. 
 
-A partir das informações demonstradas através deste, deverá ser possível criar
-um \textit{software} que efetue a análise de dados utilizando o \ac{VADER},
-através do \textit{framework} \ac{NLTK}, aplicada nos tópicos demonstrados no
-Capítulo \ref{cap:banco}.
+Através da base de dados criada, assim como o \ac{NLTK}, deverá ser possível
+efetuar a análise de sentimentos na rede social Reddit com o objetivo de
+encontrar padrões entre usuários, comunidades e opiniões.
+
+\section{Atividade e Cronograma do TCC II}
+
+Atividades a serem desenvolvidas para a conclusão do TCC II:
+\begin{enumerate}
+\item Implementação do software de Processamento de Linguagem Natural para a
+análise de sentimentos na base de dados criada.
+\item Análise dos resultados obtidos.
+\item Redação da monografia TCC II.
+\item Apresentação do TCC II.
+\end{enumerate}
+
+As atividades apresentadas podem ser observadas através da Tabela
+\ref{tab:tcc2}.
+\renewcommand{\arraystretch}{2}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{table}[!htb]
+\begin{tabularx}{0.9\textwidth}{Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}
+& \multicolumn{2}{|c|}{Ago} & \multicolumn{2}{|c|}{Set} &
+\multicolumn{2}{|c|}{Out} & \multicolumn{2}{|c|}{Nov} &
+\multicolumn{2}{|c|}{Dez}
+\\
+\midrule
+1 & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
+\cellcolor{black!80} & & & & & & \\
+2 &  & & & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
+& & &\\
+3 &  & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
+\cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80}
+& \cellcolor{black!80} & &\\
+4 &  &  &  &  &  & & & & \cellcolor{black!80} &\\
+\end{tabularx}
+
+\caption{Cronograma do TCC II.}
+\label{tab:tcc2}
+\end{table}
+
+% No Capítulo \ref{cap:Processamento} foram introduzidos dois tipos de métodos
+% distintos para o \ac{NLP}, métodos simbólicos e
+% métodos estatísticos, os quais foram estudados para a análise de sentimentos
+% através do Capítulo \ref{cap:Classificadores}.
+% 
+% Através do Capítulo \ref{cap:Classificadores}, foram comparados um método
+% simbólico e outro método estatístico a fim de se determinar qual apresenta melhor performance na análise de sentimentos
+% aplicada em uma rede social, sendo que a literatura apontou que o método mais
+% assertivo é o método \ac{VADER}, o qual está disponível através do
+% \textit{framework} \ac{NLTK}.
+% 
+% Já no Capítulo \ref{cap:banco}, foi apresentada como funciona a rede social
+% Reddit, os tópicos selecionados para a análise de sentimentos, e por fim foi
+% apresentado a forma na qual esses tópicos serão extraídos para população da base
+% de dados.
+% 
+% A partir das informações demonstradas através deste, deverá ser possível criar
+% um \textit{software} que efetue a análise de dados utilizando o \ac{VADER},
+% através do \textit{framework} \ac{NLTK}, aplicada nos tópicos demonstrados no
+% Capítulo \ref{cap:banco}.
 
 

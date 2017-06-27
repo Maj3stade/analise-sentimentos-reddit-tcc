@@ -20,5 +20,6 @@
 \contentsline {section}{\numberline {4.1}Rede Social Reddit}{24}
 \contentsline {section}{\numberline {4.2}Extra\IeC {\c c}\IeC {\~a}o de Dados}{24}
 \contentsline {section}{\numberline {4.3}T\IeC {\'o}picos Selecionados}{26}
-\contentsline {section}{\numberline {4.4}Conclus\IeC {\~a}o Parcial}{28}
-\contentsline {chapter}{Refer{\^e}ncias}{29}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o Parcial}{29}
+\contentsline {section}{\numberline {5.1}Atividade e Cronograma do TCC II}{30}
+\contentsline {chapter}{Refer{\^e}ncias}{31}
