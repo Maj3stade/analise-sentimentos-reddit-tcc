@@ -4,15 +4,19 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\select@language {english}
+\addvspace {10\p@ }
+\select@language {brazilian}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {Tabela\nobreakspace 2.1:}{\ignorespaces Tabela de Probabilidades de Associa\IeC {\c c}\IeC {\~a}o}}{14}
-\contentsline {table}{\numberline {Tabela\nobreakspace 2.2:}{\ignorespaces Tabela de Probabilidade de Transi\IeC {\c c}\IeC {\~a}o}}{15}
+\contentsline {table}{\numberline {Tabela\nobreakspace 2.1:}{\ignorespaces Tabela de Probabilidades de Associa\IeC {\c c}\IeC {\~a}o}}{15}
+\contentsline {table}{\numberline {Tabela\nobreakspace 2.2:}{\ignorespaces Tabela de Probabilidade de Transi\IeC {\c c}\IeC {\~a}o}}{16}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {Tabela\nobreakspace 3.1:}{\ignorespaces \textit {Training Set}}}{18}
-\contentsline {table}{\numberline {Tabela\nobreakspace 3.2:}{\ignorespaces Tabela de Palavras e Probabilidades.}}{19}
-\contentsline {table}{\numberline {Tabela\nobreakspace 3.3:}{\ignorespaces Tabela de Probabilidades - \textit {Laplace smoothing}.}}{20}
+\contentsline {table}{\numberline {Tabela\nobreakspace 3.1:}{\ignorespaces \textit {Training Set}}}{19}
+\contentsline {table}{\numberline {Tabela\nobreakspace 3.2:}{\ignorespaces Tabela de Palavras e Probabilidades.}}{20}
+\contentsline {table}{\numberline {Tabela\nobreakspace 3.3:}{\ignorespaces Tabela de Probabilidades - \textit {Laplace smoothing}.}}{21}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {Tabela\nobreakspace 5.1:}{\ignorespaces Cronograma do TCC II.}}{30}
+\contentsline {table}{\numberline {Tabela\nobreakspace 5.1:}{\ignorespaces Cronograma do TCC I.}}{31}
+\contentsline {table}{\numberline {Tabela\nobreakspace 5.2:}{\ignorespaces Cronograma do TCC II.}}{32}
 \addvspace {10\p@ }

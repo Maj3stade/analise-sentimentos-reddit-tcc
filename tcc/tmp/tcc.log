@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  26 JUN 2017 20:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  27 JUN 2017 23:43
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1076,7 +1076,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--5
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 6--6
+Underfull \hbox (badness 10000) in paragraph at lines 7--7
  [][]  
  []
 
@@ -1086,30 +1086,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 9--9
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
  [][]  
  []
 
 
-Overfull \hbox (26.01202pt too wide) in paragraph at lines 14--14
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+ [][]  
+ []
+
+
+Overfull \hbox (26.01202pt too wide) in paragraph at lines 17--17
  [][] []\OT1/cmss/bx/n/12 M[]ETODOS ES-TAT^^S^^PSTICOS E SIMB[]OLICOS APLI-CA-D
 OS NA AN[]ALISE 
  []
 
+Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 21.
 
-Underfull \hbox (badness 10000) in paragraph at lines 19--19
- [][]  
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 23--23
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
  [][]  
  []
 
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 25--25
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+ [][]  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 29--29
  [][]  
  []
 
@@ -1131,7 +1139,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--25
 
  [6
 
-] [7
+]
+Package acronym Info: Label `acro:NLTK' newly defined as it shall be overridden
+
+although it is yet undefined on input line 147.
+ [7
+
+]
+Overfull \hbox (3.91663pt too wide) in paragraph at lines 152--152
+[] 
+ []
+
+[8
+
 
 ]
 \openout2 = `capitulos/introducao.aux'.
@@ -1142,30 +1162,33 @@ Overfull \hbox (13.02539pt too wide) in paragraph at lines 19--26
 , 2017), \OT1/cmr/m/it/12 Apa-che OpenNLP \OT1/cmr/m/n/12 (Apa-che OpenNLP,
  []
 
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 8
- []
-
-[8
+[9
 
 
-]) [9]
-\openout2 = `capitulos/capitulo1.aux'.
-
- (./capitulos/capitulo1.tex
+]
+Package acronym Info: Label `acro:VADER' overridden on input line 76.
+Package acronym Info: Label `acro:NLTK' overridden on input line 77.
+)
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 10
  []
 
-[10
+[10]
+\openout2 = `capitulos/capitulo1.aux'.
+
+ (./capitulos/capitulo1.tex [11
 
 
 
 ]
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
 although it is yet undefined on input line 63.
- [11]
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 12
+ []
+
+[12]
 Overfull \hbox (22.3792pt too wide) in paragraph at lines 126--136
  [][][] 
  []
@@ -1173,54 +1196,52 @@ Overfull \hbox (22.3792pt too wide) in paragraph at lines 126--136
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 12
- []
-
-[12] <imagens/markov.png, id=56, 432.61626pt x 231.86626pt>
+ [13]
+<imagens/markov.png, id=59, 432.61626pt x 231.86626pt>
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
 Package pdftex.def Info: imagens/markov.png used on input line 213.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
- [13 <./imagens/markov.png>]
+
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 14
  []
 
-[14] [15]
+[14 <./imagens/markov.png>] [15]
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 16
+ []
+
+[16]
 Overfull \hbox (9.03474pt too wide) in paragraph at lines 367--376
 \OT1/cmr/m/n/12 ``um'' como subs-tan-tivo pos-sui uma pro-ba-bi-li-dade de 0,00
 000000196875 $(0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 000000525 \OMS/cmsy/m/n/12 ^
 ^C
  []
 
-<imagens/markov2.png, id=71, 432.61626pt x 251.94125pt>
+<imagens/markov2.png, id=74, 432.61626pt x 251.94125pt>
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
 Package pdftex.def Info: imagens/markov2.png used on input line 380.
 (pdftex.def)             Requested size: 310.24245pt x 180.67566pt.
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 16
- []
-
-[16 <./imagens/markov2.png>]
+ [17 <./imagens/markov2.png>]
 Overfull \hbox (8.32231pt too wide) in paragraph at lines 405--405
 []\OT1/cmss/bx/n/17.28 3 M[]ETODOS ES-TAT[]ISTICOS E SIMB[]OLICOS APLI-
  []
 
-Package acronym Info: Label `acro:VADER' newly defined as it shall be overridde
-n
-although it is yet undefined on input line 421.
 Package acronym Info: Label `acro:SVM' newly defined as it shall be overridden
 although it is yet undefined on input line 422.
 Package acronym Info: Label `acro:MaxEnt' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 422.
-[17
+although it is yet undefined on input line 423.
+
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 18
+ []
+
+[18
 
 ]
 Overfull \hbox (3.2725pt too wide) detected at line 491
@@ -1228,25 +1249,15 @@ Overfull \hbox (3.2725pt too wide) detected at line 491
  []
 
 
-Overfull \hbox (0.87251pt too wide) detected at line 512
+Overfull \hbox (0.87251pt too wide) detected at line 514
 [] []
- []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-\OT1/cmr/m/n/10.95 18
- []
-
-[18]
-Overfull \hbox (48.991pt too wide) in paragraph at lines 573--580
-[][]\OT1/cmr/m/n/12 A par-tir da Equa^^Xc~ao 3.8[] ^^Se ne-cess^^Sario cal-cu-l
-ar os ter-mos P(\OT1/cmr/m/it/12 This$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positi
-va), P(\OT1/cmr/m/it/12 place$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positiva),
  []
 
 [19]
-Overfull \hbox (22.01466pt too wide) detected at line 647
-[] []
+Overfull \hbox (48.991pt too wide) in paragraph at lines 573--581
+[][]\OT1/cmr/m/n/12 A par-tir da Equa^^Xc~ao 3.8[] ^^Se ne-cess^^Sario cal-cu-l
+ar os ter-mos P(\OT1/cmr/m/it/12 This$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positi
+va), P(\OT1/cmr/m/it/12 place$\OMS/cmsy/m/n/12 j$\OT1/cmr/m/n/12 Positiva),
  []
 
 
@@ -1254,152 +1265,167 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 20
  []
 
-[20] [21]
+[20]
+Overfull \hbox (22.01466pt too wide) detected at line 648
+[] []
+ []
+
+[21]
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 22
  []
 
-[22]
-Package acronym Info: Label `acro:NLTK' newly defined as it shall be overridden
-
-although it is yet undefined on input line 895.
-) [23]
-\openout2 = `capitulos/capitulo3.aux'.
-
- (./capitulos/capitulo3.tex
-Overfull \hbox (6.29811pt too wide) in paragraph at lines 27--29
-[][]\OT1/cmr/m/it/12 /r/worldnews\OT1/cmr/m/n/12 : Pos-sui as not^^S^^Pcias do 
-mundo. Conta, atu-al-mente, com 16.570.606
- []
-
-
+[22] [23])
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 24
  []
 
-[24
+[24]
+\openout2 = `capitulos/capitulo3.aux'.
+
+ (./capitulos/capitulo3.tex
+<imagens/reddit.png, id=102, 768.62157pt x 560.8453pt>
+File: imagens/reddit.png Graphic file (type png)
+
+<use imagens/reddit.png>
+Package pdftex.def Info: imagens/reddit.png used on input line 21.
+(pdftex.def)             Requested size: 412.68037pt x 301.1261pt.
+ [25
 
 
 
-] <imagens/arquitetura.png, id=102, 475.7775pt x 334.24875pt>
+]
+<imagens/arquitetura.png, id=106, 475.7775pt x 334.24875pt>
 File: imagens/arquitetura.png Graphic file (type png)
 
 <use imagens/arquitetura.png>
-Package pdftex.def Info: imagens/arquitetura.png used on input line 74.
+Package pdftex.def Info: imagens/arquitetura.png used on input line 85.
 (pdftex.def)             Requested size: 321.4844pt x 225.84457pt.
+Package acronym Info: Label `acro:API' newly defined as it shall be overridden
+although it is yet undefined on input line 92.
+
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <12> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 94.
+
 Package acronym Info: Label `acro:JSON' newly defined as it shall be overridden
 
-although it is yet undefined on input line 83.
+although it is yet undefined on input line 95.
 Package acronym Info: Label `acro:POJO' newly defined as it shall be overridden
 
-although it is yet undefined on input line 88.
- [25 <./imagens/arquitetura.png>]
-Overfull \hbox (9.98418pt too wide) in paragraph at lines 122--127
-\OT1/cmss/m/n/12 reddit . com / r / worldnews / comments / 36ny58 / brazil[]blo
-gger[]known[]for[]reporting[]on[]
- []
-
-
-Overfull \hbox (6.98271pt too wide) in paragraph at lines 127--131
-\OT1/cmss/m/n/12 / / www . reddit . com / r / worldnews / comments / 4bqcc3 / b
-razil[]descends[]into[]chaos[]as[]
- []
-
-
-Overfull \hbox (18.32527pt too wide) in paragraph at lines 131--136
-\OT1/cmr/m/n/12 pon^^S^^Pvel em $\OT1/cmss/m/n/12 https : / / www . reddit . co
-m / r / worldnews / comments / 5oyz3b / plane[]carrying[]
- []
-
-
-Overfull \hbox (7.47656pt too wide) in paragraph at lines 138--142
-\OT1/cmss/m/n/12 worldnews / comments / 21f3as / brazil[]passes[]internet[]gove
-rnance[]bill[]brazil[]has/$ \OT1/cmr/m/n/12 e se
- []
-
-
-Overfull \hbox (19.33743pt too wide) in paragraph at lines 159--163
-\OT1/cmss/m/n/12 / / www . reddit . com / r / worldnews / comments / 4d75i7 / 2
-6[]terabyte[]leak[]of[]panamanian[]
- []
-
+although it is yet undefined on input line 99.
 
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 26
  []
 
-[26]
-Overfull \hbox (8.14696pt too wide) in paragraph at lines 171--175
-\OT1/cmss/m/n/12 com / r / worldnews / comments / 67ivae / donald[]trump[]to[]s
-trip[]all[]funding[]from[]state[]
+[26 <./imagens/reddit.png>]
+Underfull \hbox (badness 4981) in paragraph at lines 127--132
+[][]\OT1/cmr/m/it/12 Brazil Se-eks To Copy U.S. Gun Cul-ture ``to al-low em-bat
+-tled ci-ti-
  []
 
 
-Overfull \hbox (6.36678pt too wide) in paragraph at lines 177--181
-[][]\OT1/cmr/m/it/12 Manchester Arena 'ex-plo-si-ons': Two loud bangs he-ard at
- MEN Arena\OT1/cmr/m/n/12 : encontra-
+Underfull \hbox (badness 1242) in paragraph at lines 127--132
+\OT1/cmr/m/it/12 zens the right to de-fend them-sel-ves from cri-mi-nals''\OT1/
+cmr/m/n/12 : esse encontra-se
  []
 
 
-Overfull \hbox (31.77853pt too wide) in paragraph at lines 177--181
-\OT1/cmr/m/n/12 se dis-pon^^S^^Pvel em $\OT1/cmss/m/n/12 https : / / www . redd
-it . com / r / worldnews / comments / 6cqdye / manchester[]
+Underfull \hbox (badness 8189) in paragraph at lines 132--136
+[][]\OT1/cmr/m/it/12 Brazil des-cends into chaos as Olym-pics lo-oms\OT1/cmr/m/
+n/12 : esse encontra-se
  []
 
 
-Overfull \hbox (21.86748pt too wide) in paragraph at lines 189--193
+Underfull \hbox (badness 3240) in paragraph at lines 132--136
+\OT1/cmss/m/n/12 descends[]into[]chaos[]as[]olympics[]looms/$ \OT1/cmr/m/n/12 e
+ refere-se ao caos ocor-rido nas
+ []
+
+
+Underfull \vbox (badness 1005) has occurred while \output is active []
+
+ [27 <./imagens/arquitetura.png>]
+Underfull \hbox (badness 1895) in paragraph at lines 176--180
+\OT1/cmr/m/it/12 men's rights around the world - Le-a-ked plan co-mes as First 
+Daugh-
+ []
+
+
+Underfull \hbox (badness 1931) in paragraph at lines 176--180
+\OT1/cmr/m/it/12 ter Ivanka de-fends her father's re-cord with wo-men\OT1/cmr/m
+/n/12 : esse encontra-se
+ []
+
+
+Underfull \hbox (badness 1796) in paragraph at lines 182--187
 \OT1/cmr/m/n/12 encontra-se dis-pon^^S^^Pvel em $\OT1/cmss/m/n/12 https : / / w
-ww . reddit . com / r / worldnews / comments / 5qqa51 /
+ww . reddit . com / r / worldnews / comments /
  []
 
 
-Overfull \hbox (16.62418pt too wide) in paragraph at lines 199--203
-\OT1/cmr/m/it/12 Anything.\OT1/cmr/m/n/12 : encontra-se dis-pon^^S^^Pvel em $\O
-T1/cmss/m/n/12 https : / / www . reddit . com / r / IAmA / comments /
- []
-
-
-Overfull \hbox (0.77243pt too wide) in paragraph at lines 203--206
-\OT1/cmss/m/n/12 reddit . com / r / IAmA / comments / 1wl9ic / hey[]its[]lars[]
-from[]metallica[]ama/$ \OT1/cmr/m/n/12 e aborda
- []
-
-
-Overfull \hbox (12.70247pt too wide) in paragraph at lines 209--212
-\OT1/cmss/m/n/12 www . reddit . com / r / IAmA / comments / 2s7obx / im[]the[]c
-eo[]of[]renault[]and[]nissan[]and[]
- []
-
-[27]
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 28
  []
 
 [28]
+Underfull \hbox (badness 2065) in paragraph at lines 196--200
+[][]\OT1/cmr/m/it/12 \Canada will wel-come you," Tru-deau in-vi-tes re-fu-gees 
+as Trump bans
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 210--215
+\OT1/cmss/m/n/12 / / www . reddit . com / r / IAmA / comments / 1wl9ic / hey[]i
+ts[]lars[]from[]metallica[]ama/$\OT1/cmr/m/n/12 .
+ []
+
+
+Underfull \hbox (badness 1881) in paragraph at lines 222--227
+\OT1/cmr/m/n/12 se dis-pon^^S^^Pvel em $\OT1/cmss/m/n/12 https : / / www . redd
+it . com / r / IAmA / comments / 5n58sm / i[]am[]
+ []
+
+[29]
 Underfull \vbox (badness 1424) has occurred while \output is active []
 
- [29
 
-])
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 30
  []
 
-[30] (./tcc.bbl
-Underfull \hbox (badness 1735) in paragraph at lines 30--36
-[][]\OT1/cmr/m/n/12 LOPER, E.; BIRD, S. NLTK: the na-tu-ral lan-guage to-ol-kit
-. In: ACL-02
- []
+[30
 
-[31
+] [31]
 
+Package array Warning: Column Y is already defined on input line 343.
 
-]) AED: lastpage setting LastPage
+)
 Underfull \hbox (badness 10000) has occurred while \output is active
 \OT1/cmr/m/n/10.95 32
  []
 
-[32] (./tcc.aux (./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
+[32] (./tcc.bbl
+Underfull \hbox (badness 1052) in paragraph at lines 23--27
+\OT1/cmr/m/n/12 FE-RENCE ON LAN-GUAGE RE-SOUR-CES AND EVA-LU-A-TION (LREC'06.
+ []
+
+[33
+
+
+]
+Underfull \hbox (badness 1735) in paragraph at lines 50--56
+[][]\OT1/cmr/m/n/12 LOPER, E.; BIRD, S. NLTK: the na-tu-ral lan-guage to-ol-kit
+. In: ACL-02
+ []
+
+) AED: lastpage setting LastPage
+Underfull \hbox (badness 10000) has occurred while \output is active
+\OT1/cmr/m/n/10.95 34
+ []
+
+[34] (./tcc.aux (./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
 (./capitulos/capitulo3.aux))
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1410,11 +1436,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8976 strings out of 493013
- 122840 string characters out of 6136993
- 237590 words of memory out of 5000000
- 12259 multiletter control sequences out of 15000+600000
- 16346 words of font info for 56 fonts, out of 8000000 for 9000
+ 9011 strings out of 493013
+ 123618 string characters out of 6136993
+ 245590 words of memory out of 5000000
+ 12292 multiletter control sequences out of 15000+600000
+ 16705 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,18n,72p,1215b,340s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<c:/tex
@@ -1429,15 +1455,16 @@ r10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c
 016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2016/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2016/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb
-><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texli
-ve/2016/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on tcc.pdf (33 pages, 332323 bytes).
+public/amsfonts/cm/cmssi12.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy8.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.p
+fb><c:/texlive/2016/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb><c:/tex
+live/2016/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2016/
+texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on tcc.pdf (35 pages, 425397 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 130 compressed objects within 2 object streams
+ 202 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
