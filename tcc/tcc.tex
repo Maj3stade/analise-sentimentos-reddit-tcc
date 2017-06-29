@@ -107,7 +107,7 @@ Informação da Universidade de Caxias do Sul, como requisito obrigatório para 
 % ---
 
 % alterando o aspecto da cor azul
-\definecolor{blue}{RGB}{41,5,195}
+\definecolor{blue}{RGB}{2,2,2}
 
 % informações do PDF
 \makeatletter
@@ -125,7 +125,7 @@ Informação da Universidade de Caxias do Sul, como requisito obrigatório para 
 		urlcolor=blue,
 		bookmarksdepth=4
 }
-\makeatother
+\makeatother 
 % --- 
 
 % --- 
@@ -173,19 +173,20 @@ Informação da Universidade de Caxias do Sul, como requisito obrigatório para 
 % ---
 % Inserir a ficha bibliografica
 % ---
-% \include{diversos/catalografica}
+%\include{diversos/catalografica}
 % ---
 
 % ---
 % Inserir folha de aprovação
 % ---
-%\include{diversos/aprovacao}
+\cleardoublepage
+\include{diversos/aprovacao}
 % ---
 
 % ---
 % Dedicatória
 % ---
-%\include{diversos/dedicatoria}
+%\include{diversos/dedicatoria} 
 % ---
 
 % ---
@@ -204,7 +205,7 @@ Informação da Universidade de Caxias do Sul, como requisito obrigatório para 
 % inserir lista de ilustrações
 % ---
 
-\cleardoublepage
+
 \pdfbookmark[0]{\listfigurename}{lof}
 \listoffigures*
 \cleardoublepage
@@ -222,6 +223,8 @@ Informação da Universidade de Caxias do Sul, como requisito obrigatório para 
 % inserir lista de abreviaturas e siglas
 % ---
 \include{diversos/acronimos}
+
+\cleardoublepage
 % ---
 % inserir o sumario
 % ---
