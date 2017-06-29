@@ -9,11 +9,12 @@
 \select@language {brazilian}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {Figura\nobreakspace 2.1:}{\ignorespaces Caminhos poss\IeC {\'\i }veis de classifica\IeC {\c c}\IeC {\~a}o}}{14}
-\contentsline {figure}{\numberline {Figura\nobreakspace 2.2:}{\ignorespaces Caminhos definidos para a classifica\IeC {\c c}\IeC {\~a}o pelo Algoritmo de Viterbi}}{17}
+\contentsline {figure}{\numberline {Figura\nobreakspace 2.1:}{\ignorespaces Caminhos poss\IeC {\'\i }veis de classifica\IeC {\c c}\IeC {\~a}o}}{15}
+\contentsline {figure}{\numberline {Figura\nobreakspace 2.2:}{\ignorespaces Caminhos definidos para a classifica\IeC {\c c}\IeC {\~a}o pelo Algoritmo de Viterbi}}{18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {Figura\nobreakspace 4.1:}{\ignorespaces \textit {Website Reddit}: As flechas demarcadas permitem efetuarmos \textit {upvotes} ou \textit {downvotes}.}}{26}
-\contentsline {figure}{\numberline {Figura\nobreakspace 4.2:}{\ignorespaces Arquitetura do \textit {Crawler}}}{27}
+\contentsline {figure}{\numberline {Figura\nobreakspace 4.1:}{\ignorespaces \textit {Website Reddit}: As flechas demarcadas permitem efetuarmos \textit {upvotes} ou \textit {downvotes}.}}{27}
+\contentsline {figure}{\numberline {Figura\nobreakspace 4.2:}{\ignorespaces Arquitetura do \textit {Crawler}}}{28}
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

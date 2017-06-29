@@ -9,21 +9,21 @@
 \contentsline {chapter}{\numberline {1}Introdu\IeC {\c c}\IeC {\~a}o}{9}
 \contentsline {section}{\numberline {1.1}Objetivos do Trabalho}{10}
 \contentsline {section}{\numberline {1.2}Estrutura do Trabalho}{10}
-\contentsline {chapter}{\numberline {2}Processamento de Linguagem Natural}{11}
-\contentsline {section}{\numberline {2.1}Lingu\IeC {\'\i }stica}{11}
-\contentsline {section}{\numberline {2.2}M\IeC {\'e}todos de Processamento de Linguagem Natural}{12}
-\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{12}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{14}
-\contentsline {chapter}{\numberline {3}M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}{18}
-\contentsline {section}{\numberline {3.1}M\IeC {\'e}todo de Naive Bayes}{18}
-\contentsline {section}{\numberline {3.2}M\IeC {\'e}todo de \textit {VADER}}{21}
-\contentsline {subsection}{\numberline {3.2.1}Defini\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todo para Identifica\IeC {\c c}\IeC {\~a}o de Sentimentos}{23}
-\contentsline {subsection}{\numberline {3.2.2}Implementa\IeC {\c c}\IeC {\~a}o do M\IeC {\'e}todo de \ac {VADER}}{24}
-\contentsline {chapter}{\numberline {4}Cria\IeC {\c c}\IeC {\~a}o de Base de Dados}{25}
-\contentsline {section}{\numberline {4.1}Rede Social Reddit}{25}
-\contentsline {section}{\numberline {4.2}Extra\IeC {\c c}\IeC {\~a}o de Dados}{26}
-\contentsline {section}{\numberline {4.3}T\IeC {\'o}picos Selecionados}{27}
-\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o Parcial}{30}
-\contentsline {section}{\numberline {5.1}Atividade e Cronograma do TCC I}{31}
-\contentsline {section}{\numberline {5.2}Atividade e Cronograma do TCC II}{32}
-\contentsline {chapter}{Refer{\^e}ncias}{33}
+\contentsline {chapter}{\numberline {2}Processamento de Linguagem Natural}{12}
+\contentsline {section}{\numberline {2.1}Lingu\IeC {\'\i }stica}{12}
+\contentsline {section}{\numberline {2.2}M\IeC {\'e}todos de Processamento de Linguagem Natural}{13}
+\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{13}
+\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{15}
+\contentsline {chapter}{\numberline {3}M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}{19}
+\contentsline {section}{\numberline {3.1}M\IeC {\'e}todo de Naive Bayes}{19}
+\contentsline {section}{\numberline {3.2}M\IeC {\'e}todo de \textit {VADER}}{22}
+\contentsline {subsection}{\numberline {3.2.1}Defini\IeC {\c c}\IeC {\~a}o de M\IeC {\'e}todo para Identifica\IeC {\c c}\IeC {\~a}o de Sentimentos}{24}
+\contentsline {subsection}{\numberline {3.2.2}NLTK - \textit {Natural Language Toolkit}}{25}
+\contentsline {chapter}{\numberline {4}Cria\IeC {\c c}\IeC {\~a}o de Base de Dados}{26}
+\contentsline {section}{\numberline {4.1}Rede Social Reddit}{26}
+\contentsline {section}{\numberline {4.2}Extra\IeC {\c c}\IeC {\~a}o de Dados}{27}
+\contentsline {section}{\numberline {4.3}T\IeC {\'o}picos Selecionados}{28}
+\contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o Parcial}{32}
+\contentsline {section}{\numberline {5.1}Atividades e Cronograma}{33}
+\contentsline {chapter}{Refer{\^e}ncias}{35}
+\contentsline {chapter}{\numberline {6}ANEXO A - C\IeC {\'o}digo Fonte do Rob\IeC {\^o} de Extra\IeC {\c c}\IeC {\~a}o de Dados}{37}

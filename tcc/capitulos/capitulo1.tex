@@ -867,25 +867,26 @@ classificada como positiva.
 Para o desenvolvimento deste trabalho optou-se pelo uso do método de \ac{VADER},
 uma vez que este, segundo a literatura, apresenta resultados superiores ao
 Método de Naive Bayes. Segundo Pålsson e Szerszen \cite{SentimentinSocialMedia},
-para a análise de \textit{Tweets}, o método de \ac{VADER} apresentou uma
-assertividade de 72,3\% enquanto o Naive Bayes apresentou uma assertividade de
-apenas 58,2\%.
+para a análise de \textit{Tweets}\footnote{\textit{Tweets} é o termo utilizado
+para designar as publicações realizadas na rede social Twitter.}, o método de
+\ac{VADER} apresentou uma assertividade de 72,3\% enquanto o Naive Bayes apresentou uma assertividade de apenas 58,2\%.
 
 Na análise conduzida por Hutto \cite{conf/icwsm/HuttoG14},
 considerando-se a análise de \textit{tweets}, avaliações de produtos da Amazon e
 editoriais do New York Times, o método de \ac{VADER} apresentou uma melhor
-performance que o método de Naive Bayes com assertividade de 96\%, 63\% e 55\%,
-respectivamente, contra 56\%, 49\%, 44\%.
+performance que o método de Naive Bayes. De fato, o método de \ac{VADER}
+apresentou uma assertividade de 96\%, 63\% e 55\%, respectivamente, contra
+56\%, 49\%, 44\% do método de Naive Bayes.
 
 Destaca-se ainda que o método de \ac{VADER} possui uma maior
-adaptabilidade uma vez que esse não necessita de um \textit{training set}
-que seja adequado especificadamente ao tema que está sendo analisado. Desta
-forma, sendo o mais adequado para a análise de sentimentos na rede social
-Reddit, visto que os tópicos que foram selecionados neste trabalho para análise
-abrangem uma quantidade diversificada de assuntos, inviabilizando a
-especialização de um \textit{training set} para cada um dos tópicos.
+adaptabilidade, uma vez que esse não necessita do desenvolvimento de um
+\textit{training set} específico para o tema que está sendo analisado.
+Desta forma, sendo o mais adequado para a análise de sentimentos na rede social
+Reddit, visto que os tópicos que foram selecionados neste trabalho abrangem uma
+quantidade diversificada de assuntos, o que inviabiliza a especialização de um
+\textit{training set} para cada um dos tópicos.
 
-\subsection{Implementação do Método de \ac{VADER}}
+\subsection{NLTK - \textit{Natural Language Toolkit}}
 
 A implementação de um software de análise de sentimentos pode ser feita através
 do desenvolvimento de um \textit{software} por completo, ou através da
@@ -893,26 +894,28 @@ utilização de \textit{frameworks} já disponíveis.
 Métodos estatísticos como o Naive Bayes podem ser encontrados tanto em
 \textit{frameworks} de aprendizado de máquina, quanto em \textit{frameworks}
 voltados para o \ac{NLP}.
-Já métodos simbólicos, por suas implementações serem específicas para o
+Já os métodos simbólicos, por suas implementações serem específicas para o
 \ac{NLP} ou análise de sentimentos, somente são encontrados em
 \textit{frameworks} de \ac{NLP}.
 
 O método de \ac{VADER}, que será utilizado nesse trabalho, encontra-se
-disponível como um \textit{package} Python e também através do \textit{framework} \ac{NLTK} \cite{Loper:2002:NNL:1118108.1118117}, o qual
-implementa diversos métodos de \ac{NLP}, incluindo métodos para análise de
-sentimentos. Neste trabalho, optou-se pelo uso do \textit{framework} \ac{NLTK},
-devido a uma possibilidade futura de utilização de outros métodos de
-identificação de sentimentos.
+disponível como um \textit{package} Python \cite{Rossum:1995:PRM:869369} e
+também através do \textit{framework} \ac{NLTK}
+\cite{Loper:2002:NNL:1118108.1118117}, o qual implementa diversos métodos de
+\ac{NLP}, incluindo métodos para análise de sentimentos. Neste trabalho,
+optou-se pelo uso do \textit{framework} \ac{NLTK}, devido a uma possibilidade de
+utilização de outros métodos de \ac{NLP} para execução de outras tarefas não
+relacionadas como identificação de sentimentos.
 
 O \ac{NLTK} é um \textit{framework open source} para Python
 criado em 2001 na Universidade de Pensilvânia e atualmente utilizado por mais de
 30 universidades em diversos
-países\cite{nltk}.
+países \cite{nltk}.
 Esse apresenta tanto métodos estatísticos como, \ac{MaxEnt} e Naive Bayes, como
 métodos simbólicos, contendo mais de 50 dicionários e modelos já treinados.
 Como exemplo, pode-se citar além do método de \ac{VADER}, o \textit{Sentiment
 Polarity Dataset Version 2.0} que é um conjunto de dados já classificados que
 contém mais de 1000 filmes avaliados de forma positiva e 1000 filmes avaliados
-de forma negativa \cite{Pang:2002:TUS:1118693.1118704}; \textit{SentiWordNet}
-que é um dicionário com as palavras extraídas do WordNet já classificadas em
-positividade, negatividade e objetividade \cite{Esuli2006sentiwordnet}.
+de forma negativa \cite{Pang:2002:TUS:1118693.1118704};
+Além disso, destaca-se o \textit{SentiWordNet} que é um dicionário com as
+palavras extraídas do WordNet já classificadas em positividade, negatividade e objetividade \cite{Esuli2006sentiwordnet}.
