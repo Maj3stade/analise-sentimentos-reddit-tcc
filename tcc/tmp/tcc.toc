@@ -22,8 +22,7 @@
 \contentsline {chapter}{\numberline {4}Cria\IeC {\c c}\IeC {\~a}o de Base de Dados}{26}
 \contentsline {section}{\numberline {4.1}Rede Social Reddit}{26}
 \contentsline {section}{\numberline {4.2}Extra\IeC {\c c}\IeC {\~a}o de Dados}{27}
-\contentsline {section}{\numberline {4.3}T\IeC {\'o}picos Selecionados}{28}
+\contentsline {section}{\numberline {4.3}T\IeC {\'o}picos Selecionados}{29}
 \contentsline {chapter}{\numberline {5}Conclus\IeC {\~a}o Parcial}{32}
 \contentsline {section}{\numberline {5.1}Atividades e Cronograma}{33}
 \contentsline {chapter}{Refer{\^e}ncias}{35}
-\contentsline {chapter}{\numberline {6}ANEXO A - C\IeC {\'o}digo Fonte do Rob\IeC {\^o} de Extra\IeC {\c c}\IeC {\~a}o de Dados}{37}

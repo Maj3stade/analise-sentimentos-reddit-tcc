@@ -1,20 +1,22 @@
 \chapter{Criação de Base de Dados}
 \label{cap:banco}
-Este capítulo tem como objetivo descrever sucintamente a rede social Reddit.
-Após são apresentados os tópicos que foram selecionados para a análise de
+Este capítulo tem como objetivo descrever a rede social Reddit.
+Após, são apresentados os tópicos que foram selecionados para a análise de
 sentimentos. Por fim, é apresentada a ferramenta desenvolvida para a extração
 dos comentários destes tópicos e para a criação da base.
 \section{Rede Social Reddit}
 \label{cap:Reddit}
 
-O \textit{website} Reddit teve seu início em 2005 como um agregador de
-conteúdo e, atualmente, é o vigésimo terceiro \textit{website} mais acessado na
+O \textit{website} Reddit foi criado por Alexis Ohanian e Steve Huffman e teve
+seu início em 2005 como um agregador de conteúdo e, atualmente, é o vigésimo terceiro \textit{website} mais acessado na
 internet e o sétimo mais acessado nos Estados Unidos da América \cite{alexa}.
 Os usuários do Reddit podem enviar \textit{links} com conteúdos externos
 ao Reddit ou ainda mensagens de texto. A partir desse conteúdo, os seus
 usuários podem votar para cima (\textit{upvote}) ou para baixo \textit{downvote},
 influenciando na posição do conteúdo no \textit{website}. Além de votar no conteúdo, seus usuários podem enviar comentários como
 forma de expressar sua opinião (Figura \ref{fig:reddit}).
+
+\newpage
 
 \begin{figure}[!htbp]
 \centering
@@ -33,13 +35,13 @@ que dentre esses \textit{subreddits}, destacam-se:
 \begin{itemize}
   \item \textit{/r/AskReddit}: esse \textit{subreddit} é utilizado para fazer
   perguntas gerais para outros usuários do Reddit. Esse \textit{subreddit}
-  possui aproximadamente 16.941.544 inscritos.
+  possui aproximadamente 16.941.540 inscritos.
   \item \textit{/r/worldnews}: esse \textit{subreddit} possui as notícias de
-  todo o mundo, contando com aproximadamente 16.570.606 inscritos.
+  todo o mundo, contando com aproximadamente 16.570.600 inscritos.
   \item \textit{/r/IAmA}: IAmA é um estilização de 'I am a' ('Eu sou um'):
   a partir desse \textit{subreddit} os usuários podem fazer perguntas ao criador
   de um determinado tópico. Esse \textit{subreddit} possui aproximadamente
-  16.990.161 inscritos.
+  16.990.160 inscritos.
 \end{itemize}
 
 % Dentre esses \textit{subreddits} podemos destacar alguns dos tópicos mais
@@ -78,9 +80,7 @@ conteúdo do \textit{website} Reddit, extraindo os dados e comentários referent
 determinado tópico. Após, os dados são armazenados em banco de dados MySQL
 \cite{Widenius:2002:MRM:560480}.
 Na Figura \ref{fig:crawler} tem-se a arquitetura do \textit{software}
-desenvolvido. O código deste encontra-se no Anexo A.
-
-\newpage
+desenvolvido. O código deste encontra-se no CD em anexo.
 
 \begin{figure}[htbp]
 \centering
@@ -98,25 +98,25 @@ o \textit{website} retorna um objeto \ac{JSON}. Uma vez que o \ac{JSON}
 retornado pelo \textit{website} possui 68 campos e que esses não se encontram
 documentados, utilizou-se o \textit{website}
 jsonschema2pojo\footnote{http://www.jsonschema2pojo.org/ - O \textit{website}
-jsonschema2pojo tem como objetivo a conversão de um esquema \ac{JSON} em \ac{POJO}, permitindo o
-\textit{download} da classe para a utilização.} para converter o
-JSON retornado em um objeto \ac{POJO}.
+jsonschema2pojo tem como objetivo a conversão de um esquema \ac{JSON} em
+\textit{Plain Old Java Objects}\ac{POJO}, permitindo o \textit{download} da classe para a utilização.} para converter o
+JSON retornado em um \textit{Plain Old Java Objects} (\ac{POJO}).
 
 Após, foi utilizado o \textit{framework} Hibernate
 \cite{Iverson:2004:HJD:1044870} para a criação do banco de dados e para a
 persistência dos dados. O Hibernate é um \textit{framework} de
 mapeamento objeto-relacional que tem como objetivo representar tabelas do banco
-de dados através de classes, ou seja, esse tem como principal característica a
-transformação das classes em Java para tabelas em um banco de dados relacional.
+de dados através de classes, ou seja, esse \textit{framework} tem como principal
+característica a transformação das classes em Java para tabelas em um banco de dados relacional.
 No caso deste trabalho, ele é responsável pela criação das tabelas \textit{RedditPost} e
-\textit{RedditThread}, relacionadas respectivamente com os comentários e o
+\textit{RedditThread}, relacionadas, respectivamente, com os comentários e o
 tópico em questão. 
 
 \section{Tópicos Selecionados}
 
 Para análise de sentimentos e para comparação dos resultados obtidos, foram
 selecionados 15 tópicos, sendo que esses tópicos são os que
-apresentam maior número de comentários no último ano. Destaca-se que os 15
+apresentam o maior número de comentários no último ano. Destaca-se que os 15
 tópicos encontram-se distribuídos em diferentes assuntos, que são: cenário
 político nacional, cenário político internacional e tópicos diversos:
 
@@ -165,7 +165,7 @@ Já os tópicos escolhidos que se referem a política internacional são:
   drug smugglers, celebrities and professional
   athletes."}.: esse tópico encontra-se disponível em
   \url{https://www.reddit.com/r/worldnews/comments/4d75i7/26_terabyte_leak_of_panamanian_shell_company_data/}
-  e refere-se ao vazamento dos documentos confidenciais de uma
+  e se refere ao vazamento dos documentos confidenciais de uma
   sociedade de advogados panamenha. Esses documentos apresentam informações
   detalhadas de empresas localizadas em paraísos fiscais.
   \item
@@ -210,13 +210,13 @@ Por fim, os tópicos selecionados que abordam assuntos diversos foram:
   \textit{I’m Bill Gates, co-chair of the Bill \& Melinda Gates Foundation. Ask
   Me Anything.}: esse tópico encontra-se disponível em
   \url{https://www.reddit.com/r/IAmA/comments/5whpqs/im_bill_gates_cochair_of_the_bill_melinda_gates/}
-  e refere-se as respostas às perguntas que foram feitas ao fundador da
-  Microsoft, Bill Gates.
+  e apresenta as respostas de perguntas que foram feitas ao fundador
+  da Microsoft, Bill Gates.
   \item
   \textit{Hey, it's Lars from Metallica. AMA}: esse tópico encontra-se disponível em
   \url{https://www.reddit.com/r/IAmA/comments/1wl9ic/hey_its_lars_from_metallica_ama/}.
-  Esse tópico apresenta as respostas às perguntas realizadas ao vocalista da
-  banda de rock Metallica, James Hetfield.
+  Esse tópico apresenta as respostas de perguntas que foram realizadas ao
+  vocalista da banda de rock Metallica, James Hetfield.
   \item
   \textit{I'm the CEO of Renault and Nissan and we're making autonomous driving
   vehicles happen by 2020. Ask me anything!}: esse tópico encontra-se disponível em
@@ -236,20 +236,18 @@ Por fim, os tópicos selecionados que abordam assuntos diversos foram:
 
 Destaca-se que para a criação da base de dados, somente foram extraídos
 comentários em resposta ao tópico em questão, comentários em resposta a outros
-comentários foram desconsiderados uma vez que esses podem não estar relacionados
-diretamente ao tópico em questão, tornando inválida ou prejudicando a
-análise de sentimento.
+comentários foram desconsiderados, uma vez que esses podem não estar diretamente
+relacionados ao tópico em questão, tornando inválida ou prejudicando a análise de sentimento.
 
 
 \chapter{Conclusão Parcial}
 \label{cap:conclusao}
 A \ac{NLP} tem como objetivo a análise de linguagem natural, seja
-essa escrita ou falada. Dentre diversas tarefas que ela executa, uma delas é a
-análise de sentimentos, a qual se faz útil visto que cada vez
-mais as pessoas se comunicam através de redes sociais, gerando um grande volume
-de dados. A análise e quantificação da opinião expressa por esses dados, seja
+essa escrita ou falada. Dentre diversas tarefas que ela executa, tem-se a
+análise de sentimentos, a qual recebeu destaque nos últimos anos devido ao fato das pessoas cada vez se comunicarem através de redes sociais,
+gerando um grande volume de dados. A análise e quantificação da opinião expressa por esses dados, seja
 por fins políticos, comerciais ou quaisquer outros, se torna díficil devido a
-grande quantidade de dados.
+essa grande quantidade de dados.
 
 Observou-se que os métodos mais utilizados para análise de sentimentos são o
 Método de Naive Bayes (estatístico) e o Método de \ac{VADER} (simbólico). Dentre
@@ -266,29 +264,30 @@ Além disso, optou-se pela utilização do método de \ac{VADER}, devido
 ao fato deste não necessitar da criação de um \textit{training set} específico
 para a análise de sentimentos. A necessidade da criação de um \textit{training
 set} específico para cada tema inviabilizaria o desenvolvimento deste trabalho,
-uma vez que neste serão analisados 15 tópicos com temas distintos.
-
-Para implementação do método \ac{VADER} optou-se pela biblioteca \ac{NLTK}. A
+uma vez que neste serão analisados 15 tópicos com temas distintos. Para
+implementação do método \ac{VADER} optou-se pela biblioteca \ac{NLTK}. A
 utilização da biblioteca \ac{NLTK} permitirá a utilização futura de outros
-métodos de \ac{NLP}.
+métodos de \ac{NLP}, bem como um estudo da performance do Método de \ac{VADER} e esses outros métodos.
  
 Por fim, se fez necessária a criação de uma base de dados para armazenar os
-tópicos e comentários disponibilizados pela rede social Reddit. Para isso, foi
-desenvolvido um \textit{crawler} (robô) que é responsável por extrair os
+tópicos e os comentários disponibilizados pela rede social Reddit. Para isso,
+foi desenvolvido um \textit{crawler} (robô) que é responsável por extrair os
 comentários relacionados a um tópico na rede social Reddit e armazenar em um
 banco de dados MySQL. Esse robô foi desenvolvido na linguagem Java e utiliza a
 API da rede social Reddit para extrair as informações de um tópico. Após, ele
-utiliza o \textit{framework} Hibernate para armazenar os dados extraídos em uma
-base de dados relacional em um banco MySQL.
+utiliza o \textit{framework} Hibernate para armazenar os dados extraídos na
+base de dados MySQL.
 
 Na segunda etapa deste trabalho, será utilizado o \textit{framework} \ac{NLTK}
-para efetuar a análise de sentimento sobre a base de dados criada com o objetivo
-de identificar padrões de sentimentos entre usuários e comunidades.
+para efetuar a análise de sentimento sobre a base de dados criada. Essa análise
+tem como principal objetivo identificar padrões de sentimentos entre
+usuários e comunidades da rede Reddit.
 
 \section{Atividades e Cronograma}
 
 Na Tabela \ref{tab:tcc1} tem-se o cronongrama das atividades realizadas durante
-o TCC I.
+o TCC I. Como pode ser observado, todas as tarefas programadas foram
+realizadas.
 \begin{enumerate}
 \item Estudo de algoritmos para o processamento de texto e também análise de
 sentimentos.

@@ -866,17 +866,15 @@ classificada como positiva.
 
 Para o desenvolvimento deste trabalho optou-se pelo uso do método de \ac{VADER},
 uma vez que este, segundo a literatura, apresenta resultados superiores ao
-Método de Naive Bayes. Segundo Pålsson e Szerszen \cite{SentimentinSocialMedia},
-para a análise de \textit{Tweets}\footnote{\textit{Tweets} é o termo utilizado
+Método de Naive Bayes. De fato, segundo Pålsson e Szerszen
+\cite{SentimentinSocialMedia}, para a análise de \textit{Tweets}\footnote{\textit{Tweets} é o termo utilizado
 para designar as publicações realizadas na rede social Twitter.}, o método de
 \ac{VADER} apresentou uma assertividade de 72,3\% enquanto o Naive Bayes apresentou uma assertividade de apenas 58,2\%.
 
 Na análise conduzida por Hutto \cite{conf/icwsm/HuttoG14},
 considerando-se a análise de \textit{tweets}, avaliações de produtos da Amazon e
-editoriais do New York Times, o método de \ac{VADER} apresentou uma melhor
-performance que o método de Naive Bayes. De fato, o método de \ac{VADER}
-apresentou uma assertividade de 96\%, 63\% e 55\%, respectivamente, contra
-56\%, 49\%, 44\% do método de Naive Bayes.
+editoriais do New York Times, o método de \ac{VADER} apresentou uma assertividade de 96\%, 63\% e 55\%, respectivamente, contra
+56\%, 49\%, 44\% do método de Naive Bayes. 
 
 Destaca-se ainda que o método de \ac{VADER} possui uma maior
 adaptabilidade, uma vez que esse não necessita do desenvolvimento de um
@@ -891,7 +889,7 @@ quantidade diversificada de assuntos, o que inviabiliza a especialização de um
 A implementação de um software de análise de sentimentos pode ser feita através
 do desenvolvimento de um \textit{software} por completo, ou através da
 utilização de \textit{frameworks} já disponíveis.
-Métodos estatísticos como o Naive Bayes podem ser encontrados tanto em
+Métodos estatísticos, como o Naive Bayes, podem ser encontrados tanto em
 \textit{frameworks} de aprendizado de máquina, quanto em \textit{frameworks}
 voltados para o \ac{NLP}.
 Já os métodos simbólicos, por suas implementações serem específicas para o
@@ -899,17 +897,15 @@ Já os métodos simbólicos, por suas implementações serem específicas para o
 \textit{frameworks} de \ac{NLP}.
 
 O método de \ac{VADER}, que será utilizado nesse trabalho, encontra-se
-disponível como um \textit{package} Python \cite{Rossum:1995:PRM:869369} e
-também através do \textit{framework} \ac{NLTK}
-\cite{Loper:2002:NNL:1118108.1118117}, o qual implementa diversos métodos de
-\ac{NLP}, incluindo métodos para análise de sentimentos. Neste trabalho,
-optou-se pelo uso do \textit{framework} \ac{NLTK}, devido a uma possibilidade de
-utilização de outros métodos de \ac{NLP} para execução de outras tarefas não
-relacionadas como identificação de sentimentos.
+disponível como um \textit{package} Python \cite{Rossum:1995:PRM:869369}, ou
+ainda, através do \textit{framework} \ac{NLTK}
+\cite{Loper:2002:NNL:1118108.1118117}, o qual implementa diversos métodos de \ac{NLP}, incluindo métodos para análise de sentimentos. Neste trabalho,
+optou-se pelo uso do \textit{framework} \ac{NLTK}, devido a uma possibilidade
+futura de utilização de outros métodos de \ac{NLP} análise de sentimentos.
 
-O \ac{NLTK} é um \textit{framework open source} para Python
-criado em 2001 na Universidade de Pensilvânia e atualmente utilizado por mais de
-30 universidades em diversos
+O \ac{NLTK} é um \textit{framework open source} para Python que foi
+criado em 2001 na Universidade de Pensilvânia e, atualmente, utilizado por mais
+de 30 universidades em diversos
 países \cite{nltk}.
 Esse apresenta tanto métodos estatísticos como, \ac{MaxEnt} e Naive Bayes, como
 métodos simbólicos, contendo mais de 50 dicionários e modelos já treinados.
