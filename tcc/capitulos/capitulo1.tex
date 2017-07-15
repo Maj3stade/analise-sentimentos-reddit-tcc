@@ -13,7 +13,7 @@ ou falada \cite{manningschutze1999}.
 O Processamento de Linguagem Natural é uma área antiga, sendo anterior a
 invenção dos computadores modernos. De fato, sua primeira grande aplicação foi
 um dicionário desenvolvido no Birkbeck College em Londres no ano de 1948. Por ser
-uma área complexa, seus primeiros trabalhos foram notavelmente falhos o que
+uma área complexa, seus primeiros trabalhos foram notavelmente falhos, o que
 causou uma certa hostilidade por parte das agências fomentadoras de pesquisas.
 
 Os primeiros pesquisadores eram muitas vezes bilíngues, como por exemplo,
@@ -41,7 +41,7 @@ para estruturar as expressões. Uma série de dificuldades no Processamento de
 Linguagem Natural são ocasionadas pelo fato de que as pessoas constantemente
 mudam as regras para satisfazerem suas necessidades de comunicação
 \cite{manningschutze1999}. Uma vez que as regras são constantemente modificadas
-pelo locutor, se torna extremamente difícil a criação de um software ou hardware
+pelo locutor, torna-se extremamente difícil a criação de um software ou hardware
 que efetue a interpretação de uma língua.
 
 
@@ -331,7 +331,7 @@ Por exemplo, para a palavra ``João'', tem-se que $v_{t-1}$ é igual a
 da frase);
 $a_{ij}$ (probabilidade de transição entre ``Início'' e um substantivo) é
 igual a 0,125 (Tabela \ref{tabela:transicao}); e $b_j(o_t)$ (probabilidade de
-associação da palavra João com um substantivo) é igual a 0,0001 (Tabela
+associação da palavra João com um substantivo) é igual a 0,001 (Tabela
 \ref{tabela:associacao}).
 Desta forma, tem-se que o valor de $v_t$ para a palavra João é:
 
@@ -438,7 +438,7 @@ façam uso da língua Portuguesa com similar precisão.
 O Naive Bayes é um método estatístico para a classificação e que pode ser
 utilizado para a análise de sentimento. Esse faz o uso do teorema de Bayes e um
 \textit{training set} para inferir a classificação de uma frase. Por exemplo,
-considerando se necessita determinar se a frase \textit{``This place is
+considerando que se quer determinar se a frase \textit{``This place is
 great.''} demonstra um sentimento negativo ou positivo.
 
 \begin{table}[htb]
@@ -681,7 +681,7 @@ frase ser negativa (0,00000196).
 
 O método de \ac{VADER} é um dicionário e classificador de sentimentos que se
 baseia em regras, portanto, um método de classificação simbólico. Esse foi desenvolvido
-especificadamente para ser utilizado em redes sociais, onde se tem um contexto
+especificamente para ser utilizado em redes sociais, onde se tem um contexto
 vago, pouca quantidade de texto, gírias e \textit{emoticons}
 \cite{conf/icwsm/HuttoG14}.
 
@@ -709,8 +709,9 @@ Intensidade:   &  &   &  & 3,1
 
 As palavras \textit{``This''}, \textit{``place''} e \textit{``is''} são
 desconsideradas uma vez que não existem no dicionário e não expressam
-sentimentos. Após, essa fase inicial utiliza-se o seguinte conjunto de regras
-para inferir a intensidade do sentimento:
+sentimentos. Após, essa fase inicial, utiliza-se o seguinte conjunto de regras,
+os quais utilizam valores empiricamente derivados para inferir a intensidade
+do sentimento \cite{conf/icwsm/HuttoG14}:
 \begin{itemize}
 \item É verificado quando uma palavra que expressa sentimentos é escrita em letras
 maiúsculas.
@@ -874,7 +875,15 @@ para designar as publicações realizadas na rede social Twitter.}, o método de
 Na análise conduzida por Hutto \cite{conf/icwsm/HuttoG14},
 considerando-se a análise de \textit{tweets}, avaliações de produtos da Amazon e
 editoriais do New York Times, o método de \ac{VADER} apresentou uma assertividade de 96\%, 63\% e 55\%, respectivamente, contra
-56\%, 49\%, 44\% do método de Naive Bayes. 
+56\%, 49\%, 44\% do método de Naive Bayes. A Figura \ref{fig:definicao} ilustra
+os resultados obtidos através da literatura.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[height=150px]{imagens/definicao.png}
+\caption{Resultados obtidos para definição do método.}
+\label{fig:definicao}
+\end{figure}
 
 Destaca-se ainda que o método de \ac{VADER} possui uma maior
 adaptabilidade, uma vez que esse não necessita do desenvolvimento de um
@@ -883,6 +892,7 @@ Desta forma, sendo o mais adequado para a análise de sentimentos na rede social
 Reddit, visto que os tópicos que foram selecionados neste trabalho abrangem uma
 quantidade diversificada de assuntos, o que inviabiliza a especialização de um
 \textit{training set} para cada um dos tópicos.
+
 
 \subsection{NLTK - \textit{Natural Language Toolkit}}
 
