@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  15 JUL 2017 19:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  27 SEP 2017 20:49
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1470,7 +1470,7 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
-) (./capitulos/capitulo3.aux))
+) (./capitulos/capitulo3.aux) (./capitulos/capitulo5.aux))
 \openout1 = `tcc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
@@ -1711,14 +1711,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-[20] [21] <imagens/markov.png, id=258, 432.61626pt x 231.86626pt>
+[20] [21] <imagens/markov.png, id=263, 432.61626pt x 231.86626pt>
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
 Package pdftex.def Info: imagens/markov.png used on input line 213.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
  [22 <./imagens/markov.png>] [23] [24]
-<imagens/markov2.png, id=301, 432.61626pt x 251.94125pt>
+<imagens/markov2.png, id=306, 432.61626pt x 251.94125pt>
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
@@ -1752,7 +1752,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <17.28> not available
  [30] [31]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 872.
- <imagens/definicao.png, id=413, 893.58844pt x 300.3722pt>
+ <imagens/definicao.png, id=418, 893.58844pt x 300.3722pt>
 File: imagens/definicao.png Graphic file (type png)
 
 <use imagens/definicao.png>
@@ -1766,7 +1766,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
 
 
 (./capitulos/capitulo3.tex
-<imagens/reddit.png, id=459, 768.62157pt x 560.8453pt>
+<imagens/reddit.png, id=464, 768.62157pt x 560.8453pt>
 File: imagens/reddit.png Graphic file (type png)
 
 <use imagens/reddit.png>
@@ -1777,7 +1777,7 @@ Package pdftex.def Info: imagens/reddit.png used on input line 22.
 
 
  <./imagens/reddit.png>]
-<imagens/arquitetura.png, id=468, 475.7775pt x 334.24875pt>
+<imagens/arquitetura.png, id=473, 475.7775pt x 334.24875pt>
 File: imagens/arquitetura.png Graphic file (type png)
 
 <use imagens/arquitetura.png>
@@ -1824,11 +1824,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Class memoir Warning: Column Y is already defined on input line 339.
 
-) [42] [43] (./tcc.bbl (./tcc.brf)
+) [42] [43]
+\openout2 = `capitulos/capitulo5.aux'.
+
+ (./capitulos/capitulo5.tex [44
+
+
+
+]) [45] (./tcc.bbl (./tcc.brf)
 \tf@brf=\write6
 \openout6 = `tcc.brf'.
 
- [44
+
+[46
 
 
 ]
@@ -1837,7 +1845,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
 
 bibitemlist
-[45]) AED: lastpage setting LastPage [46]
+[47]) AED: lastpage setting LastPage [48]
 \tf@lof=\write7
 \openout7 = `tcc.lof'.
 
@@ -1847,30 +1855,30 @@ bibitemlist
 \tf@toc=\write9
 \openout9 = `tcc.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 309.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 309.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
  (./tcc.aux (./diversos/aprovacao.aux) (./diversos/resumos.aux) (./diversos/acr
 onimos.aux)
 (./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
-(./capitulos/capitulo3.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 309.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 309.
+(./capitulos/capitulo3.aux) (./capitulos/capitulo5.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
 Package rerunfilecheck Info: File `tcc.brf' has not changed.
-(rerunfilecheck)             Checksum: 46F23AA1C36822E3499494030EF8B5BE;1819.
+(rerunfilecheck)             Checksum: B6026DD91EF4860E0BA3293DE6E5A4C7;2007.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 309.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
  ) 
 Here is how much of TeX's memory you used:
- 19510 strings out of 493013
- 289582 string characters out of 6136993
- 496396 words of memory out of 5000000
- 22313 multiletter control sequences out of 15000+600000
+ 19558 strings out of 493013
+ 290914 string characters out of 6136993
+ 497231 words of memory out of 5000000
+ 22348 multiletter control sequences out of 15000+600000
  123768 words of font info for 164 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,17n,54p,1215b,672s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,17n,54p,1215b,676s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2016/tex
 mf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvip
 s/lm/lm-mathsy.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
@@ -1891,10 +1899,10 @@ fb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2
 016/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/public/lm/lmsso17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tcc.pdf (48 pages, 609890 bytes).
+Output written on tcc.pdf (50 pages, 615677 bytes).
 PDF statistics:
- 835 PDF objects out of 1000 (max. 8388607)
- 749 compressed objects within 8 object streams
- 162 named destinations out of 1000 (max. 500000)
- 37106 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 877 PDF objects out of 1000 (max. 8388607)
+ 789 compressed objects within 8 object streams
+ 168 named destinations out of 1000 (max. 500000)
+ 37122 words of extra memory for PDF output out of 42996 (max. 10000000)
 

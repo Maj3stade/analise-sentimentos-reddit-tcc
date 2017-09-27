@@ -1,0 +1,43 @@
+\chapter{Implementação do Método \ac{VADER}}
+\label{cap:impl}
+Como forma de avaliar a implementação realizada para uma posterior avaliação dos
+resultados, foi selecionado o tópico: ``Canada will welcome you, Trudeau
+invites refugees as Trump bans them''. A partir desse tópico, foram extraídos os
+comentários armazenados anteriormente através do Capítulo \ref{cap:Extracao} e
+estes foram processados através da ferramenta \ac{NLTK}. A utilização do
+\ac{VADER} através do \ac{NLTK} disponibiliza como resultado um objeto contendo
+a pontuação positiva //TODO(colocar exemplo), neutra, negativa e composta. 
+
+A partir da
+pontuação composta, foram avaliados de forma manual os comentários com o
+objetivo de se determinar se a classificação estava sendo feita de forma
+correta, obtendo-se 58\% de assertividade.
+
+Parte dos comentários que foram identificados de forma
+incorreta apresentam seu sentimento de forma irônica \\TODO EXEMPLO. A
+identificação de irônia através da leitura textual se faz difícil mesmo
+para um ser-humano visto que muitas vezes este texto pode não apresentar sinais
+de humor. Ferramentas que fazem uso de dicionários de palavras
+utilizam-se do princípio que o sentimento expresso é o qual é
+apresentado na maior parte do texto análisado. No caso de comentários
+irônicos como \textit{``Good luck with that.''} a metologia de análise de
+sentimentos se apresenta falha, sem possilibidade de classificação correta sem
+se apoiar em outros métodos. Também, que a ironia para a análise de sentimentos
+é considerado um tópico problemático sendo alvo de diversos estudos
+\cite{DBLP:conf/lrec/StranisciBFP16}.
+
+Outros comentários que foram identificados de forma incorreta determinou-se que
+o sentimento expresso não se encontrava em dicionário de sentimentos padrão do
+\ac{VADER}. Como solução para este problema, foi utilizado o método de
+Propagação Dupla para adicionar novas palavras ao dicionário
+\cite{Qiu:2011:OWE:1970420.1970422}.
+
+\section{Expansão do Dicionário através do Método de Propagação Dupla}
+
+O método de Propagação Dupla, proposto por Qiu
+\cite{Qiu:2011:OWE:1970420.1970422} tem como objetivo solução de dois problemas
+do \ac{NLP}, a expansão de dicionário e também a extração dos alvos destas
+opiniões. Para este problema é proposta uma solução na qual novas palavras e
+alvos são adicionados ao dicionário de forma recursiva a partir de palavras já
+conhecidas (dicionário padrão do \ac{VADER}) e também alvos já conhecidos
+(palavras relacionadas com as que constam no dicionário do \ac{VADER}).
