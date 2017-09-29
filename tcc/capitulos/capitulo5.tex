@@ -41,3 +41,112 @@ opiniões. Para este problema é proposta uma solução na qual novas palavras e
 alvos são adicionados ao dicionário de forma recursiva a partir de palavras já
 conhecidas (dicionário padrão do \ac{VADER}) e também alvos já conhecidos
 (palavras relacionadas com as que constam no dicionário do \ac{VADER}).
+
+Essa implementação é feita a partir de quatro sub-tarefas, as quais contém duas
+regras cada uma destas. A primeira sub-tarefa é a extração de alvos a partir de
+palavras que expressam sentimento já conhecidas. Na primeira regra dessa
+dessa sub-tarefa são verificadas as palavras na qual a palavra que
+expressa sentimento depende e caso essa seja um substantivo, ela será extraída. Como por exemplo na frase \textit{``We have
+a great president''} a palavra \textit{``great''} depende de
+\textit{``president''} e essa é um substantivo.
+
+\[\textit{We have a } \underbrace{\textit{great president.}}_\text{president
+\textrightarrow \text{ great}}\]
+
+Neste caso, a palavra \textit{``president''} será adicionada a lista de
+palavras que são alvos de sentimentos. A segunda regra da primeira sub-tarefa
+verifica se uma palavra que expressa sentimentos depende de uma determinada
+palavra, que depende de um substantivo. Como por exemplo na frase
+\textit{``Trump is a great president.''} a palavra \textit{``great''} depende de
+\textit{``is''} que por sua vez depende de \textit{``president''} e essa é um
+substantivo.
+
+\[\textit{Trump} \underbrace{\textit{is a great president.}}_\text{president
+\textrightarrow \text{ is} \textrightarrow \text{ great}}\]
+
+A segunda sub-tarefa é a extração de novas palavras que expressam sentimentos a
+partir dos alvos extraídos anteriormente. Para isso, são utilizadas duas
+regras. Na primeira regra dessa sub-tarefa, é verificada se a frase possui uma
+palavra existente na lista de alvos de sentimentos, e a partir dessa palavra, é verificado ela possui algum
+dependente que seja um adjetivo.
+
+
+\[\textit{We have a } \underbrace{\textit{witty president.}}_\text{president
+\textrightarrow \text{ witty}}\]
+
+A palavra \textit{``president''} foi extraída na sub-tarefa
+anterior, porém, a palavra \textit{``witty''} não existe no dicionário de
+sentimentos. Ao processar a segunda sub-tarefa, a palavra \textit{``witty''}
+será acrescida ao dicionário de sentimentos pois essa é um adjetivo que não
+existe ainda no nosso conjunto de palavras. A segunda regra dessa sub-tarefa
+verifica se uma palavra alvo possui um dependente que por sua vez possua um
+adjetivo como dependente. Como por exemplo na frase
+\textit{``Trump is a witty president.''} a palavra \textit{``witty''}, que é um
+adjetivo, depende de \textit{``is''} que por sua vez depende de
+\textit{``president''}.
+
+\[\textit{Trump} \underbrace{\textit{is a witty president.}}_\text{president
+\textrightarrow \text{ is} \textrightarrow \text{ witty}}\]
+
+A terceira sub-tarefa é a extração de palavras alvo a partir de palavras alvo já
+extraídas anteriormente. A sua primeira regra verifica se a frase possui uma
+palavra da lista de alvos e verifica se essa possuí alguma conjunção. Caso sim,
+essa última palavra é adicionada a lista de alvos.
+
+
+\[\textit{We have a great} \underbrace{\textit{president and
+leader.}}_\text{president \textrightarrow \text{ and} \textrightarrow \text{
+leader}}\]
+
+Neste caso, a palavra \textit{``president''} que foi extraída através da primeira
+sub-tarefa possui a conjunção \textit{``and''} que a relaciona com a palavra
+\textit{``leader''}, a qual não consta na lista de palavras alvo e portanto será
+adicionada. A segunda regra dessa sub-tarefa verifica se dois substantivos
+possuem uma palavra dependente em comum, e caso um desses substantivos seja
+uma palavra alvo, o outro também é adicionado na lista.
+
+\[\underbrace{\textit{Trump is a great president.}}_\text{Trump
+\textrightarrow \text{ is} \textleftarrow \text{ president}}\]
+
+A palavra \textit{``president''} que foi extraída através da primeira
+sub-tarefa possui a palavra \textit{``is''} como dependente, assim como a
+palavra \textit{``Trump''}. Neste caso, a palavra \textit{``Trump''} será
+adicionada a lista de alvos.
+
+A última sub-tarefa tem como objetivo a extração de opiniões a partir das
+opiniões já extraídas. A sua primeira regra, assim como a primeira regra da
+terceira sub-tarefa, efetua a extração através das conjunções presentes no
+texto.
+
+\[\textit{Trump} \underbrace{\textit{is witty and clever.}}_\text{witty
+\textleftarrow \text{ and} \textrightarrow \text{ clever}}\]
+
+Neste caso aonde a palavra \textit{``witty''} foi extraída anteriormente, é
+verificada se essa possuí uma conjunção, no caso, a palavra \textit{``and''}, e
+extraída a palavra relacionada com essa conjunção. Extraindo a palavra
+\textit{``clever''} para o dicionário de sentimentos.
+
+A última regra verifica se dois adjetivos possuem dependência com a
+mesma palavra, e caso um desses pertence ao dicionário de sentimentos, o outro
+também é adicionado na lista.
+
+\[\textit{Trump} \underbrace{\textit{is witty, clever.}}_\text{witty
+\textleftarrow \text{ Trump} \textrightarrow \text{ clever}}\]
+
+Por fim, é verificado se o número de palavras da lista de alvos ou sentimentos
+aumentou desde a última execução das quatro sub-tarefas. Caso sim, o conjunto de
+sub-tarefas será executado novamente até que nenhuma palavra seja acrescentada a
+uma das listas.
+
+A pontuação das novas palavras do dicionário de sentimentos é realizada da
+seguinte forma. Para palavras extraídas através da quarta sub-tarefa, é
+utilizada a mesma pontuação da palavra relacionada a essa nova palavra. Para
+palavras extraídas através da segunda sub-tarefa é utilizada a mesma pontuação
+da palavra utilizada para a extração do alvo a qual essa palavra utiliza. Como
+por exemplo, na primeira regra foi extraída a palavra \textit{``president''} a
+partir de \textit{``great''}. Na segunda sub-tarefa, ao extrair a palavra
+\textit{``witty''} através de \textit{``president''}, ela irá receber a mesma
+pontução de \textit{``great''}.
+
+
+

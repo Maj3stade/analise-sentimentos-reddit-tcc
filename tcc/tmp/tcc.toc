@@ -33,4 +33,4 @@
 \contentsline {section}{\numberline {6.1}Expans\IeC {\~a}o do Dicion\IeC {\'a}rio atrav\IeC {\'e}s do M\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{45}{section.6.1}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{47}{section*.16}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{49}{section*.16}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  27 SEP 2017 20:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  28 SEP 2017 21:36
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1831,21 +1831,24 @@ Class memoir Warning: Column Y is already defined on input line 339.
 
 
 
-]) [45] (./tcc.bbl (./tcc.brf)
+]
+Underfull \vbox (badness 4048) has occurred while \output is active []
+
+ [45]
+[46] [47]) [48] (./tcc.bbl (./tcc.brf)
 \tf@brf=\write6
 \openout6 = `tcc.brf'.
 
 
-[46
-
-
-]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
 
 bibitemlist
-[47]) AED: lastpage setting LastPage [48]
+[49
+
+
+]) AED: lastpage setting LastPage [50]
 \tf@lof=\write7
 \openout7 = `tcc.lof'.
 
@@ -1872,11 +1875,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
  ) 
 Here is how much of TeX's memory you used:
- 19558 strings out of 493013
- 290914 string characters out of 6136993
+ 19567 strings out of 493013
+ 291014 string characters out of 6136993
  497231 words of memory out of 5000000
- 22348 multiletter control sequences out of 15000+600000
- 123768 words of font info for 164 fonts, out of 8000000 for 9000
+ 22349 multiletter control sequences out of 15000+600000
+ 124155 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,17n,54p,1215b,676s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2016/tex
@@ -1899,10 +1902,10 @@ fb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2
 016/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/public/lm/lmsso17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tcc.pdf (50 pages, 615677 bytes).
+Output written on tcc.pdf (52 pages, 623238 bytes).
 PDF statistics:
- 877 PDF objects out of 1000 (max. 8388607)
- 789 compressed objects within 8 object streams
- 168 named destinations out of 1000 (max. 500000)
+ 888 PDF objects out of 1000 (max. 8388607)
+ 798 compressed objects within 8 object streams
+ 170 named destinations out of 1000 (max. 500000)
  37122 words of extra memory for PDF output out of 42996 (max. 10000000)
 
