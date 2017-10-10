@@ -1,33 +1,26 @@
-\chapter{Implementação do Método \ac{VADER}}
+\chapter{Avaliação dos Resultados}
 \label{cap:impl}
-Como forma de avaliar a implementação realizada para uma posterior avaliação dos
-resultados, foi selecionado o tópico: ``Canada will welcome you, Trudeau
-invites refugees as Trump bans them''. A partir desse tópico, foram extraídos os
-comentários armazenados anteriormente através do Capítulo \ref{cap:Extracao} e
-estes foram processados através da ferramenta \ac{NLTK}. A utilização do
-\ac{VADER} através do \ac{NLTK} disponibiliza como resultado um objeto contendo
-a pontuação positiva //TODO(colocar exemplo), neutra, negativa e composta. 
+De forma a avaliar a implementação desenvolvida, foi selecionado o tópico:
+\textit{``Canada will welcome you, Trudeau invites refugees as Trump bans
+them''.}
+A partir desse tópico, foram extraídos os comentários que foram avaliados de
+forma manual. Após, os mesmos foram processados através da ferramenta \ac{NLTK},
+obtendo uma assertividade de 56\%.
 
-A partir da
-pontuação composta, foram avaliados de forma manual os comentários com o
-objetivo de se determinar se a classificação estava sendo feita de forma
-correta, obtendo-se 58\% de assertividade.
-
-Parte dos comentários que foram identificados de forma
-incorreta apresentam seu sentimento de forma irônica \\TODO EXEMPLO. A
-identificação de irônia através da leitura textual se faz difícil mesmo
-para um ser-humano visto que muitas vezes este texto pode não apresentar sinais
-de humor. Ferramentas que fazem uso de dicionários de palavras
-utilizam-se do princípio que o sentimento expresso é o qual é
+Observa-se que parte dos comentários que foram identificados de forma
+incorreta apresentam irônia, como por exemplo: \textit{``lol Good Luck
+Canada''} e similares. A identificação de ironia através da leitura textual se
+faz difícil até mesmo para um ser-humano visto que muitas vezes este texto pode
+não apresentar sinais de humor. As ferramentas que fazem uso de dicionários de
+palavras utilizam-se do princípio que o sentimento expresso é o qual é
 apresentado na maior parte do texto análisado. No caso de comentários
-irônicos como \textit{``Good luck with that.''} a metologia de análise de
-sentimentos se apresenta falha, sem possilibidade de classificação correta sem
-se apoiar em outros métodos. Também, que a ironia para a análise de sentimentos
-é considerado um tópico problemático sendo alvo de diversos estudos
-\cite{DBLP:conf/lrec/StranisciBFP16}.
+irônicos como \textit{``Good luck with that.''} e suas variações, que aparecem
+trinta vezes no tópico selecionado, a metologia de análise de sentimentos se
+apresenta falha. A ironia para a análise de sentimentos é considerado
+um tópico problemático sendo alvo de diversos estudos \cite{DBLP:conf/lrec/StranisciBFP16}.
 
-Outros comentários que foram identificados de forma incorreta determinou-se que
-o sentimento expresso não se encontrava em dicionário de sentimentos padrão do
+Já para outros comentários que foram identificados de forma incorreta
+determinou-se que o sentimento expresso não se encontrava em dicionário de sentimentos padrão do
 \ac{VADER}. Como solução para este problema, foi utilizado o método de
 Propagação Dupla para adicionar novas palavras ao dicionário
 \cite{Qiu:2011:OWE:1970420.1970422}.
@@ -35,118 +28,163 @@ Propagação Dupla para adicionar novas palavras ao dicionário
 \section{Expansão do Dicionário através do Método de Propagação Dupla}
 
 O método de Propagação Dupla, proposto por Qiu
-\cite{Qiu:2011:OWE:1970420.1970422} tem como objetivo solução de dois problemas
-do \ac{NLP}, a expansão de dicionário e também a extração dos alvos destas
-opiniões. Para este problema é proposta uma solução na qual novas palavras e
-alvos são adicionados ao dicionário de forma recursiva a partir de palavras já
-conhecidas (dicionário padrão do \ac{VADER}) e também alvos já conhecidos
-(palavras relacionadas com as que constam no dicionário do \ac{VADER}).
+\cite{Qiu:2011:OWE:1970420.1970422}, tem como objetivo resolver dois
+problemas do \ac{NLP}, que são a expansão de dicionário e também a extração dos
+alvos destas opiniões. \textit{``Opinion targets"} ou alvos de opinião, são
+palavras as quais sentimentos se referem. Por exemplo, na frase ``Essa
+música é muito boa", a palavra boa demonstra o sentimento do autor com relação a
+música. Tornando assim, a palavra música um alvo de opinião. A extração dos
+alvos se faz necessária uma vez que, em determinadas frases podemos ter várias
+opiniões expressas sobre diversos alvos, e também para entender opiniões
+expressas sobre diferentes características de um mesmo produto. Por exemplo, na
+frase ``Este celular é muito bom, porém a bateria dele é péssima", se faz
+útil entendermos que o produto em si é bom, porém, a opinião geral sobre a
+bateria dele é negativa. Para este problema, é proposta uma solução na qual
+novas palavras e alvos são adicionados ao dicionário a partir da execução de quatro tarefas sobre um determinado conjunto de textos.
 
-Essa implementação é feita a partir de quatro sub-tarefas, as quais contém duas
-regras cada uma destas. A primeira sub-tarefa é a extração de alvos a partir de
-palavras que expressam sentimento já conhecidas. Na primeira regra dessa
-dessa sub-tarefa são verificadas as palavras na qual a palavra que
-expressa sentimento depende e caso essa seja um substantivo, ela será extraída. Como por exemplo na frase \textit{``We have
-a great president''} a palavra \textit{``great''} depende de
-\textit{``president''} e essa é um substantivo.
+Cada tarefa contém duas regras, a primeira tarefa, é a extração de alvos a
+partir de palavras que expressam sentimento e que já são conhecidas. Ou seja, são verificadas as palavras, na qual a palavra que expressa sentimento depende. Caso
+essa palavra seja um substantivo, ela será extraída e adicionada na lista de
+alvos de sentimentos. Por exemplo na frase \textit{``We have a great
+president''} a palavra \textit{``great''} depende de \textit{``president''}, que
+é um substantivo. Neste caso, a palavra \textit{``president''} será adicionada a
+lista de palavras que são alvos de sentimentos.
 
 \[\textit{We have a } \underbrace{\textit{great president.}}_\text{president
 \textrightarrow \text{ great}}\]
 
-Neste caso, a palavra \textit{``president''} será adicionada a lista de
-palavras que são alvos de sentimentos. A segunda regra da primeira sub-tarefa
+A segunda regra da primeira tarefa
 verifica se uma palavra que expressa sentimentos depende de uma determinada
-palavra, que depende de um substantivo. Como por exemplo na frase
+palavra, que depende de um substantivo. Por exemplo, na frase
 \textit{``Trump is a great president.''} a palavra \textit{``great''} depende de
 \textit{``is''} que por sua vez depende de \textit{``president''} e essa é um
-substantivo.
+substantivo. Neste caso, a palavra \textit{``president''} será
+adicionada a lista de palavras que são alvos de sentimentos.
 
 \[\textit{Trump} \underbrace{\textit{is a great president.}}_\text{president
 \textrightarrow \text{ is} \textrightarrow \text{ great}}\]
 
-A segunda sub-tarefa é a extração de novas palavras que expressam sentimentos a
-partir dos alvos extraídos anteriormente. Para isso, são utilizadas duas
-regras. Na primeira regra dessa sub-tarefa, é verificada se a frase possui uma
-palavra existente na lista de alvos de sentimentos, e a partir dessa palavra, é verificado ela possui algum
-dependente que seja um adjetivo.
+A segunda tarefa é a extração de novas palavras que expressam sentimentos. Para isso, são utilizadas duas
+regras, onde na primeira regra, é verificada se a frase possui
+uma palavra existente na lista de alvos de sentimentos, após, é verificado se
+essa palavra possui algum dependente que seja um adjetivo. Por exemplo, na frase
+\textit{``Trump is a witty president.''}, a palavra \textit{``president''} foi
+extraída na tarefa anterior, porém, a palavra \textit{``witty''} não existe no dicionário de
+sentimentos. Ao processar a segunda tarefa, a palavra \textit{``witty''}
+será acrescida ao dicionário de sentimentos uma vez que essa é um adjetivo que
+não existe ainda no dicionário.
 
 
 \[\textit{We have a } \underbrace{\textit{witty president.}}_\text{president
 \textrightarrow \text{ witty}}\]
 
-A palavra \textit{``president''} foi extraída na sub-tarefa
-anterior, porém, a palavra \textit{``witty''} não existe no dicionário de
-sentimentos. Ao processar a segunda sub-tarefa, a palavra \textit{``witty''}
-será acrescida ao dicionário de sentimentos pois essa é um adjetivo que não
-existe ainda no nosso conjunto de palavras. A segunda regra dessa sub-tarefa
-verifica se uma palavra alvo possui um dependente que por sua vez possua um
-adjetivo como dependente. Como por exemplo na frase
+A segunda regra da tarefa dois
+verifica se uma palavra alvo possui um dependente, que por sua vez possua um
+adjetivo como dependente. Por exemplo, na frase
 \textit{``Trump is a witty president.''} a palavra \textit{``witty''}, que é um
 adjetivo, depende de \textit{``is''} que por sua vez depende de
-\textit{``president''}.
+\textit{``president''}. Neste caso, a palavra \textit{``witty''}
+será acrescida ao dicionário de sentimentos uma vez que essa é um adjetivo que
+não existe ainda no dicionário.
 
 \[\textit{Trump} \underbrace{\textit{is a witty president.}}_\text{president
 \textrightarrow \text{ is} \textrightarrow \text{ witty}}\]
 
-A terceira sub-tarefa é a extração de palavras alvo a partir de palavras alvo já
-extraídas anteriormente. A sua primeira regra verifica se a frase possui uma
-palavra da lista de alvos e verifica se essa possuí alguma conjunção. Caso sim,
-essa última palavra é adicionada a lista de alvos.
+A terceira tarefa é a extração de palavras alvo a partir de palavras alvo que
+foram extraídas anteriormente. A primeira regra desta tarefa verifica se a frase
+possui alguma palavra da lista de alvos e verifica se essa possui alguma
+conjunção, em caso positivo, a última palavra é adicionada na lista
+de alvos. Por exemplo, na frase \textit{``We have a great president and
+leader."}, a palavra \textit{``president''} que foi extraída através
+da primeira tarefa, possui a conjunção \textit{``and''} que a relaciona com a
+palavra \textit{``leader''}, a qual não consta na lista de palavras alvo. Neste
+caso, a palavra \textit{``leader''} será adicionada a lista de palavras alvo.
 
 
 \[\textit{We have a great} \underbrace{\textit{president and
 leader.}}_\text{president \textrightarrow \text{ and} \textrightarrow \text{
 leader}}\]
 
-Neste caso, a palavra \textit{``president''} que foi extraída através da primeira
-sub-tarefa possui a conjunção \textit{``and''} que a relaciona com a palavra
-\textit{``leader''}, a qual não consta na lista de palavras alvo e portanto será
-adicionada. A segunda regra dessa sub-tarefa verifica se dois substantivos
+A segunda regra da terceira sub-tarefa verifica se dois substantivos
 possuem uma palavra dependente em comum, e caso um desses substantivos seja
-uma palavra alvo, o outro também é adicionado na lista.
+uma palavra alvo, o outro também é adicionado na lista. Por exemplo, na frase
+\textit{``Trump is a great president.''}, a palavra \textit{``president''} que
+foi extraída através da primeira sub-tarefa possui a palavra \textit{``is''} como dependente, assim como a
+palavra \textit{``Trump''}. Desta forma, a palavra \textit{``Trump''} será
+adicionada a lista de alvos.
 
 \[\underbrace{\textit{Trump is a great president.}}_\text{Trump
 \textrightarrow \text{ is} \textleftarrow \text{ president}}\]
 
-A palavra \textit{``president''} que foi extraída através da primeira
-sub-tarefa possui a palavra \textit{``is''} como dependente, assim como a
-palavra \textit{``Trump''}. Neste caso, a palavra \textit{``Trump''} será
-adicionada a lista de alvos.
 
-A última sub-tarefa tem como objetivo a extração de opiniões a partir das
-opiniões já extraídas. A sua primeira regra, assim como a primeira regra da
-terceira sub-tarefa, efetua a extração através das conjunções presentes no
-texto.
+
+A última tarefa tem como objetivo a extração de opiniões a partir de
+opiniões que já foram extraídas. A sua primeira regra efetua a extração através
+das conjunções presentes no texto. Por exemplo, para a frase \textit{``Trump is
+witty and clever.''}, a palavra \textit{``witty''} possui uma conjunção
+(\textit{``and''}), relacionando a palavra \textit{``clever''}. Neste caso, será
+extraída a palavra \textit{``clever''} e adicionada no dicionário.
 
 \[\textit{Trump} \underbrace{\textit{is witty and clever.}}_\text{witty
 \textleftarrow \text{ and} \textrightarrow \text{ clever}}\]
 
-Neste caso aonde a palavra \textit{``witty''} foi extraída anteriormente, é
-verificada se essa possuí uma conjunção, no caso, a palavra \textit{``and''}, e
-extraída a palavra relacionada com essa conjunção. Extraindo a palavra
-\textit{``clever''} para o dicionário de sentimentos.
 
-A última regra verifica se dois adjetivos possuem dependência com a
-mesma palavra, e caso um desses pertence ao dicionário de sentimentos, o outro
-também é adicionado na lista.
+Na última regra da tarefa quatro, é verificado-se dois adjetivos
+dependem de uma mesma palavra. Se uma destas palavras pertence ao dicionário de
+sentimentos, a outra também será adicionada na lista. Por exemplo, na frase
+\textit{``Trump is witty, clever''}, ambas as palavras \textit{``witty''} e
+\textit{``clever''} dependem de \textit{``Trump''}. Neste caso, será extraída a
+palavra \textit{``clever''} e adicionada ao dicionário.
 
 \[\textit{Trump} \underbrace{\textit{is witty, clever.}}_\text{witty
 \textleftarrow \text{ Trump} \textrightarrow \text{ clever}}\]
 
 Por fim, é verificado se o número de palavras da lista de alvos ou sentimentos
-aumentou desde a última execução das quatro sub-tarefas. Caso sim, o conjunto de
-sub-tarefas será executado novamente até que nenhuma palavra seja acrescentada a
+aumentou. Em caso positivo, as quatro tarefas serão executadas até que nenhuma palavra seja acrescentada a
 uma das listas.
 
-A pontuação das novas palavras do dicionário de sentimentos é realizada da
-seguinte forma. Para palavras extraídas através da quarta sub-tarefa, é
-utilizada a mesma pontuação da palavra relacionada a essa nova palavra. Para
-palavras extraídas através da segunda sub-tarefa é utilizada a mesma pontuação
-da palavra utilizada para a extração do alvo a qual essa palavra utiliza. Como
-por exemplo, na primeira regra foi extraída a palavra \textit{``president''} a
-partir de \textit{``great''}. Na segunda sub-tarefa, ao extrair a palavra
-\textit{``witty''} através de \textit{``president''}, ela irá receber a mesma
-pontução de \textit{``great''}.
+A pontuação das novas palavras do dicionário de sentimentos é realizada
+considerando-se: Para as palavras extraídas através da quarta tarefa, é
+utilizada a mesma pontuação da palavra relacionada a essa nova palavra. Para palavras extraídas através da segunda tarefa é utilizada a mesma pontuação
+da palavra utilizada para a extração do alvo a qual essa palavra utiliza. Por
+exemplo, na primeira regra foi extraída a palavra \textit{``president''} a partir de \textit{``great''}. Na segunda tarefa, a palavra
+\textit{``witty''}, que foi extraída através de \textit{``president''}, irá
+receber a mesma pontuação da palavra \textit{``great''}.
 
+Como visto, para utilização do método de Propagação Dupla, é necessário um
+conjunto de textos para que sejam executadas as quatro tarefas. Segundo Qiu
+\cite{Qiu:2011:OWE:1970420.1970422}, como as palavras tem diferentes
+significados em diferentes contextos, é recomendado que este conjunto de textos
+pertença ao mesmo contexto que está sendo efetuada a análise de sentimentos.
+A fim de se determinar o melhor conjunto de textos para utilização do método,
+foram utilizados dois conjuntos de dados diferentes. No primeiro conjunto de
+textos, consideramos como contexto outros comentários do mesmo usuário que
+ está sendo efetuada a análise de sentimentos. Para o segundo conjunto de
+ textos, foram considerados comentários de usuários em outros tópicos seguindo o
+ mesmo tema. Neste avaliação, foram utilizados os comentários presentes nos
+ tópicos de política internacional descritos através do Capítulo 4.3.
+ 
 
+ 
+Após a utilização do Método de Propagação Dupla utilizando os dois conjuntos de
+textos e a avaliação dos comentários foram
+obtidos os seguintes resultados:
+\begin{itemize}
+  \item 58\% de assertividade na utilização do dicionário padrão.
+  \item 59\% de assertividade na utilização do dicionário padrão com palavras
+  extraídas a partir de comentários do mesmo autor.
+  \item 62\% de assertividade na utilização do dicionário padrão com palavras
+  extraídas a partir de comentários de um mesmo tema.
+\end{itemize}
+ 
+Destaca-se que mesmo com o aumento na assertividade com a utilização de
+comentários de tópicos do mesmo domínio, os comentários que não foram
+identificados de forma correta são comentários como: \textit{"...These
+laws are not "racist", morons keep hysterically throwing that word around and
+its losing all meaning..."}, aonde que o sentimento expresso é negativo, porém,
+a pessoa expressa um sentimento a favor da notícia em questão. Este problema
+pode ser resolvido através da análise não só dos comentários mais também dos
+alvos dos sentimentos expressos através destes comentários.
+ 
+\section{Extração de Alvos}
 

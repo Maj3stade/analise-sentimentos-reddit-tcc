@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  28 SEP 2017 21:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  7 OCT 2017 17:30
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1711,14 +1711,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 ]
-[20] [21] <imagens/markov.png, id=263, 432.61626pt x 231.86626pt>
+[20] [21] <imagens/markov.png, id=264, 432.61626pt x 231.86626pt>
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
 Package pdftex.def Info: imagens/markov.png used on input line 213.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
  [22 <./imagens/markov.png>] [23] [24]
-<imagens/markov2.png, id=306, 432.61626pt x 251.94125pt>
+<imagens/markov2.png, id=307, 432.61626pt x 251.94125pt>
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
@@ -1752,7 +1752,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <17.28> not available
  [30] [31]
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 872.
- <imagens/definicao.png, id=418, 893.58844pt x 300.3722pt>
+ <imagens/definicao.png, id=419, 893.58844pt x 300.3722pt>
 File: imagens/definicao.png Graphic file (type png)
 
 <use imagens/definicao.png>
@@ -1766,7 +1766,7 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
 
 
 (./capitulos/capitulo3.tex
-<imagens/reddit.png, id=464, 768.62157pt x 560.8453pt>
+<imagens/reddit.png, id=465, 768.62157pt x 560.8453pt>
 File: imagens/reddit.png Graphic file (type png)
 
 <use imagens/reddit.png>
@@ -1777,7 +1777,7 @@ Package pdftex.def Info: imagens/reddit.png used on input line 22.
 
 
  <./imagens/reddit.png>]
-<imagens/arquitetura.png, id=473, 475.7775pt x 334.24875pt>
+<imagens/arquitetura.png, id=474, 475.7775pt x 334.24875pt>
 File: imagens/arquitetura.png Graphic file (type png)
 
 <use imagens/arquitetura.png>
@@ -1831,24 +1831,21 @@ Class memoir Warning: Column Y is already defined on input line 339.
 
 
 
-]
-Underfull \vbox (badness 4048) has occurred while \output is active []
-
- [45]
-[46] [47]) [48] (./tcc.bbl (./tcc.brf)
+] [45] [46] [47]) [48] [49]
+(./tcc.bbl (./tcc.brf)
 \tf@brf=\write6
 \openout6 = `tcc.brf'.
 
+ [50
 
+
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
 
 bibitemlist
-[49
-
-
-]) AED: lastpage setting LastPage [50]
+[51]) AED: lastpage setting LastPage [52]
 \tf@lof=\write7
 \openout7 = `tcc.lof'.
 
@@ -1867,7 +1864,7 @@ onimos.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
 Package rerunfilecheck Info: File `tcc.brf' has not changed.
-(rerunfilecheck)             Checksum: B6026DD91EF4860E0BA3293DE6E5A4C7;2007.
+(rerunfilecheck)             Checksum: BA7ECDEB6A855B7556B397BE19BD50AE;2072.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1875,11 +1872,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
  ) 
 Here is how much of TeX's memory you used:
- 19567 strings out of 493013
- 291014 string characters out of 6136993
- 497231 words of memory out of 5000000
- 22349 multiletter control sequences out of 15000+600000
- 124155 words of font info for 167 fonts, out of 8000000 for 9000
+ 19577 strings out of 493013
+ 291125 string characters out of 6136993
+ 498210 words of memory out of 5000000
+ 22352 multiletter control sequences out of 15000+600000
+ 124413 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,17n,54p,1215b,676s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2016/tex
@@ -1902,10 +1899,10 @@ fb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2
 016/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/public/lm/lmsso17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tcc.pdf (52 pages, 623238 bytes).
+Output written on tcc.pdf (54 pages, 625995 bytes).
 PDF statistics:
- 888 PDF objects out of 1000 (max. 8388607)
- 798 compressed objects within 8 object streams
- 170 named destinations out of 1000 (max. 500000)
- 37122 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 896 PDF objects out of 1000 (max. 8388607)
+ 803 compressed objects within 9 object streams
+ 173 named destinations out of 1000 (max. 500000)
+ 37130 words of extra memory for PDF output out of 42996 (max. 10000000)
 

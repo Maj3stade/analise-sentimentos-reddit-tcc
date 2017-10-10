@@ -29,8 +29,9 @@
 \contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Conclus\IeC {\~a}o Parcial}}{41}{chapter.5}
 \contentsline {section}{\numberline {5.1}Atividades e Cronograma}{42}{section.5.1}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Implementa\IeC {\c c}\IeC {\~a}o do M\IeC {\'e}todo \ac {VADER}}}{45}{chapter.6}
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Avalia\IeC {\c c}\IeC {\~a}o dos Resultados}}{45}{chapter.6}
 \contentsline {section}{\numberline {6.1}Expans\IeC {\~a}o do Dicion\IeC {\'a}rio atrav\IeC {\'e}s do M\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{45}{section.6.1}
+\contentsline {section}{\numberline {6.2}Extra\IeC {\c c}\IeC {\~a}o de Alvos}{49}{section.6.2}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{49}{section*.16}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{51}{section*.16}
