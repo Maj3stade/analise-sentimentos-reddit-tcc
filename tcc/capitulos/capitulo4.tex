@@ -1,17 +1,85 @@
-\chapter{Extração de Dados}
+\chapter{Criação de Base de Dados}
+\label{cap:banco}
+Este capítulo tem como objetivo descrever a rede social Reddit.
+Após, são apresentados os tópicos que foram selecionados para a análise de
+sentimentos. Por fim, é apresentada a ferramenta desenvolvida para a extração
+dos comentários destes tópicos e para a criação da base.
+\section{Rede Social Reddit}
+\label{cap:Reddit}
+
+O \textit{website} Reddit foi criado por Alexis Ohanian e Steve Huffman e teve
+seu início em 2005 como um agregador de conteúdo e, atualmente, é o vigésimo terceiro \textit{website} mais acessado na
+internet e o sétimo mais acessado nos Estados Unidos da América \cite{alexa}.
+Os usuários do Reddit podem enviar \textit{links} com conteúdos externos
+ao Reddit ou ainda mensagens de texto. A partir desse conteúdo, os seus
+usuários podem votar para cima (\textit{upvote}) ou para baixo \textit{downvote},
+influenciando na posição do conteúdo no \textit{website}. Além de votar no conteúdo, seus usuários podem enviar comentários como
+forma de expressar sua opinião (Figura \ref{fig:reddit}).
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[height=300px]{imagens/reddit.png}
+\caption{\textit{Website Reddit}:  As flechas demarcadas permitem efetuarmos
+\textit{upvotes} ou \textit{downvotes}.}
+\label{fig:reddit}
+\end{figure}
+
+O conteúdo do Reddit é distribuído em \textit{subreddits} que funcionam como
+comunidades. Os usuários podem se inscrever nesses
+\textit{subreddits}, recebendo as atualizações na sua página inicial, sendo
+que dentre esses \textit{subreddits}, destacam-se:
+
+
+\begin{itemize}
+  \item \textit{/r/AskReddit}: esse \textit{subreddit} é utilizado para fazer
+  perguntas gerais para outros usuários do Reddit. Esse \textit{subreddit}
+  possui aproximadamente 16.941.540 inscritos.
+  \item \textit{/r/worldnews}: esse \textit{subreddit} possui as notícias de
+  todo o mundo, contando com aproximadamente 16.570.600 inscritos.
+  \item \textit{/r/IAmA}: IAmA é um estilização de 'I am a' ('Eu sou um'):
+  a partir desse \textit{subreddit} os usuários podem fazer perguntas ao criador
+  de um determinado tópico. Esse \textit{subreddit} possui aproximadamente
+  16.990.160 inscritos.
+\end{itemize}
+
+% Dentre esses \textit{subreddits} podemos destacar alguns dos tópicos mais
+% acessados no ano de 2016:
+% 
+% \begin{itemize}
+%   \item \textit{/r/IAmA} - \textit{We're NASA scientists \& exoplanet experts.
+%   Ask us anything about today's announcement of seven Earth-size planets
+%   orbiting TRAPPIST-1!} - Tópico de perguntas e respostas com cientistas da
+%   NASA após a descoberta dos planetas que orbitavam a estrela TRAPPIST-1.
+%   \item \textit{/r/IAmA} - \textit{I’m Bill Gates, co-chair of the Bill \&
+%   Melinda Gates Foundation. Ask Me Anything.} - Tópico de perguntas e respostas com Bill Gates.
+%   \item \textit{/r/worldnews} - \textit{Fidel Castro is dead at 90.} - Link para
+%   anúncio da morte de Fidel Castro.
+%   \item \textit{/r/AskReddit} - \textit{[Serious]South Koreans of Reddit, how
+%   did they teach you about the existence of North Korea in School when you were
+%   young?serious replies only} - Tópico perguntando para os usuários sul coreanos
+%   como que foi ensinado para eles sobre a existência da Coreia do Norte.
+% \end{itemize}
+
+% A identificação de padrões de sentimentos expressos por determinados grupos
+% dessa comunidade, se faz útil visto que a partir dessa avaliação é possível construir
+% ferramentas que apoiam decisões tanto de um ponto de vista político, como por
+% exemplo, entender qual é a opinião sobre um determinado assunto de um conjunto
+% de eleitores, tanto quanto um ponto de vista de negócios, para entender qual a
+% opinião dos consumidores de um produto, ou de seu competidor, a respeito de um
+% determinado assunto.
+
+\section{Extração de Dados}
 \label{cap:Extracao}
 
-Para a extração dos dados para a análise de sentimentos foi criado um
-\textit{crawler} ou robô de navegação. Esse robô tem como objetivo a navegação
-automática no conteúdo web do Reddit, extraindo os dados referentes a tópicos e
-a comentários e persistindo esses em um banco de dados.
-
-\section{\textit{Crawler}}
-
-O \textit{Crawler} foi escrito na linguagem Java por se tratar de uma linguagem
-com uma grande quantidade de bibliotecas disponíveis e também
-sua facilidade de implementação. A Figura \ref{fig:crawler} representa a
-arquitetura utilizada para desenvolvimento deste software.
+Para a extração comentários do \textit{website} Reddit e para a criação da base
+foi desenvolvido um \textit{crawler} ou robô de navegação. Esse robô foi
+implementado na linguagem Java e tem como objetivo a navegação automática no
+conteúdo do \textit{website} Reddit, extraindo os dados e comentários referentes a um
+determinado tópico. Após, os dados são armazenados em uma base de dados criada
+em um banco de dados MySQL \cite{Widenius:2002:MRM:560480}.
+Na Figura \ref{fig:crawler} tem-se a arquitetura do \textit{software}
+desenvolvido. O código deste encontra-se no CD em anexo.
 
 \begin{figure}[htbp]
 \centering
@@ -20,158 +88,287 @@ arquitetura utilizada para desenvolvimento deste software.
 \label{fig:crawler}
 \end{figure}
 
-A partir de um \textit{link} para um tópico, o software tem como tarefa, a
-extração e pesquisa de dados relacionados com o tópico em questão. Isso se faz
-da seguinte forma, primeiramente, é enviada uma requisição para o \textit{link}
-utilizando o sufixo ``.json'', de forma demonstrada na API, a partir dessa
-requisição, o \textit{website} retorna um objeto \ac{JSON}.
+A partir de um \textit{link} para um tópico, o robô efetua uma busca e a
+extração dos dados relacionados a esse tópico. Para tanto, foi utilizada a
+\ac{API} do Reddit, onde, inicialmente envia-se uma requisição utilizando o
+sufixo ``.json'' (Por exemplo:
+\textit{\url{https://www.reddit.com/r/iama.json}}) e, a partir dessa requisição,
+o \textit{website} retorna um objeto \ac{JSON}. Uma vez que o \ac{JSON}
+retornado pelo \textit{website} possui 68 campos e que esses não se encontram
+documentados, utilizou-se o \textit{website}
+\textit{jsonschema2pojo}\footnote{http://www.jsonschema2pojo.org/ - O
+\textit{website} jsonschema2pojo tem como objetivo a conversão de um esquema \ac{JSON} em
+\textit{Plain Old Java Objects}\ac{POJO}, permitindo o \textit{download} da classe para a utilização.} para converter o
+JSON retornado em um \textit{Plain Old Java Objects} (\ac{POJO}).
 
-Como o \ac{JSON} possui 68 campos que assim como seus tipos de dados, não se
-encontram em nenhuma documentação, foi utilizado o \textit{website}
-jsonschema2pojo\footnote{http://www.jsonschema2pojo.org/} para mapear o \ac{JSON} retornado em um
-objeto Java. Esse \textit{website} tem como objetivo a conversão de um esquema \ac{JSON} ou o próprio \ac{JSON} para um \ac{POJO} ou Os Singelos Clássicos Objetos Java, permitindo
-o \textit{download} da classe para utilização, já com as anotações
-``@JsonProperty'' utilizadas na biblioteca Jackson. Este objeto disponibilizado a
-partir do \textit{website} foi renomeado para \textit{RedditPost} e adicionado
-ao código fonte da aplicação.
+Após, foi utilizado o \textit{framework} Hibernate
+\cite{Iverson:2004:HJD:1044870} para a criação do banco de dados e para a
+persistência dos dados. O Hibernate é um \textit{framework} de
+mapeamento objeto-relacional que tem como objetivo representar as tabelas de um
+banco de dados através de classes, ou seja, esse \textit{framework} tem como principal
+característica a transformação das classes em Java em tabelas em um banco de
+dados relacional.
+No caso deste trabalho, ele é responsável pela criação das tabelas \textit{RedditPost} e
+\textit{RedditThread}, relacionadas, respectivamente, com os comentários e o
+tópico em questão. 
 
-A anotação ``@JsonProperty'' é relativa ao
-mapeamento do objeto Java com relação ao \ac{JSON} e nos permite com
-intermédio da classe \textit{Object Mapper} instanciar o objeto
-\textit{RedditPost} a partir de um objeto \textit{String} em formato \ac{JSON}.
+\section{Validação da Implementação}
 
-\begin{lstlisting}
-RedditPost post = objectMapper.readValue(iteratorPost.get("data").toString(),
-RedditPost.class);
-\end{lstlisting}
+Após a extração dos dados, com o objetivo de validar a implementação
+do método \ac{VADER}, foi selecionado o tópico:
+\textit{``Canada will welcome you, Trudeau invites refugees as Trump bans
+them''.}
+A partir desse tópico, foram extraídos todos os comentários, que foram avaliados
+de forma manual. Após, esses comentários foram processados através da ferramenta
+\ac{NLTK}, obtendo uma assertividade de 56\%.
 
-Utilizando o método \textit{readValue} que tem como retorno um \textit{Object},
-é informado um objeto \textit{String}, neste caso
-\textit{``iteratorPost.get("data").toString()"} e uma classe mapeada, neste caso
-\textit{RedditPost}.
+Destaca-se que uma grande parte dos comentários que foram identificados de forma
+incorreta, apresentam a irônia como característica, como por exemplo, o
+comentário \textit{``lol Good Luck Canada''}. A identificação da ironia através
+da leitura textual se faz difícil até mesmo para um ser-humano, uma vez que o
+texto pode não apresentar sinais de humor. A ironia para a análise de sentimentos é considerado
+um tópico problemático sendo alvo de diversos estudos \cite{DBLP:conf/lrec/StranisciBFP16}.
 
-Porém, para o correto funcionamento, deve ser feita a seguinte mudança: O campo
-\textit{edited} representando se foi editado o comentário, retornado no
-\ac{JSON} apresenta um tipo de dado ambíguo aonde que caso o comentário não tenha sido editado, ele apresenta o valor \textit{booleano} de \textit{false}, porém, ao ter sido editado, ele apresenta
-seu valor em um formato decimal. Este e demais objetos que apresentavam o tipo
-de dado de forma ambígua foram transformados em objetos \textit{String}.
+Já para outros comentários que foram identificados de forma incorreta
+observa-se que o sentimento expresso não no encontrava em dicionário de
+sentimentos padrão do \ac{VADER}. De forma a minimizar este problema, foi
+utilizado o método de Propagação Dupla, que possui como principal objetivo
+adicionar novas palavras ao dicionário \cite{Qiu:2011:OWE:1970420.1970422}.
+
+\section{Método de Propagação Dupla}
+
+O método de Propagação Dupla, proposto por Qiu
+\cite{Qiu:2011:OWE:1970420.1970422}, apresenta como objetivo resolver dois
+problemas do \ac{NLP}, que são a expansão do dicionário e também a extração de
+alvos de um comentário. Os \textit{``Opinion targets"} ou alvos de opinião, são
+palavras as quais sentimentos se referem. Por exemplo, na frase ``Essa
+música é muito boa", a palavra ``boa'' demonstra o sentimento do autor com relação a
+``música'', tornando assim, a palavra música um alvo de opinião. 
+
+A extração dos alvos é necessária pois em algumas frases
+podemos ter opiniões sobre diferentes alvos. Além disso, podemos
+ter opiniões diferentes sobre diferentes características de um alvo. Por
+exemplo, na frase ``Este celular é muito bom, porém a bateria dele é péssima", tem-se que o produto em si é bom, porém, a opinião sobre a bateria dele é negativa. De
+forma, a resolver esses problemas, novas palavras e alvos são adicionados ao
+dicionário a partir da execução das quatro tarefas que serão descritas na
+próxima seção.
+
+\subsection{Adição de Palavras e Alvos ao Dicionário}
+
+A \textbf{primeira tarefa}, é dividida em duas regras, sendo que a primeira
+consiste na extração de alvos a partir de palavras que expressam sentimentos e
+que já são conhecidas. Ou seja, são verificadas todas as palavras das quais a palavra que
+expressa sentimentos depende. Caso essa palavra seja um substantivo, ela será
+extraída e adicionada na lista de alvos de sentimentos. Por exemplo na frase \textit{``We have a great president''} a palavra \textit{``great''} depende de \textit{``president''}, que é um substantivo. Neste caso, a palavra \textit{``president''} será adicionada a
+lista de alvos de sentimentos.
+
+\[\textit{We have a } \underbrace{\textit{great president.}}_\text{president
+\textrightarrow \text{ great}}\]
+
+A segunda regra da primeira tarefa,
+consiste em verificar se uma palavra que expressa sentimentos é dependente de
+uma segunda palavra que depende de um substantivo.
+Por exemplo, na frase \textit{``Trump is a great president.''} a palavra
+\textit{``great''} depende da palavra \textit{``is''} que por sua vez depende da
+palavra \textit{``president''} que é um substantivo. Neste caso, a palavra
+\textit{``president''} será adicionada a lista de palavras que são alvos de sentimentos.
+
+\[\textit{Trump} \underbrace{\textit{is a great president.}}_\text{president
+\textrightarrow \text{ is} \textrightarrow \text{ great}}\]
+
+A \textbf{segunda tarefa} é a extração de novas palavras que expressam
+sentimentos. Para isso, são utilizadas duas regras. Na primeira regra, é
+verificada se a frase possui alguma palavra que se encontra na lista de alvos de
+sentimentos, em caso positivo, é verificado se essa palavra possui algum dependente que seja um adjetivo. Por exemplo, na frase \textit{``Trump is a witty president.''}, a palavra \textit{``president''} foi
+extraída na tarefa anterior, porém, a palavra \textit{``witty''} ainda não se
+encontra no dicionário de sentimentos.
+Desta forma, a palavra \textit{``witty''} será acrescida ao
+dicionário de sentimentos uma vez que essa palavra é um adjetivo e que ainda não
+existe no dicionário.
 
 
-A partir deste objeto Java, foi utilizado o \textit{framework} Hibernate para a
-criação do banco de dados, assim como persistência destes. Através da anotação
-``@Entity'', adicionada também na classe RedditPost. O Hibernate mapeia essa
-entidade junto ao banco de dados, neste caso, MySQL.
+\[\textit{We have a } \underbrace{\textit{witty president.}}_\text{president
+\textrightarrow \text{ witty}}\]
 
-Para criação das tabelas do banco de dados, foi utilizada a propriedade
-\textit{hibernate.hbm2ddl.auto} do Hibernate. Essa propriedade quando
-instânciada uma nova sessão do \textit{framework} no Java executa as seguintes
-ações dependendo de seus valores informados:
+A segunda regra da tarefa dois
+consiste em verificar se uma palavra alvo possui um dependente, que por sua vez
+possui um adjetivo como dependente. Por exemplo, na frase
+\textit{``Trump is a witty president.''} a palavra \textit{``witty''}, que é um
+adjetivo, depende de \textit{``is''} que por sua vez depende de
+\textit{``president''}. Neste caso, a palavra \textit{``witty''}
+será acrescida ao dicionário de sentimentos uma vez que essa é um adjetivo que
+não existe ainda no dicionário.
 
+\[\textit{Trump} \underbrace{\textit{is a witty president.}}_\text{president
+\textrightarrow \text{ is} \textrightarrow \text{ witty}}\]
+
+A \textbf{terceira tarefa} consiste na extração de palavras alvo a partir de
+palavras alvo que já se encontram na lista de alvos. A primeira regra desta
+tarefa verifica se a frase possui alguma palavra na lista de alvos, e verifica se essa possui alguma
+conjunção. Em caso positivo, a palavra após a conjunção é adicionada na lista
+de alvos. Por exemplo, na frase \textit{``We have a great president and
+leader."}, a palavra \textit{``president''} que foi extraída através
+da primeira tarefa, possui a conjunção \textit{``and''} que a relaciona com a
+palavra \textit{``leader''}, a qual não consta na lista de alvos. Neste
+caso, a palavra \textit{``leader''} será adicionada a lista de alvos.
+
+
+\[\textit{We have a great} \underbrace{\textit{president and
+leader.}}_\text{president \textrightarrow \text{ and} \textrightarrow \text{
+leader}}\]
+
+A segunda regra da terceira tarefa verifica se dois substantivos
+possuem uma palavra dependente em comum. No caso de um desses substantivos ser
+uma palavra alvo, o outro também é adicionado na lista. Por exemplo, na frase
+\textit{``Trump is a great president.''}, a palavra \textit{``president''} que
+foi extraída através da primeira tarefa possui a palavra \textit{``is''} como
+dependente, bem como a palavra ``Trump'' também possui a palavra \textit{``is''}
+como dependente. Desta forma, a palavra \textit{``Trump''} será adicionada a
+lista de alvos.
+
+\[\underbrace{\textit{Trump is a great president.}}_\text{Trump
+\textrightarrow \text{ is} \textleftarrow \text{ president}}\]
+
+
+
+A \textbf{quarta tarefa} tem como objetivo a extração de novas opiniões a partir
+de adjetivos já extraídos. A primeira regra desta tarefa, efetua a extração através
+das conjunções presentes no texto. Por exemplo, para a frase \textit{``Trump is
+witty and clever.''}, a palavra \textit{``witty''} possui uma conjunção
+(\textit{``and''}), que a relaciona com a palavra \textit{``clever''}. Neste
+caso, a palavra \textit{``clever''} será adicionada ao dicionário.
+
+\[\textit{Trump} \underbrace{\textit{is witty and clever.}}_\text{witty
+\textleftarrow \text{ and} \textrightarrow \text{ clever}}\]
+
+
+A segunda da quarta tarefa, consiste em verificar-se dois adjetivos
+dependem de uma mesma palavra. Se uma destas palavras pertence ao dicionário de
+sentimentos, a outra também será adicionada na lista. Por exemplo, na frase
+\textit{``Trump is witty, clever''}, ambas as palavras \textit{``witty''} e
+\textit{``clever''} dependem de \textit{``Trump''}. Neste caso, será extraída a
+palavra \textit{``clever''} e adicionada ao dicionário.
+
+\[\textit{Trump} \underbrace{\textit{is witty, clever.}}_\text{witty
+\textleftarrow \text{ Trump} \textrightarrow \text{ clever}}\]
+
+Por fim, é verificado se as listas de alvos ou sentimentos sofreram
+alterações, ou seja, foram adicionadas novas palavras a essas listas. Em caso
+positivo, as quatro tarefas serão executadas até que nenhuma palavra seja acrescentada a uma das listas.
+
+\subsection{Atribuição de Pontuação às Novas Palavras}
+
+Após a execução das quatro tarefas, se faz necessário definir a
+pontuação relativa a polaridade do sentimento expresso pelas novas palavras
+identificadas através do Método de Propagação Dupla para sua posterior
+utilização através do método \ac{VADER}.
+
+Essa atribuição é realizada da seguinte forma, para as palavras extraídas
+através da quarta tarefa, é utilizada a mesma pontuação da palavra relacionada a
+essa nova palavra. Por exemplo, para a frase \textit{``Trump is
+witty and clever.''}, a palavra \textit{``witty''} possui uma conjunção
+(\textit{``and''}), que a relaciona com a palavra \textit{``clever''}. Neste
+caso, a palavra \textit{``clever''} terá a mesma pontuação da palavra
+\textit{``witty''}.
+
+Para a pontuação das palavras extraídas na tarefa dois, é realizado o seguinte
+processo, na extração do alvo é atribuído a este alvo a mesma pontuação do
+sentimento relacionado com ele. Por exemplo, na frase \textit{``We have a great
+president''}, a palavra \textit{``president''} será adicionada a lista de alvos
+de sentimentos com a mesma pontuação de \textit{``great''}, a qual está
+relacionada. Após, essa pontuação é atribuída a palavra extraída na tarefa dois.
+Por exemplo, no comentário \textit{``This president is witty.''}, na segunda
+tarefa, a palavra \textit{``witty''}, que foi extraída através de
+\textit{``president''}, irá receber a mesma pontuação da palavra \textit{``great''}.
+
+
+Como visto, para utilização do método de Propagação Dupla, é necessário um
+conjunto de textos para que sejam executadas as quatro tarefas. Segundo Qiu
+\cite{Qiu:2011:OWE:1970420.1970422}, como as palavras tem diferentes
+significados em diferentes contextos, é recomendado que este conjunto de textos
+pertença ao mesmo contexto que está sendo efetuada a análise de sentimentos. Por
+exemplo, ao utilizar um conjunto de dados sobre notícias gerais, pode-se
+determinar que a palavra \textit{``gucci''} é uma gíria similar a palavra
+\textit{``good''}. Porém, o uso dessa palavra em comentários de roupas
+apresenta um outro contexto uma vez que se refere a uma marca de roupas.
+
+A fim de se determinar o
+melhor conjunto de textos para utilização do método, foram utilizados dois
+conjuntos de dados de testes. No primeiro conjunto de textos, considerou-se
+comentários de um mesmo usuário, desta forma, foram extraídos os 1000
+comentários mais recentes dos usuários que comentaram no tópico \textit{``Canada will welcome
+you,” Trudeau invites refugees as Trump bans them}, totalizando %TODO% 
+comentários. Para o segundo
+conjunto de textos, foram considerados comentários de usuários em tópicos
+que apresentam o mesmo tema. Nesta avaliação, foram utilizados os seguintes
+comentários:
 
 \begin{itemize}
-  \item \textit{validate}: Não efetua mudanças no banco de dados, somente
-  valida.
-  \item \textit{update}: Atualiza o esquema do banco de dados conforme os
-  objetos mapeados na camada Java.
-  \item \textit{create}: Cria o esquema contendo tabelas e campos a partir dos
-  objetos Java, destruindo dados anteriores.
-  \item \textit{create-drop}: Cria o esquema da mesma que o \textit{create},
-  porém, ao termino da sessão, remove o esquema criado.
-\end{itemize}
-
-No primeiro momento, a propriedade obteve o valor \textit{create}, para fins de
-criação e validação do esquema criado e após isso, foi informado \textit{update}
-como seu valor para tornar reflexo as alterações feitas na camada Java.
-
-Portanto, a execução do \textit{Crawler} funciona da seguinte forma, é enviada
-uma requisição para o \textit{website} através da URL do tópico em questão com o
-sufixo ``\textit{.json}'' no final. O \textit{website} retorna um
-\textit{JSON} com os dados referentes ao tópico solicitado e aos comentários
-deste tópico. Este objeto \ac{JSON} é convertido em um \ac{POJO} através da
-biblioteca Jackson e persistida no banco de dados através do \textit{framework}
-Hibernate. Como a API do Reddit possui uma restrição do número de comentários
-disponibilizados, são efetuadas novas requisições para a seção \textit{``more''}
-disponível no \ac{JSON} de retorno.
-
-\section{Tópicos Selecionados}
-
-Para análise de sentimentos e comparação dos resultados obtidos, foram
-selecionados 25 tópicos controversos, selecionados com o objetivo de encontrar
-padrões de opinião entre seus comentários, distribuídos da seguinte forma:
-
-Tópicos relacionados com o cenário político nacional:
-\begin{itemize}
   \item
-  \textit{Brazil Seeks To Copy U.S. Gun Culture ``to allow embattled
-  citizens the right to defend themselves from
-  criminals''} - Disponível em: 
-  \url{https://www.reddit.com/r/worldnews/comments/36ny58/brazil_blogger_known_for_reporting_on_corruption/}.
-  \item
-  \textit{Brazil descends into chaos as Olympics looms} - Disponível em: 
-  \url{https://www.reddit.com/r/worldnews/comments/4bqcc3/brazil_descends_into_chaos_as_olympics_looms/}.
-  \item
-  \textit{Plane carrying Brazil Supreme Court judge crashes into sea}
-   - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/5oyz3b/plane_carrying_brazil_supreme_court_judge_crashes/}.
-  \item
-  \textit{Brazil passes Internet governance Bill: Brazil has made history with
-  the approval of a post-Snowden Bill which sets out principles, rights and guarantees for Internet users.} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/21f3as/brazil_passes_internet_governance_bill_brazil_has/}.
-  \item
-  \textit{FIFA generated more than \$4 billion in sales from the 2014 World Cup,
-  and is Giving Brazil \$100 Million After The Country Spent \$15 Billion On The
-  World Cup} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/2t65ql/fifa_generated_more_than_4_billion_in_sales_from/}.
-  \item
-  \textit{Brazil Seeks To Copy U.S. Gun Culture "to allow embattled citizens the
-  right to defend themselves from
-  criminals"} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/3skpe7/brazil_seeks_to_copy_us_gun_culture_to_allow/}.
-\end{itemize}
-
-Tópicos relacionados sobre política internacional.
-\begin{itemize}
-  \item
-  \textit{2.6 terabyte leak of Panamanian shell company data reveals "how a
-  global industry led by major banks, legal firms, and asset management companies
-  secretly manages the estates of politicians, Fifa officials, fraudsters and
-  drug smugglers, celebrities and professional
-  athletes."}. - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/4d75i7/26_terabyte_leak_of_panamanian_shell_company_data/}.
-  \item
-  \textit{Fidel Castro is dead at
-  90.} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/5exz2e/fidel_castro_is_dead_at_90/}.
-  
-  \item
-  \textit{Donald Trump to strip all funding from State Dept team promoting women's rights around the world - Leaked plan comes as First Daughter Ivanka defends her father's record with women} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/67ivae/donald_trump_to_strip_all_funding_from_state_dept/}.
-  
-  \item
-  \textit{Manchester Arena 'explosions': Two loud bangs heard at MEN Arena} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/6cqdye/manchester_arena_explosions_two_loud_bangs_heard/}.
-  
+  \textit{Donald Trump to strip all funding from State Dept team promoting
+  women's rights around the world - Leaked plan comes as First Daughter Ivanka
+  defends her father's record with women}: esse tópico contém 9246
+  comentários e encontra-se disponível em
+  \url{https://www.reddit.com/r/worldnews/comments/67ivae/donald_trump_to_strip_all_funding_from_state_dept/}
+  e refere-se a decisão do presidente dos Estados Unidos da América, Donald
+  Trump, em remover fundos de promoção ao direito das mulheres.  
   \item
   \textit{Sweden asks the U.S. to explain Trump comment on
-  Sweden} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/5uzetf/sweden_asks_the_us_to_explain_trump_comment_on/}
+  Sweden}: esse tópico contém 10927
+  comentários e encontra-se disponível em
+  \url{https://www.reddit.com/r/worldnews/comments/5uzetf/sweden_asks_the_us_to_explain_trump_comment_on/}
+  e se refere aos comentários feitos do presidente dos Estados Unidos da
+  América, Donald Trump, sobre a Suécia.
   
   \item\textit{“Canada will welcome you,” Trudeau invites refugees as Trump bans
-  them} - Disponível em: \url{https://www.reddit.com/r/worldnews/comments/5qqa51/canada_will_welcome_you_trudeau_invites_refugees/}
+  them}: esse tópico contém 9113
+  comentários e encontra-se disponível em
+  \url{https://www.reddit.com/r/worldnews/comments/5qqa51/canada_will_welcome_you_trudeau_invites_refugees/}
+  e refere-se a declaração do primeiro ministro canadense sobre decisão de
+  receber refugiados. Neste declaração, o primeiro ministro canadense afirma que
+  os refugiados serão bem-vindos no Canadá.
 \end{itemize}
-
-Tópicos diversos.
+ 
+Após a utilização do Método de Propagação Dupla, utilizando os dois conjuntos
+de textos e a avaliação dos comentários foram
+obtidos os seguintes resultados a partir do tópico \textit{``Canada will welcome
+you,” Trudeau invites refugees as Trump bans them}:
 \begin{itemize}
-  \item
-  \textit{I’m Bill Gates, co-chair of the Bill \& Melinda Gates Foundation. Ask
-  Me Anything.} - Disponível em: \url{https://www.reddit.com/r/IAmA/comments/5whpqs/im_bill_gates_cochair_of_the_bill_melinda_gates/}.
-  \item
-  \textit{Hey, it's Lars from Metallica. AMA} - Disponível em: \url{https://www.reddit.com/r/IAmA/comments/1wl9ic/hey_its_lars_from_metallica_ama/}.
-  
-  \item
-  \textit{I'm the CEO of Renault and Nissan and we're making autonomous driving vehicles happen by 2020. Ask me anything!} - Disponível em: \url{https://www.reddit.com/r/IAmA/comments/2s7obx/im_the_ceo_of_renault_and_nissan_and_were_making/}.
-  
-  \item
-  \textit{I am Julian Assange founder of WikiLeaks -- Ask Me Anything} - Disponível em: \url{https://www.reddit.com/r/IAmA/comments/5n58sm/i_am_julian_assange_founder_of_wikileaks_ask_me/}.
-  
+  \item 58\% de assertividade na utilização do dicionário padrão.
+  \item 59\% de assertividade na utilização do dicionário padrão com palavras
+  extraídas a partir de comentários de um mesmo usuário.
+  \item 62\% de assertividade na utilização do dicionário padrão com palavras
+  extraídas a partir de comentários de um mesmo tema.
 \end{itemize}
+ 
+Destaca-se que mesmo com o aumento na assertividade com a utilização de
+comentários de tópicos do mesmo domínio, os comentários que não foram
+identificados de forma correta são comentários como: \textit{"...These
+laws are not "racist", morons keep hysterically throwing that word around and
+its losing all meaning..."}, aonde que o sentimento expresso é negativo, porém,
+a pessoa expressa um sentimento a favor da notícia em questão. 
+
+Para a solução deste problema, são extraídos somente os sentimentos relacionados
+a uma palavra alvo. Por exemplo, no tópico \textit{``Canada will welcome you,”
+Trudeau invites refugees as Trump bans them}, é possível que a mesma pessoa expresse uma opinião positiva com relação
+ao Canada e negativa com relação a Trudeau. Ao determinar que queremos saber
+somente a opinião dos usuários com relação ao Trudeau, definindo Trudeau como a
+palavra alvo para a análise, serão somente avaliadas as frases
+relacionadas com essa palavra. 
+
+Por exemplo, \textit{``Come enjoy our 15\% tax
+:D edit: Trudeau is the most fake person ever. He always pulls this shit but
+undercuts us Canadians all the time. He ain't getting voted in next
+election.''}, será analisada somente a frase dependente da palavra ``Trudeau'',
+que será \textit{``\ldots is the most fake person ever''}, evitando que a
+primeira frase \textit{``Come enjoy our 15\% tax :D\ldots''} que representa um
+sentimento positivo afete a análise a qual queremos obter.
+
+Baseando a análise somente em determinados alvos, e utilizando a palavra
+``Trump'' para extração dos comentários do tópico \textit{``Canada will welcome you,” Trudeau invites refugees as Trump bans them}, foi obtida a assertividade
+de 65\%, mostrando-se mais assertiva que os resultados anteriores. Por fim, para
+a avaliação dos resultados apresentados no seguinte capítulo, foi escolhida a
+utilização dos dois métodos citados anteriormente em conjunto com o \ac{VADER}.
 
 
-A partir destes tópicos selecionados, foram extraídos seus dados, como conteúdo,
-usuário de criação e número de \textit{upvotes}. Somente foram extraídos
-comentários em resposta ao tópico em questão, comentários em resposta a outros
-comentários foram desconsiderados pois estes podem não estar relacionados com o
-tópico em questão, o que torna a sua análise de sentimento inaproveitável. Além
-de não existirem \textit{softwares} ou \textit{frameworks} preparados para a
-análise de sentimentos de uma conversa sobre um determinado tópico.
+

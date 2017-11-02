@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  26 OCT 2017 21:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  2 NOV 2017 15:55
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1447,8 +1447,12 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 127.
 
 Writing index file tcc.idx 
 (./tcc.aux (./diversos/aprovacao.aux) (./diversos/resumos.aux)
-(./diversos/acronimos.aux) (./capitulos/introducao.aux)
-(./capitulos/capitulo1.aux
+(./diversos/acronimos.aux) (./capitulos/capitulo1.aux)
+(./capitulos/capitulo2.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+) (./capitulos/capitulo3.aux
 
 LaTeX Warning: Label `my-label' multiply defined.
 
@@ -1467,10 +1471,8 @@ LaTeX Warning: Label `my-label' multiply defined.
 
 LaTeX Warning: Label `my-label' multiply defined.
 
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-) (./capitulos/capitulo3.aux) (./capitulos/capitulo5.aux))
+) (./capitulos/capitulo4.aux) (./capitulos/capitulo5.aux)
+(./capitulos/capitulo6.aux))
 \openout1 = `tcc.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 150.
@@ -1683,9 +1685,9 @@ LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <12> not available
 ) [15] [16
 
 ]
-\openout2 = `capitulos/introducao.aux'.
+\openout2 = `capitulos/capitulo1.aux'.
 
- (./capitulos/introducao.tex
+ (./capitulos/capitulo1.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17
@@ -1697,43 +1699,49 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 59.
 (c:/texlive/2016/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )) [18]
-\openout2 = `capitulos/capitulo1.aux'.
+\openout2 = `capitulos/capitulo2.aux'.
 
 
-(./capitulos/capitulo1.tex
+(./capitulos/capitulo2.tex [19
+
+
+
+]
 Package acronym Info: Label `acro:NLP' newly defined as it shall be overridden
 although it is yet undefined on input line 63.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [19
-
-
-
-]
-[20] [21] <imagens/markov.png, id=270, 432.61626pt x 231.86626pt>
+ [20]
+[21] <imagens/markov.png, id=271, 432.61626pt x 231.86626pt>
 File: imagens/markov.png Graphic file (type png)
 
 <use imagens/markov.png>
 Package pdftex.def Info: imagens/markov.png used on input line 213.
 (pdftex.def)             Requested size: 337.10927pt x 180.67566pt.
- [22 <./imagens/markov.png>] [23] [24]
+ [22] [23 <./imagens/markov.png>] [24]
 <imagens/markov2.png, id=313, 432.61626pt x 251.94125pt>
 File: imagens/markov2.png Graphic file (type png)
 
 <use imagens/markov2.png>
 Package pdftex.def Info: imagens/markov2.png used on input line 380.
 (pdftex.def)             Requested size: 310.24245pt x 180.67566pt.
- [25 <./imagens/markov2.png>] [26
+) [25 <./imagens/markov2.png>]
+\openout2 = `capitulos/capitulo3.aux'.
+
+
+(./capitulos/capitulo3.tex [26
+
+
 
 ]
 Package acronym Info: Label `acro:SVM' newly defined as it shall be overridden
-although it is yet undefined on input line 422.
+although it is yet undefined on input line 18.
 Package acronym Info: Label `acro:MaxEnt' newly defined as it shall be overridd
 en
-although it is yet undefined on input line 423.
+although it is yet undefined on input line 19.
  [27] [28]
-Overfull \hbox (28.7915pt too wide) in paragraph at lines 573--581
+Overfull \hbox (28.7915pt too wide) in paragraph at lines 169--177
 [][]\T1/lmr/m/n/12 (-20) A par-tir da Equa-ção [][]3.8[][] é ne-ces-sá-rio cal-
 cu-lar os ter-mos P(\T1/lmr/m/it/12 (-20) This$\OMS/lmsy/m/n/12 j$\T1/lmr/m/n/1
 2 (-20) Positiva), P(\T1/lmr/m/it/12 (-20) place$\OMS/lmsy/m/n/12 j$\T1/lmr/m/n
@@ -1741,32 +1749,32 @@ cu-lar os ter-mos P(\T1/lmr/m/it/12 (-20) This$\OMS/lmsy/m/n/12 j$\T1/lmr/m/n/1
  []
 
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 601.
+(Font)              <14.4> on input line 197.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 601.
+(Font)              <10> on input line 197.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 601.
+(Font)              <7> on input line 197.
 [29]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <17.28> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 680.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 276.
  [30] [31]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 872.
- <imagens/definicao.png, id=425, 893.58844pt x 300.3722pt>
+(Font)              <5> on input line 468.
+ <imagens/definicao.png, id=426, 905.63344pt x 249.93375pt>
 File: imagens/definicao.png Graphic file (type png)
 
 <use imagens/definicao.png>
-Package pdftex.def Info: imagens/definicao.png used on input line 883.
-(pdftex.def)             Requested size: 447.92484pt x 150.56305pt.
+Package pdftex.def Info: imagens/definicao.png used on input line 481.
+(pdftex.def)             Requested size: 436.4541pt x 120.45044pt.
  [32]
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14.4> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 897.
-) [33 <./imagens/definicao.png>] [34]
-\openout2 = `capitulos/capitulo3.aux'.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 496.
+ [33 <./imagens/definicao.png>]) [34]
+\openout2 = `capitulos/capitulo4.aux'.
 
 
-(./capitulos/capitulo3.tex
-<imagens/reddit.png, id=471, 768.62157pt x 560.8453pt>
+(./capitulos/capitulo4.tex
+<imagens/reddit.png, id=472, 768.62157pt x 560.8453pt>
 File: imagens/reddit.png Graphic file (type png)
 
 <use imagens/reddit.png>
@@ -1777,7 +1785,7 @@ Package pdftex.def Info: imagens/reddit.png used on input line 22.
 
 
  <./imagens/reddit.png>]
-<imagens/arquitetura.png, id=480, 475.7775pt x 334.24875pt>
+<imagens/arquitetura.png, id=481, 475.7775pt x 334.24875pt>
 File: imagens/arquitetura.png Graphic file (type png)
 
 <use imagens/arquitetura.png>
@@ -1792,77 +1800,80 @@ Package acronym Info: Label `acro:POJO' newly defined as it shall be overridden
 
 although it is yet undefined on input line 101.
  [36 <./imagens/arquitetura.png>]
-Underfull \hbox (badness 1708) in paragraph at lines 129--134
-[][]\T1/lmr/m/it/12 (+20) Brazil Se-eks To Copy U.S. Gun Cul-ture ``to al-low e
-m-bat-tled ci-ti-zens the
- []
-
-[37]
-Underfull \hbox (badness 1803) in paragraph at lines 179--183
-[][]\T1/lmr/m/it/12 (+20) Donald Trump to strip all fun-ding from State Dept te
-am pro-mo-ting wo-
- []
-
-
-Underfull \hbox (badness 1286) in paragraph at lines 179--183
-\T1/lmr/m/it/12 (+20) de-fends her father's re-cord with wo-men\T1/lmr/m/n/12 (
-+20) : esse tó-pico encontra-se dis-po-ní-vel
- []
-
-[38]
-Underfull \hbox (badness 6412) in paragraph at lines 215--220
-[][]\T1/lmr/m/it/12 (+20) Hey, it's Lars from Me-tal-lica. AMA\T1/lmr/m/n/12 (+
-20) : esse tó-pico encontra-se dis-po-ní-
- []
-
-[39] [40
-
-]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [41]
+ [37]
+[38] [39]
+Overfull \hbox (0.47023pt too wide) in paragraph at lines 274--283
+\T1/lmr/m/n/12 (-20) relacionado com ele. Por exemplo, na frase \T1/lmr/m/it/12
+ (-20) ``We have a great president''\T1/lmr/m/n/12 (-20) , a palavra \T1/lmr/m/
+it/12 (-20) ``president''
+ []
 
-Class memoir Warning: Column Y is already defined on input line 339.
+[40]
+Overfull \hbox (11.31625pt too wide) in paragraph at lines 324--330
+\T1/lmr/m/n/12 (-20) worldnews / comments / 5qqa51 / canada _ will _ welcome _ 
+you _ trudeau _ invites _ refugees /
+ []
 
-) [42] [43]
+[41]) [42]
 \openout2 = `capitulos/capitulo5.aux'.
 
- (./capitulos/capitulo5.tex [44
+ (./capitulos/capitulo5.tex
+Overfull \hbox (11.31625pt too wide) in paragraph at lines 34--40
+\T1/lmr/m/n/12 (-20) worldnews / comments / 5qqa51 / canada _ will _ welcome _ 
+you _ trudeau _ invites _ refugees /
+ []
+
+[43
 
 
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Overfull \hbox (5.21768pt too wide) in paragraph at lines 57--62
+\T1/lmr/m/n/12 (-20) men-tá-rios e encontra-se dis-po-ní-vel em [][]$<[]https :
+ / / www . reddit . com / r / movies / comments /
+ []
 
- [45]
-Underfull \vbox (badness 1019) has occurred while \output is active []
-
- [46]
-[47] [48] [49] <imagens/grafico1.png, id=632, 447.92343pt x 278.54062pt>
+<imagens/grafico1.png, id=568, 447.92343pt x 278.54062pt>
 File: imagens/grafico1.png Graphic file (type png)
 
 <use imagens/grafico1.png>
-Package pdftex.def Info: imagens/grafico1.png used on input line 251.
+Package pdftex.def Info: imagens/grafico1.png used on input line 94.
 (pdftex.def)             Requested size: 484.25587pt x 301.1261pt.
 
-Overfull \hbox (29.25587pt too wide) in paragraph at lines 251--252
+Overfull \hbox (29.25587pt too wide) in paragraph at lines 94--95
  [][][] 
  []
 
-) [50 <./imagens/grafico1.png>] (./tcc.bbl (./tcc.brf)
+[44]) [45 <./imagens/grafico1.png>]
+\openout2 = `capitulos/capitulo6.aux'.
+
+ (./capitulos/capitulo6.tex [46
+
+
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47]
+
+Class memoir Warning: Column Y is already defined on input line 98.
+
+) [48] [49] (./tcc.bbl (./tcc.brf)
 \tf@brf=\write6
 \openout6 = `tcc.brf'.
 
+ [50
 
+
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
 
 bibitemlist
-[51
-
-
-]) AED: lastpage setting LastPage [52]
+[51]) AED: lastpage setting LastPage [52]
 \tf@lof=\write7
 \openout7 = `tcc.lof'.
 
@@ -1872,30 +1883,31 @@ bibitemlist
 \tf@toc=\write9
 \openout9 = `tcc.toc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 310.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 310.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 312.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 312.
  (./tcc.aux (./diversos/aprovacao.aux) (./diversos/resumos.aux) (./diversos/acr
-onimos.aux)
-(./capitulos/introducao.aux) (./capitulos/capitulo1.aux)
-(./capitulos/capitulo3.aux) (./capitulos/capitulo5.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 310.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 310.
+onimos.aux) (./capitulos/capitulo1.aux) (./capitulos/capitulo2.aux) (./capitulo
+s/capitulo3.aux)
+(./capitulos/capitulo4.aux) (./capitulos/capitulo5.aux)
+(./capitulos/capitulo6.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
 Package rerunfilecheck Info: File `tcc.brf' has not changed.
-(rerunfilecheck)             Checksum: A84D26D5F395CA39470F4616EAB54779;2079.
+(rerunfilecheck)             Checksum: E08E58DF5735E77B568BF3FFB0E2E74F;2147.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 310.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
  ) 
 Here is how much of TeX's memory you used:
- 19594 strings out of 493013
- 291372 string characters out of 6136993
- 498321 words of memory out of 5000000
- 22361 multiletter control sequences out of 15000+600000
- 124658 words of font info for 171 fonts, out of 8000000 for 9000
+ 19602 strings out of 493013
+ 291682 string characters out of 6136993
+ 497795 words of memory out of 5000000
+ 22365 multiletter control sequences out of 15000+600000
+ 124013 words of font info for 166 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,17n,54p,1215b,676s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,17n,54p,1214b,680s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2016/tex
 mf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvip
 s/lm/lm-mathsy.enc}{c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc
@@ -1916,10 +1928,10 @@ fb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2
 016/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/public/lm/lmsso17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tcc.pdf (54 pages, 648696 bytes).
+Output written on tcc.pdf (54 pages, 645758 bytes).
 PDF statistics:
- 911 PDF objects out of 1000 (max. 8388607)
- 817 compressed objects within 9 object streams
+ 907 PDF objects out of 1000 (max. 8388607)
+ 812 compressed objects within 9 object streams
  176 named destinations out of 1000 (max. 500000)
  37151 words of extra memory for PDF output out of 42996 (max. 10000000)
 

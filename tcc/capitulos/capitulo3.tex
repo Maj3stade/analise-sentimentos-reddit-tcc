@@ -1,382 +1,529 @@
-\chapter{Criação de Base de Dados}
-\label{cap:banco}
-Este capítulo tem como objetivo descrever a rede social Reddit.
-Após, são apresentados os tópicos que foram selecionados para a análise de
-sentimentos. Por fim, é apresentada a ferramenta desenvolvida para a extração
-dos comentários destes tópicos e para a criação da base.
-\section{Rede Social Reddit}
-\label{cap:Reddit}
+\chapter{Métodos estatísticos e simbólicos aplicados na análise de sentimentos}
+\label{cap:Classificadores}
 
-O \textit{website} Reddit foi criado por Alexis Ohanian e Steve Huffman e teve
-seu início em 2005 como um agregador de conteúdo e, atualmente, é o vigésimo terceiro \textit{website} mais acessado na
-internet e o sétimo mais acessado nos Estados Unidos da América \cite{alexa}.
-Os usuários do Reddit podem enviar \textit{links} com conteúdos externos
-ao Reddit ou ainda mensagens de texto. A partir desse conteúdo, os seus
-usuários podem votar para cima (\textit{upvote}) ou para baixo \textit{downvote},
-influenciando na posição do conteúdo no \textit{website}. Além de votar no conteúdo, seus usuários podem enviar comentários como
-forma de expressar sua opinião (Figura \ref{fig:reddit}).
+Antigamente, para sabermos a opinião de outras pessoas sobre um
+determinado produto, tinhamos que perguntar diretamente a essas pessoas. Com a
+popularização da Internet e também de redes sociais, milhares de pessoas
+compartilham as suas opinões sobre produtos, política, serviços e
+demais assuntos. Porém, muitas vezes essas opiniões acabam
+por ser esquecidas devido a dificuldade em analisar uma grande quantidade de
+textos. De fato, uma das maiores dificuldades reside em como obter a opinião
+geral das pessoas sobre determinado produto em uma seção de comentários com mais
+de 1000 opiniões diferentes. Dentro dessa contexto, a análise de sentimentos,
+tem como função identificar e quantificar os sentimentos expressos através de
+textos.
+
+Neste capítulo serão descritos um método estatístico (\textit{Naive Bayes}) e um
+método simbólico (\ac{VADER}), que podem ser aplicados na análise de sentimentos.
+Outros possíveis métodos estatísticos para a análise de sentimentos são \ac{SVM}
+\cite{Hearst:1998:SVM:630302.630387} e \ac{MaxEnt}
+\cite{Berger:1996:MEA:234285.234289}, os quais possuem performance similar ao Naive Bayes \cite{Pang:2002:TUS:1118693.1118704}. Ambos métodos serão descritos para o uso da língua Inglesa, visto que o \textit{Website} analisado (Reddit) possui a maioria de seus
+comentários em língua Inglesa. Além disso, não foram encontrados métodos que
+façam uso da língua Portuguesa com similar precisão.
 
 
-\begin{figure}[!htbp]
+
+
+%Para o \ac{NLP} e também para o campo de estatísticas, classificadores são
+%algorítmos que identificam a qual categoria determinado item pertence. Essa
+%classificação é feita a partir de dados já classificados corretamente, ou seja,
+%um \textit{training set}.
+
+\section{Método de Naive Bayes}
+
+O Naive Bayes é um método estatístico para a classificação e que pode ser
+utilizado para a análise de sentimento. Esse faz o uso do teorema de Bayes e um
+\textit{training set} para inferir a classificação de uma frase. Por exemplo,
+considerando que se quer determinar se a frase \textit{``This place is
+great.''} demonstra um sentimento negativo ou positivo.
+
+\begin{table}[htb]
 \centering
-\includegraphics[height=300px]{imagens/reddit.png}
-\caption{\textit{Website Reddit}:  As flechas demarcadas permitem efetuarmos
-\textit{upvotes} ou \textit{downvotes}.}
-\label{fig:reddit}
+\begin{tabular}{|l|l|}
+\hline
+Texto  & Categoria \\ \hline
+The food was great  & Positiva     \\ \hline
+They are horrible!    & Negativa     \\ \hline
+I love the food here  & Positiva     \\ \hline
+This place is wonderful  & Positiva     \\ \hline
+Forgettable experience  & Negativa     \\ \hline
+\end{tabular}
+\caption{\textit{Training Set}}
+\label{tab:trainingsetnb}
+\end{table}
+
+A partir do \textit{training set} hipotético (Tabela
+\ref{tab:trainingsetnb}) será calculada a probabilidade da frase
+\textit{``This place is great''} ser positiva e também de ser negativa sendo que
+a partir dessas duas possibilidades, será escolhida a de maior probabilidade.
+
+Para cálcular a probabilidade da frase \textit{``This place is great''}
+pertencer a cada categoria é utilizado o teorema de Bayes \cite{manningschutze1999}, através da Equação
+\ref{eq:teorema}. Na Equação \ref{eq:teorema}, o termo P(c$\vert$d) corresponde
+a probabilidade da frase \textbf{d} pertencer a classe \textbf{c}, ou seja, a
+probabilidade de \textit{``This place is great''} ser uma frase positiva ou negativa. O Termo P(d$\vert$c) é a probabilidade da
+  classe \textbf{c} ser a frase \textbf{d}, ou seja, dentre todas as frases
+  negativas ou positivas, a probabilidade de uma das frases ser \textit{``This
+  place is great''}. Já P(c) é a probabilidade de frases negativas ou positivas
+  aparecerem em nosso \textit{training set}. E, por fim, P(d) é a probabilidade
+  da frase \textit{``This place is great''} aparecer em nosso \textit{training
+  set}.
+
+\begin{equation}
+\begin{gathered}
+P(c|d) = \frac{P(d|c) \times P(c)}{P(d)} \\
+\label{eq:teorema}
+\end{gathered}
+\end{equation}
+
+\begin{equation}
+\begin{gathered}
+P(Negativa|\textit{This place is great})
+=
+\frac{P(\textit{This place is great}|Negativa) \times
+P(Negativa)}{\textit{This place is great}}
+\label{eq:teoreman1}
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great})
+=
+\frac{P(\textit{This place is great}|Positiva) \times
+P(Positiva)}{\textit{This place is great}}
+\label{eq:teoremap1}
+\end{gathered}
+\end{equation}
+
+
+Uma vez que as Equações \ref{eq:teoreman1} e \ref{eq:teoremap1}
+apresentam P(d) como divisor (\textit{``This place is great''}), essas podem ser
+simplificadas resultando nas Equações \ref{eq:teoreman} e \ref{eq:teoremap}.
+\begin{equation}
+\begin{gathered}
+P(Negativa|\textit{This place is great})
+=
+P(\textit{This place is great}|Negativa) \times
+P(Negativa)
+\label{eq:teoreman}
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great})
+=
+P(\textit{This place is great}|Positiva) \times
+P(Positiva)
+\label{eq:teoremap}
+\end{gathered}
+\end{equation}
+
+
+
+Nas Equações \ref{eq:teoreman} e \ref{eq:teoremap}, os termos P(Positiva) e
+P(Negativa) são definidos pela frequência que frases positivas e negativas aparecem no \textit{training set}, sendo determinados
+através das Equações \ref{eq:frasespositivas} e \ref{eq:frasesnegativas}. Como
+pode ser observado, os valores de P(positiva) e P(negativa) correspondem a 0,6
+e 0,4 respectivamente, uma vez que em nosso \textit{training set} tem-se um
+total de 5 frases onde 3 dessas são positivas (Equação \ref{eq:frasespositivas})
+e as outras 2 são negativas (Equação \ref{eq:frasesnegativas}).
+
+\begin{equation}
+\begin{gathered}
+P(Positiva)
+=
+\frac{3}{5} = 0,6
+\label{eq:frasespositivas}
+\end{gathered}
+\end{equation}
+\begin{equation}
+\begin{gathered}
+P(Negativa)
+=
+\frac{2}{5} = 0,4
+\label{eq:frasesnegativas}
+\end{gathered}
+\end{equation}
+
+Uma vez que a frase \textit{``This place is great''} não existe por completo no
+\textit{training set}, tem-se que o termo P(d$\vert$c) da Equação
+\ref{eq:teoreman} e \ref{eq:teoremap} é igual a zero (0), impossibilitando o
+cálculo de probabilidade para essa frase. Neste caso, se faz o uso do
+\textit{Naive Bayes}, o qual passa a considerar todas as palavras ao invés da
+frase completa. O uso do Naive Bayes elimina o problema com frases que não se
+encontram no \textit{training sets}. Neste caso, é considerado somente a
+frequência que cada palavra aparece em uma frase positiva e em uma negativa.
+Portanto, o termo $P(\textit{This place is
+great}|Positiva)$ da Equação \ref{eq:teoremap} é dado pela Equação
+\ref{eq:frasespositivas1}.
+
+\begin{equation}
+\begin{gathered}
+P(\textit{This place is great}|Positiva) = P(\textit{This}|Positiva)
+\times P(\textit{place}|Positiva) \\ \times P(\textit{is}|Positiva) \times
+P(\textit{great}|Positiva)
+\label{eq:frasespositivas1}
+\end{gathered}
+\end{equation}
+
+A partir da Equação \ref{eq:frasespositivas1} é necessário calcular os
+termos P(\textit{This}$\vert$Positiva),
+P(\textit{place}$\vert$Positiva), P(\textit{is}$\vert$Positiva), P(\textit{great}$\vert$Positiva).
+O termo P(\textit{This}$\vert$Positiva) é calculado pela razão entre a
+quantidade de vezes que a palavra \textit{This} encontra-se em uma frase
+classificada como positiva no \textit{training set}, e o total de palavras que
+se encontram em frases classificadas como positiva (Equação
+\ref{eq:thispositiva}).
+
+\begin{equation}
+\begin{gathered}
+P(\textit{This}|Positiva) = \frac{1}{13}
+\label{eq:thispositiva}
+\end{gathered}
+\end{equation}
+
+
+Da mesma forma, a Equação \ref{eq:thispositiva} deve ser aplicada para as demais
+palavras da frase \textit{``This place is great''}, obtendo-se os valores
+apresentados na Tabela \ref{tab:probabilidadesnb}.
+
+\begin{table}[htb]
+\centering
+\renewcommand{\arraystretch}{1.5}% Spread rows out...
+\begin{tabular}{lll}
+\hline
+
+Palavra & Positiva & Negativa \\ \hline
+This & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+place & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+is & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+great & \large $\frac{1}{13}$ & \large $\frac{0}{5}$ \\
+\end{tabular}
+\caption{Tabela de Palavras e Probabilidades.}
+\label{tab:probabilidadesnb}
+\end{table}
+
+Uma vez que algumas palavras não encontram-se no \textit{training set}
+essas acabam zerando o resultado final da
+multiplicação das probabilidades (Equação
+\ref{eq:frasespositivas1}). De modo, a evitar que uma única palavra
+invalide a frase por completo é utilizado o método \textit{Laplace smoothing}
+\cite{Manning:2008:IIR:1394399}. Neste, é somado 1 a cada palavra da frase. Já
+ao total de palavras positivas é somada a quantidade de palavras distintas do
+\textit{training set} (16). Aplicando o \textit{Laplace smoothing} para os
+valores apresentados na Tabela \ref{tab:probabilidadesnb} são obtidos os valores
+que são apresentados na Tabela \ref{tab:probabilidadesl}.
+
+
+\begin{table}[htb]
+\centering
+\renewcommand{\arraystretch}{1.5}% Spread rows out...
+\begin{tabular}{lll}
+\hline
+
+Palavra & Positiva & Negativa \\ \hline
+This & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
+place & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
+is & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
+great & \large $\frac{1 + 1}{13 + 16}$ & \large $\frac{0 + 1}{5 + 16}$ \\
+\end{tabular}
+\caption{Tabela de Probabilidades - \textit{Laplace smoothing}.}
+\label{tab:probabilidadesl}
+\end{table}
+
+Utilizando as probabilidades que são apresentadas na Tabela
+\ref{tab:probabilidadesl} na Equação \ref{eq:frasespositivas1} tem-se:
+
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great}) = \frac{1 + 1}{13 + 16} \times
+\frac{1 + 1}{13 + 16} \times \frac{1 + 1}{13 + 16} \times
+\frac{1 + 1}{13 + 16} = 0,000023.
+\label{eq:ppositivaplace}
+\end{gathered}
+\end{equation}
+
+Uma vez que o termo P(Positiva $\vert$ \textit{This place is great})
+encontra-se definido, esse pode ser utilizado na Equação \ref{eq:teoreman},
+onde o termo P(Positiva) é igual a 0,6 (Equação \ref{eq:frasespositivas}). Neste caso, tem-se que a probabilidade da
+frase \textit{``This place is great''} ser classificada como positiva é
+
+\begin{equation}
+\begin{gathered}
+P(Positiva|\textit{This place is great})
+=
+0,000023 \times
+0,6 = 0,0000138.
+\label{eq:positiva}
+\end{gathered}
+\end{equation}
+
+Efetuando o mesmo processo para a probabilidade da frase ser negativa, tem-se:
+\begin{equation}
+\begin{gathered}
+P(Negativa|\textit{This place is great})
+=
+0,0000049 \times
+0,4 = 0,00000196.
+\label{eq:negativa}
+\end{gathered}
+\end{equation}
+
+Portanto, tem-se que a frase ``This place is great'' é positiva, uma vez que a
+probabilidade de ser positiva (0,0000138) é maior que a probabilidade dessa
+frase ser negativa (0,00000196).
+
+\section{Método de \textit{VADER}}
+
+O método de \ac{VADER} é um dicionário e classificador de sentimentos que se
+baseia em regras, portanto, um método de classificação simbólico. Esse foi desenvolvido
+especificamente para ser utilizado em redes sociais, onde se tem um contexto
+vago, pouca quantidade de texto, gírias e \textit{emoticons}
+\cite{conf/icwsm/HuttoG14}.
+
+A classificação do sentimento é feita através da separação da frase em palavras,
+sendo que para cada palavra da frase é atribuída uma pontuação de intensidade em
+uma escala de -4 (sentimento negativo) até +4 (sentimento positivo). Como por
+exemplo, a palavra \textit{great} tem a intensidade de 3.1 e \textit{horrible} -2.5. Essa pontuação é obtida através de
+um dicionário que é construído utilizando o método de \textit{``wisdom of the
+crowd''}, onde um grupo de pessoas é responsável por atribuir os valores de
+intensidade para cada palavra. Por exemplo, a frase \textit{``This place is great''} seria classificada com
+
+
+\begin{table}[htb]
+\centering
+\begin{tabular}{l|l|l|l|l|l|l}
+Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+\textit{great}
+\\
+%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+% Substantivo \\
+Intensidade:   &  &   &  & 3,1
+\end{tabular}
+\label{my-label}
+\end{table}
+
+As palavras \textit{``This''}, \textit{``place''} e \textit{``is''} são
+desconsideradas uma vez que não existem no dicionário e não expressam
+sentimentos. Após, essa fase inicial, utiliza-se o seguinte conjunto de regras,
+os quais utilizam valores empiricamente derivados para inferir a intensidade
+do sentimento \cite{conf/icwsm/HuttoG14}:
+\begin{itemize}
+\item É verificado quando uma palavra que expressa sentimentos é escrita em letras
+maiúsculas.
+  Neste caso, é aumentada a magnitude da intensidade do sentimento sem modificar
+  a orientação semântica. Isso é feito somando 0,733 na intensidade do
+  sentimento caso este tenha intensidade positiva ou subtraindo
+  0,733 caso este tenha uma intensidade negativa.
+  \begin{table}[htb]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{GREAT}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & 3,1 \textrightarrow 3,833
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+
+\item É verificado se alguma das três palavras anteriores é um advérbio
+intensificador. Neste caso, a intensidade do sentimento é aumentada ou diminuida
+em 0,293.
+
+  \begin{table}[htb]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{incredibly} & \textit{great}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & Advérbio & 3,1 \textrightarrow 3,393 
+	
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+   
+   
+  \begin{table}[!htb]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{somewhat} & \textit{great}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & Advérbio & 3,1 \textrightarrow 2,807
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+   
+
+\item É verificado se a frase contém a palavra \textit{``but''}. Essa palavra
+indica uma troca do sentimento da frase, uma vez que o texto seguinte a palavra
+\textit{``but''} expressa um sentimento dominante. Neste caso, o método
+multiplica a intensidade dos sentimentos expressos até a palavra
+\textit{``but''} por 0,5 e os sentimentos expressos após a palavra
+\textit{``but''} por 1,5.
+
+   
+   \begin{table}[!htbp]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l|l|l}
+	Palavra         & \textit{Great} & \textit{place}      & \textbf{\textit{but}}
+	& \textit{today} & \textit{the}      &
+	\textit{food} & \textit{was}      & \textit{horrible}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade: & 3,1 \textrightarrow 1,55  &   &  &  & & & &  -2,5
+	\textrightarrow -3,75
+	\end{tabular}
+	\label{my-label5}
+   \end{table}
+
+\item É verificado se a frase possui pontos de exclamação (!). Este
+tipo de pontuação aumenta a magnitude da intensidade sem modificar a
+orientação semântica. Neste caso, é adicionado um valor de 0,292 a cada
+ponto de exclamação, considerando um máximo de 4 pontos de exclamação.
+
+ \begin{table}[!htbp]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{is}      &
+	\textit{great!}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   &  & 3,1 \textrightarrow 3,392
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+   
+
+\item São examinadas as três palavras anteriores,
+procurando a existência de uma negação que inverta a polaridade do texto.
+Quando é encontrada uma negação na frase, a intensidade de cada palavra de
+sentimento é multiplicada por -0,74.
+
+ \begin{table}[!htbp]
+	\centering
+	\begin{tabular}{l|l|l|l|l|l|l}
+	Palavra         & \textit{This}        & \textit{place} & \textit{wasn't}     
+	&
+	\textit{great}
+	\\
+	%Correta: & Substantivo & Verbo  & Artigo & Substantivo & Preposição &
+	% Substantivo \\
+	Intensidade:   &  &   & Negação & 3,1 \textrightarrow -2,294
+	\end{tabular}
+	\label{my-label}
+   \end{table}
+
+
+\end{itemize}
+
+Após o cálculo de intensidade, é feita a normalização dessa
+pontuação, a partir da Equação \ref{eq:vader}. Neste caso, 15 é um valor
+fixo para aproximar o resultado final do valor máximo esperado (-1 para
+palavras negativas e +1 para palavras positivas).
+
+\begin{equation}
+\begin{gathered}
+\text{Pontuação Normalizada}
+=
+\frac{\text{Pontuação}}{\sqrt{\text{Pontuação}^2 + 15}}
+\label{eq:vader}
+\end{gathered}
+\end{equation}
+
+
+\begin{equation}
+\begin{gathered}
+\text{Pontuação Normalizada}
+=
+\frac{\text{3,1}}{\sqrt{\text{3,1}^2 + 15}} = 0,6249
+\label{eq:vaderscore}
+\end{gathered}
+\end{equation}
+
+Neste caso para a frase \textit{``This place is great''}, será
+atribuída uma pontuação final de 0,6249.  Caso a
+pontuação da frase fosse menor que -1 ou maior que 1, essa seria limitada aos
+valores de -1 ou 1, respectivamente. Para o \ac{VADER}, são consideradas frases negativas
+aquelas que apresentam uma pontuação de -1 até -0,5, frases neutras aquelas que
+apresentam uma pontuação de -0,5 até 0,5 e frases positivas aquelas que
+apresentam uma pontuação 0,5 até 1.
+Portanto, a frase \textit{``This place is great''} com pontuação de 0,6249 seria
+classificada como positiva.
+
+\subsection{Definição de Método para Identificação de Sentimentos}
+
+Para o desenvolvimento deste trabalho optou-se pelo uso do método de \ac{VADER},
+uma vez que este, segundo a literatura, apresenta resultados superiores ao
+Método de Naive Bayes. De fato, segundo Pålsson e Szerszen
+\cite{SentimentinSocialMedia}, para a análise de \textit{Tweets}\footnote{\textit{Tweets} é o termo utilizado
+para designar as publicações realizadas na rede social Twitter.}, o método de
+\ac{VADER} apresentou uma assertividade de 72,3\% enquanto o Naive Bayes apresentou uma assertividade de apenas 58,2\%.
+
+Na análise conduzida por Hutto \cite{conf/icwsm/HuttoG14},
+considerando-se a análise de \textit{tweets}, avaliações de produtos da Amazon e
+editoriais do New York Times, o método de \ac{VADER} apresentou uma assertividade de 96\%, 63\% e 55\%, respectivamente, contra
+56\%, 49\%, 44\% do método de Naive Bayes. A Figura \ref{fig:definicao} ilustra
+os resultados obtidos através da literatura.
+
+\begin{figure}[htbp] 
+
+ \begin{framed}\raggedleft%\centering
+ \centering 
+\includegraphics[height=120px]{imagens/definicao.png}
+\end{framed}
+\caption{Resultados obtidos para definição do método.}
+\label{fig:definicao}
 \end{figure}
 
-O conteúdo do Reddit é distribuído em \textit{subreddits} que funcionam como
-comunidades. Os usuários podem se inscrever nesses
-\textit{subreddits}, recebendo as atualizações na sua página inicial, sendo
-que dentre esses \textit{subreddits}, destacam-se:
+Destaca-se ainda que o método de \ac{VADER} possui uma maior
+adaptabilidade, uma vez que esse não necessita do desenvolvimento de um
+\textit{training set} específico para o tema que está sendo analisado.
+Desta forma, sendo o mais adequado para a análise de sentimentos na rede social
+Reddit, visto que os tópicos que foram selecionados neste trabalho abrangem uma
+quantidade diversificada de assuntos, o que inviabiliza a especialização de um
+\textit{training set} para cada um dos tópicos.
 
 
-\begin{itemize}
-  \item \textit{/r/AskReddit}: esse \textit{subreddit} é utilizado para fazer
-  perguntas gerais para outros usuários do Reddit. Esse \textit{subreddit}
-  possui aproximadamente 16.941.540 inscritos.
-  \item \textit{/r/worldnews}: esse \textit{subreddit} possui as notícias de
-  todo o mundo, contando com aproximadamente 16.570.600 inscritos.
-  \item \textit{/r/IAmA}: IAmA é um estilização de 'I am a' ('Eu sou um'):
-  a partir desse \textit{subreddit} os usuários podem fazer perguntas ao criador
-  de um determinado tópico. Esse \textit{subreddit} possui aproximadamente
-  16.990.160 inscritos.
-\end{itemize}
+\subsection{NLTK - \textit{Natural Language Toolkit}}
 
-% Dentre esses \textit{subreddits} podemos destacar alguns dos tópicos mais
-% acessados no ano de 2016:
-% 
-% \begin{itemize}
-%   \item \textit{/r/IAmA} - \textit{We're NASA scientists \& exoplanet experts.
-%   Ask us anything about today's announcement of seven Earth-size planets
-%   orbiting TRAPPIST-1!} - Tópico de perguntas e respostas com cientistas da
-%   NASA após a descoberta dos planetas que orbitavam a estrela TRAPPIST-1.
-%   \item \textit{/r/IAmA} - \textit{I’m Bill Gates, co-chair of the Bill \&
-%   Melinda Gates Foundation. Ask Me Anything.} - Tópico de perguntas e respostas com Bill Gates.
-%   \item \textit{/r/worldnews} - \textit{Fidel Castro is dead at 90.} - Link para
-%   anúncio da morte de Fidel Castro.
-%   \item \textit{/r/AskReddit} - \textit{[Serious]South Koreans of Reddit, how
-%   did they teach you about the existence of North Korea in School when you were
-%   young?serious replies only} - Tópico perguntando para os usuários sul coreanos
-%   como que foi ensinado para eles sobre a existência da Coreia do Norte.
-% \end{itemize}
+A implementação de um software de análise de sentimentos pode ser feita através
+do desenvolvimento de um \textit{software} por completo, ou através da
+utilização de \textit{frameworks} já disponíveis.
+Métodos estatísticos, como o Naive Bayes, podem ser encontrados tanto em
+\textit{frameworks} de aprendizado de máquina, quanto em \textit{frameworks}
+voltados para o \ac{NLP}.
+Já os métodos simbólicos, por suas implementações serem específicas para o
+\ac{NLP} ou análise de sentimentos, somente são encontrados em
+\textit{frameworks} de \ac{NLP}.
 
-% A identificação de padrões de sentimentos expressos por determinados grupos
-% dessa comunidade, se faz útil visto que a partir dessa avaliação é possível construir
-% ferramentas que apoiam decisões tanto de um ponto de vista político, como por
-% exemplo, entender qual é a opinião sobre um determinado assunto de um conjunto
-% de eleitores, tanto quanto um ponto de vista de negócios, para entender qual a
-% opinião dos consumidores de um produto, ou de seu competidor, a respeito de um
-% determinado assunto.
-
-\section{Extração de Dados}
-\label{cap:Extracao}
-
-Para a extração comentários do \textit{website} Reddit e para a criação da base
-foi desenvolvido um \textit{crawler} ou robô de navegação. Esse robô foi
-implementado na linguagem Java e tem como objetivo a navegação automática no
-conteúdo do \textit{website} Reddit, extraindo os dados e comentários referentes a um
-determinado tópico. Após, os dados são armazenados em banco de dados MySQL
-\cite{Widenius:2002:MRM:560480}.
-Na Figura \ref{fig:crawler} tem-se a arquitetura do \textit{software}
-desenvolvido. O código deste encontra-se no CD em anexo.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[height=225px]{imagens/arquitetura.png}
-\caption{Arquitetura do \textit{Crawler}}
-\label{fig:crawler}
-\end{figure}
-
-A partir de um \textit{link} para um tópico, o robô efetua uma busca e a
-extração dos dados relacionados a esse tópico. Para tanto, foi utilizada a
-\ac{API} do Reddit, onde, inicialmente envia-se uma requisição utilizando o
-sufixo ``.json'' (Por exemplo:
-\textit{\url{https://www.reddit.com/r/iama.json}}) e, a partir dessa requisição,
-o \textit{website} retorna um objeto \ac{JSON}. Uma vez que o \ac{JSON}
-retornado pelo \textit{website} possui 68 campos e que esses não se encontram
-documentados, utilizou-se o \textit{website}
-jsonschema2pojo\footnote{http://www.jsonschema2pojo.org/ - O \textit{website}
-jsonschema2pojo tem como objetivo a conversão de um esquema \ac{JSON} em
-\textit{Plain Old Java Objects}\ac{POJO}, permitindo o \textit{download} da classe para a utilização.} para converter o
-JSON retornado em um \textit{Plain Old Java Objects} (\ac{POJO}).
-
-Após, foi utilizado o \textit{framework} Hibernate
-\cite{Iverson:2004:HJD:1044870} para a criação do banco de dados e para a
-persistência dos dados. O Hibernate é um \textit{framework} de
-mapeamento objeto-relacional que tem como objetivo representar tabelas do banco
-de dados através de classes, ou seja, esse \textit{framework} tem como principal
-característica a transformação das classes em Java para tabelas em um banco de dados relacional.
-No caso deste trabalho, ele é responsável pela criação das tabelas \textit{RedditPost} e
-\textit{RedditThread}, relacionadas, respectivamente, com os comentários e o
-tópico em questão. 
-
-\section{Tópicos Selecionados}
-
-Para análise de sentimentos e para comparação dos resultados obtidos, foram
-selecionados 15 tópicos, sendo que esses tópicos são os que
-apresentam o maior número de comentários no último ano. Destaca-se que os 15
-tópicos encontram-se distribuídos em diferentes assuntos, que são: cenário
-político nacional, cenário político internacional e tópicos diversos:
-
-No que diz respeito a tópicos relacionados com ao cenário político nacional, os
-tópicos escolhidos foram:
-\sloppy
-\begin{itemize}
-  \item
-  \textit{Brazil Seeks To Copy U.S. Gun Culture ``to allow embattled
-  citizens the right to defend themselves from
-  criminals''}: esse tópico encontra-se disponível em 
-  \url{https://www.reddit.com/r/worldnews/comments/36ny58/brazil_blogger_known_for_reporting_on_corruption/}
-  e refere-se a intenção do Brasil em adotar a cultura de porte de armas dos
-  Estados Unidos da América.
-  \item
-  \textit{Brazil descends into chaos as Olympics looms}: esse tópico encontra-se disponível em 
-  \url{https://www.reddit.com/r/worldnews/comments/4bqcc3/brazil_descends_into_chaos_as_olympics_looms/}
-  e refere-se ao caos ocorrido nas Olímpiadas de 2016 que foram realizadas no
-  Brasil.
-  \item
-  \textit{Plane carrying Brazil Supreme Court judge crashes into sea}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/5oyz3b/plane_carrying_brazil_supreme_court_judge_crashes/}
-  e refere-se a queda do avião no qual o ministro Teori Zavascki estava abordo.
-  \item
-  \textit{Brazil passes Internet governance Bill: Brazil has made history with
-  the approval of a post-Snowden Bill which sets out principles, rights and
-  guarantees for Internet users.}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/21f3as/brazil_passes_internet_governance_bill_brazil_has/}
-  e refere-se a aprovação do Marco Civil da Internet.
-  \item
-  \textit{FIFA generated more than \$4 billion in sales from the 2014 World Cup,
-  and is Giving Brazil \$100 Million After The Country Spent \$15 Billion On The
-  World Cup}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/2t65ql/fifa_generated_more_than_4_billion_in_sales_from/}
-  e refere-se a diferença entre o que foi gasto e o que foi arrecadado pelo
-  Brasil na Copa do Mundo de 2014.
- 
-\end{itemize}
-
-Já os tópicos escolhidos que se referem a política internacional são:
-\begin{itemize}
-  \item
-  \textit{2.6 terabyte leak of Panamanian shell company data reveals "how a
-  global industry led by major banks, legal firms, and asset management companies
-  secretly manages the estates of politicians, Fifa officials, fraudsters and
-  drug smugglers, celebrities and professional
-  athletes."}.: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/4d75i7/26_terabyte_leak_of_panamanian_shell_company_data/}
-  e se refere ao vazamento dos documentos confidenciais de uma
-  sociedade de advogados panamenha. Esses documentos apresentam informações
-  detalhadas de empresas localizadas em paraísos fiscais.
-  \item
-  \textit{Fidel Castro is dead at
-  90.}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/5exz2e/fidel_castro_is_dead_at_90/}
-  e se refere a morte do presidente de Cuba, Fidel Castro.
-  
-  \item
-  \textit{Donald Trump to strip all funding from State Dept team promoting
-  women's rights around the world - Leaked plan comes as First Daughter Ivanka
-  defends her father's record with women}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/67ivae/donald_trump_to_strip_all_funding_from_state_dept/}
-  e refere-se a decisão do presidente dos Estados Unidos da América, Donald
-  Trump, em remover fundos de promoção ao direito das mulheres.
-  
-  \item
-  \textit{Manchester Arena 'explosions': Two loud bangs heard at MEN Arena}:
-  esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/6cqdye/manchester_arena_explosions_two_loud_bangs_heard/}
-  e refere-se ao atentado terrorista ocorrido na Manchester Arena (Inglaterra)
-  em 23 de Maio de 2017.
-  
-  \item
-  \textit{Sweden asks the U.S. to explain Trump comment on
-  Sweden}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/5uzetf/sweden_asks_the_us_to_explain_trump_comment_on/}
-  e se refere aos comentários feitos do presidente dos Estados Unidos da
-  América, Donald Trump, sobre a Suécia.
-  
-  \item\textit{“Canada will welcome you,” Trudeau invites refugees as Trump bans
-  them}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/5qqa51/canada_will_welcome_you_trudeau_invites_refugees/}
-  e refere-se a declaração do primeiro ministro canadense sobre decisão de
-  receber refugiados. Neste declaração, o primeiro ministro canadense afirma que
-  os refugiados serão bem-vindos no Canadá.
-\end{itemize}
-
-Por fim, os tópicos selecionados que abordam assuntos diversos foram:
-\begin{itemize}
-  \item
-  \textit{I’m Bill Gates, co-chair of the Bill \& Melinda Gates Foundation. Ask
-  Me Anything.}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/IAmA/comments/5whpqs/im_bill_gates_cochair_of_the_bill_melinda_gates/}
-  e apresenta as respostas de perguntas que foram feitas ao fundador
-  da Microsoft, Bill Gates.
-  \item
-  \textit{Hey, it's Lars from Metallica. AMA}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/IAmA/comments/1wl9ic/hey_its_lars_from_metallica_ama/}.
-  Esse tópico apresenta as respostas de perguntas que foram realizadas ao
-  vocalista da banda de rock Metallica, James Hetfield.
-  \item
-  \textit{I'm the CEO of Renault and Nissan and we're making autonomous driving
-  vehicles happen by 2020. Ask me anything!}: esse tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/IAmA/comments/2s7obx/im_the_ceo_of_renault_and_nissan_and_were_making/}
-  e refere-se as respostas às perguntas realizadas ao diretor executivo da Renault e Nissan,
-  Carlos Ghosn.
-  
-  \item
-  \textit{I am Julian Assange founder of WikiLeaks -- Ask Me Anything}: esse
-  tópico encontra-se disponível em
-  \url{https://www.reddit.com/r/IAmA/comments/5n58sm/i_am_julian_assange_founder_of_wikileaks_ask_me/}
-  e refere-se as respostas às perguntas realizadas ao Julian Assange, fundador do
-  \textit{WikiLeaks}.
-  
-\end{itemize}
-
-
-Destaca-se que para a criação da base de dados, somente foram extraídos
-comentários em resposta ao tópico em questão, comentários em resposta a outros
-comentários foram desconsiderados, uma vez que esses podem não estar diretamente
-relacionados ao tópico em questão, tornando inválida ou prejudicando a análise de sentimento.
-
-
-\chapter{Conclusão Parcial}
-\label{cap:conclusao}
-A \ac{NLP} tem como objetivo a análise de linguagem natural, seja
-essa escrita ou falada. Dentre diversas tarefas que ela executa, tem-se a
-análise de sentimentos, a qual recebeu destaque nos últimos anos devido ao fato das pessoas cada vez se comunicarem através de redes sociais,
-gerando um grande volume de dados. A análise e quantificação da opinião expressa por esses dados, seja
-por fins políticos, comerciais ou quaisquer outros, se torna díficil devido a
-essa grande quantidade de dados.
-
-Observou-se que os métodos mais utilizados para análise de sentimentos são o
-Método de Naive Bayes (estatístico) e o Método de \ac{VADER} (simbólico). Dentre
-estes, optou-se pela utilização do método de \ac{VADER}, uma vez que de acordo
-com a literatura, esse apresenta um desempenho superior ao método de Naive
-Bayes. De fato, esse mostrou-se superior na análise de sentimentos nas avaliações de
-produtos da Amazon, editoriais do New York Times e mais importante, na análise
-de \textit{Tweets} da rede social Twitter \cite{SentimentinSocialMedia}. A
-justificativa para isso, se dá ao fato de métodos estatísticos necessitarem de um \textit{training set}
-especializado para obter resultados similares ou superiores aos métodos
-simbólicos. 
-
-Além disso, optou-se pela utilização do método de \ac{VADER}, devido
-ao fato deste não necessitar da criação de um \textit{training set} específico
-para a análise de sentimentos. A necessidade da criação de um \textit{training
-set} específico para cada tema inviabilizaria o desenvolvimento deste trabalho,
-uma vez que neste serão analisados 15 tópicos com temas distintos. Para
-implementação do método \ac{VADER} optou-se pela biblioteca \ac{NLTK}. A
-utilização da biblioteca \ac{NLTK} permitirá a utilização futura de outros
-métodos de \ac{NLP}, bem como um estudo da performance do Método de \ac{VADER} e esses outros métodos.
- 
-Por fim, se fez necessária a criação de uma base de dados para armazenar os
-tópicos e os comentários disponibilizados pela rede social Reddit. Para isso,
-foi desenvolvido um \textit{crawler} (robô) que é responsável por extrair os
-comentários relacionados a um tópico na rede social Reddit e armazenar em um
-banco de dados MySQL. Esse robô foi desenvolvido na linguagem Java e utiliza a
-API da rede social Reddit para extrair as informações de um tópico. Após, ele
-utiliza o \textit{framework} Hibernate para armazenar os dados extraídos na
-base de dados MySQL.
-
-Na segunda etapa deste trabalho, será utilizado o \textit{framework} \ac{NLTK}
-para efetuar a análise de sentimento sobre a base de dados criada. Essa análise
-tem como principal objetivo identificar padrões de sentimentos entre
-usuários e comunidades da rede Reddit.
-
-\section{Atividades e Cronograma}
-
-Na Tabela \ref{tab:tcc1} tem-se o cronongrama das atividades realizadas durante
-o TCC I. Como pode ser observado, todas as tarefas programadas foram
-realizadas.
-\begin{enumerate}
-\item Estudo de algoritmos para o processamento de texto e também análise de
+O método de \ac{VADER}, que será utilizado nesse trabalho, encontra-se
+disponível como um \textit{package} Python \cite{Rossum:1995:PRM:869369}, ou
+ainda, através do \textit{framework} \ac{NLTK}
+\cite{Loper:2002:NNL:1118108.1118117}, o qual implementa diversos métodos de
+\ac{NLP}, incluindo métodos para análise de sentimentos. Neste trabalho,
+optou-se pelo uso do \textit{framework} \ac{NLTK}, devido a possibilidade de uma
+futura de utilização de outros métodos de \ac{NLP} para a análise de
 sentimentos.
-\item Análise das ferramentas já existentes.
-\item Análise da API do Reddit.
-\item Construção de um software para extração dos dados da API.
-\item Extração e criação da base de dados.
-\item Redação da monografia TCC I.
-\item Apresentação TCC I.
-\end{enumerate}
 
-\renewcommand{\arraystretch}{2}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\begin{table}[!htb]
-\begin{tabularx}{0.9\textwidth}{Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}
-& \multicolumn{2}{|c|}{Mar} & \multicolumn{2}{|c|}{Abr} &
-\multicolumn{2}{|c|}{Mai} & \multicolumn{2}{|c|}{Jun} &
-\multicolumn{2}{|c|}{Jul}
-\\
-\midrule
-1 & \cellcolor{black!80} & \cellcolor{black!80} & & & & & & & & \\
-2 &  & \cellcolor{black!80} & \cellcolor{black!80} & & & & & & &\\
-3 &  &  &  & \cellcolor{black!80} & & & & & &\\
-4 &  &  &  &  & \cellcolor{black!80} & & & &  &\\
-5 &  &  &  &  &  & \cellcolor{black!80} & \cellcolor{black!80} & & &\\
-6 &  & \cellcolor{black!80}  & \cellcolor{black!80}  &  \cellcolor{black!80} & 
-\cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &  &\\
-7 &  &  &  &  &  & & & & \cellcolor{black!80} &\\
-\end{tabularx}
-
-\caption{Cronograma do TCC I.}
-\label{tab:tcc1}
-\end{table}
-
-Já na Tabela \ref{tab:tcc2} tem-se as atividades a serem desenvolvidas no TCC
-II:
-
-\begin{enumerate}
-\item Implementação do software de Processamento de Linguagem Natural para a
-análise de sentimentos na base de dados criada.
-\item Análise dos resultados obtidos.
-\item Redação da monografia TCC II.
-\item Apresentação do TCC II.
-\end{enumerate}
-
-%loucura
-\makeatletter
-\setlength{\@fptop}{0pt}
-\makeatother
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\begin{table}[ht!]
-\begin{tabularx}{0.9\textwidth}{Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}
-& \multicolumn{2}{|c|}{Ago} & \multicolumn{2}{|c|}{Set} &
-\multicolumn{2}{|c|}{Out} & \multicolumn{2}{|c|}{Nov} &
-\multicolumn{2}{|c|}{Dez}
-\\
-\midrule
-1 & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
-\cellcolor{black!80} & & & & & & \\
-2 &  & & & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
-& & &\\
-3 &  & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
-\cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80}
-& \cellcolor{black!80} & &\\
-4 &  &  &  &  &  & & & & \cellcolor{black!80} &\\
-\end{tabularx}
-
-\caption{Cronograma do TCC II.}
-\label{tab:tcc2}
-\end{table}
-
-% No Capítulo \ref{cap:Processamento} foram introduzidos dois tipos de métodos
-% distintos para o \ac{NLP}, métodos simbólicos e
-% métodos estatísticos, os quais foram estudados para a análise de sentimentos
-% através do Capítulo \ref{cap:Classificadores}.
-% 
-% Através do Capítulo \ref{cap:Classificadores}, foram comparados um método
-% simbólico e outro método estatístico a fim de se determinar qual apresenta melhor performance na análise de sentimentos
-% aplicada em uma rede social, sendo que a literatura apontou que o método mais
-% assertivo é o método \ac{VADER}, o qual está disponível através do
-% \textit{framework} \ac{NLTK}.
-% 
-% Já no Capítulo \ref{cap:banco}, foi apresentada como funciona a rede social
-% Reddit, os tópicos selecionados para a análise de sentimentos, e por fim foi
-% apresentado a forma na qual esses tópicos serão extraídos para população da base
-% de dados.
-% 
-% A partir das informações demonstradas através deste, deverá ser possível criar
-% um \textit{software} que efetue a análise de dados utilizando o \ac{VADER},
-% através do \textit{framework} \ac{NLTK}, aplicada nos tópicos demonstrados no
-% Capítulo \ref{cap:banco}.
-
+O \ac{NLTK} é um \textit{framework open source} para Python que foi
+criado em 2001 na Universidade de Pensilvânia e, atualmente, utilizado por mais
+de 30 universidades em diversos
+países \cite{nltk}.
+Esse apresenta tanto métodos estatísticos como, \ac{MaxEnt} e Naive Bayes, como
+métodos simbólicos, contendo mais de 50 dicionários e modelos já treinados.
+Como exemplo, pode-se citar o conjunto de dados \textit{Sentiment
+Polarity Dataset Version 2.0}, que contém mais de 1000 filmes classificados de
+forma positiva e 1000 filmes classificados de forma negativa
+\cite{Pang:2002:TUS:1118693.1118704}.
+Além disso, destaca-se o \textit{SentiWordNet} que é um dicionário com as
+palavras extraídas do WordNet já classificadas em positividade, negatividade e objetividade \cite{Esuli2006sentiwordnet}.
 

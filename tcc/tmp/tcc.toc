@@ -10,10 +10,10 @@
 \contentsline {section}{\numberline {1.2}Estrutura do Trabalho}{18}{section.1.2}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {2}\MakeTextUppercase {Processamento de Linguagem Natural}}{19}{chapter.2}
-\contentsline {section}{\numberline {2.1}Lingu\IeC {\'\i }stica}{19}{section.2.1}
+\contentsline {section}{\numberline {2.1}Lingu\IeC {\'\i }stica}{20}{section.2.1}
 \contentsline {section}{\numberline {2.2}M\IeC {\'e}todos de Processamento de Linguagem Natural}{20}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{20}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{21}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.1}M\IeC {\'e}todo Simb\IeC {\'o}lico}{21}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}M\IeC {\'e}todo Estat\IeC {\'\i }stico}{22}{subsection.2.2.2}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {3}\MakeTextUppercase {M\IeC {\'e}todos estat\IeC {\'\i }sticos e simb\IeC {\'o}licos aplicados na an\IeC {\'a}lise de sentimentos}}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}M\IeC {\'e}todo de Naive Bayes}{27}{section.3.1}
@@ -24,16 +24,16 @@
 \contentsline {chapter}{\chapternumberline {4}\MakeTextUppercase {Cria\IeC {\c c}\IeC {\~a}o de Base de Dados}}{35}{chapter.4}
 \contentsline {section}{\numberline {4.1}Rede Social Reddit}{35}{section.4.1}
 \contentsline {section}{\numberline {4.2}Extra\IeC {\c c}\IeC {\~a}o de Dados}{36}{section.4.2}
-\contentsline {section}{\numberline {4.3}T\IeC {\'o}picos Selecionados}{37}{section.4.3}
+\contentsline {section}{\numberline {4.3}Valida\IeC {\c c}\IeC {\~a}o da Implementa\IeC {\c c}\IeC {\~a}o}{37}{section.4.3}
+\contentsline {section}{\numberline {4.4}M\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{38}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Adi\IeC {\c c}\IeC {\~a}o de Palavras e Alvos ao Dicion\IeC {\'a}rio}{38}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Atribui\IeC {\c c}\IeC {\~a}o de Pontua\IeC {\c c}\IeC {\~a}o \IeC {\`a}s Novas Palavras}{40}{subsection.4.4.2}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Conclus\IeC {\~a}o Parcial}}{41}{chapter.5}
-\contentsline {section}{\numberline {5.1}Atividades e Cronograma}{42}{section.5.1}
+\contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Avalia\IeC {\c c}\IeC {\~a}o dos Resultados}}{43}{chapter.5}
+\contentsline {subsection}{\numberline {5.0.1}Uso da Ferramenta para An\IeC {\'a}lise de Sentimentos na Rede Social Reddit}{44}{subsection.5.0.1}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Avalia\IeC {\c c}\IeC {\~a}o dos Resultados}}{45}{chapter.6}
-\contentsline {section}{\numberline {6.1}M\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{45}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Adi\IeC {\c c}\IeC {\~a}o de Palavras e Alvos ao Dicion\IeC {\'a}rio}{46}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Atribui\IeC {\c c}\IeC {\~a}o de Pontua\IeC {\c c}\IeC {\~a}o \IeC {\`a}s Novas Palavras}{48}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Uso da Ferramenta para An\IeC {\'a}lise de Sentimentos na Rede Social Reddit}{49}{subsection.6.1.3}
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\IeC {\~a}o Final}}{47}{chapter.6}
+\contentsline {section}{\numberline {6.1}Atividades e Cronograma}{48}{section.6.1}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
 \contentsline {chapter}{\uppercase {Refer\^encias}}{51}{section*.16}

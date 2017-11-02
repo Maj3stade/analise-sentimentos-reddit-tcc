@@ -1,0 +1,139 @@
+\chapter{Conclusão Final}
+\label{cap:conclusao}
+A \ac{NLP} tem como objetivo a análise de linguagem natural, seja
+essa escrita ou falada. Dentre diversas tarefas que ela executa, tem-se a
+análise de sentimentos, a qual recebeu destaque nos últimos anos devido ao fato das pessoas cada vez se comunicarem através de redes sociais,
+gerando um grande volume de dados. A análise e quantificação da opinião expressa por esses dados, seja
+por fins políticos, comerciais ou quaisquer outros, se torna díficil devido a
+essa grande quantidade de dados.
+
+Observou-se que os métodos mais utilizados para análise de sentimentos são o
+Método de Naive Bayes (estatístico) e o Método de \ac{VADER} (simbólico). Dentre
+estes, optou-se pela utilização do método de \ac{VADER}, uma vez que de acordo
+com a literatura, esse apresenta um desempenho superior ao método de Naive
+Bayes. De fato, esse mostrou-se superior na análise de sentimentos nas avaliações de
+produtos da Amazon, editoriais do New York Times e mais importante, na análise
+de \textit{Tweets} da rede social Twitter \cite{SentimentinSocialMedia}. A
+justificativa para isso, se dá ao fato de métodos estatísticos necessitarem de um \textit{training set}
+especializado para obter resultados similares ou superiores aos métodos
+simbólicos. 
+
+Além disso, optou-se pela utilização do método de \ac{VADER}, devido
+ao fato deste não necessitar da criação de um \textit{training set} específico
+para a análise de sentimentos. A necessidade da criação de um \textit{training
+set} específico para cada tema inviabilizaria o desenvolvimento deste trabalho,
+uma vez que neste serão analisados 15 tópicos com temas distintos. Para
+implementação do método \ac{VADER} optou-se pela biblioteca \ac{NLTK}. A
+utilização da biblioteca \ac{NLTK} permitirá a utilização futura de outros
+métodos de \ac{NLP}, bem como um estudo da performance do Método de \ac{VADER} e esses outros métodos.
+ 
+Por fim, se fez necessária a criação de uma base de dados para armazenar os
+tópicos e os comentários disponibilizados pela rede social Reddit. Para isso,
+foi desenvolvido um \textit{crawler} (robô) que é responsável por extrair os
+comentários relacionados a um tópico na rede social Reddit e armazenar em um
+banco de dados MySQL. Esse robô foi desenvolvido na linguagem Java e utiliza a
+API da rede social Reddit para extrair as informações de um tópico. Após, ele
+utiliza o \textit{framework} Hibernate para armazenar os dados extraídos na
+base de dados MySQL.
+
+Na segunda etapa deste trabalho, será utilizado o \textit{framework} \ac{NLTK}
+para efetuar a análise de sentimento sobre a base de dados criada. Essa análise
+tem como principal objetivo identificar padrões de sentimentos entre
+usuários e comunidades da rede Reddit.
+
+\section{Atividades e Cronograma}
+
+Na Tabela \ref{tab:tcc1} tem-se o cronongrama das atividades realizadas durante
+o TCC I. Como pode ser observado, todas as tarefas programadas foram
+realizadas.
+\begin{enumerate}
+\item Estudo de algoritmos para o processamento de texto e também análise de
+sentimentos.
+\item Análise das ferramentas já existentes.
+\item Análise da API do Reddit.
+\item Construção de um software para extração dos dados da API.
+\item Extração e criação da base de dados.
+\item Redação da monografia TCC I.
+\item Apresentação TCC I.
+\end{enumerate}
+
+\renewcommand{\arraystretch}{2}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{table}[!htb]
+\begin{tabularx}{0.9\textwidth}{Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}
+& \multicolumn{2}{|c|}{Mar} & \multicolumn{2}{|c|}{Abr} &
+\multicolumn{2}{|c|}{Mai} & \multicolumn{2}{|c|}{Jun} &
+\multicolumn{2}{|c|}{Jul}
+\\
+\midrule
+1 & \cellcolor{black!80} & \cellcolor{black!80} & & & & & & & & \\
+2 &  & \cellcolor{black!80} & \cellcolor{black!80} & & & & & & &\\
+3 &  &  &  & \cellcolor{black!80} & & & & & &\\
+4 &  &  &  &  & \cellcolor{black!80} & & & &  &\\
+5 &  &  &  &  &  & \cellcolor{black!80} & \cellcolor{black!80} & & &\\
+6 &  & \cellcolor{black!80}  & \cellcolor{black!80}  &  \cellcolor{black!80} & 
+\cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &  &\\
+7 &  &  &  &  &  & & & & \cellcolor{black!80} &\\
+\end{tabularx}
+
+\caption{Cronograma do TCC I.}
+\label{tab:tcc1}
+\end{table}
+
+Já na Tabela \ref{tab:tcc2} tem-se as atividades a serem desenvolvidas no TCC
+II:
+
+\begin{enumerate}
+\item Implementação do software de Processamento de Linguagem Natural para a
+análise de sentimentos na base de dados criada.
+\item Análise dos resultados obtidos.
+\item Redação da monografia TCC II.
+\item Apresentação do TCC II.
+\end{enumerate}
+
+%loucura
+\makeatletter
+\setlength{\@fptop}{0pt}
+\makeatother
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\begin{table}[ht!]
+\begin{tabularx}{0.9\textwidth}{Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}
+& \multicolumn{2}{|c|}{Ago} & \multicolumn{2}{|c|}{Set} &
+\multicolumn{2}{|c|}{Out} & \multicolumn{2}{|c|}{Nov} &
+\multicolumn{2}{|c|}{Dez}
+\\
+\midrule
+1 & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
+\cellcolor{black!80} & & & & & & \\
+2 &  & & & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
+& & &\\
+3 &  & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
+\cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80}
+& \cellcolor{black!80} & &\\
+4 &  &  &  &  &  & & & & \cellcolor{black!80} &\\
+\end{tabularx}
+
+\caption{Cronograma do TCC II.}
+\label{tab:tcc2}
+\end{table}
+
+% No Capítulo \ref{cap:Processamento} foram introduzidos dois tipos de métodos
+% distintos para o \ac{NLP}, métodos simbólicos e
+% métodos estatísticos, os quais foram estudados para a análise de sentimentos
+% através do Capítulo \ref{cap:Classificadores}.
+% 
+% Através do Capítulo \ref{cap:Classificadores}, foram comparados um método
+% simbólico e outro método estatístico a fim de se determinar qual apresenta melhor performance na análise de sentimentos
+% aplicada em uma rede social, sendo que a literatura apontou que o método mais
+% assertivo é o método \ac{VADER}, o qual está disponível através do
+% \textit{framework} \ac{NLTK}.
+% 
+% Já no Capítulo \ref{cap:banco}, foi apresentada como funciona a rede social
+% Reddit, os tópicos selecionados para a análise de sentimentos, e por fim foi
+% apresentado a forma na qual esses tópicos serão extraídos para população da base
+% de dados.
+% 
+% A partir das informações demonstradas através deste, deverá ser possível criar
+% um \textit{software} que efetue a análise de dados utilizando o \ac{VADER},
+% através do \textit{framework} \ac{NLTK}, aplicada nos tópicos demonstrados no
+% Capítulo \ref{cap:banco}.
