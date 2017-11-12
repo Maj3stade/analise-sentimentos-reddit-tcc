@@ -1,139 +1,56 @@
 \chapter{Conclusão Final}
 \label{cap:conclusao}
-A \ac{NLP} tem como objetivo a análise de linguagem natural, seja
-essa escrita ou falada. Dentre diversas tarefas que ela executa, tem-se a
-análise de sentimentos, a qual recebeu destaque nos últimos anos devido ao fato das pessoas cada vez se comunicarem através de redes sociais,
-gerando um grande volume de dados. A análise e quantificação da opinião expressa por esses dados, seja
-por fins políticos, comerciais ou quaisquer outros, se torna díficil devido a
-essa grande quantidade de dados.
-
-Observou-se que os métodos mais utilizados para análise de sentimentos são o
-Método de Naive Bayes (estatístico) e o Método de \ac{VADER} (simbólico). Dentre
+Através deste trabalho, observou-se que os métodos mais utilizados para análise
+de sentimentos são o Método de Naive Bayes (estatístico) e o Método de \ac{VADER} (simbólico). Dentre
 estes, optou-se pela utilização do método de \ac{VADER}, uma vez que de acordo
 com a literatura, esse apresenta um desempenho superior ao método de Naive
-Bayes. De fato, esse mostrou-se superior na análise de sentimentos nas avaliações de
+Bayes, na análise de sentimentos nas avaliações de
 produtos da Amazon, editoriais do New York Times e mais importante, na análise
-de \textit{Tweets} da rede social Twitter \cite{SentimentinSocialMedia}. A
-justificativa para isso, se dá ao fato de métodos estatísticos necessitarem de um \textit{training set}
-especializado para obter resultados similares ou superiores aos métodos
-simbólicos. 
+de \textit{Tweets} da rede social Twitter \cite{SentimentinSocialMedia}.
 
-Além disso, optou-se pela utilização do método de \ac{VADER}, devido
-ao fato deste não necessitar da criação de um \textit{training set} específico
-para a análise de sentimentos. A necessidade da criação de um \textit{training
-set} específico para cada tema inviabilizaria o desenvolvimento deste trabalho,
-uma vez que neste serão analisados 15 tópicos com temas distintos. Para
-implementação do método \ac{VADER} optou-se pela biblioteca \ac{NLTK}. A
-utilização da biblioteca \ac{NLTK} permitirá a utilização futura de outros
-métodos de \ac{NLP}, bem como um estudo da performance do Método de \ac{VADER} e esses outros métodos.
- 
-Por fim, se fez necessária a criação de uma base de dados para armazenar os
-tópicos e os comentários disponibilizados pela rede social Reddit. Para isso,
-foi desenvolvido um \textit{crawler} (robô) que é responsável por extrair os
-comentários relacionados a um tópico na rede social Reddit e armazenar em um
-banco de dados MySQL. Esse robô foi desenvolvido na linguagem Java e utiliza a
-API da rede social Reddit para extrair as informações de um tópico. Após, ele
-utiliza o \textit{framework} Hibernate para armazenar os dados extraídos na
-base de dados MySQL.
+Com a utilização do \ac{VADER} através do \ac{NLTK} para a análise de
+comentários do Reddit em um conjunto de dados de validação, pode-se verificar
+que somente a utilização do \ac{VADER}, neste contexto, nos traz resultados
+abaixo do que foi encontrado na literatura. 
 
-Na segunda etapa deste trabalho, será utilizado o \textit{framework} \ac{NLTK}
-para efetuar a análise de sentimento sobre a base de dados criada. Essa análise
-tem como principal objetivo identificar padrões de sentimentos entre
-usuários e comunidades da rede Reddit.
+Para a solução deste problema, foi
+utilizado o método de Propagação Dupla e também a escolha de palavras alvo para
+a análise. Desta forma, foram analisados 6 tópicos divididos em duas categorias,
+comentários políticos e comentários de filmes. Estes tópicos foram analisados em
+sua assertividade e assertividade por quantidade de caracteres.
 
-\section{Atividades e Cronograma}
+Os resultados desta análise nos demonstrou que os comentários sobre filmes,
+apresentaram maior assertividade que comentários políticos. Isso se deve ao fato
+de que nos tópicos relacionados com filmes, é pedido a opinião
+ou avaliação dos usuários sobre aquele filme, aumentando a utilização de
+expressões simples como ``\ldots este filme foi ruim\ldots''.
 
-Na Tabela \ref{tab:tcc1} tem-se o cronongrama das atividades realizadas durante
-o TCC I. Como pode ser observado, todas as tarefas programadas foram
-realizadas.
-\begin{enumerate}
-\item Estudo de algoritmos para o processamento de texto e também análise de
-sentimentos.
-\item Análise das ferramentas já existentes.
-\item Análise da API do Reddit.
-\item Construção de um software para extração dos dados da API.
-\item Extração e criação da base de dados.
-\item Redação da monografia TCC I.
-\item Apresentação TCC I.
-\end{enumerate}
+Também, a partir da análise de assertividade por quantidade de caracter, foi
+possível demonstrar que o \ac{VADER} tende a perder assertividade
+quanto maior a quantidade de caracteres em um comentário.
 
-\renewcommand{\arraystretch}{2}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\begin{table}[!htb]
-\begin{tabularx}{0.9\textwidth}{Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}
-& \multicolumn{2}{|c|}{Mar} & \multicolumn{2}{|c|}{Abr} &
-\multicolumn{2}{|c|}{Mai} & \multicolumn{2}{|c|}{Jun} &
-\multicolumn{2}{|c|}{Jul}
-\\
-\midrule
-1 & \cellcolor{black!80} & \cellcolor{black!80} & & & & & & & & \\
-2 &  & \cellcolor{black!80} & \cellcolor{black!80} & & & & & & &\\
-3 &  &  &  & \cellcolor{black!80} & & & & & &\\
-4 &  &  &  &  & \cellcolor{black!80} & & & &  &\\
-5 &  &  &  &  &  & \cellcolor{black!80} & \cellcolor{black!80} & & &\\
-6 &  & \cellcolor{black!80}  & \cellcolor{black!80}  &  \cellcolor{black!80} & 
-\cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &  &\\
-7 &  &  &  &  &  & & & & \cellcolor{black!80} &\\
-\end{tabularx}
+Por fim, podemos concluir que é possível a criação de uma ferramenta que executa
+análise de sentimentos na rede social Reddit, como a criada por este trabalho,
+porém, a assertividade dessa ferramenta inclina-se conforme o contexto dos
+comentários, e também a quantidade de caracteres deste. Por isso, se
+recomenda que a utilização desta ferramenta seja somente em tópicos controlados,
+nos quais já se foi provado a assertividade do \ac{VADER} sobre este, como análise de comentários sobre
+filmes.
 
-\caption{Cronograma do TCC I.}
-\label{tab:tcc1}
-\end{table}
+\section{Trabalhos Futuros}
 
-Já na Tabela \ref{tab:tcc2} tem-se as atividades a serem desenvolvidas no TCC
-II:
+Como sugestão de trabalhos futuros, tem-se a resolução de problemas encontrados
+durante a elaboração deste trabalho, como a modificação de sentimentos de palavras do dicionário
+\ac{VADER} conforme o contexto e também a possibilidade do \ac{VADER} expressar
+resultados não somente através de uma pontuação sobre um corpo de texto, mas sim
+sobre os alvos de sentimentos daquele corpo de texto.
 
-\begin{enumerate}
-\item Implementação do software de Processamento de Linguagem Natural para a
-análise de sentimentos na base de dados criada.
-\item Análise dos resultados obtidos.
-\item Redação da monografia TCC II.
-\item Apresentação do TCC II.
-\end{enumerate}
+Também, se faz interessante a análise de comentários do Reddit através do
+\textit{``Naive Bayes''} para que seja possível elencarmos pontos positivos e
+negativos deste com relação ao \ac{VADER} na sua utilização no Reddit.
 
-%loucura
-\makeatletter
-\setlength{\@fptop}{0pt}
-\makeatother
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
-\begin{table}[ht!]
-\begin{tabularx}{0.9\textwidth}{Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|Y|}
-& \multicolumn{2}{|c|}{Ago} & \multicolumn{2}{|c|}{Set} &
-\multicolumn{2}{|c|}{Out} & \multicolumn{2}{|c|}{Nov} &
-\multicolumn{2}{|c|}{Dez}
-\\
-\midrule
-1 & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
-\cellcolor{black!80} & & & & & & \\
-2 &  & & & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
-& & &\\
-3 &  & \cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80} &
-\cellcolor{black!80} & \cellcolor{black!80} & \cellcolor{black!80}
-& \cellcolor{black!80} & &\\
-4 &  &  &  &  &  & & & & \cellcolor{black!80} &\\
-\end{tabularx}
-
-\caption{Cronograma do TCC II.}
-\label{tab:tcc2}
-\end{table}
-
-% No Capítulo \ref{cap:Processamento} foram introduzidos dois tipos de métodos
-% distintos para o \ac{NLP}, métodos simbólicos e
-% métodos estatísticos, os quais foram estudados para a análise de sentimentos
-% através do Capítulo \ref{cap:Classificadores}.
-% 
-% Através do Capítulo \ref{cap:Classificadores}, foram comparados um método
-% simbólico e outro método estatístico a fim de se determinar qual apresenta melhor performance na análise de sentimentos
-% aplicada em uma rede social, sendo que a literatura apontou que o método mais
-% assertivo é o método \ac{VADER}, o qual está disponível através do
-% \textit{framework} \ac{NLTK}.
-% 
-% Já no Capítulo \ref{cap:banco}, foi apresentada como funciona a rede social
-% Reddit, os tópicos selecionados para a análise de sentimentos, e por fim foi
-% apresentado a forma na qual esses tópicos serão extraídos para população da base
-% de dados.
-% 
-% A partir das informações demonstradas através deste, deverá ser possível criar
-% um \textit{software} que efetue a análise de dados utilizando o \ac{VADER},
-% através do \textit{framework} \ac{NLTK}, aplicada nos tópicos demonstrados no
-% Capítulo \ref{cap:banco}.
+Por fim, tem-se como sugestão de trabalho futuro, a incorporação do histórico do
+usuário na análise de sentimentos. Como por exemplo, determinar que o usuário
+esta sendo irônico ao verificar que no histórico deste, ele sempre elogiou
+determinado produto, e somente neste determinado comentário ele está criticando
+este.

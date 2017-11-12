@@ -35,7 +35,7 @@ O Naive Bayes é um método estatístico para a classificação e que pode ser
 utilizado para a análise de sentimento. Esse faz o uso do teorema de Bayes e um
 \textit{training set} para inferir a classificação de uma frase. Por exemplo,
 considerando que se quer determinar se a frase \textit{``This place is
-great.''} demonstra um sentimento negativo ou positivo.
+great''} demonstra um sentimento negativo ou positivo.
 
 \begin{table}[htb]
 \centering
@@ -150,8 +150,8 @@ Uma vez que a frase \textit{``This place is great''} não existe por completo no
 \ref{eq:teoreman} e \ref{eq:teoremap} é igual a zero (0), impossibilitando o
 cálculo de probabilidade para essa frase. Neste caso, se faz o uso do
 \textit{Naive Bayes}, o qual passa a considerar todas as palavras ao invés da
-frase completa. O uso do Naive Bayes elimina o problema com frases que não se
-encontram no \textit{training sets}. Neste caso, é considerado somente a
+frase completa. O uso do Naive Bayes elimina o problema de frases que não se
+encontram no \textit{training set}. Neste caso, é considerado somente a
 frequência que cada palavra aparece em uma frase positiva e em uma negativa.
 Portanto, o termo $P(\textit{This place is
 great}|Positiva)$ da Equação \ref{eq:teoremap} é dado pela Equação
@@ -212,7 +212,7 @@ invalide a frase por completo é utilizado o método \textit{Laplace smoothing}
 ao total de palavras positivas é somada a quantidade de palavras distintas do
 \textit{training set} (16). Aplicando o \textit{Laplace smoothing} para os
 valores apresentados na Tabela \ref{tab:probabilidadesnb} são obtidos os valores
-que são apresentados na Tabela \ref{tab:probabilidadesl}.
+que se encontram na Tabela \ref{tab:probabilidadesl}.
 
 
 \begin{table}[htb]
@@ -464,15 +464,15 @@ classificada como positiva.
 Para o desenvolvimento deste trabalho optou-se pelo uso do método de \ac{VADER},
 uma vez que este, segundo a literatura, apresenta resultados superiores ao
 Método de Naive Bayes. De fato, segundo Pålsson e Szerszen
-\cite{SentimentinSocialMedia}, para a análise de \textit{Tweets}\footnote{\textit{Tweets} é o termo utilizado
-para designar as publicações realizadas na rede social Twitter.}, o método de
+\cite{SentimentinSocialMedia}, para a análise de
+\textit{tweets}\footnote{\textit{Tweets} é o termo utilizado para designar as publicações realizadas na rede social Twitter.}, o método de
 \ac{VADER} apresentou uma assertividade de 72,3\% enquanto o Naive Bayes apresentou uma assertividade de apenas 58,2\%.
 
 Na análise conduzida por Hutto \cite{conf/icwsm/HuttoG14},
 considerando-se a análise de \textit{tweets}, avaliações de produtos da Amazon e
 editoriais do New York Times, o método de \ac{VADER} apresentou uma assertividade de 96\%, 63\% e 55\%, respectivamente, contra
-56\%, 49\%, 44\% do método de Naive Bayes. A Figura \ref{fig:definicao} ilustra
-os resultados obtidos através da literatura.
+56\%, 49\%, 44\% do método de Naive Bayes. A Figura \ref{fig:definicao}
+apresenta um resumo dos resultados demonstrados na literatura.
 
 \begin{figure}[htbp] 
 
@@ -515,12 +515,12 @@ futura de utilização de outros métodos de \ac{NLP} para a análise de
 sentimentos.
 
 O \ac{NLTK} é um \textit{framework open source} para Python que foi
-criado em 2001 na Universidade de Pensilvânia e, atualmente, utilizado por mais
-de 30 universidades em diversos
+criado em 2001 na Universidade de Pensilvânia e, atualmente, é utilizado por
+mais de 30 universidades em diversos
 países \cite{nltk}.
 Esse apresenta tanto métodos estatísticos como, \ac{MaxEnt} e Naive Bayes, como
 métodos simbólicos, contendo mais de 50 dicionários e modelos já treinados.
-Como exemplo, pode-se citar o conjunto de dados \textit{Sentiment
+Além do \ac{VADER}, pode-se citar o conjunto de dados \textit{Sentiment
 Polarity Dataset Version 2.0}, que contém mais de 1000 filmes classificados de
 forma positiva e 1000 filmes classificados de forma negativa
 \cite{Pang:2002:TUS:1118693.1118704}.

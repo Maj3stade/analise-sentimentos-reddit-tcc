@@ -7,12 +7,13 @@
 \backcite {alexa}{{17}{1}{chapter.1}}
 \backcite {manningschutze1999}{{19}{2}{chapter.2}}
 \backcite {history}{{19}{2}{chapter.2}}
-\backcite {manningschutze1999}{{20}{2.1}{section.2.1}}
+\backcite {manningschutze1999}{{19}{2.1}{section.2.1}}
 \backcite {manningschutze1999}{{20}{2.1}{section.2.1}}
 \backcite {shannon48}{{20}{2.2}{section.2.2}}
-\backcite {Brill:1992:SRP:974499.974526}{{21}{2.2.1}{subsection.2.2.1}}
+\backcite {Brill:1992:SRP:974499.974526}{{20}{2.2.1}{subsection.2.2.1}}
 \backcite {manningschutze1999}{{22}{2.2.2}{subsection.2.2.2}}
-\backcite {manningschutze1999}{{22}{2.2.2}{figure.2.1}}
+\backcite {manningschutze1999}{{22}{2.2.2}{subsection.2.2.2}}
+\backcite {manningschutze1999}{{23}{2.2.2}{figure.2.1}}
 \backcite {Hearst:1998:SVM:630302.630387}{{27}{3}{chapter.3}}
 \backcite {Berger:1996:MEA:234285.234289}{{27}{3}{chapter.3}}
 \backcite {Pang:2002:TUS:1118693.1118704}{{27}{3}{chapter.3}}
@@ -25,7 +26,7 @@
 \backcite {Rossum:1995:PRM:869369}{{33}{3.2.2}{subsection.3.2.2}}
 \backcite {Loper:2002:NNL:1118108.1118117}{{33}{3.2.2}{subsection.3.2.2}}
 \backcite {nltk}{{33}{3.2.2}{subsection.3.2.2}}
-\backcite {Pang:2002:TUS:1118693.1118704}{{33}{3.2.2}{subsection.3.2.2}}
+\backcite {Pang:2002:TUS:1118693.1118704}{{34}{3.2.2}{subsection.3.2.2}}
 \backcite {Esuli2006sentiwordnet}{{34}{3.2.2}{subsection.3.2.2}}
 \backcite {alexa}{{35}{4.1}{section.4.1}}
 \backcite {Widenius:2002:MRM:560480}{{36}{4.2}{section.4.2}}
@@ -33,6 +34,7 @@
 \backcite {DBLP:conf/lrec/StranisciBFP16}{{37}{4.3}{section.4.3}}
 \backcite {Qiu:2011:OWE:1970420.1970422}{{37}{4.3}{section.4.3}}
 \backcite {Qiu:2011:OWE:1970420.1970422}{{38}{4.4}{section.4.4}}
-\backcite {Qiu:2011:OWE:1970420.1970422}{{40}{4.4.2}{subsection.4.4.2}}
-\backcite {SentimentinSocialMedia}{{44}{5.0.1}{figure.5.6}}
-\backcite {SentimentinSocialMedia}{{47}{6}{chapter.6}}
+\backcite {Qiu:2011:OWE:1970420.1970422}{{41}{4.4.2}{subsection.4.4.2}}
+\backcite {conf/icwsm/HuttoG14}{{44}{5.1}{figure.5.6}}
+\backcite {SentimentinSocialMedia}{{47}{5.3}{section.5.3}}
+\backcite {SentimentinSocialMedia}{{49}{6}{chapter.6}}

@@ -2,8 +2,9 @@
 \label{cap:banco}
 Este capítulo tem como objetivo descrever a rede social Reddit.
 Após, são apresentados os tópicos que foram selecionados para a análise de
-sentimentos. Por fim, é apresentada a ferramenta desenvolvida para a extração
-dos comentários destes tópicos e para a criação da base.
+sentimentos. Após, é apresentada a ferramenta desenvolvida para a extração
+dos comentários destes tópicos e para a criação da base. Por fim, são
+apresentados os resultados da validação da ferramenta desenvolvida.
 \section{Rede Social Reddit}
 \label{cap:Reddit}
 
@@ -104,8 +105,8 @@ JSON retornado em um \textit{Plain Old Java Objects} (\ac{POJO}).
 Após, foi utilizado o \textit{framework} Hibernate
 \cite{Iverson:2004:HJD:1044870} para a criação do banco de dados e para a
 persistência dos dados. O Hibernate é um \textit{framework} de
-mapeamento objeto-relacional que tem como objetivo representar as tabelas de um
-banco de dados através de classes, ou seja, esse \textit{framework} tem como principal
+mapeamento objeto-relacional que tem como objetivo principal representar as
+tabelas de um banco de dados através de classes, ou seja, esse \textit{framework} tem como principal
 característica a transformação das classes em Java em tabelas em um banco de
 dados relacional.
 No caso deste trabalho, ele é responsável pela criação das tabelas \textit{RedditPost} e
@@ -125,13 +126,13 @@ de forma manual. Após, esses comentários foram processados através da ferrame
 Destaca-se que uma grande parte dos comentários que foram identificados de forma
 incorreta, apresentam a irônia como característica, como por exemplo, o
 comentário \textit{``lol Good Luck Canada''}. A identificação da ironia através
-da leitura textual se faz difícil até mesmo para um ser-humano, uma vez que o
-texto pode não apresentar sinais de humor. A ironia para a análise de sentimentos é considerado
-um tópico problemático sendo alvo de diversos estudos \cite{DBLP:conf/lrec/StranisciBFP16}.
+da leitura textual é difícil até mesmo para um ser-humano, uma vez que o
+texto pode não apresentar sinais de humor. De fato, a ironia para a análise de
+sentimentos é considerado um tópico problemático sendo alvo de diversos estudos \cite{DBLP:conf/lrec/StranisciBFP16}.
 
 Já para outros comentários que foram identificados de forma incorreta
-observa-se que o sentimento expresso não no encontrava em dicionário de
-sentimentos padrão do \ac{VADER}. De forma a minimizar este problema, foi
+observa-se que o sentimento expresso não se encontrava no dicionário de
+sentimentos padrão do \ac{VADER}. Desta forma, para diminuir este problema, foi
 utilizado o método de Propagação Dupla, que possui como principal objetivo
 adicionar novas palavras ao dicionário \cite{Qiu:2011:OWE:1970420.1970422}.
 
@@ -139,19 +140,21 @@ adicionar novas palavras ao dicionário \cite{Qiu:2011:OWE:1970420.1970422}.
 
 O método de Propagação Dupla, proposto por Qiu
 \cite{Qiu:2011:OWE:1970420.1970422}, apresenta como objetivo resolver dois
-problemas do \ac{NLP}, que são a expansão do dicionário e também a extração de
+problemas do \ac{NLP}, que são a expansão do dicionário e também a extração dos
 alvos de um comentário. Os \textit{``Opinion targets"} ou alvos de opinião, são
-palavras as quais sentimentos se referem. Por exemplo, na frase ``Essa
-música é muito boa", a palavra ``boa'' demonstra o sentimento do autor com relação a
-``música'', tornando assim, a palavra música um alvo de opinião. 
+palavras as quais sentimentos se referem. Por exemplo, na frase \textit{``Essa
+música é muito boa''}, a palavra \textit{``boa''} demonstra o sentimento do
+autor com relação a \textit{``música''}, tornando assim, a palavra
+\textit{``música''} um alvo de opinião.
 
 A extração dos alvos é necessária pois em algumas frases
 podemos ter opiniões sobre diferentes alvos. Além disso, podemos
 ter opiniões diferentes sobre diferentes características de um alvo. Por
-exemplo, na frase ``Este celular é muito bom, porém a bateria dele é péssima", tem-se que o produto em si é bom, porém, a opinião sobre a bateria dele é negativa. De
-forma, a resolver esses problemas, novas palavras e alvos são adicionados ao
-dicionário a partir da execução das quatro tarefas que serão descritas na
-próxima seção.
+exemplo, na frase \textit{``Este celular é muito bom, porém a bateria dele é
+péssima''}, tem-se que o produto em si é bom, porém, a opinião sobre a bateria
+dele é negativa. De forma, a diminuir esses problemas, novas palavras e alvos
+são adicionados ao dicionário padrão do \ac{VADER} partir da execução das quatro
+tarefas que serão descritas na próxima seção.
 
 \subsection{Adição de Palavras e Alvos ao Dicionário}
 
@@ -183,7 +186,7 @@ sentimentos, em caso positivo, é verificado se essa palavra possui algum depend
 extraída na tarefa anterior, porém, a palavra \textit{``witty''} ainda não se
 encontra no dicionário de sentimentos.
 Desta forma, a palavra \textit{``witty''} será acrescida ao
-dicionário de sentimentos uma vez que essa palavra é um adjetivo e que ainda não
+dicionário de sentimentos uma vez que essa palavra é um adjetivo e ainda não
 existe no dicionário.
 
 
@@ -193,14 +196,14 @@ existe no dicionário.
 A segunda regra da tarefa dois
 consiste em verificar se uma palavra alvo possui um dependente, que por sua vez
 possui um adjetivo como dependente. Por exemplo, na frase
-\textit{``Trump is a witty president.''} a palavra \textit{``witty''}, que é um
+\textit{``Trump is a wholesome president.''} a palavra \textit{``wholesome''}, que é um
 adjetivo, depende de \textit{``is''} que por sua vez depende de
-\textit{``president''}. Neste caso, a palavra \textit{``witty''}
+\textit{``president''}. Neste caso, a palavra \textit{``wholesome''}
 será acrescida ao dicionário de sentimentos uma vez que essa é um adjetivo que
 não existe ainda no dicionário.
 
-\[\textit{Trump} \underbrace{\textit{is a witty president.}}_\text{president
-\textrightarrow \text{ is} \textrightarrow \text{ witty}}\]
+\[\textit{Trump} \underbrace{\textit{is a wholesome president.}}_\text{president
+\textrightarrow \text{ is} \textrightarrow \text{ wholesome}}\]
 
 A \textbf{terceira tarefa} consiste na extração de palavras alvo a partir de
 palavras alvo que já se encontram na lista de alvos. A primeira regra desta
@@ -242,7 +245,7 @@ caso, a palavra \textit{``clever''} será adicionada ao dicionário.
 \textleftarrow \text{ and} \textrightarrow \text{ clever}}\]
 
 
-A segunda da quarta tarefa, consiste em verificar-se dois adjetivos
+A segunda regra da quarta tarefa, consiste em verificar-se dois adjetivos
 dependem de uma mesma palavra. Se uma destas palavras pertence ao dicionário de
 sentimentos, a outra também será adicionada na lista. Por exemplo, na frase
 \textit{``Trump is witty, clever''}, ambas as palavras \textit{``witty''} e
@@ -254,7 +257,8 @@ palavra \textit{``clever''} e adicionada ao dicionário.
 
 Por fim, é verificado se as listas de alvos ou sentimentos sofreram
 alterações, ou seja, foram adicionadas novas palavras a essas listas. Em caso
-positivo, as quatro tarefas serão executadas até que nenhuma palavra seja acrescentada a uma das listas.
+positivo, as quatro tarefas serão executadas até que nenhuma palavra seja
+acrescentada nas listas.
 
 \subsection{Atribuição de Pontuação às Novas Palavras}
 
@@ -276,13 +280,14 @@ processo, na extração do alvo é atribuído a este alvo a mesma pontuação do
 sentimento relacionado com ele. Por exemplo, na frase \textit{``We have a great
 president''}, a palavra \textit{``president''} será adicionada a lista de alvos
 de sentimentos com a mesma pontuação de \textit{``great''}, a qual está
-relacionada. Após, essa pontuação é atribuída a palavra extraída na tarefa dois.
-Por exemplo, no comentário \textit{``This president is witty.''}, na segunda
-tarefa, a palavra \textit{``witty''}, que foi extraída através de
-\textit{``president''}, irá receber a mesma pontuação da palavra \textit{``great''}.
+relacionada. Após, essa pontuação é atribuída a palavra extraída a partir
+da tarefa dois.
+Por exemplo, no comentário \textit{``Trump is a wholesome president.''}, na
+segunda tarefa, a palavra \textit{``wholesome''}, que foi extraída a partir da
+palavra \textit{``president''}, irá receber a mesma pontuação da palavra
+\textit{``great''}.
 
-
-Como visto, para utilização do método de Propagação Dupla, é necessário um
+Para utilização do método de Propagação Dupla, é necessário um
 conjunto de textos para que sejam executadas as quatro tarefas. Segundo Qiu
 \cite{Qiu:2011:OWE:1970420.1970422}, como as palavras tem diferentes
 significados em diferentes contextos, é recomendado que este conjunto de textos
@@ -290,18 +295,22 @@ pertença ao mesmo contexto que está sendo efetuada a análise de sentimentos. 
 exemplo, ao utilizar um conjunto de dados sobre notícias gerais, pode-se
 determinar que a palavra \textit{``gucci''} é uma gíria similar a palavra
 \textit{``good''}. Porém, o uso dessa palavra em comentários de roupas
-apresenta um outro contexto uma vez que se refere a uma marca de roupas.
+apresenta um outro contexto, se referindo a uma marca de roupas.
 
-A fim de se determinar o
-melhor conjunto de textos para utilização do método, foram utilizados dois
-conjuntos de dados de testes. No primeiro conjunto de textos, considerou-se
-comentários de um mesmo usuário, desta forma, foram extraídos os 1000
-comentários mais recentes dos usuários que comentaram no tópico \textit{``Canada will welcome
-you,” Trudeau invites refugees as Trump bans them}, totalizando %TODO% 
-comentários. Para o segundo
+\subsection{Resultados obtidos com o método de Propagação Dupla}
+
+A fim de se determinar o melhor conjunto de textos para utilização do método de
+Propagação Dupla, foram utilizados dois conjuntos de dados de testes. No
+primeiro conjunto de textos, considerou-se comentários de todos os usuários que
+comentaram o tópico \textit{``Canada will welcome you,” Trudeau invites
+refugees as Trump bans them}, mais especificamente, foram considerados os
+últimos 1000 comentários destes usuários, totalizando 780063 comentários.
+
+No segundo
 conjunto de textos, foram considerados comentários de usuários em tópicos
-que apresentam o mesmo tema. Nesta avaliação, foram utilizados os seguintes
-comentários:
+que apresentam o mesmo tema do tópico \textit{``Canada will welcome you,” Trudeau invites
+refugees as Trump bans them}. Nesta avaliação, foram utilizados os
+seguintes comentários:
 
 \begin{itemize}
   \item
@@ -309,21 +318,21 @@ comentários:
   women's rights around the world - Leaked plan comes as First Daughter Ivanka
   defends her father's record with women}: esse tópico contém 9246
   comentários e encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/67ivae/donald_trump_to_strip_all_funding_from_state_dept/}
+  \textit{\url{https://www.reddit.com/r/worldnews/comments/67ivae/donald_trump_to_strip_all_funding_from_state_dept/}}
   e refere-se a decisão do presidente dos Estados Unidos da América, Donald
-  Trump, em remover fundos de promoção ao direito das mulheres.  
+  Trump, em remover os fundos de promoção ao direito das mulheres.  
   \item
   \textit{Sweden asks the U.S. to explain Trump comment on
   Sweden}: esse tópico contém 10927
   comentários e encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/5uzetf/sweden_asks_the_us_to_explain_trump_comment_on/}
+  \textit{\url{https://www.reddit.com/r/worldnews/comments/5uzetf/sweden_asks_the_us_to_explain_trump_comment_on/}}
   e se refere aos comentários feitos do presidente dos Estados Unidos da
   América, Donald Trump, sobre a Suécia.
   
   \item\textit{“Canada will welcome you,” Trudeau invites refugees as Trump bans
   them}: esse tópico contém 9113
   comentários e encontra-se disponível em
-  \url{https://www.reddit.com/r/worldnews/comments/5qqa51/canada_will_welcome_you_trudeau_invites_refugees/}
+  \textit{\url{https://www.reddit.com/r/worldnews/comments/5qqa51/canada_will_welcome_you_trudeau_invites_refugees/}}
   e refere-se a declaração do primeiro ministro canadense sobre decisão de
   receber refugiados. Neste declaração, o primeiro ministro canadense afirma que
   os refugiados serão bem-vindos no Canadá.
@@ -331,44 +340,47 @@ comentários:
  
 Após a utilização do Método de Propagação Dupla, utilizando os dois conjuntos
 de textos e a avaliação dos comentários foram
-obtidos os seguintes resultados a partir do tópico \textit{``Canada will welcome
+obtidos os seguintes resultados para o tópico \textit{``Canada will welcome
 you,” Trudeau invites refugees as Trump bans them}:
 \begin{itemize}
   \item 58\% de assertividade na utilização do dicionário padrão.
   \item 59\% de assertividade na utilização do dicionário padrão com palavras
-  extraídas a partir de comentários de um mesmo usuário.
+  extraídas a partir dos últimos 1000 comentários de todos os usuários que
+  comentaram o tópico em questão.
   \item 62\% de assertividade na utilização do dicionário padrão com palavras
-  extraídas a partir de comentários de um mesmo tema.
+  extraídas a partir de comentários postados em tópicos relacionados ao mesmo
+  assunto.
 \end{itemize}
- 
-Destaca-se que mesmo com o aumento na assertividade com a utilização de
-comentários de tópicos do mesmo domínio, os comentários que não foram
+
+\section{Conclusões Sobre a Validação de Resultados}
+
+Os comentários que não foram
 identificados de forma correta são comentários como: \textit{"...These
 laws are not "racist", morons keep hysterically throwing that word around and
 its losing all meaning..."}, aonde que o sentimento expresso é negativo, porém,
 a pessoa expressa um sentimento a favor da notícia em questão. 
 
 Para a solução deste problema, são extraídos somente os sentimentos relacionados
-a uma palavra alvo. Por exemplo, no tópico \textit{``Canada will welcome you,”
-Trudeau invites refugees as Trump bans them}, é possível que a mesma pessoa expresse uma opinião positiva com relação
-ao Canada e negativa com relação a Trudeau. Ao determinar que queremos saber
-somente a opinião dos usuários com relação ao Trudeau, definindo Trudeau como a
-palavra alvo para a análise, serão somente avaliadas as frases
-relacionadas com essa palavra. 
-
-Por exemplo, \textit{``Come enjoy our 15\% tax
-:D edit: Trudeau is the most fake person ever. He always pulls this shit but
+a uma determinada palavra alvo. Por exemplo, no tópico \textit{``Canada will
+welcome you,'' Trudeau invites refugees as Trump bans them}, é possível que a mesma pessoa expresse uma opinião positiva com relação
+ao Canadá e negativa com relação a Trudeau. Ao determinar que queremos saber
+somente a opinião dos usuários com relação ao Trudeau, pode-se definir a palavra
+Trudeau como a palavra alvo para a análise, sendo consideradas somente as
+frases relacionadas com essa palavra. Por exemplo, \textit{``Come enjoy our 15\%
+tax :D edit: Trudeau is the most fake person ever. He always pulls this shit but
 undercuts us Canadians all the time. He ain't getting voted in next
 election.''}, será analisada somente a frase dependente da palavra ``Trudeau'',
 que será \textit{``\ldots is the most fake person ever''}, evitando que a
 primeira frase \textit{``Come enjoy our 15\% tax :D\ldots''} que representa um
 sentimento positivo afete a análise a qual queremos obter.
 
-Baseando a análise somente em determinados alvos, e utilizando a palavra
-``Trump'' para extração dos comentários do tópico \textit{``Canada will welcome you,” Trudeau invites refugees as Trump bans them}, foi obtida a assertividade
-de 65\%, mostrando-se mais assertiva que os resultados anteriores. Por fim, para
-a avaliação dos resultados apresentados no seguinte capítulo, foi escolhida a
-utilização dos dois métodos citados anteriormente em conjunto com o \ac{VADER}.
+Restringindo a análise a palavra alvo ``Trump'' para extração dos comentários do
+tópico \textit{``Canada will welcome you,'' Trudeau invites refugees as Trump
+bans them}, foi obtida a assertividade de 65\%, mostrando-se mais assertiva que
+os resultados anteriores. A partir destes resultados, optou-se pela utilização
+do método de \ac{VADER}, combinado com o método de Propagação Dupla e a
+restrição de alvos para a execução dos testes que serão apresentados no Capítulo
+\ref{cap:impl}.
 
 
 

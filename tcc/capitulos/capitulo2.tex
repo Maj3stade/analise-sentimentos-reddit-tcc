@@ -28,13 +28,13 @@ língua, primariamente, necessitamos compreender como nós efetuamos essa
 interpretação.
 Por isso, uma parte considerável do Processamento de Linguagem Natural está apoiado na área de Linguística.
 
-\newpage
-
 \section{Linguística}
 
-O objetivo da Linguística é compreender como os seres humanos adquirem, produzem
-e entendem as diversas línguas, ou seja, a forma como conversamos, a nossa
+O objetivo da Linguística é compreender a forma como os seres humanos adquirem,
+produzem e entendem as diversas línguas, ou seja, a forma como conversamos, a nossa
 escrita e outras mídias de comunicação \cite{manningschutze1999}.
+
+\newpage
 
 Na linguagem tanto escrita, como na falada, existem regras gramaticais que são
 utilizadas para estruturar as expressões. Uma série de dificuldades no Processamento de
@@ -92,7 +92,7 @@ análise serão descritos no Capítulo \ref{cap:Classificadores}.
 O método simbólico ou racionalista está
 baseado no campo da Linguística e faz o uso da manipulação dos símbolos,
 significados e das regras de um texto. Um exemplo simples de um método simbólico
-é o método de Brill \cite{Brill:1992:SRP:974499.974526} utilizado para a
+é o método de Brill \cite{Brill:1992:SRP:974499.974526}, que é utilizado para a
 análise léxica, ou seja, identificar a classe de uma palavra em um texto.
 Por exemplo, no método de Brill a frase ``João pintou a casa de branco'', será separada em palavras que
 serão classificadas através de um dicionário pré-definido, como:
@@ -112,8 +112,8 @@ Classificação:   & 			   & Verbo  & Artigo & Substantivo & Preposição & Adje
 
 Observa-se que algumas palavras não foram
 identificadas, como ``João'', ou classificadas de forma incorreta, como
-``branco". Desta forma, o método de Brill utiliza-se de outras duas regras para
-a classificação.
+``branco". Desta forma, o método de Brill utiliza-se ainda de duas outras
+regras para a classificação.
 A primeira dessas regras classifica todas as palavras desconhecidas que
 iniciam com uma letra em maiúscula como substantivos, por exemplo, a palavra ``João''. Já a
 segunda regra, atribui para a palavra desconhecida a mesma classificação de outras palavras que terminam com as mesmas três letras. Por exemplo, supondo
@@ -189,7 +189,7 @@ regras, ou ainda, regras derivadas dessas:
 Um método estatístico utiliza-se de uma grande
 quantidade de texto, procurando por padrões e
 associações a modelos, sendo que esses padrões podem ou não estar relacionados
-com regras sintáticas ou semânticas.
+com regras sintáticas ou semânticas \cite{manningschutze1999}.
 
 Os métodos estatísticos baseia-se na utilização de um sistema de aprendizado
 supervisionado, ou seja, a classificação é feita a partir de um conjunto de dados já
@@ -224,11 +224,30 @@ Algoritmo de Viterbi para definir qual o caminho com maior probabilidade
 
 O Modelo de Markov irá utilizar-se do \textit{training set} para inferir a
 classificação da palavra ``um''. Por exemplo, considerando-se um
-\textit{training set} hipotético com as seguintes características: 10000
-substantivos onde desses 150 são a palavra ``um''; 10
-são a palavra ``João''; 50 são a palavra ``carro''; 20000 artigos onde desses 500 são
-a palavra ``um''; 12000 verbos onde desses 50 são a palavra ``comprou''; 15000
-pronomes onde desses 50 são a palavra ``um''. Neste caso, a probabilidade da palavra
+\textit{training set} hipotético com as seguintes características:
+
+\begin{itemize}
+  \item 10000 substantivos.
+  \begin{itemize}
+	\item 150 são a palavra ``um''.
+	\item 10 são a palavra ``João''.
+	\item 50 são a palavra ``carro''.
+  \end{itemize}
+  \item 20000 artigos.
+  \begin{itemize}
+    \item 500 são a palavra ``um''.
+  \end{itemize}
+  \item 12000 verbos
+  \begin{itemize}
+    \item 50 são a palavra ``comprou''.
+  \end{itemize} 
+  \item 15000 pronomes.
+  \begin{itemize}
+    \item 50 são a palavra ``um''.
+  \end{itemize} 
+\end{itemize}
+
+Neste caso, a probabilidade da palavra
 ``um'' ser um substantivo é dada pela Equação \ref{eq:associacao}, uma vez que
 no \textit{training set} temos 150 instâncias da palavra ``um'' classificadas como
 substantivo e um total de 10000 substantivos. Ou seja, a probabilidade de ``um'' ser um substantivo é
@@ -247,7 +266,7 @@ P(um|SM) = \frac{C(SM,um)}{C(SM)} = \frac{150}{10000} = 0,015.
 O
 cálculo de probabilidade é realizado para todas as palavras da frase que está
 sendo classificada. Na Tabela \ref{tabela:associacao} tem-se os resultados
-obtidos para todas as palavras da frame ``João comprou um carro''.
+obtidos para todas as palavras da frase ``João comprou um carro''.
 
 \begin{table}[htb]
 \centering
@@ -303,6 +322,9 @@ de 0,42 e de um verbo para um pronome é de 0,17. A Equação
 iniciar com determinada classe.
 A Tabela \ref{tabela:transicao} tem-se a probabilidade de transição para todas
 as classes do \textit{training set} de exemplo.
+
+
+\newpage
 
 \begin{table}[htb]
 \centering
