@@ -8,49 +8,35 @@ Bayes, na análise de sentimentos nas avaliações de
 produtos da Amazon, editoriais do New York Times e mais importante, na análise
 de \textit{Tweets} da rede social Twitter \cite{SentimentinSocialMedia}.
 
-Com a utilização do \ac{VADER} através do \ac{NLTK} para a análise de
-comentários do Reddit em um conjunto de dados de validação, pode-se verificar
-que somente a utilização do \ac{VADER}, neste contexto, nos traz resultados
-abaixo do que foi encontrado na literatura. 
-
-Para a solução deste problema, foi
+A partir dos resultados obtidos verifica-se que o método de \ac{VADER} sozinho
+apresenta resultados insatisfatórios. Desta forma, foi
 utilizado o método de Propagação Dupla e também a escolha de palavras alvo para
-a análise. Desta forma, foram analisados 6 tópicos divididos em duas categorias,
+a análise. 
+
+Foram analisados 6 tópicos divididos em duas categorias,
 comentários políticos e comentários de filmes. Estes tópicos foram analisados em
-sua assertividade e assertividade por quantidade de caracteres.
-
-Os resultados desta análise nos demonstrou que os comentários sobre filmes,
-apresentaram maior assertividade que comentários políticos. Isso se deve ao fato
-de que nos tópicos relacionados com filmes, é pedido a opinião
+sua assertividade e assertividade por quantidade de caracteres. Os resultados
+desta análise nos demonstrou que os comentários sobre filmes, apresentaram maior
+assertividade que comentários políticos. Isso se deve ao fato de que nos tópicos relacionados com filmes, é pedido a opinião
 ou avaliação dos usuários sobre aquele filme, aumentando a utilização de
-expressões simples como ``\ldots este filme foi ruim\ldots''.
+expressões simples como \textit{``\ldots este filme foi ruim\ldots''}. Também, a
+partir da análise de assertividade por quantidade de caracter, foi possível
+demonstrar que o \ac{VADER} tende a perder assertividade quanto maior a
+quantidade de caracteres em um comentário. 
 
-Também, a partir da análise de assertividade por quantidade de caracter, foi
-possível demonstrar que o \ac{VADER} tende a perder assertividade
-quanto maior a quantidade de caracteres em um comentário.
+De fato, quanto maior o número de
+caracteres, menor a assertividade do método. Essas tendências já haviam sido
+observadas nos trabalhos de Hutto e Gilbert \cite{conf/icwsm/HuttoG14}.
 
-Por fim, podemos concluir que é possível a criação de uma ferramenta que executa
-análise de sentimentos na rede social Reddit, como a criada por este trabalho,
-porém, a assertividade dessa ferramenta inclina-se conforme o contexto dos
-comentários, e também a quantidade de caracteres deste. Por isso, se
-recomenda que a utilização desta ferramenta seja somente em tópicos controlados,
-nos quais já se foi provado a assertividade do \ac{VADER} sobre este, como análise de comentários sobre
-filmes.
 
 \section{Trabalhos Futuros}
 
-Como sugestão de trabalhos futuros, tem-se a resolução de problemas encontrados
-durante a elaboração deste trabalho, como a modificação de sentimentos de palavras do dicionário
-\ac{VADER} conforme o contexto e também a possibilidade do \ac{VADER} expressar
-resultados não somente através de uma pontuação sobre um corpo de texto, mas sim
-sobre os alvos de sentimentos daquele corpo de texto.
-
-Também, se faz interessante a análise de comentários do Reddit através do
+Como sugestão de trabalhos futuros, a análise de comentários do Reddit através do
 \textit{``Naive Bayes''} para que seja possível elencarmos pontos positivos e
-negativos deste com relação ao \ac{VADER} na sua utilização no Reddit.
+negativos deste método em relação ao método de \ac{VADER} na sua utilização
+no Reddit.
 
-Por fim, tem-se como sugestão de trabalho futuro, a incorporação do histórico do
-usuário na análise de sentimentos. Como por exemplo, determinar que o usuário
-esta sendo irônico ao verificar que no histórico deste, ele sempre elogiou
-determinado produto, e somente neste determinado comentário ele está criticando
-este.
+Sugere-se ainda, a incorporação do
+histórico do usuário na análise de sentimentos. Ou seja, para definirmos se um
+usuário está sendo irônico, por exemplo, seria interessante verificar se este
+sempre elogiou determinado produto, e somente neste determinado comentário ele está criticando este.

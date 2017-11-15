@@ -3,9 +3,11 @@
 
 Para realização dos testes, foram
 selecionados 6 tópicos distribuídos em duas categorias diferentes, que são:
-Comentários políticos e Comentários sobre filmes. Foram escolhidas duas
+comentários políticos e comentários sobre filmes. Optou-se pela escolha de duas
 categorias distintas com o objetivo de avaliar a assertividade do método
-desenvolvido em diferentes assuntos e contextos.
+desenvolvido em diferentes contextos. Como a validação dos resultados é efetuada
+de forma manual, não foi possível efetuar a análise sobre mais tópicos ou
+categorias.
 
 \section{Comentários Políticos}
 
@@ -13,74 +15,62 @@ De forma a realizar testes sobre um contexto de comentários políticos, foi
 executado o método de Propagação Dupla, através dos próprios comentários e então
 selecionada a palavra \textit{``Trump''}, como a palavra alvo para
 restrição na análise de comentários. Desta forma, os tópicos selecionados para
-essa análise foram:
+essa análise estão listados abaixo. Esses foram descritos na seção
+\ref{sec:textos}.
 
 \begin{itemize}
   \item
   \textit{Donald Trump to strip all funding from State Dept team promoting
   women's rights around the world - Leaked plan comes as First Daughter Ivanka
-  defends her father's record with women}: esse tópico contém 9246
-  comentários e encontra-se disponível em
-  \textit{\url{https://www.reddit.com/r/worldnews/comments/67ivae/donald_trump_to_strip_all_funding_from_state_dept/}}
-  e refere-se a decisão do presidente dos Estados Unidos da América, Donald
-  Trump, em remover fundos de promoção ao direito das mulheres.  
+  defends her father's record with women}.  
   \item
   \textit{Sweden asks the U.S. to explain Trump comment on
-  Sweden}: esse tópico contém 10927
-  comentários e encontra-se disponível em
-  \textit{\url{https://www.reddit.com/r/worldnews/comments/5uzetf/sweden_asks_the_us_to_explain_trump_comment_on/}}
-  e se refere aos comentários feitos do presidente dos Estados Unidos da
-  América, Donald Trump, sobre a Suécia.
+  Sweden}.
   
   \item\textit{“Canada will welcome you,” Trudeau invites refugees as Trump bans
-  them}: esse tópico contém 9113
-  comentários e encontra-se disponível em
-  \textit{\url{https://www.reddit.com/r/worldnews/comments/5qqa51/canada_will_welcome_you_trudeau_invites_refugees/}}
-  e refere-se a declaração do primeiro ministro canadense sobre decisão de
-  receber refugiados. Neste declaração, o primeiro ministro canadense afirma que
-  os refugiados serão bem-vindos no Canadá.
+  them}.
 \end{itemize}
 
-Através da aplicação do método desenvolvido nos tópicos citados anteriormente,
-foram obtidos os seguintes resultados com relação a assertividade:
-
+ 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=300px]{imagens/politica1.png}
+\includegraphics[height=250px]{imagens/politica1.png}
 \caption{Assertividade da ferramenta desenvolvida com relação a comentários de
 política.}
 \label{fig:pol1}
 \end{figure}
 
-A fim de se determinar se os diferentes resultados obtidos por Hutto
-\cite{conf/icwsm/HuttoG14} sobre a análise de \textit{tweets}, avaliações
-de produtos da Amazon e editoriais do New York Times, foram resultados pela
-diferença de contexto ou por seus corpos conterem diferentes tamanhos, foi
-também conduzida uma análise separando todos os comentários de política em três
-categorias, comentários com 144 caracteres ou menos, similares a
-\textit{``tweets''}, tópicos com menos de 1000 caracteres e tópicos com 1000
-caracteres ou mais. 
+Na Figura \ref{fig:pol1}, tem-se os resultados obtidos. Observa-se que
+a assertividade foi próxima aos valores obtidos por Hutto e Gilbert
+\cite{conf/icwsm/HuttoG14} para avaliações de produtos da Amazon e para
+editoriais do New York Times. Porém, os valores foram inferiores aos obtidos na
+avaliação de \textit{tweets}. A partir desse resultado, acredita-se que a
+assertividade da ferramenta está relacionada com o contexto de utilização
+desta, demonstrado pela diferença na assertividade entre os tópicos. De forma a
+avaliar se os resultados foram ocasionados pela diferença de contexto ou por seus corpos de texto terem diferentes tamanhos, foi também conduzida uma análise separando todos os comentários de política em três categorias, comentários com 144 caracteres ou
+menos, similares a \textit{``tweets''}, tópicos com menos de 1000 caracteres e
+tópicos com 1000 caracteres ou mais.
 
-\newpage 
-A partir dessa análise foram obtidos os seguintes
-resultados:
-
+\newpage
+ 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=300px]{imagens/politica2.png}
+\includegraphics[height=250px]{imagens/politica2.png}
 \caption{Assertividade da ferramenta desenvolvida com relação a comentários de
 política por tamanho.}
 \label{fig:pol2}
 \end{figure}
 
+Na Figura \ref{fig:pol2} tem-se os resultados obtidos através da
+análise através da quantidade de caracteres. Pode-se observar que o método
+apresenta uma diminuição na sua assertividade com o aumento do texto. 
 
 \section{Comentários sobre Filmes}
 
-De forma a executar as mesmas análises realizadas sobre comentários políticos,
-foi selecionada a palavra \textit{``movie''}, como uma palavra alvo de restrição
-na análise de comentários, em conjunto com o método de Propagação Dupla executado
-sobre os próprios comentários. Desta forma, os tópicos selecionados para
-essa análise foram:
+Os mesmos testes foram realizados utilizando a palavra \textit{``movie''} como
+alvo, em tópicos de cinema. O método \ac{VADER}, foi utilizado usando o método
+de Propagação Dupla, sendo que os textos selecionados para a expansão e, para a
+posterior análise foram obtidos dos comentários dos tópicos:
 
 \begin{itemize}
   \item
@@ -104,37 +94,43 @@ essa análise foram:
 \end{itemize}
 
 
-Através da aplicação do método desenvolvido nos tópicos citados anteriormente,
-foram obtidos os seguintes resultados com relação a assertividade:
+Na Figura \ref{fig:fil1} tem-se os resultados obtidos. Observa-se que a
+assertividade também se mostra próxima aos valores obtidos por Hutto e Gilbert
+\cite{conf/icwsm/HuttoG14}, porém acima dos valores apresentados para
+comentários de política. Acredita-se que isso é causado pois os
+tópicos de discussão de filmes encorajam o leitor a avaliar o filme que está sendo discutido apresentando uma enquete em seu corpo, enquanto
+os comentários sobre política apresentam no conteúdo de seu tópico somente um
+\textit{link} direto para a notícia original. 
+
+
+\newpage 
+
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=300px]{imagens/filmes1.png}
+\includegraphics[height=250px]{imagens/filmes1.png}
 \caption{Assertividade da ferramenta desenvolvida com relação a comentários de
 filmes.}
 \label{fig:fil1}
 \end{figure}
 
 
-Também, com o objetivo de demonstrar a assertividade da ferramenta com relação a
-quantidade de caracteres por comentário, foi conduzida uma análise separando
-todos os comentários de filmes em três categorias de forma a espelhar o
-realizado com tópicos de política. Comentários com 144 caracteres ou menos,
-similares a \textit{``tweets''}, tópicos com menos de 1000 caracteres e tópicos com 1000 caracteres ou mais. 
-
-\newpage 
-A partir dessa análise foram obtidos os seguintes
-resultados:
+Posteriormente, foi conduzida uma análise separando
+todos os comentários de filmes em três categorias de acordo com o tamanho do
+texto: comentários com 144 caracteres ou menos (similares a
+\textit{``tweets''}), comentários com menos de 1000 caracteres e comentários com
+1000 caracteres ou mais. Na Figura \ref{fig:fil2} tem-se os resultados obtidos através da
+análise através da quantidade de caracteres. De forma similar aos comentários
+de política, o método apresenta uma diminuição na sua assertividade com o
+aumento do texto.
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=300px]{imagens/filmes2.png}
+\includegraphics[height=225px]{imagens/filmes2.png}
 \caption{Assertividade da ferramenta desenvolvida com relação a comentários de
 filmes por tamanho.}
 \label{fig:fil2}
 \end{figure}
-
-\section{Análise dos Resultados Obtidos}
 
 Através dos resultados
 apresentados anteriormente, pode-se verificar que a ferramenta apresentou maior
@@ -148,30 +144,21 @@ apresentou uma baixa assertividade, chegando a apresentar assertividade similar
 a uma classificação realizada de forma aleatória, o que naturalmente iria
 classificar os comentários com 50\% de acerto eventualmente.
 
-Destaca-se que os tópicos de discussão de filmes encorajam o leitor a avaliar o
-filme que está sendo discutido apresentando uma enquete em seu corpo, enquanto
-os comentários sobre política apresentam no conteúdo de seu tópico somente um
-\textit{link} direto para a notícia original. 
-
-Como o \ac{VADER} faz uso de um
-dicionário para a avaliação dos sentimentos, e nos tópicos relacionados com
+Destaca-se que nos tópicos relacionados com
 política não é pedido que o autor do comentário expresse sua opinião sobre o
-que estamos querendo avaliar, o \ac{VADER} acaba atribuindo sentimentos não
-existentes ou com sua polaridade errada em determinadas frases, como por
-exemplo: 
-
-\textit{``\ldots What if he is just like trump and trump's useless
-father\ldots``}. 
+que estamos querendo avaliar. Desta forma, o \ac{VADER} acaba atribuindo
+sentimentos inexistentes ou com sua polaridade errada em determinadas frases,
+como por exemplo, \textit{``\ldots What if he is just like trump and trump's
+useless father\ldots``}. 
 
 Neste caso, o dicionário irá avaliar de forma positiva o
-comentário pois a palavra \textit{``like''}, quando utilizada com o significado
-de ``gostar'' apresenta um sentimento positivo, porém, a palavra
-\textit{``like''} neste caso está sendo utilizada como comparação, fazendo com
-que a ferramenta apresente o sentimento errado.
+comentário pois esse apresenta a palavra \textit{``like''}, que quando utilizada
+com o significado de \textit{``gostar''} apresenta um sentimento positivo.
+Porém, a palavra \textit{``like''} neste caso está sendo utilizada como
+comparação.
 
-Com relação a análise referente a quantidade de caracteres, apresentadas através
-das Figuras \ref{fig:pol2} e \ref{fig:fil2}, pode-se verificar que a ferramenta
-demonstra a tendência de perder a sua assertividade conforme o número de
-caracteres análisados, pois tanto no contexto de comentários de filmes, quanto
-no contexto de comentários políticos, a ferramenta apresentou perda na
-assertividade conforme os comentários ficaram mais extensos.
+Pode-se verificar que o método apresenta uma diminuição na sua assertividade
+com o aumento do texto. Essa tendência é observada nos
+trabalhos de Hutto e Gilbert \cite{conf/icwsm/HuttoG14} onde \textit{``tweets''}
+analisados apresentaram maior assertividade do que editorias do \textit{New
+York Times} e avaliações de produto da \textit{Amazon}.
