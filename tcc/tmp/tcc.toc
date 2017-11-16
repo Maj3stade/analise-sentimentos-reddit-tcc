@@ -25,18 +25,18 @@
 \contentsline {section}{\numberline {4.1}Rede Social Reddit}{35}{section.4.1}
 \contentsline {section}{\numberline {4.2}Extra\IeC {\c c}\IeC {\~a}o de Dados}{36}{section.4.2}
 \contentsline {section}{\numberline {4.3}Valida\IeC {\c c}\IeC {\~a}o da Implementa\IeC {\c c}\IeC {\~a}o}{37}{section.4.3}
-\contentsline {section}{\numberline {4.4}M\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{38}{section.4.4}
+\contentsline {section}{\numberline {4.4}M\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{37}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}Adi\IeC {\c c}\IeC {\~a}o de Palavras e Alvos ao Dicion\IeC {\'a}rio}{38}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Atribui\IeC {\c c}\IeC {\~a}o de Pontua\IeC {\c c}\IeC {\~a}o \IeC {\`a}s Novas Palavras}{40}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Textos utilizados para o m\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{41}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}Textos utilizados para o m\IeC {\'e}todo de Propaga\IeC {\c c}\IeC {\~a}o Dupla}{40}{subsection.4.4.3}
 \contentsline {section}{\numberline {4.5}Restri\IeC {\c c}\IeC {\~a}o de Palavras Alvos}{42}{section.4.5}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
 \contentsline {chapter}{\chapternumberline {5}\MakeTextUppercase {Resultados Obtidos}}{43}{chapter.5}
 \contentsline {section}{\numberline {5.1}Coment\IeC {\'a}rios Pol\IeC {\'\i }ticos}{43}{section.5.1}
 \contentsline {section}{\numberline {5.2}Coment\IeC {\'a}rios sobre Filmes}{45}{section.5.2}
 \setlength {\cftchapterindent }{0em} \setlength {\cftchapternumwidth }{\cftlastnumwidth }
-\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\IeC {\~a}o Final}}{49}{chapter.6}
-\contentsline {section}{\numberline {6.1}Trabalhos Futuros}{49}{section.6.1}
+\contentsline {chapter}{\chapternumberline {6}\MakeTextUppercase {Conclus\IeC {\~a}o Final}}{47}{chapter.6}
+\contentsline {section}{\numberline {6.1}Trabalhos Futuros}{47}{section.6.1}
 \vspace {\cftbeforechapterskip }
 \setlength {\cftchapterindent }{\cftlastnumwidth } \setlength {\cftchapternumwidth }{2em}
-\contentsline {chapter}{\uppercase {Refer\^encias}}{51}{section*.16}
+\contentsline {chapter}{\uppercase {Refer\^encias}}{49}{section*.16}

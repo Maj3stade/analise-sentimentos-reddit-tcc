@@ -8,33 +8,35 @@ Bayes, na análise de sentimentos nas avaliações de
 produtos da Amazon, editoriais do New York Times e mais importante, na análise
 de \textit{Tweets} da rede social Twitter \cite{SentimentinSocialMedia}.
 
-A partir dos resultados obtidos verifica-se que o método de \ac{VADER} sozinho
-apresenta resultados insatisfatórios. Desta forma, foi
-utilizado o método de Propagação Dupla e também a escolha de palavras alvo para
-a análise. 
+A partir dos resultados obtidos verifica-se que a utilização do método de
+\ac{VADER} isolado apresenta resultados insatisfatórios. Desta forma, foi
+utilizado o método de Propagação Dupla e combinado com a escolha de palavras
+alvo para a análise. Neste caso, os resultados apresentaram melhorias de mais
+7\%. De fato, no caso do Método de \ac{VADER} isolado, obteve-se uma
+assertividade de 58\%. Já utilizando o Método de Propagação Dupla com palavras
+alvos, obteve-se uma assertividade de 65\%.
 
 Foram analisados 6 tópicos divididos em duas categorias,
-comentários políticos e comentários de filmes. Estes tópicos foram analisados em
-sua assertividade e assertividade por quantidade de caracteres. Os resultados
-desta análise nos demonstrou que os comentários sobre filmes, apresentaram maior
-assertividade que comentários políticos. Isso se deve ao fato de que nos tópicos relacionados com filmes, é pedido a opinião
-ou avaliação dos usuários sobre aquele filme, aumentando a utilização de
-expressões simples como \textit{``\ldots este filme foi ruim\ldots''}. Também, a
-partir da análise de assertividade por quantidade de caracter, foi possível
-demonstrar que o \ac{VADER} tende a perder assertividade quanto maior a
-quantidade de caracteres em um comentário. 
-
-De fato, quanto maior o número de
+comentários políticos e comentários de filmes. Estes tópicos foram analisados
+por completo e posteriormente, considerando o número de caracteres. Os
+resultados obtidos demonstraram que a aplicação do método desenvolvido sobre
+comentários de filmes apresenta uma maior assertividade do que a aplicação do
+método sobre comentários políticos. Isso se deve ao fato de que nos tópicos
+relacionados com filmes, é pedido a opinião ou avaliação dos usuários sobre
+aquele filme, aumentando a utilização de expressões simples como
+\textit{``\ldots este filme foi ruim\ldots''}. Já a partir da análise de
+assertividade por quantidade de caracter, foi possível concluir que o \ac{VADER}
+tende a perder assertividade com o aumento no número de caracteres em um
+comentário. De fato, quanto maior o número de
 caracteres, menor a assertividade do método. Essas tendências já haviam sido
 observadas nos trabalhos de Hutto e Gilbert \cite{conf/icwsm/HuttoG14}.
 
 
 \section{Trabalhos Futuros}
 
-Como sugestão de trabalhos futuros, a análise de comentários do Reddit através do
-\textit{``Naive Bayes''} para que seja possível elencarmos pontos positivos e
-negativos deste método em relação ao método de \ac{VADER} na sua utilização
-no Reddit.
+Como trabalhos futuros, segere-se a análise de comentários do Reddit através
+do \textit{``Naive Bayes''} de forma a comparar com o método de \ac{VADER} na
+sua utilização no Reddit.
 
 Sugere-se ainda, a incorporação do
 histórico do usuário na análise de sentimentos. Ou seja, para definirmos se um
