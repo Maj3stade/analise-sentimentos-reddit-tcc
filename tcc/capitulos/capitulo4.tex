@@ -25,8 +25,8 @@ usuários podem enviar comentários como forma de expressar sua opinião (Figura
 \label{fig:reddit}
 \end{figure}
 
-O conteúdo do Reddit é distribuído em \textit{subreddits} que funcionam como
-comunidades. Os usuários podem se inscrever nesses
+O conteúdo do Reddit encontra-se distribuído em \textit{subreddits} que
+funcionam como comunidades. Os usuários podem se inscrever nesses
 \textit{subreddits}, recebendo as atualizações na sua página inicial, sendo
 que dentre esses \textit{subreddits}, destacam-se:
 
@@ -73,8 +73,8 @@ que dentre esses \textit{subreddits}, destacam-se:
 \section{Extração de Dados}
 \label{cap:Extracao}
 
-Para a extração comentários do \textit{website} Reddit e para a criação da base
-foi desenvolvido um \textit{crawler} ou robô de navegação. Esse robô foi
+Para a extração de comentários do \textit{website} Reddit e para a criação da
+base foi desenvolvido um \textit{crawler} ou robô de navegação. Esse robô foi
 implementado na linguagem de programação Java e tem como objetivo a navegação
 automática no conteúdo do \textit{website}, extraindo os dados e comentários referentes a um
 determinado tópico. Após, os dados são armazenados em uma base de dados criada
@@ -120,7 +120,7 @@ Para validação da implementação desenvolvida foi selecionado o tópico:
 them''.}
 A partir desse tópico, foram extraídos todos os comentários, sendo que
 esses foram avaliados de forma manual. Após, esses comentários foram processados
-através da ferramenta \ac{NLTK}, obtendo uma assertividade de 56\%.
+utilizando-se a \ac{NLTK}, obtendo uma assertividade de 56\%.
 
 Destaca-se que uma grande parte dos comentários que foram identificados de forma
 incorreta, apresentavam a irônia como característica, como por exemplo, o
@@ -147,7 +147,7 @@ música é muito boa''}, a palavra \textit{``boa''} demonstra o sentimento do
 autor com relação a \textit{``música''}, tornando assim, a palavra
 \textit{``música''} um alvo de opinião.
 
-A extração dos alvos é necessária pois em uma mesma frase
+A extração dos alvos é interessante pois em uma mesma frase
 podemos expressar opiniões sobre diferentes alvos. Além disso, podemos
 ter opiniões diferentes sobre diferentes características de um alvo. Por
 exemplo, na frase \textit{``Este celular é muito bom, porém a bateria dele é
@@ -159,7 +159,7 @@ tarefas que serão descritas na próxima seção.
 \subsection{Adição de Palavras e Alvos ao Dicionário}
 
 A \textbf{primeira tarefa}, é dividida em duas regras, sendo que a primeira
-consiste na extração de alvos a partir de palavras que expressam sentimento e
+consiste na extração de alvos a partir de palavras que expressam um sentimento e
 que já são conhecidas. Ou seja, são verificadas todas as palavras das quais a palavra que
 expressa sentimentos depende. Caso essa palavra seja um substantivo, ela será
 extraída e adicionada na lista de alvos. Por exemplo na frase \textit{``We have
@@ -169,7 +169,7 @@ a great president''} a palavra \textit{``great''} depende de \textit{``president
 \textrightarrow \text{ great}}\]
 
 A segunda regra da primeira tarefa,
-consiste em verificar se uma palavra que expressa sentimento é dependente de
+consiste em verificar se uma palavra que expressa um sentimento é dependente de
 uma segunda palavra que depende de um substantivo.
 Por exemplo, na frase \textit{``Trump is a great president.''} a palavra
 \textit{``great''} depende da palavra \textit{``is''} que por sua vez depende da
@@ -186,8 +186,8 @@ sentimentos, em caso positivo, é verificado se essa palavra possui algum depend
 extraída na tarefa anterior, porém, a palavra \textit{``witty''} ainda não se
 encontra no dicionário de sentimentos.
 Desta forma, a palavra \textit{``witty''} será acrescida ao
-dicionário de sentimentos uma vez que essa palavra é um adjetivo que
-ainda não se encontra no dicionário de sentimentos.
+dicionário de sentimentos uma vez que essa palavra é um adjetivo que não se
+encontra no dicionário de sentimentos.
 
 
 \[\textit{We have a } \underbrace{\textit{witty president.}}_\text{president
@@ -222,7 +222,7 @@ leader}}\]
 
 A segunda regra da terceira tarefa verifica se dois substantivos
 possuem uma palavra dependente em comum. No caso de um desses substantivos ser
-uma palavra alvo, o outro também é adicionado na lista. Por exemplo, na frase
+uma palavra alvo, o outro também será adicionado na lista. Por exemplo, na frase
 \textit{``Trump is a great president.''}, a palavra \textit{``president''} que
 foi extraída através da primeira tarefa possui a palavra \textit{``is''} como
 dependente, bem como a palavra \textit{``Trump''} também possui a palavra
@@ -268,7 +268,7 @@ através do Método de Propagação Dupla. Essa atribuição é realizada da seg
 para as palavras que foram extraídas através da quarta tarefa, é utilizada a
 mesma pontuação da palavra relacionada a essa nova palavra. Por exemplo, para a frase \textit{``Trump is
 witty and clever.''}, a palavra \textit{``witty''} possui uma conjunção
-(\textit{``and''}), que a relaciona com a palavra \textit{``clever''}. Neste
+\textit{``and''}, que a relaciona com a palavra \textit{``clever''}. Neste
 caso, a palavra \textit{``clever''} terá a mesma pontuação da palavra
 \textit{``witty''}.
 
@@ -288,9 +288,9 @@ palavra \textit{``president''}, irá receber a mesma pontuação da palavra
 \label{sec:textos}
 
 Para utilização do método de Propagação Dupla, é necessário utilizar-se de um
-conjunto de textos para que sejam executadas as quatro tarefas. Segundo Qiu \cite{Qiu:2011:OWE:1970420.1970422}, como as palavras tem diferentes
-significados em diferentes contextos, é recomendado que este conjunto de textos
-pertença ao mesmo contexto que está sendo efetuada a análise de sentimentos. Por
+conjunto de textos para que sejam executadas as quatro tarefas. Segundo Qiu
+\cite{Qiu:2011:OWE:1970420.1970422}, como as palavras podem ter diferentes
+significados em diferentes contextos, é recomendado que este conjunto de textos pertença ao mesmo contexto que está sendo efetuada a análise de sentimentos. Por
 exemplo, ao utilizar um conjunto de dados sobre notícias gerais, pode-se
 determinar que a palavra \textit{``gucci''} é uma gíria similar a palavra
 \textit{``good''}. Porém, o uso dessa palavra em comentários de roupas
@@ -304,9 +304,9 @@ refugees as Trump bans them}. Mais especificamente, foram considerados os
 últimos 1000 comentários destes usuários, totalizando 780063 comentários.
 
 No segundo
-conjunto de textos, foram considerados comentários de usuários em tópicos
+conjunto de textos, foram considerados os comentários de usuários em tópicos
 que apresentam o mesmo tema do tópico \textit{``Canada will welcome you,” Trudeau invites
-refugees as Trump bans them}. Nesta avaliação, foram utilizados os
+refugees as Trump bans them}. Mais especificamente, foram utilizados os
 seguintes tópicos:
 
 \begin{itemize}
@@ -345,7 +345,7 @@ will welcome you,” Trudeau invites refugees as Trump bans them}:
   comentaram o tópico em questão.
   \item 62\% de assertividade na utilização do dicionário padrão com palavras
   extraídas a partir de comentários postados em tópicos relacionados ao mesmo
-  assunto.
+  tema.
 \end{itemize}
 
 Observa-se que os melhores resultados foram obtidos utilizando-se o método de
@@ -359,9 +359,10 @@ comentários que não foram identificados de forma correta são comentários com
 its losing all meaning..."}, aonde que o sentimento expresso é negativo, porém,
 a pessoa expressa um sentimento a favor da notícia em questão. 
 
-Para a solução deste problema, foram extraídos somente os sentimentos
-relacionados a uma determinada palavra alvo. Por exemplo, no tópico \textit{````Canada will
-welcome you,'' Trudeau invites refugees as Trump bans them''}, é possível que a mesma pessoa expresse uma opinião positiva com relação
+Para amenizar esse problema, pode-se utilizar uma técnica que consiste em
+restringir a análise à determinadas palavras alvos, ou seja, extrair somente os
+sentimentos relacionados a uma determinada palavra alvo.
+Por exemplo, no tópico \textit{````Canada will welcome you,'' Trudeau invites refugees as Trump bans them''}, é possível que a mesma pessoa expresse uma opinião positiva com relação
 ao \textit{Canadá} e negativa com relação a \textit{Trudeau}. Ao se determinar
 que desejamos analisar comentários sobre a palavra \textit{``Trudeau''},
 pode-se definir \textit{Trudeau} como a palavra alvo para a análise,
@@ -373,8 +374,8 @@ election.''}, será analisada somente a frase dependente da palavra
 evitando que a primeira frase \textit{``Come enjoy our 15\% tax :D\ldots''}, que
 representa um sentimento positivo, afete a análise.
 
-Restringindo a análise a palavra alvo ``Trump'' para extração dos comentários do
-tópico \textit{````Canada will welcome you,'' Trudeau invites refugees as Trump
+Restringindo a análise a palavra alvo \textit{``Trump''} para extração dos
+comentários do tópico \textit{````Canada will welcome you,'' Trudeau invites refugees as Trump
 bans them''}, foi obtida a assertividade de 65\%. A partir destes resultados,
 optou-se pela utilização do método de \ac{VADER}, combinado com o método de Propagação Dupla e a
 restrição de alvos para a execução dos testes que serão apresentados no Capítulo

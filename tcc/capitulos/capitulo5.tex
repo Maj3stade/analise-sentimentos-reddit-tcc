@@ -11,12 +11,12 @@ trabalho, não foi possível efetuar a análise sobre mais tópicos ou categoria
 
 \section{Comentários Políticos}
 \label{sec:pol}
-De forma a realizar testes sobre um contexto de comentários políticos,
-foram executados testes sobre os comentários listados abaixo, e que foram
-descritos Seção \ref{sec:textos}, sendo utilizado o Método de Propagação Dupla e
-a restrição de palavra alvo \textit{``Trump''}. Para a aplicação do Método de
-Propagação Dupla, utilizou-se como conjuto de textos os próprios comentários
-destes tópicos.
+Para a realização dos testes sobre um contexto de comentários políticos,
+foram executados testes sobre os comentários listados abaixo e que foram
+descritos Seção \ref{sec:textos}. Para tanto, foi utilizado o Método de
+Propagação Dupla e a restrição da palavra alvo \textit{``Trump''}. Para a
+aplicação do Método de Propagação Dupla, utilizou-se como conjuto de textos
+para a expansão os próprios comentários destes tópicos.
 
 \begin{itemize}
   \item
@@ -31,42 +31,46 @@ destes tópicos.
   them}.
 \end{itemize}
 
- 
-\begin{figure}[!htbp]
-\centering
-\includegraphics[height=250px]{imagens/politica1.png}
-\caption{Assertividade da ferramenta desenvolvida com relação a comentários de
-política.}
-\label{fig:pol1}
-\end{figure}
-
 Na Figura \ref{fig:pol1}, tem-se os resultados obtidos. Observa-se que
 a assertividade foi próxima aos valores obtidos por Hutto e Gilbert
 \cite{conf/icwsm/HuttoG14} para avaliações de produtos da Amazon e para
 editoriais do New York Times. Porém, os valores foram inferiores aos obtidos na
 avaliação de \textit{tweets}. 
 
+\newpage
+ 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=250px]{imagens/politica2.png}
+\includegraphics[height=200px]{imagens/politica1.png}
+\caption{Assertividade da ferramenta desenvolvida com relação a comentários de
+política.}
+\label{fig:pol1}
+\end{figure}
+
+De forma a
+avaliar se os resultados foram ocasionados pela diferença de contexto ou por
+seus corpos de texto terem diferentes tamanhos, foi também conduzida uma análise
+separando todos os comentários de política em três categorias de acordo com o
+número de caracteres, que são: comentários com 144 caracteres ou menos,
+similares a \textit{``tweets''}; tópicos com menos de 1000 caracteres; e tópicos
+com 1000 caracteres ou mais. Na Figura \ref{fig:pol2} tem-se os resultados obtidos através da análise através da quantidade de caracteres.
+Observa-se que o método apresenta uma diminuição na sua assertividade com o
+aumento do texto. Essa tendência já foi observada nos
+trabalhos de Hutto e Gilbert \cite{conf/icwsm/HuttoG14} onde \textit{``tweets''}
+analisados apresentaram maior assertividade do que editorias do \textit{New
+York Times} e as avaliações de produtos da \textit{Amazon}.
+
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[height=200px]{imagens/politica2.png}
 \caption{Assertividade da ferramenta desenvolvida com relação a comentários de
 política por tamanho.}
 \label{fig:pol2}
 \end{figure}
 
-\newpage 
 
 
-De forma a
-avaliar se os resultados foram ocasionados pela diferença de contexto ou por seus corpos de texto terem diferentes tamanhos, foi também conduzida uma análise separando todos os comentários de política em três categorias, comentários com 144 caracteres ou
-menos, similares a \textit{``tweets''}, tópicos com menos de 1000 caracteres e
-tópicos com 1000 caracteres ou mais. Na Figura \ref{fig:pol2} tem-se os
-resultados obtidos através da análise através da quantidade de caracteres.
-Observa-se que o método apresenta uma diminuição na sua assertividade com o
-aumento do texto. Essa tendência é observada nos
-trabalhos de Hutto e Gilbert \cite{conf/icwsm/HuttoG14} onde \textit{``tweets''}
-analisados apresentaram maior assertividade do que editorias do \textit{New
-York Times} e avaliações de produto da \textit{Amazon}.
 
 \section{Comentários sobre Filmes}
 
@@ -100,16 +104,15 @@ posterior análise foram obtidos dos comentários dos tópicos:
 Na Figura \ref{fig:fil1} tem-se os resultados obtidos. Observa-se que a
 assertividade também se mostra próxima aos valores obtidos por Hutto e Gilbert
 \cite{conf/icwsm/HuttoG14}.Observa-se neste caso que os resultados foram
-superiores aos apresentados na Seção \ref{sec:pol}. Essa melhora na
+superiores aos apresentados na Seção \ref{sec:pol}. Esse aumento na
 assertividade se deve ao fatos dos tópicos de filme encorajarem ao
 leitor a efetuar a avaliação do filme em questão, enquanto os comentários sobre
 política apresentam no conteúdo em um \textit{link} direto para a notícia
 original.
 
-
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=250px]{imagens/filmes1.png}
+\includegraphics[height=200px]{imagens/filmes1.png}
 \caption{Assertividade da ferramenta desenvolvida com relação a comentários de
 filmes.}
 \label{fig:fil1}
@@ -121,11 +124,12 @@ os comentários de filmes, de acordo com o tamanho do texto, sendo considerados:
 comentários com 144 caracteres ou menos (similares a \textit{``tweets''}), comentários com menos de 1000 caracteres e comentários com
 1000 caracteres ou mais. Na Figura \ref{fig:fil2} tem-se os resultados obtidos através da
 análise através da quantidade de caracteres. Observa-se que neste caso, também
-houve uma queda na assertividade com o aumento do texto.
+houve uma queda na assertividade com o aumento do texto, como observado no
+trabalho de Hutto e Gilbert \cite{conf/icwsm/HuttoG14}. 
 
 \begin{figure}[!htbp]
 \centering
-\includegraphics[height=225px]{imagens/filmes2.png}
+\includegraphics[height=200px]{imagens/filmes2.png}
 \caption{Assertividade da ferramenta desenvolvida com relação a comentários de
 filmes por tamanho.}
 \label{fig:fil2}

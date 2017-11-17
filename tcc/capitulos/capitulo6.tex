@@ -2,43 +2,51 @@
 \label{cap:conclusao}
 Através deste trabalho, observou-se que os métodos mais utilizados para análise
 de sentimentos são o Método de Naive Bayes (estatístico) e o Método de \ac{VADER} (simbólico). Dentre
-estes, optou-se pela utilização do método de \ac{VADER}, uma vez que de acordo
-com a literatura, esse apresenta um desempenho superior ao método de Naive
+estes, optou-se pela utilização do método de \ac{VADER}, uma vez que esse, de
+acordo com a literatura, apresenta um desempenho superior ao método de Naive
 Bayes, na análise de sentimentos nas avaliações de
-produtos da Amazon, editoriais do New York Times e mais importante, na análise
+produtos da Amazon, editoriais do New York Times e na análise
 de \textit{Tweets} da rede social Twitter \cite{SentimentinSocialMedia}.
 
-A partir dos resultados obtidos verifica-se que a utilização do método de
+A partir dos resultados obtidos verificou-se que a utilização do método de
 \ac{VADER} isolado apresenta resultados insatisfatórios. Desta forma, foi
 utilizado o método de Propagação Dupla e combinado com a escolha de palavras
-alvo para a análise. Neste caso, os resultados apresentaram melhorias de mais
-7\%. De fato, no caso do Método de \ac{VADER} isolado, obteve-se uma
-assertividade de 58\%. Já utilizando o Método de Propagação Dupla com palavras
-alvos, obteve-se uma assertividade de 65\%.
+alvo para a análise. Neste caso, os resultados apresentaram melhorias de
+aproximadamente 7\%. De fato, no caso do Método de \ac{VADER} isolado, obteve-se
+uma assertividade de 58\% na análise de sentimento relacionada aos comentários
+do tópico \textit{````Canada will welcome you,'' Trudeau invites refugees as
+Trump bans them''}.
+Já utilizando o Método de Propagação Dupla com palavras alvos, obteve-se uma assertividade de 65\%.
 
-Foram analisados 6 tópicos divididos em duas categorias,
+Por fim, foram analisados 6 tópicos divididos em duas categorias, que foram 
 comentários políticos e comentários de filmes. Estes tópicos foram analisados
-por completo e posteriormente, considerando o número de caracteres. Os
-resultados obtidos demonstraram que a aplicação do método desenvolvido sobre
+por completo e, posteriormente, considerando o número de caracteres. Os resultados obtidos demonstraram que a aplicação do método desenvolvido sobre
 comentários de filmes apresenta uma maior assertividade do que a aplicação do
 método sobre comentários políticos. Isso se deve ao fato de que nos tópicos
-relacionados com filmes, é pedido a opinião ou avaliação dos usuários sobre
+relacionados com filmes, é solicitado a opinião ou avaliação dos usuários sobre
 aquele filme, aumentando a utilização de expressões simples como
-\textit{``\ldots este filme foi ruim\ldots''}. Já a partir da análise de
+\textit{``\ldots este filme foi ruim\ldots''}. 
+
+Já a partir da análise de
 assertividade por quantidade de caracter, foi possível concluir que o \ac{VADER}
-tende a perder assertividade com o aumento no número de caracteres em um
-comentário. De fato, quanto maior o número de
+tende a diminuir a taxa de assertividade com o aumento no número de caracteres
+em um comentário. De fato, quanto maior o número de
 caracteres, menor a assertividade do método. Essas tendências já haviam sido
-observadas nos trabalhos de Hutto e Gilbert \cite{conf/icwsm/HuttoG14}.
+observadas no trabalho de Hutto e Gilbert \cite{conf/icwsm/HuttoG14}.
 
 
 \section{Trabalhos Futuros}
 
 Como trabalhos futuros, segere-se a análise de comentários do Reddit através
-do \textit{``Naive Bayes''} de forma a comparar com o método de \ac{VADER} na
-sua utilização no Reddit.
+do \textit{``Naive Bayes''}. Os resultados desta análise poderiam ser utilizados
+para uma comparação com os resultados obtidos neste trabalho através da
+aplicação do Método de \ac{VADER}.
 
 Sugere-se ainda, a incorporação do
 histórico do usuário na análise de sentimentos. Ou seja, para definirmos se um
 usuário está sendo irônico, por exemplo, seria interessante verificar se este
 sempre elogiou determinado produto, e somente neste determinado comentário ele está criticando este.
+
+Por fim, seria interessante efetuar uma análise sobre um conjunto maior de
+tópicos. Essa análise permitiria consolidar os resultados obtidos neste
+trabalho.

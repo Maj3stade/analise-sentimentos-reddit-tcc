@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  16 NOV 2017 21:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/W32TeX) (preloaded format=pdflatex 2017.3.29)  17 NOV 2017 12:54
 entering extended mode
  restricted \write18 enabled.
  Source specials enabled.
@@ -1813,64 +1813,65 @@ Overfull \hbox (10.96404pt too wide) in paragraph at lines 330--336
 [41]) [42]
 \openout2 = `capitulos/capitulo5.aux'.
 
- (./capitulos/capitulo5.tex
-<imagens/politica1.png, id=571, 447.17062pt x 274.77657pt>
+ (./capitulos/capitulo5.tex [43
+
+
+
+]
+<imagens/politica1.png, id=581, 447.17062pt x 274.77657pt>
 File: imagens/politica1.png Graphic file (type png)
 
 <use imagens/politica1.png>
-Package pdftex.def Info: imagens/politica1.png used on input line 37.
-(pdftex.def)             Requested size: 408.38608pt x 250.93842pt.
+Package pdftex.def Info: imagens/politica1.png used on input line 44.
+(pdftex.def)             Requested size: 326.7116pt x 200.75073pt.
 
-<imagens/politica2.png, id=575, 448.67625pt x 271.76532pt>
+<imagens/politica2.png, id=585, 448.67625pt x 271.76532pt>
 File: imagens/politica2.png Graphic file (type png)
 
 <use imagens/politica2.png>
-Package pdftex.def Info: imagens/politica2.png used on input line 51.
-(pdftex.def)             Requested size: 414.31387pt x 250.93842pt.
- [43
-
-
-
-] [44 <./imagens/politica1.png> <./imagens/politica2.png>]
-Overfull \hbox (10.04117pt too wide) in paragraph at lines 91--96
+Package pdftex.def Info: imagens/politica2.png used on input line 66.
+(pdftex.def)             Requested size: 331.44699pt x 200.75073pt.
+ [44 <./imagens/politica1.png> <./imagens/politica2.png>]
+Overfull \hbox (10.04117pt too wide) in paragraph at lines 95--100
 \T1/lmr/m/n/12 (-20) men-tá-rios e encontra-se dis-po-ní-vel em [][]$\T1/lmr/m/
 it/12 (-20) <[]https : / / www . reddit . com / r / movies / comments /
  []
 
-<imagens/filmes1.png, id=595, 447.17062pt x 274.77657pt>
+<imagens/filmes1.png, id=598, 447.17062pt x 274.77657pt>
 File: imagens/filmes1.png Graphic file (type png)
 
 <use imagens/filmes1.png>
-Package pdftex.def Info: imagens/filmes1.png used on input line 112.
-(pdftex.def)             Requested size: 408.38608pt x 250.93842pt.
- [45]
-<imagens/filmes2.png, id=604, 445.665pt x 274.02374pt>
+Package pdftex.def Info: imagens/filmes1.png used on input line 115.
+(pdftex.def)             Requested size: 326.7116pt x 200.75073pt.
+ [45 <./imagens/filmes1.png>]
+<imagens/filmes2.png, id=609, 445.665pt x 274.02374pt>
 File: imagens/filmes2.png Graphic file (type png)
 
 <use imagens/filmes2.png>
-Package pdftex.def Info: imagens/filmes2.png used on input line 128.
-(pdftex.def)             Requested size: 367.31094pt x 225.84457pt.
-) [46 <./imagens/filmes1.png> <./imagens/filmes2.png>]
+Package pdftex.def Info: imagens/filmes2.png used on input line 132.
+(pdftex.def)             Requested size: 326.5024pt x 200.75073pt.
+) [46 <./imagens/filmes2.png>]
 \openout2 = `capitulos/capitulo6.aux'.
 
-(./capitulos/capitulo6.tex) [47
+
+(./capitulos/capitulo6.tex [47
 
 
 
-] (./tcc.bbl (./tcc.brf)
+]) [48] (./tcc.bbl (./tcc.brf)
 \tf@brf=\write6
 \openout6 = `tcc.brf'.
 
- [48
 
-
-]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `\uppercase' on input line 3.
 
 bibitemlist
-[49]) AED: lastpage setting LastPage [50]
+[49
+
+
+]) AED: lastpage setting LastPage [50]
 \tf@lof=\write7
 \openout7 = `tcc.lof'.
 
@@ -1890,7 +1891,7 @@ s/capitulo3.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 312.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 312.
 Package rerunfilecheck Info: File `tcc.brf' has not changed.
-(rerunfilecheck)             Checksum: 81954315BB17E20D2BBCA2AEED6E98DA;2367.
+(rerunfilecheck)             Checksum: 609B2B42016B7DAAE7EE8F99D0B4C31B;2423.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1898,11 +1899,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 312.
  ) 
 Here is how much of TeX's memory you used:
- 19614 strings out of 493013
- 292003 string characters out of 6136993
+ 19612 strings out of 493013
+ 291979 string characters out of 6136993
  481622 words of memory out of 5000000
  22379 multiletter control sequences out of 15000+600000
- 124284 words of font info for 168 fonts, out of 8000000 for 9000
+ 124155 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  46i,17n,54p,1214b,687s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2016/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2016/tex
@@ -1925,10 +1926,10 @@ fb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2
 016/texmf-dist/fonts/type1/public/lm/lmsso12.pfb><c:/texlive/2016/texmf-dist/fo
 nts/type1/public/lm/lmsso17.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb><c:/texlive/2016/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on tcc.pdf (52 pages, 686009 bytes).
+Output written on tcc.pdf (52 pages, 687619 bytes).
 PDF statistics:
- 915 PDF objects out of 1000 (max. 8388607)
- 819 compressed objects within 9 object streams
+ 922 PDF objects out of 1000 (max. 8388607)
+ 826 compressed objects within 9 object streams
  167 named destinations out of 1000 (max. 500000)
  37190 words of extra memory for PDF output out of 42996 (max. 10000000)
 
